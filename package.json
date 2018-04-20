@@ -1,0 +1,29 @@
+{
+  "name": "geostyler-style",
+  "version": "0.1.0",
+  "description": "",
+  "main": "index.d.ts",
+  "scripts": {
+    "pretest": "npm run lint",
+    "test": "jest",
+    "lint": "tslint --project tsconfig.json --config tslint.json"
+  },
+  "dependencies": {
+    "@types/jest": "22.2.3",
+    "@types/node": "9.6.5",
+    "jest": "22.4.3",
+    "ts-jest": "22.4.3",
+    "tslint": "5.9.1",
+    "typescript": "2.8.1"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/terrestris/geostyler-style.git"
+  },
+  "author": "",
+  "license": "BSD-2-Clause",
+  "bugs": {
+    "url": "https://github.com/terrestris/geostyler-style/issues"
+  },
+  "homepage": "https://github.com/terrestris/geostyler-style#readme"
+}
