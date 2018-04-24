@@ -5,16 +5,58 @@ const testStyle: Style = {
   rules: [
     {
       filter: ['&&',
-        ['name', 'Peter'],
-        ['age', 12]
+        ['==', 'name', 'Peter'],
+        ['<=', 'age', 12]
       ],
       scaleDenominator: {
-        min: 1000,
-        max: 500
+        min: 500,
+        max: 1000
       },
       symbolizer: {
+        kind: 'Icon',
         visibility: false,
-        antialias: true,
+        allowOverlap: true,
+        ignorePlacement: false,
+        optional: false,
+        rotationAlignment: 'map',
+        spacing: 21
+      }
+    },
+    {
+      filter: ['&&',
+        ['==', 'name', 'Peter'],
+        ['==', 'age', 12]
+      ],
+      scaleDenominator: {
+        min: 500,
+        max: 1000
+      },
+      symbolizer: {
+        kind: 'Text',
+        visibility: false,
+        allowOverlap: true,
+        letterSpacing: 12,
+        ignorePlacement: false,
+        optional: false,
+        rotationAlignment: 'map',
+        spacing: 21,
+        haloColor: '#ff00aa',
+        haloWidth: 4
+      }
+    },
+    {
+      filter: ['&&',
+        ['==', 'name', 'Peter'],
+        ['>=', 'age', 12]
+      ],
+      scaleDenominator: {
+        min: 500,
+        max: 1000
+      },
+      symbolizer: {
+        kind: 'Circle',
+        visibility: false,
+        radius: 5,
         spacing: 21
       }
     }
