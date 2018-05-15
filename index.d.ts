@@ -46,7 +46,7 @@ export interface CombinationFilter {
 }
 
 /**
- * A Symbolizer describes the style representation of geographical data.
+ * A NegationFilter negates a given Filter.
  */
 export interface NegationFilter {
   0: '!';
@@ -173,7 +173,8 @@ export interface LineSymbolizer extends Symbolizer {
 }
 
 /**
- * A Rule aggreagates a specific amount of data and an associated styler.
+ * A Rule combines a specific amount of data (defined by a filter and a
+ * scaleDenominator) and an associated symbolizer.
  */
 export interface Rule {
   filter: ComparisonFilter | CombinationFilter | NegationFilter;
@@ -204,7 +205,7 @@ export interface StyleParser {
    * Reads the GeoStyler Style and transforms it to the target Style
    * representation.
    *
-   * @param style
+   * @param geoStylerStyle Style
    */
   writeStyle(geoStylerStyle: Style): Promise<any>;
 }
