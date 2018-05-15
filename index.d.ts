@@ -1,3 +1,6 @@
+/**
+ * The ScaleDenominator defines a range of scales.
+ */
 export interface ScaleDenominator {
   /**
    * Minimum value of the ScaleDenominator. The value is inclusive.
@@ -10,14 +13,23 @@ export interface ScaleDenominator {
   max: number;
 }
 
+/**
+ * A ComparisonFilter compares a value of an object (by key) with an expected
+ * value.
+ */
 export interface ComparisonFilter {
   0: '==' | '*=' | '!=' | '<' | '<=' | '>' | '>=';
   1: string;
   2: string|number|boolean|null;
 }
 
-// This is just type secure for a maximum of 10 combined filters as you can't
-// type 'rest' parameters of an array.
+/**
+ * A CombinationFilter combines N Filters with a logical OR / AND operator.
+ *
+ * This is just type secure for a maximum of 10 combined filters as you can't
+ * type 'rest' parameters of an array. Nevertheless, theoreticaly you can
+ * combine >10 filters.
+ */
 export interface CombinationFilter {
   0: '&&' | '||';
   1: ComparisonFilter | CombinationFilter | NegationFilter;
@@ -33,11 +45,17 @@ export interface CombinationFilter {
   11?: ComparisonFilter | CombinationFilter | NegationFilter;
 }
 
+/**
+ * A Symbolizer describes the style representation of geographical data.
+ */
 export interface NegationFilter {
   0: '!';
   1: ComparisonFilter | CombinationFilter | NegationFilter;
 }
 
+/**
+ * A Symbolizer describes the style representation of geographical data.
+ */
 export interface Symbolizer {
   kind: 'Circle' | 'Fill' | 'Icon' | 'Line' |'Text';
   color?: string;
@@ -47,11 +65,18 @@ export interface Symbolizer {
   visibility?: boolean;
 }
 
+/**
+ * A PointSymbolizer describes the style representation of POINT data.
+ */
 export interface PointSymbolizer extends Symbolizer {
   avoidEdges?: boolean;
   spacing?: number;
 }
 
+/**
+ * A CircleSymbolizer describes the style representation of POINT data if styled with
+ * a regular circle geometry.
+ */
 export interface CircleSymbolizer extends PointSymbolizer {
   kind: 'Circle';
   blur?: number;
@@ -63,6 +88,10 @@ export interface CircleSymbolizer extends PointSymbolizer {
   strokeWidth?: number;
 }
 
+/**
+ * A TextSymbolizer describes the style representation of POINT data if styled with
+ * a text.
+ */
 export interface TextSymbolizer extends PointSymbolizer {
   kind: 'Text';
   allowOverlap?: boolean;
@@ -89,6 +118,10 @@ export interface TextSymbolizer extends PointSymbolizer {
   transform?: 'none' | 'uppercase' | 'lowercase';
 }
 
+/**
+ * A FillSymbolizer describes the style representation of POINT data if styled with
+ * an specific icon.
+ */
 export interface IconSymbolizer extends PointSymbolizer {
   kind: 'Icon';
   allowOverlap?: boolean;
@@ -110,6 +143,9 @@ export interface IconSymbolizer extends PointSymbolizer {
   textFitPadding?: [number, number, number, number];
 }
 
+/**
+ * A FillSymbolizer describes the style representation of POLYGON data.
+ */
 export interface FillSymbolizer extends Symbolizer {
   kind: 'Fill';
   antialias?: boolean;
@@ -117,6 +153,9 @@ export interface FillSymbolizer extends Symbolizer {
   outlineColor?: string;
 }
 
+/**
+ * A LineSymbolizer describes the style representation of LINESTRING data.
+ */
 export interface LineSymbolizer extends Symbolizer {
   kind: 'Line';
   blur?: number;
@@ -133,6 +172,9 @@ export interface LineSymbolizer extends Symbolizer {
   width?: number;
 }
 
+/**
+ * A Rule aggreagates a specific amount of data and an associated styler.
+ */
 export interface Rule {
   filter: ComparisonFilter | CombinationFilter | NegationFilter;
   scaleDenominator: ScaleDenominator;
@@ -140,9 +182,29 @@ export interface Rule {
 }
 
 /**
- *
+ * The Style is the main interface and the root for all other interfaces.
  */
 export interface Style {
   rules: Rule[];
   type: 'Point' | 'Fill' | 'Line';
+}
+
+/**
+ * Interface, which has to be implemented by all GeoStyler style parser classes.
+ */
+export interface StyleParser {
+  /**
+   * Parses the inputStyle and transforms it to the GeoStyler Style
+   *
+   * @param inputStyle
+   */
+  readStyle(inputStyle: any): Promise<Style>;
+
+  /**
+   * Reads the GeoStyler Style and transforms it to the target Style
+   * representation.
+   *
+   * @param style
+   */
+  writeStyle(geoStylerStyle: Style): Promise<any>;
 }
