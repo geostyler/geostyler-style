@@ -5,5 +5,5 @@ script:
 - npm run test
 cache:
   directories:
-- node_modules
+  - node_modules
 
