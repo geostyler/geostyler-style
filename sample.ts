@@ -1,6 +1,6 @@
 import { Style } from 'index';
 
-const testStyle: Style = {
+const sampleStyle: Style = {
   type: 'Point',
   rules: [
     {
@@ -62,3 +62,5 @@ const testStyle: Style = {
     }
   ]
 };
+
+export default sampleStyle;

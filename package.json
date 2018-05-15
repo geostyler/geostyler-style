@@ -25,5 +25,15 @@
   "bugs": {
     "url": "https://github.com/terrestris/geostyler-style/issues"
   },
-  "homepage": "https://github.com/terrestris/geostyler-style#readme"
+  "homepage": "https://github.com/terrestris/geostyler-style#readme",
+  "jest": {
+    "moduleFileExtensions": [
+      "ts",
+      "js"
+    ],
+    "transform": {
+      "\\.(ts)$": "<rootDir>/node_modules/ts-jest/preprocessor.js"
+    },
+    "testRegex": "/.*\\.spec.(ts|js)$"
+  }
 }
