@@ -14,11 +14,36 @@ export interface ScaleDenominator {
 }
 
 /**
+ * The possible Operator used for comparison Filters.
+ */
+export type ComparisonOperator = '==' | '*=' | '!=' | '<' | '<=' | '>' | '>='
+
+/**
+ * The possible Operator used for combination Filters.
+ */
+export type CombinationOperator = '&&' | '||'
+
+/**
+ * The Operator used for negation Filters;
+ */
+export type NegationOpertaor = '!'
+
+/**
+ * All opeartors
+ */
+export type Operator = ComparisonOperator | CombinationOperator | NegationOpertaor;
+
+/**
+ * A base interface for Filter
+ */
+export interface Filter {}
+
+/**
  * A ComparisonFilter compares a value of an object (by key) with an expected
  * value.
  */
-export interface ComparisonFilter {
-  0: '==' | '*=' | '!=' | '<' | '<=' | '>' | '>=';
+export interface ComparisonFilter extends Filter {
+  0: ComparisonOperator;
   1: string;
   2: string|number|boolean|null;
 }
@@ -30,27 +55,27 @@ export interface ComparisonFilter {
  * type 'rest' parameters of an array. Nevertheless, theoreticaly you can
  * combine >10 filters.
  */
-export interface CombinationFilter {
-  0: '&&' | '||';
-  1: ComparisonFilter | CombinationFilter | NegationFilter;
-  2: ComparisonFilter | CombinationFilter | NegationFilter;
-  3?: ComparisonFilter | CombinationFilter | NegationFilter;
-  4?: ComparisonFilter | CombinationFilter | NegationFilter;
-  5?: ComparisonFilter | CombinationFilter | NegationFilter;
-  6?: ComparisonFilter | CombinationFilter | NegationFilter;
-  7?: ComparisonFilter | CombinationFilter | NegationFilter;
-  8?: ComparisonFilter | CombinationFilter | NegationFilter;
-  9?: ComparisonFilter | CombinationFilter | NegationFilter;
-  10?: ComparisonFilter | CombinationFilter | NegationFilter;
-  11?: ComparisonFilter | CombinationFilter | NegationFilter;
+export interface CombinationFilter extends Filter  {
+  0: CombinationOperator;
+  1: Filter;
+  2: Filter;
+  3?: Filter;
+  4?: Filter;
+  5?: Filter;
+  6?: Filter;
+  7?: Filter;
+  8?: Filter;
+  9?: Filter;
+  10?: Filter;
+  11?: Filter;
 }
 
 /**
  * A NegationFilter negates a given Filter.
  */
-export interface NegationFilter {
-  0: '!';
-  1: ComparisonFilter | CombinationFilter | NegationFilter;
+export interface NegationFilter extends Filter  {
+  0: NegationOpertaor;
+  1: Filter;
 }
 
 /**
@@ -177,7 +202,7 @@ export interface LineSymbolizer extends Symbolizer {
  * scaleDenominator) and an associated symbolizer.
  */
 export interface Rule {
-  filter: ComparisonFilter | CombinationFilter | NegationFilter;
+  filter: Filter;
   scaleDenominator: ScaleDenominator;
   symbolizer: IconSymbolizer | CircleSymbolizer | LineSymbolizer | FillSymbolizer | TextSymbolizer;
 }
