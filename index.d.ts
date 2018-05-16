@@ -14,6 +14,11 @@ export interface ScaleDenominator {
 }
 
 /**
+ * The type of the Style.
+ */
+export type StyleType = 'Point' | 'Fill' | 'Line';
+
+/**
  * The possible Operator used for comparison Filters.
  */
 export type ComparisonOperator = '==' | '*=' | '!=' | '<' | '<=' | '>' | '>='
@@ -212,7 +217,7 @@ export interface Rule {
  */
 export interface Style {
   rules: Rule[];
-  type: 'Point' | 'Fill' | 'Line';
+  type: StyleType;
 }
 
 /**
