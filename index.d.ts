@@ -29,17 +29,17 @@ export type ComparisonOperator = '==' | '*=' | '!=' | '<' | '<=' | '>' | '>='
 export type CombinationOperator = '&&' | '||'
 
 /**
- * The Operator used for negation Filters;
+ * The Operator used for negation Filters.
  */
 export type NegationOpertaor = '!'
 
 /**
- * All opeartors
+ * All operators.
  */
 export type Operator = ComparisonOperator | CombinationOperator | NegationOpertaor;
 
 /**
- * A base interface for Filter
+ * A base interface for Filter.
  */
 export interface Filter {}
 
@@ -84,10 +84,15 @@ export interface NegationFilter extends Filter  {
 }
 
 /**
+ * The kind of the Symbolizer
+ */
+export type SymbolizerKind = 'Circle' | 'Fill' | 'Icon' | 'Line' |'Text'
+
+/**
  * A Symbolizer describes the style representation of geographical data.
  */
-export interface Symbolizer {
-  kind: 'Circle' | 'Fill' | 'Icon' | 'Line' |'Text';
+interface BaseSymbolizer {
+  kind: SymbolizerKind;
   color?: string;
   opacity?: number;
   translate?: [number, number];
@@ -98,7 +103,7 @@ export interface Symbolizer {
 /**
  * A PointSymbolizer describes the style representation of POINT data.
  */
-export interface PointSymbolizer extends Symbolizer {
+export interface BasePointSymbolizer extends BaseSymbolizer {
   avoidEdges?: boolean;
   spacing?: number;
 }
@@ -107,7 +112,7 @@ export interface PointSymbolizer extends Symbolizer {
  * A CircleSymbolizer describes the style representation of POINT data if styled with
  * a regular circle geometry.
  */
-export interface CircleSymbolizer extends PointSymbolizer {
+export interface CircleSymbolizer extends BasePointSymbolizer {
   kind: 'Circle';
   blur?: number;
   pitchAlignment?: 'map' | 'viewport';
@@ -122,7 +127,7 @@ export interface CircleSymbolizer extends PointSymbolizer {
  * A TextSymbolizer describes the style representation of POINT data if styled with
  * a text.
  */
-export interface TextSymbolizer extends PointSymbolizer {
+export interface TextSymbolizer extends BasePointSymbolizer {
   kind: 'Text';
   allowOverlap?: boolean;
   anchor?: 'center' | 'left' | 'right' | 'top' | 'bottom' | 'top-left' | 'top-right' | 'bottom-left' | 'bottom-right';
@@ -152,7 +157,7 @@ export interface TextSymbolizer extends PointSymbolizer {
  * A FillSymbolizer describes the style representation of POINT data if styled with
  * an specific icon.
  */
-export interface IconSymbolizer extends PointSymbolizer {
+export interface IconSymbolizer extends BasePointSymbolizer {
   kind: 'Icon';
   allowOverlap?: boolean;
   anchor?: 'center' | 'left' | 'right' | 'top' | 'bottom' | 'top-left' | 'top-right' | 'bottom-left' | 'bottom-right';
@@ -176,7 +181,7 @@ export interface IconSymbolizer extends PointSymbolizer {
 /**
  * A FillSymbolizer describes the style representation of POLYGON data.
  */
-export interface FillSymbolizer extends Symbolizer {
+export interface FillSymbolizer extends BaseSymbolizer {
   kind: 'Fill';
   antialias?: boolean;
   fillPattern?: string;
@@ -186,7 +191,7 @@ export interface FillSymbolizer extends Symbolizer {
 /**
  * A LineSymbolizer describes the style representation of LINESTRING data.
  */
-export interface LineSymbolizer extends Symbolizer {
+export interface LineSymbolizer extends BaseSymbolizer {
   kind: 'Line';
   blur?: number;
   cap?: 'butt' | 'round' | 'square';
@@ -201,6 +206,15 @@ export interface LineSymbolizer extends Symbolizer {
   type?: string;
   width?: number;
 }
+/**
+ * Operators used for Point symbolization.
+ */
+export type PointSymbolizer = IconSymbolizer | CircleSymbolizer | TextSymbolizer
+
+/**
+ * All operators.
+ */
+export type Symbolizer = PointSymbolizer | LineSymbolizer | FillSymbolizer
 
 /**
  * A Rule combines a specific amount of data (defined by a filter and a
@@ -209,7 +223,7 @@ export interface LineSymbolizer extends Symbolizer {
 export interface Rule {
   filter: Filter;
   scaleDenominator: ScaleDenominator;
-  symbolizer: IconSymbolizer | CircleSymbolizer | LineSymbolizer | FillSymbolizer | TextSymbolizer;
+  symbolizer: Symbolizer;
 }
 
 /**
