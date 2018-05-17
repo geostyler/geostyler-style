@@ -6,7 +6,8 @@
   "scripts": {
     "pretest": "npm run lint",
     "test": "jest",
-    "lint": "tslint --project tsconfig.json --config tslint.json"
+    "lint": "tslint --project tsconfig.json --config tslint.json",
+    "release": "np --no-yarn"
   },
   "dependencies": {
     "@types/jest": "22.2.3",
