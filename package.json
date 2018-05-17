@@ -35,5 +35,8 @@
       "\\.(ts)$": "<rootDir>/node_modules/ts-jest/preprocessor.js"
     },
     "testRegex": "/.*\\.spec.(ts|js)$"
+  },
+  "devDependencies": {
+    "np": "2.20.1"
   }
 }
