@@ -6,11 +6,11 @@ export interface ScaleDenominator {
    * Minimum value of the ScaleDenominator. The value is inclusive.
    *
    */
-  min: number;
+  min?: number;
   /**
    * Maximum value of the ScaleDenominator. The value is exclusive.
    */
-  max: number;
+  max?: number;
 }
 
 /**
@@ -221,8 +221,8 @@ export type Symbolizer = PointSymbolizer | LineSymbolizer | FillSymbolizer
  * scaleDenominator) and an associated symbolizer.
  */
 export interface Rule {
-  filter: Filter;
-  scaleDenominator: ScaleDenominator;
+  filter?: Filter;
+  scaleDenominator?: ScaleDenominator;
   symbolizer: Symbolizer;
 }
 
