@@ -6,19 +6,49 @@ export interface ScaleDenominator {
    * Minimum value of the ScaleDenominator. The value is inclusive.
    *
    */
-  min: number;
+  min?: number;
   /**
    * Maximum value of the ScaleDenominator. The value is exclusive.
    */
-  max: number;
+  max?: number;
 }
+
+/**
+ * The type of the Style.
+ */
+export type StyleType = 'Point' | 'Fill' | 'Line';
+
+/**
+ * The possible Operator used for comparison Filters.
+ */
+export type ComparisonOperator = '==' | '*=' | '!=' | '<' | '<=' | '>' | '>='
+
+/**
+ * The possible Operator used for combination Filters.
+ */
+export type CombinationOperator = '&&' | '||'
+
+/**
+ * The Operator used for negation Filters.
+ */
+export type NegationOpertaor = '!'
+
+/**
+ * All operators.
+ */
+export type Operator = ComparisonOperator | CombinationOperator | NegationOpertaor;
+
+/**
+ * A base interface for Filter.
+ */
+export interface Filter {}
 
 /**
  * A ComparisonFilter compares a value of an object (by key) with an expected
  * value.
  */
-export interface ComparisonFilter {
-  0: '==' | '*=' | '!=' | '<' | '<=' | '>' | '>=';
+export interface ComparisonFilter extends Filter {
+  0: ComparisonOperator;
   1: string;
   2: string|number|boolean|null;
 }
@@ -30,34 +60,39 @@ export interface ComparisonFilter {
  * type 'rest' parameters of an array. Nevertheless, theoreticaly you can
  * combine >10 filters.
  */
-export interface CombinationFilter {
-  0: '&&' | '||';
-  1: ComparisonFilter | CombinationFilter | NegationFilter;
-  2: ComparisonFilter | CombinationFilter | NegationFilter;
-  3?: ComparisonFilter | CombinationFilter | NegationFilter;
-  4?: ComparisonFilter | CombinationFilter | NegationFilter;
-  5?: ComparisonFilter | CombinationFilter | NegationFilter;
-  6?: ComparisonFilter | CombinationFilter | NegationFilter;
-  7?: ComparisonFilter | CombinationFilter | NegationFilter;
-  8?: ComparisonFilter | CombinationFilter | NegationFilter;
-  9?: ComparisonFilter | CombinationFilter | NegationFilter;
-  10?: ComparisonFilter | CombinationFilter | NegationFilter;
-  11?: ComparisonFilter | CombinationFilter | NegationFilter;
+export interface CombinationFilter extends Filter  {
+  0: CombinationOperator;
+  1: Filter;
+  2: Filter;
+  3?: Filter;
+  4?: Filter;
+  5?: Filter;
+  6?: Filter;
+  7?: Filter;
+  8?: Filter;
+  9?: Filter;
+  10?: Filter;
+  11?: Filter;
 }
 
 /**
  * A NegationFilter negates a given Filter.
  */
-export interface NegationFilter {
-  0: '!';
-  1: ComparisonFilter | CombinationFilter | NegationFilter;
+export interface NegationFilter extends Filter  {
+  0: NegationOpertaor;
+  1: Filter;
 }
+
+/**
+ * The kind of the Symbolizer
+ */
+export type SymbolizerKind = 'Circle' | 'Fill' | 'Icon' | 'Line' |'Text'
 
 /**
  * A Symbolizer describes the style representation of geographical data.
  */
-export interface Symbolizer {
-  kind: 'Circle' | 'Fill' | 'Icon' | 'Line' |'Text';
+interface BaseSymbolizer {
+  kind: SymbolizerKind;
   color?: string;
   opacity?: number;
   translate?: [number, number];
@@ -68,7 +103,7 @@ export interface Symbolizer {
 /**
  * A PointSymbolizer describes the style representation of POINT data.
  */
-export interface PointSymbolizer extends Symbolizer {
+export interface BasePointSymbolizer extends BaseSymbolizer {
   avoidEdges?: boolean;
   spacing?: number;
 }
@@ -77,7 +112,7 @@ export interface PointSymbolizer extends Symbolizer {
  * A CircleSymbolizer describes the style representation of POINT data if styled with
  * a regular circle geometry.
  */
-export interface CircleSymbolizer extends PointSymbolizer {
+export interface CircleSymbolizer extends BasePointSymbolizer {
   kind: 'Circle';
   blur?: number;
   pitchAlignment?: 'map' | 'viewport';
@@ -92,7 +127,7 @@ export interface CircleSymbolizer extends PointSymbolizer {
  * A TextSymbolizer describes the style representation of POINT data if styled with
  * a text.
  */
-export interface TextSymbolizer extends PointSymbolizer {
+export interface TextSymbolizer extends BasePointSymbolizer {
   kind: 'Text';
   allowOverlap?: boolean;
   anchor?: 'center' | 'left' | 'right' | 'top' | 'bottom' | 'top-left' | 'top-right' | 'bottom-left' | 'bottom-right';
@@ -122,7 +157,7 @@ export interface TextSymbolizer extends PointSymbolizer {
  * A FillSymbolizer describes the style representation of POINT data if styled with
  * an specific icon.
  */
-export interface IconSymbolizer extends PointSymbolizer {
+export interface IconSymbolizer extends BasePointSymbolizer {
   kind: 'Icon';
   allowOverlap?: boolean;
   anchor?: 'center' | 'left' | 'right' | 'top' | 'bottom' | 'top-left' | 'top-right' | 'bottom-left' | 'bottom-right';
@@ -146,7 +181,7 @@ export interface IconSymbolizer extends PointSymbolizer {
 /**
  * A FillSymbolizer describes the style representation of POLYGON data.
  */
-export interface FillSymbolizer extends Symbolizer {
+export interface FillSymbolizer extends BaseSymbolizer {
   kind: 'Fill';
   antialias?: boolean;
   fillPattern?: string;
@@ -156,7 +191,7 @@ export interface FillSymbolizer extends Symbolizer {
 /**
  * A LineSymbolizer describes the style representation of LINESTRING data.
  */
-export interface LineSymbolizer extends Symbolizer {
+export interface LineSymbolizer extends BaseSymbolizer {
   kind: 'Line';
   blur?: number;
   cap?: 'butt' | 'round' | 'square';
@@ -171,15 +206,24 @@ export interface LineSymbolizer extends Symbolizer {
   type?: string;
   width?: number;
 }
+/**
+ * Operators used for Point symbolization.
+ */
+export type PointSymbolizer = IconSymbolizer | CircleSymbolizer | TextSymbolizer
+
+/**
+ * All operators.
+ */
+export type Symbolizer = PointSymbolizer | LineSymbolizer | FillSymbolizer
 
 /**
  * A Rule combines a specific amount of data (defined by a filter and a
  * scaleDenominator) and an associated symbolizer.
  */
 export interface Rule {
-  filter: ComparisonFilter | CombinationFilter | NegationFilter;
-  scaleDenominator: ScaleDenominator;
-  symbolizer: IconSymbolizer | CircleSymbolizer | LineSymbolizer | FillSymbolizer | TextSymbolizer;
+  filter?: Filter;
+  scaleDenominator?: ScaleDenominator;
+  symbolizer: Symbolizer;
 }
 
 /**
@@ -187,7 +231,7 @@ export interface Rule {
  */
 export interface Style {
   rules: Rule[];
-  type: 'Point' | 'Fill' | 'Line';
+  type: StyleType;
 }
 
 /**
