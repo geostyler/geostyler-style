@@ -221,6 +221,7 @@ export type Symbolizer = PointSymbolizer | LineSymbolizer | FillSymbolizer
  * scaleDenominator) and an associated symbolizer.
  */
 export interface Rule {
+  name: string;
   filter?: Filter;
   scaleDenominator?: ScaleDenominator;
   symbolizer: Symbolizer;
