@@ -206,6 +206,7 @@ export interface LineSymbolizer extends BaseSymbolizer {
   type?: string;
   width?: number;
 }
+
 /**
  * Operators used for Point symbolization.
  */
@@ -231,6 +232,7 @@ export interface Rule {
  * The Style is the main interface and the root for all other interfaces.
  */
 export interface Style {
+  name: string;
   rules: Rule[];
   type: StyleType;
 }

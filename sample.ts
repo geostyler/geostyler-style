@@ -1,9 +1,11 @@
 import { Style } from 'index';
 
 const sampleStyle: Style = {
+  name: 'Sample Point Style',
   type: 'Point',
   rules: [
     {
+      name: 'Young Peter',
       filter: ['&&',
         ['==', 'name', 'Peter'],
         ['<=', 'age', 12]
@@ -23,6 +25,7 @@ const sampleStyle: Style = {
       }
     },
     {
+      name: 'Twelve year old Peter',
       filter: ['&&',
         ['==', 'name', 'Peter'],
         ['==', 'age', 12]
@@ -45,6 +48,7 @@ const sampleStyle: Style = {
       }
     },
     {
+      name: 'Old Peter',
       filter: ['&&',
         ['==', 'name', 'Peter'],
         ['>=', 'age', 12]
