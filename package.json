@@ -6,7 +6,7 @@
   "scripts": {
     "pretest": "npm run lint",
     "test": "jest",
-    "lint": "tslint --project tsconfig.json --config tslint.json",
+    "lint": "tslint --project tsconfig.json --config tslint.json && tsc --noEmit --project tsconfig.json ",
     "release": "np --no-yarn"
   },
   "dependencies": {
