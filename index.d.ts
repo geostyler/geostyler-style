@@ -242,11 +242,6 @@ export interface Style {
  */
 export interface StyleParser {
   /**
-   * Constructor interface
-   */
-  new(): StyleParser;
-
-  /**
    * The name of the Parser instance
    */
   name: string;
@@ -326,4 +321,11 @@ export interface StyleParser {
    * @param geoStylerSymbolizer Symbolizer
    */
   writeSymbolizer?(geoStylerSymbolizer: Symbolizer): Promise<any>;
+}
+
+export interface StyleParserConstructable extends StyleParser {
+  /**
+   * Constructor interface
+   */
+  new(): StyleParser;
 }
