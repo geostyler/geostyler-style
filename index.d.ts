@@ -242,6 +242,16 @@ export interface Style {
  */
 export interface StyleParser {
   /**
+   * Constructor interface
+   */
+  new(): StyleParser;
+
+  /**
+   * The name of the Parser instance
+   */
+  name: string;
+
+  /**
    * Parses the inputStyle and transforms it to the GeoStyler Style
    *
    * @param inputStyle
@@ -255,4 +265,65 @@ export interface StyleParser {
    * @param geoStylerStyle Style
    */
   writeStyle(geoStylerStyle: Style): Promise<any>;
+
+  /**
+   * Parses an input Rule and transforms it to a GeoStyler Rule
+   *
+   * @param inputRule
+   */
+  readRule?(inputRule: any): Promise<Rule>;
+
+  /**
+   * Reads a GeoStyler Rule and transforms it to a target Rule
+   * representation.
+   *
+   * @param geoStylerRule Rule
+   */
+  writeRule?(geoStylerRule: Rule): Promise<any>;
+
+  /**
+   * Parses an input Filter and transforms it to a GeoStyler Filter
+   *
+   * @param inputFilter
+   */
+  readFilter?(inputFilter: any): Promise<Filter>;
+
+  /**
+   * Reads a GeoStyler Filter and transforms it to a target Filter
+   * representation.
+   *
+   * @param geoStylerFilter Filter
+   */
+  writeFilter?(geoStylerFilter: Filter): Promise<any>;
+
+  /**
+   * Parses an input ScaleDenominator and transforms it to a GeoStyler
+   * ScaleDenominator
+   *
+   * @param inputScaleDenominator
+   */
+  readScaleDenominator?(inputScaleDenominator: any): Promise<ScaleDenominator>;
+
+  /**
+   * Reads a GeoStyler ScaleDenominator and transforms it to a target
+   * ScaleDenominator representation
+   *
+   * @param geoStylerScaleDenominator ScaleDenominator
+   */
+  writeScaleDenominator?(geoStylerScaleDenominator: ScaleDenominator): Promise<any>;
+
+  /**
+   * Parses an input Symbolizer and transforms it to a GeoStyler Symbolizer
+   *
+   * @param inputSymbolizer
+   */
+  readSymbolizer?(inputSymbolizer: any): Promise<Symbolizer>;
+
+  /**
+   * Reads a GeoStyler Symbolizer and transforms it to a target Symbolizer
+   * representation
+   *
+   * @param geoStylerSymbolizer Symbolizer
+   */
+  writeSymbolizer?(geoStylerSymbolizer: Symbolizer): Promise<any>;
 }
