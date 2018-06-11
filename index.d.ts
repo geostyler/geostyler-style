@@ -41,7 +41,7 @@ export type Operator = ComparisonOperator | CombinationOperator | NegationOperta
 /**
  * A base interface for Filter.
  */
-export interface Filter {}
+export interface Filter extends Array<any> {}
 
 /**
  * A ComparisonFilter compares a value of an object (by key) with an expected
