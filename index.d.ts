@@ -242,11 +242,6 @@ export interface Style {
  */
 export interface StyleParser {
   /**
-   * The name of the Parser instance
-   */
-  name: string;
-
-  /**
    * Parses the inputStyle and transforms it to the GeoStyler Style
    *
    * @param inputStyle
@@ -328,4 +323,8 @@ export interface StyleParserConstructable extends StyleParser {
    * Constructor interface
    */
   new(): StyleParser;
+  /**
+   * The name of the Parser instance
+   */
+  title: string;
 }
