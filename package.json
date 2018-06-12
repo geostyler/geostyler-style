@@ -10,12 +10,12 @@
     "release": "np --no-yarn"
   },
   "dependencies": {
-    "@types/jest": "22.2.3",
-    "@types/node": "9.6.5",
-    "jest": "22.4.3",
-    "ts-jest": "22.4.3",
-    "tslint": "5.9.1",
-    "typescript": "2.8.1"
+    "@types/jest": "23.0.2",
+    "@types/node": "10.3.2",
+    "jest": "23.1.0",
+    "ts-jest": "22.4.6",
+    "tslint": "5.10.0",
+    "typescript": "2.9.1"
   },
   "repository": {
     "type": "git",
@@ -38,6 +38,6 @@
     "testRegex": "/.*\\.spec.(ts|js)$"
   },
   "devDependencies": {
-    "np": "2.20.1"
+    "np": "3.0.4"
   }
 }
