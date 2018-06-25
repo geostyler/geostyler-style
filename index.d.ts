@@ -186,6 +186,8 @@ export interface FillSymbolizer extends BaseSymbolizer {
   antialias?: boolean;
   fillPattern?: string;
   outlineColor?: string;
+  outlineWidth?: number;
+  outlineDasharray?: number[];
 }
 
 /**
