@@ -202,8 +202,10 @@ export interface LineSymbolizer extends BaseSymbolizer {
   gradient?: any[];
   join?: 'bevel' | 'round' | 'miter';
   miterLimit?: number;
+  // TODO check if offset is being used somewhere, or if perpendicularOffset and dashOffset already replace it
   offset?: number;
   perpendicularOffset?: number;
+  dashOffset?: number;
   pattern?: string;
   roundLimit?: number;
   type?: string;
