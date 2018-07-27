@@ -203,6 +203,7 @@ export interface LineSymbolizer extends BaseSymbolizer {
   join?: 'bevel' | 'round' | 'miter';
   miterLimit?: number;
   offset?: number;
+  perpendicularOffset?: number;
   pattern?: string;
   roundLimit?: number;
   type?: string;
