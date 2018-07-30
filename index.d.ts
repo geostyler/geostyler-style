@@ -200,6 +200,7 @@ export interface LineSymbolizer extends BaseSymbolizer {
   dasharray?: number[];
   gapWidth?: number;
   gradient?: any[];
+  graphicStroke?: PointSymbolizer; 
   join?: 'bevel' | 'round' | 'miter';
   miterLimit?: number;
   // TODO check if offset is being used somewhere, or if perpendicularOffset and dashOffset already replace it
