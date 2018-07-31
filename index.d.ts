@@ -14,9 +14,14 @@ export interface ScaleDenominator {
 }
 
 /**
+ * The type of the Style for basic Styles.
+ */
+export type BasicStyleType = 'Point' | 'Fill' | 'Line';
+
+/**
  * The type of the Style.
  */
-export type StyleType = 'Point' | 'Fill' | 'Line';
+export type StyleType = BasicStyleType[];
 
 /**
  * The possible Operator used for comparison Filters.
@@ -231,7 +236,7 @@ export interface Rule {
   name: string;
   filter?: Filter;
   scaleDenominator?: ScaleDenominator;
-  symbolizer: Symbolizer;
+  symbolizer: Symbolizer[];
 }
 
 /**
