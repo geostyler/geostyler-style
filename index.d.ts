@@ -86,7 +86,7 @@ export interface NegationFilter extends Filter  {
 /**
  * The kind of the Symbolizer
  */
-export type SymbolizerKind = 'Circle' | 'Fill' | 'Icon' | 'Line' |'Text'
+export type SymbolizerKind = 'Fill' | 'Icon' | 'Line' | 'Text' | 'Mark' 
 
 /**
  * A Symbolizer describes the style representation of geographical data.
@@ -109,18 +109,90 @@ export interface BasePointSymbolizer extends BaseSymbolizer {
 }
 
 /**
+ * MarkSymbolizer describes the style representation of POINT data, if styled as with
+ * a regular geometry.
+ */
+export type MarkSymbolizer = CircleSymbolizer | SquareSymbolizer | TriangleSymbolizer | StarSymbolizer | CrossSymbolizer | XSymbolizer;
+
+/**
+ * A BaseMarkSymbolizer describes the base style representation of POINT data if styled with
+ * a regular geometry.
+ */
+export interface BaseMarkSymbolizer extends BasePointSymbolizer {
+  kind: 'Mark';
+  wellKnownName: 'Circle' | 'Square' | 'Triangle' | 'Star' | 'Cross' | 'X';
+  points?: number;
+  strokeColor?: string;
+  strokeOpacity?: number;
+  strokeWidth?: number;
+  angle?: number;
+  rotation?: number;
+}
+
+/**
  * A CircleSymbolizer describes the style representation of POINT data if styled with
  * a regular circle geometry.
  */
-export interface CircleSymbolizer extends BasePointSymbolizer {
-  kind: 'Circle';
+export interface CircleSymbolizer extends BaseMarkSymbolizer {
+  wellKnownName: 'Circle';
   blur?: number;
   pitchAlignment?: 'map' | 'viewport';
   pitchScale?: 'map' | 'viewport';
   radius?: number;
-  strokeColor?: string;
-  strokeOpacity?: number;
-  strokeWidth?: number;
+}
+
+/**
+ * A SquareSymbolizer describes the style representation of POINT data if styled with
+ * a square geometry.
+ */
+export interface SquareSymbolizer extends BaseMarkSymbolizer {
+  wellKnownName: 'Square';
+  points: 4;
+  radius?: number;
+}
+
+/**
+ * A TriangleSymbolizer describes the style representation of POINT data if styled with
+ * a regular triangle geometry.
+ */
+export interface TriangleSymbolizer extends BaseMarkSymbolizer {
+  wellKnownName: 'Triangle';
+  points: 3;
+  radius?: number;
+}
+
+/**
+ * A StarSymbolizer describes the style representation of POINT data if styled with
+ * a regular star geometry.
+ */
+export interface StarSymbolizer extends BaseMarkSymbolizer {
+  wellKnownName: 'Star';
+  points: 5;
+  radius1?: number;
+  radius2?: number;
+}
+
+/**
+ * A CrossSymbolizer describes the style representation of POINT data if styled with
+ * a regular cross geometry
+ */
+export interface CrossSymbolizer extends BaseMarkSymbolizer {
+  wellKnownName: 'Cross';
+  points: 4;
+  radius1?: number;
+  radius2: 0;
+}
+
+/**
+ * A CrossSymbolizer describes the style representation of POINT data if styled with
+ * a regular cross geometry
+ */
+export interface XSymbolizer extends BaseMarkSymbolizer {
+  wellKnownName: 'X';
+  points: 4;
+  radius1?: number;
+  radius2: 0;
+  angle: number;
 }
 
 /**
@@ -216,7 +288,7 @@ export interface LineSymbolizer extends BaseSymbolizer {
 /**
  * Operators used for Point symbolization.
  */
-export type PointSymbolizer = IconSymbolizer | CircleSymbolizer | TextSymbolizer
+export type PointSymbolizer = IconSymbolizer | MarkSymbolizer | TextSymbolizer
 
 /**
  * All operators.
