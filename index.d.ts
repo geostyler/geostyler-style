@@ -121,12 +121,12 @@ export type MarkSymbolizer = CircleSymbolizer | SquareSymbolizer | TriangleSymbo
 export interface BaseMarkSymbolizer extends BasePointSymbolizer {
   kind: 'Mark';
   wellKnownName: 'Circle' | 'Square' | 'Triangle' | 'Star' | 'Cross' | 'X';
+  angle?: number;
   points?: number;
+  rotation?: number;
   strokeColor?: string;
   strokeOpacity?: number;
   strokeWidth?: number;
-  angle?: number;
-  rotation?: number;
 }
 
 /**
@@ -146,8 +146,9 @@ export interface CircleSymbolizer extends BaseMarkSymbolizer {
  * a square geometry.
  */
 export interface SquareSymbolizer extends BaseMarkSymbolizer {
-  wellKnownName: 'Square';
+  angle: 45;
   points: 4;
+  wellKnownName: 'Square';
   radius?: number;
 }
 
@@ -156,8 +157,8 @@ export interface SquareSymbolizer extends BaseMarkSymbolizer {
  * a regular triangle geometry.
  */
 export interface TriangleSymbolizer extends BaseMarkSymbolizer {
-  wellKnownName: 'Triangle';
   points: 3;
+  wellKnownName: 'Triangle';
   radius?: number;
 }
 
@@ -166,8 +167,8 @@ export interface TriangleSymbolizer extends BaseMarkSymbolizer {
  * a regular star geometry.
  */
 export interface StarSymbolizer extends BaseMarkSymbolizer {
-  wellKnownName: 'Star';
   points: 5;
+  wellKnownName: 'Star';
   radius1?: number;
   radius2?: number;
 }
@@ -177,10 +178,10 @@ export interface StarSymbolizer extends BaseMarkSymbolizer {
  * a regular cross geometry
  */
 export interface CrossSymbolizer extends BaseMarkSymbolizer {
-  wellKnownName: 'Cross';
   points: 4;
-  radius1?: number;
   radius2: 0;
+  wellKnownName: 'Cross';
+  radius1?: number;
 }
 
 /**
@@ -188,11 +189,11 @@ export interface CrossSymbolizer extends BaseMarkSymbolizer {
  * a regular cross geometry
  */
 export interface XSymbolizer extends BaseMarkSymbolizer {
-  wellKnownName: 'X';
+  angle: 45;
   points: 4;
-  radius1?: number;
   radius2: 0;
-  angle: number;
+  wellKnownName: 'X';
+  radius1?: number;
 }
 
 /**
