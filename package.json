@@ -35,7 +35,8 @@
     "transform": {
       "\\.(ts)$": "<rootDir>/node_modules/ts-jest/preprocessor.js"
     },
-    "testRegex": "/.*\\.spec.(ts|js)$"
+    "testRegex": "/.*\\.spec.(ts|js)$",
+    "testURL": "http://localhost/"
   },
   "devDependencies": {
     "np": "3.0.4"
