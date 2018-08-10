@@ -123,7 +123,8 @@ export interface BaseMarkSymbolizer extends BasePointSymbolizer {
   wellKnownName: 'Circle' | 'Square' | 'Triangle' | 'Star' | 'Cross' | 'X';
   angle?: number;
   points?: number;
-  rotation?: number;
+  radius?: number;
+  rotate?: number;
   strokeColor?: string;
   strokeOpacity?: number;
   strokeWidth?: number;
@@ -138,7 +139,6 @@ export interface CircleSymbolizer extends BaseMarkSymbolizer {
   blur?: number;
   pitchAlignment?: 'map' | 'viewport';
   pitchScale?: 'map' | 'viewport';
-  radius?: number;
 }
 
 /**
@@ -149,7 +149,6 @@ export interface SquareSymbolizer extends BaseMarkSymbolizer {
   angle: 45;
   points: 4;
   wellKnownName: 'Square';
-  radius?: number;
 }
 
 /**
@@ -159,7 +158,6 @@ export interface SquareSymbolizer extends BaseMarkSymbolizer {
 export interface TriangleSymbolizer extends BaseMarkSymbolizer {
   points: 3;
   wellKnownName: 'Triangle';
-  radius?: number;
 }
 
 /**
@@ -169,7 +167,6 @@ export interface TriangleSymbolizer extends BaseMarkSymbolizer {
 export interface StarSymbolizer extends BaseMarkSymbolizer {
   points: 5;
   wellKnownName: 'Star';
-  radius1?: number;
   radius2?: number;
 }
 
@@ -179,9 +176,8 @@ export interface StarSymbolizer extends BaseMarkSymbolizer {
  */
 export interface CrossSymbolizer extends BaseMarkSymbolizer {
   points: 4;
-  radius2: 0;
+  radius2?: 0;
   wellKnownName: 'Cross';
-  radius1?: number;
 }
 
 /**
@@ -191,9 +187,8 @@ export interface CrossSymbolizer extends BaseMarkSymbolizer {
 export interface XSymbolizer extends BaseMarkSymbolizer {
   angle: 45;
   points: 4;
-  radius2: 0;
+  radius2?: 0;
   wellKnownName: 'X';
-  radius1?: number;
 }
 
 /**
