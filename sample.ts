@@ -57,7 +57,8 @@ const sampleStyle: Style = {
         max: 1000
       },
       symbolizer: [{
-        kind: 'Circle',
+        kind: 'Mark',
+        wellKnownName: 'Circle',
         visibility: false,
         radius: 5,
         spacing: 21
