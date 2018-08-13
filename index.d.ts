@@ -115,12 +115,17 @@ export interface BasePointSymbolizer extends BaseSymbolizer {
 export type MarkSymbolizer = CircleSymbolizer | SquareSymbolizer | TriangleSymbolizer | StarSymbolizer | CrossSymbolizer | XSymbolizer;
 
 /**
+ * Supported WellKnownNames
+ */
+export type WellKnownName = 'Circle' | 'Square' | 'Triangle' | 'Star' | 'Cross' | 'X';
+
+/**
  * A BaseMarkSymbolizer describes the base style representation of POINT data if styled with
  * a regular geometry.
  */
 export interface BaseMarkSymbolizer extends BasePointSymbolizer {
   kind: 'Mark';
-  wellKnownName: 'Circle' | 'Square' | 'Triangle' | 'Star' | 'Cross' | 'X';
+  wellKnownName: WellKnownName;
   angle?: number;
   points?: number;
   radius?: number;
