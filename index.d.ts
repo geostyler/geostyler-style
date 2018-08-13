@@ -231,7 +231,7 @@ export interface Rule {
   name: string;
   filter?: Filter;
   scaleDenominator?: ScaleDenominator;
-  symbolizer: Symbolizer;
+  symbolizer: Symbolizer[];
 }
 
 /**
@@ -240,7 +240,6 @@ export interface Rule {
 export interface Style {
   name: string;
   rules: Rule[];
-  type: StyleType;
 }
 
 /**
