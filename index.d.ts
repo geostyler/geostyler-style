@@ -21,17 +21,17 @@ export type StyleType = 'Point' | 'Fill' | 'Line';
 /**
  * The possible Operator used for comparison Filters.
  */
-export type ComparisonOperator = '==' | '*=' | '!=' | '<' | '<=' | '>' | '>='
+export type ComparisonOperator = '==' | '*=' | '!=' | '<' | '<=' | '>' | '>=';
 
 /**
  * The possible Operator used for combination Filters.
  */
-export type CombinationOperator = '&&' | '||'
+export type CombinationOperator = '&&' | '||';
 
 /**
  * The Operator used for negation Filters.
  */
-export type NegationOpertaor = '!'
+export type NegationOpertaor = '!';
 
 /**
  * All operators.
@@ -86,7 +86,7 @@ export interface NegationFilter extends Filter  {
 /**
  * The kind of the Symbolizer
  */
-export type SymbolizerKind = 'Circle' | 'Fill' | 'Icon' | 'Line' |'Text'
+export type SymbolizerKind = 'Fill' | 'Icon' | 'Line' | 'Text' | 'Mark';
 
 /**
  * A Symbolizer describes the style representation of geographical data.
@@ -109,18 +109,91 @@ export interface BasePointSymbolizer extends BaseSymbolizer {
 }
 
 /**
- * A CircleSymbolizer describes the style representation of POINT data if styled with
- * a regular circle geometry.
+ * MarkSymbolizer describes the style representation of POINT data, if styled as with
+ * a regular geometry.
  */
-export interface CircleSymbolizer extends BasePointSymbolizer {
-  kind: 'Circle';
-  blur?: number;
-  pitchAlignment?: 'map' | 'viewport';
-  pitchScale?: 'map' | 'viewport';
+export type MarkSymbolizer = CircleSymbolizer | SquareSymbolizer | TriangleSymbolizer | StarSymbolizer | CrossSymbolizer | XSymbolizer;
+
+/**
+ * Supported WellKnownNames
+ */
+export type WellKnownName = 'Circle' | 'Square' | 'Triangle' | 'Star' | 'Cross' | 'X';
+
+/**
+ * A BaseMarkSymbolizer describes the base style representation of POINT data if styled with
+ * a regular geometry.
+ */
+export interface BaseMarkSymbolizer extends BasePointSymbolizer {
+  kind: 'Mark';
+  wellKnownName: WellKnownName;
+  angle?: number;
+  points?: number;
   radius?: number;
+  rotate?: number;
   strokeColor?: string;
   strokeOpacity?: number;
   strokeWidth?: number;
+}
+
+/**
+ * A CircleSymbolizer describes the style representation of POINT data if styled with
+ * a regular circle geometry.
+ */
+export interface CircleSymbolizer extends BaseMarkSymbolizer {
+  wellKnownName: 'Circle';
+  blur?: number;
+  pitchAlignment?: 'map' | 'viewport';
+  pitchScale?: 'map' | 'viewport';
+}
+
+/**
+ * A SquareSymbolizer describes the style representation of POINT data if styled with
+ * a square geometry.
+ */
+export interface SquareSymbolizer extends BaseMarkSymbolizer {
+  angle: 45;
+  points: 4;
+  wellKnownName: 'Square';
+}
+
+/**
+ * A TriangleSymbolizer describes the style representation of POINT data if styled with
+ * a regular triangle geometry.
+ */
+export interface TriangleSymbolizer extends BaseMarkSymbolizer {
+  points: 3;
+  wellKnownName: 'Triangle';
+}
+
+/**
+ * A StarSymbolizer describes the style representation of POINT data if styled with
+ * a regular star geometry.
+ */
+export interface StarSymbolizer extends BaseMarkSymbolizer {
+  points: 5;
+  wellKnownName: 'Star';
+  radius2?: number;
+}
+
+/**
+ * A CrossSymbolizer describes the style representation of POINT data if styled with
+ * a regular cross geometry
+ */
+export interface CrossSymbolizer extends BaseMarkSymbolizer {
+  points: 4;
+  radius2?: 0;
+  wellKnownName: 'Cross';
+}
+
+/**
+ * A CrossSymbolizer describes the style representation of POINT data if styled with
+ * a regular cross geometry
+ */
+export interface XSymbolizer extends BaseMarkSymbolizer {
+  angle: 45;
+  points: 4;
+  radius2?: 0;
+  wellKnownName: 'X';
 }
 
 /**
@@ -216,12 +289,12 @@ export interface LineSymbolizer extends BaseSymbolizer {
 /**
  * Operators used for Point symbolization.
  */
-export type PointSymbolizer = IconSymbolizer | CircleSymbolizer | TextSymbolizer
+export type PointSymbolizer = IconSymbolizer | MarkSymbolizer | TextSymbolizer;
 
 /**
  * All operators.
  */
-export type Symbolizer = PointSymbolizer | LineSymbolizer | FillSymbolizer
+export type Symbolizer = PointSymbolizer | LineSymbolizer | FillSymbolizer;
 
 /**
  * A Rule combines a specific amount of data (defined by a filter and a
