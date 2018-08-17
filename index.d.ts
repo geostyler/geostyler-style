@@ -264,6 +264,11 @@ export interface FillSymbolizer extends BaseSymbolizer {
 }
 
 /**
+ * The Types that are allowed in a graphic
+ */
+export type GraphicType = 'Mark' | 'Icon';
+
+/**
  * A LineSymbolizer describes the style representation of LINESTRING data.
  */
 export interface LineSymbolizer extends BaseSymbolizer {
@@ -273,7 +278,8 @@ export interface LineSymbolizer extends BaseSymbolizer {
   dasharray?: number[];
   gapWidth?: number;
   gradient?: any[];
-  graphicStroke?: PointSymbolizer; 
+  graphicStroke?: PointSymbolizer;
+  graphicFill?: PointSymbolizer;
   join?: 'bevel' | 'round' | 'miter';
   miterLimit?: number;
   // TODO check if offset is being used somewhere, or if perpendicularOffset and dashOffset already replace it

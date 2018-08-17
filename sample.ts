@@ -21,6 +21,19 @@ const sampleStyle: Style = {
         optional: false,
         rotationAlignment: 'map',
         spacing: 21
+      }, {
+        kind: 'Line',
+        blur: 3,
+        cap: 'square',
+        join: 'round',
+        perpendicularOffset: 10,
+        width: 9,
+        graphicStroke: {
+          kind: 'Mark',
+          wellKnownName: 'Square',
+          points: 4,
+          angle: 45
+        }
       }]
     },
     {
