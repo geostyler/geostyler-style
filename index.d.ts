@@ -304,7 +304,7 @@ export interface Rule {
   name: string;
   filter?: Filter;
   scaleDenominator?: ScaleDenominator;
-  symbolizer: Symbolizer[];
+  symbolizers: Symbolizer[];
 }
 
 /**
