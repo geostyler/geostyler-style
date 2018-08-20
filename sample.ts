@@ -13,7 +13,7 @@ const sampleStyle: Style = {
         min: 500,
         max: 1000
       },
-      symbolizer: [{
+      symbolizers: [{
         kind: 'Icon',
         visibility: false,
         allowOverlap: true,
@@ -33,7 +33,7 @@ const sampleStyle: Style = {
         min: 500,
         max: 1000
       },
-      symbolizer: [{
+      symbolizers: [{
         kind: 'Text',
         visibility: false,
         allowOverlap: true,
@@ -56,7 +56,7 @@ const sampleStyle: Style = {
         min: 500,
         max: 1000
       },
-      symbolizer: [{
+      symbolizers: [{
         kind: 'Mark',
         wellKnownName: 'Circle',
         visibility: false,
