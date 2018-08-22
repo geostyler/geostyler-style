@@ -63,7 +63,7 @@ const sampleStyle: Style = {
       name: 'Old Peter',
       filter: ['&&',
         ['==', 'name', 'Peter'],
-        ['>=', 'age', 12]
+        ['==', 'age', 50]
       ],
       scaleDenominator: {
         min: 500,
@@ -75,6 +75,24 @@ const sampleStyle: Style = {
         visibility: false,
         radius: 5,
         spacing: 21
+      }]
+    },
+    {
+      name: 'Very old Peter',
+      filter: ['&&',
+        ['==', 'name', 'Peter'],
+        ['>=', 'age', 51]
+      ],
+      scaleDenominator: {
+        min: 500,
+        max: 1000
+      },
+      symbolizers: [{
+        kind: 'Fill',
+        color: '#FF0000',
+        graphicFill: {
+          kind: 'Icon'
+        }
       }]
     }
   ]

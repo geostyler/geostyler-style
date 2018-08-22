@@ -261,6 +261,7 @@ export interface FillSymbolizer extends BaseSymbolizer {
   outlineColor?: string;
   outlineWidth?: number;
   outlineDasharray?: number[];
+  graphicFill?: PointSymbolizer;
 }
 
 /**
