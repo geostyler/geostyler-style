@@ -15,6 +15,7 @@ const sampleStyle: Style = {
       },
       symbolizers: [{
         kind: 'Icon',
+        format: 'image/svg+xml',
         visibility: false,
         allowOverlap: true,
         ignorePlacement: false,
