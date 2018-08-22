@@ -227,6 +227,11 @@ export interface TextSymbolizer extends BasePointSymbolizer {
 }
 
 /**
+ * IconMime describes the supported mime types for an IconSymbolizer
+ */
+export type IconMime = 'image/png' | 'image/jpeg' | 'image/gif' | 'image/svg+xml';
+
+/**
  * A FillSymbolizer describes the style representation of POINT data if styled with
  * an specific icon.
  */
@@ -234,6 +239,7 @@ export interface IconSymbolizer extends BasePointSymbolizer {
   kind: 'Icon';
   allowOverlap?: boolean;
   anchor?: 'center' | 'left' | 'right' | 'top' | 'bottom' | 'top-left' | 'top-right' | 'bottom-left' | 'bottom-right';
+  format?: IconMime;
   haloBlur?: number;
   haloColor?: string;
   haloWidth?: number;
