@@ -109,91 +109,28 @@ export interface BasePointSymbolizer extends BaseSymbolizer {
 }
 
 /**
+ * Supported WellKnownNames
+ */
+export type WellKnownName = 'Circle' | 'Square' | 'Triangle' | 'Star' | 'Cross' | 'X' 
+                            | 'shape://vertline' | 'shape://horline' | 'shape://slash'
+                            | 'shape://backslash' | 'shape://dot' | 'shape://plus'
+                            | 'shape://times' | 'shape://oarrow' | 'shape://carrow' ;
+
+/**
  * MarkSymbolizer describes the style representation of POINT data, if styled as with
  * a regular geometry.
  */
-export type MarkSymbolizer = CircleSymbolizer | SquareSymbolizer | TriangleSymbolizer | StarSymbolizer | CrossSymbolizer | XSymbolizer;
-
-/**
- * Supported WellKnownNames
- */
-export type WellKnownName = 'Circle' | 'Square' | 'Triangle' | 'Star' | 'Cross' | 'X';
-
-/**
- * A BaseMarkSymbolizer describes the base style representation of POINT data if styled with
- * a regular geometry.
- */
-export interface BaseMarkSymbolizer extends BasePointSymbolizer {
+export interface MarkSymbolizer extends BasePointSymbolizer {
   kind: 'Mark';
   wellKnownName: WellKnownName;
-  angle?: number;
-  points?: number;
   radius?: number;
   rotate?: number;
   strokeColor?: string;
   strokeOpacity?: number;
   strokeWidth?: number;
-}
-
-/**
- * A CircleSymbolizer describes the style representation of POINT data if styled with
- * a regular circle geometry.
- */
-export interface CircleSymbolizer extends BaseMarkSymbolizer {
-  wellKnownName: 'Circle';
   blur?: number;
   pitchAlignment?: 'map' | 'viewport';
   pitchScale?: 'map' | 'viewport';
-}
-
-/**
- * A SquareSymbolizer describes the style representation of POINT data if styled with
- * a square geometry.
- */
-export interface SquareSymbolizer extends BaseMarkSymbolizer {
-  angle: 45;
-  points: 4;
-  wellKnownName: 'Square';
-}
-
-/**
- * A TriangleSymbolizer describes the style representation of POINT data if styled with
- * a regular triangle geometry.
- */
-export interface TriangleSymbolizer extends BaseMarkSymbolizer {
-  points: 3;
-  wellKnownName: 'Triangle';
-}
-
-/**
- * A StarSymbolizer describes the style representation of POINT data if styled with
- * a regular star geometry.
- */
-export interface StarSymbolizer extends BaseMarkSymbolizer {
-  points: 5;
-  wellKnownName: 'Star';
-  radius2?: number;
-}
-
-/**
- * A CrossSymbolizer describes the style representation of POINT data if styled with
- * a regular cross geometry
- */
-export interface CrossSymbolizer extends BaseMarkSymbolizer {
-  points: 4;
-  radius2?: 0;
-  wellKnownName: 'Cross';
-}
-
-/**
- * A CrossSymbolizer describes the style representation of POINT data if styled with
- * a regular cross geometry
- */
-export interface XSymbolizer extends BaseMarkSymbolizer {
-  angle: 45;
-  points: 4;
-  radius2?: 0;
-  wellKnownName: 'X';
 }
 
 /**
