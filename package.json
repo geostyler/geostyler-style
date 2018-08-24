@@ -10,7 +10,7 @@
     "release": "np --no-yarn"
   },
   "dependencies": {
-    "@types/node": "10.7.1",
+    "@types/node": "10.7.2",
     "@types/jest": "23.3.1",
     "jest": "23.1.0",
     "ts-jest": "23.0.0",
