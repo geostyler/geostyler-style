@@ -30,9 +30,7 @@ const sampleStyle: Style = {
         width: 9,
         graphicStroke: {
           kind: 'Mark',
-          wellKnownName: 'Square',
-          points: 4,
-          angle: 45
+          wellKnownName: 'Square'
         }
       }]
     },
