@@ -133,15 +133,16 @@ export interface MarkSymbolizer extends BasePointSymbolizer {
   pitchScale?: 'map' | 'viewport';
 }
 
+
 /**
- * A TextSymbolizer describes the style representation of POINT data if styled with
+ * The TextSymbolizer describes the style representation of point data, if styled with
  * a text.
  */
 export interface TextSymbolizer extends BasePointSymbolizer {
   kind: 'Text';
   allowOverlap?: boolean;
   anchor?: 'center' | 'left' | 'right' | 'top' | 'bottom' | 'top-left' | 'top-right' | 'bottom-left' | 'bottom-right';
-  field?: string;
+  label?: string;
   font?: string[];
   haloBlur?: number;
   haloColor?: string;
