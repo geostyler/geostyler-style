@@ -7,7 +7,7 @@
     "pretest": "npm run lint",
     "test": "jest",
     "lint": "tslint --project tsconfig.json --config tslint.json && tsc --noEmit --project tsconfig.json ",
-    "release": "np --no-yarn"
+    "release": "np --no-yarn && git push https://github.com/terrestris/geostyler-style.git master --tags"
   },
   "dependencies": {
     "@types/jest": "23.3.5",
