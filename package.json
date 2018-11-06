@@ -13,7 +13,7 @@
     "@types/jest": "23.3.9",
     "@types/node": "10.12.2",
     "jest": "23.1.0",
-    "ts-jest": "23.0.0",
+    "ts-jest": "23.10.3",
     "tslint": "5.10.0",
     "typescript": "2.9.1"
   },
@@ -33,7 +33,7 @@
       "js"
     ],
     "transform": {
-      "\\.(ts)$": "<rootDir>/node_modules/ts-jest/preprocessor.js"
+      "\\.(ts)$": "ts-jest"
     },
     "testRegex": "/.*\\.spec.(ts|js)$",
     "testURL": "http://localhost/"
