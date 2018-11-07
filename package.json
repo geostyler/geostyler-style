@@ -9,10 +9,11 @@
     "lint": "tslint --project tsconfig.json --config tslint.json && tsc --noEmit --project tsconfig.json ",
     "release": "np --no-yarn && git push https://github.com/terrestris/geostyler-style.git master --tags"
   },
-  "dependencies": {
+  "devDependencies": {
     "@types/jest": "23.3.9",
     "@types/node": "10.12.2",
     "jest": "23.1.0",
+    "np": "3.0.4",
     "ts-jest": "23.10.3",
     "tslint": "5.10.0",
     "typescript": "2.9.1"
@@ -37,8 +38,5 @@
     },
     "testRegex": "/.*\\.spec.(ts|js)$",
     "testURL": "http://localhost/"
-  },
-  "devDependencies": {
-    "np": "3.0.4"
   }
 }
