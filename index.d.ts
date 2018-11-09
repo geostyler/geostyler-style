@@ -31,12 +31,12 @@ export type CombinationOperator = '&&' | '||';
 /**
  * The Operator used for negation Filters.
  */
-export type NegationOpertaor = '!';
+export type NegationOperator = '!';
 
 /**
  * All operators.
  */
-export type Operator = ComparisonOperator | CombinationOperator | NegationOpertaor;
+export type Operator = ComparisonOperator | CombinationOperator | NegationOperator;
 
 /**
  * A base interface for Filter.
@@ -79,7 +79,7 @@ export interface CombinationFilter extends Filter  {
  * A NegationFilter negates a given Filter.
  */
 export interface NegationFilter extends Filter  {
-  0: NegationOpertaor;
+  0: NegationOperator;
   1: Filter;
 }
 
