@@ -10,7 +10,7 @@
     "release": "np --no-yarn && git push https://github.com/terrestris/geostyler-style.git master --tags"
   },
   "devDependencies": {
-    "@types/jest": "23.3.9",
+    "@types/jest": "23.3.10",
     "@types/node": "10.12.10",
     "jest": "23.1.0",
     "np": "3.0.4",
