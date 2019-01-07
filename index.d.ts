@@ -165,7 +165,7 @@ export interface TextSymbolizer extends BasePointSymbolizer {
 }
 
 /**
- * A FillSymbolizer describes the style representation of POINT data if styled with
+ * An IconSymbolizer describes the style representation of POINT data if styled with
  * an specific icon.
  */
 export interface IconSymbolizer extends BasePointSymbolizer {
@@ -195,7 +195,6 @@ export interface IconSymbolizer extends BasePointSymbolizer {
 export interface FillSymbolizer extends BaseSymbolizer {
   kind: 'Fill';
   antialias?: boolean;
-  fillPattern?: string;
   outlineColor?: string;
   outlineWidth?: number;
   outlineDasharray?: number[];
@@ -221,11 +220,8 @@ export interface LineSymbolizer extends BaseSymbolizer {
   graphicFill?: PointSymbolizer;
   join?: 'bevel' | 'round' | 'miter';
   miterLimit?: number;
-  // TODO check if offset is being used somewhere, or if perpendicularOffset and dashOffset already replace it
-  offset?: number;
   perpendicularOffset?: number;
   dashOffset?: number;
-  pattern?: string;
   roundLimit?: number;
   type?: string;
   width?: number;
@@ -258,6 +254,33 @@ export interface Rule {
 export interface Style {
   name: string;
   rules: Rule[];
+}
+
+/**
+ * Interface for defining unsupported properties in the parsers.
+ * Value of each property must either be 'undefined', or an object whose (sub-)subproperties have the value 'undefined'.
+ */
+export interface UnsupportedProperties {
+  ScaleDenominator?: 'unsupported';
+  Filter?: {
+    '&&'?: 'unsupported';
+    '!'?: 'unsupported';
+    '||'?: 'unsupported';
+    '>'?: 'unsupported';
+    '>='?: 'unsupported';
+    '=='?: 'unsupported';
+    '<'?: 'unsupported';
+    '<='?: 'unsupported';
+    '!='?: 'unsupported';
+    '*='?: 'unsupported';
+  };
+  Symbolizer?: {
+    PointSymbolizer?: any;
+    LineSymbolizer?: any;
+    FillSymbolizer?: any;
+    MarkSymbolizer?: any;
+    IconSymbolizer?: any;
+  }
 }
 
 /**
@@ -339,6 +362,12 @@ export interface StyleParser {
    * @param geoStylerSymbolizer Symbolizer
    */
   writeSymbolizer?(geoStylerSymbolizer: Symbolizer): Promise<any>;
+
+  /**
+   * Object specifying which properties are not supported. MUST be a static
+   * class attribute.
+   */
+  unsupportedProperties?: UnsupportedProperties;
 }
 
 export interface StyleParserConstructable extends StyleParser {
