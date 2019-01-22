@@ -111,7 +111,7 @@ export interface BasePointSymbolizer extends BaseSymbolizer {
 /**
  * Supported WellKnownNames
  */
-export type WellKnownName = 'Circle' | 'Square' | 'Triangle' | 'Star' | 'Cross' | 'X' 
+export type WellKnownName = 'Circle' | 'Square' | 'Triangle' | 'Star' | 'Cross' | 'X'
                             | 'shape://vertline' | 'shape://horline' | 'shape://slash'
                             | 'shape://backslash' | 'shape://dot' | 'shape://plus'
                             | 'shape://times' | 'shape://oarrow' | 'shape://carrow' ;
@@ -220,7 +220,7 @@ export interface LineSymbolizer extends BaseSymbolizer {
   graphicFill?: PointSymbolizer;
   join?: 'bevel' | 'round' | 'miter';
   miterLimit?: number;
-  perpendicularOffset?: number;
+  offset?: number;
   dashOffset?: number;
   roundLimit?: number;
   type?: string;
