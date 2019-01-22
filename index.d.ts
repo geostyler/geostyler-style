@@ -106,12 +106,13 @@ interface BaseSymbolizer {
 export interface BasePointSymbolizer extends BaseSymbolizer {
   avoidEdges?: boolean;
   spacing?: number;
+  offset?: [number, number];
 }
 
 /**
  * Supported WellKnownNames
  */
-export type WellKnownName = 'Circle' | 'Square' | 'Triangle' | 'Star' | 'Cross' | 'X' 
+export type WellKnownName = 'Circle' | 'Square' | 'Triangle' | 'Star' | 'Cross' | 'X'
                             | 'shape://vertline' | 'shape://horline' | 'shape://slash'
                             | 'shape://backslash' | 'shape://dot' | 'shape://plus'
                             | 'shape://times' | 'shape://oarrow' | 'shape://carrow' ;
@@ -154,7 +155,6 @@ export interface TextSymbolizer extends BasePointSymbolizer {
   lineHeight?: number;
   maxAngle?: number;
   maxWidth?: number;
-  offset?: [number, number];
   optional?: boolean;
   padding?: number;
   pitchAlignment?: 'map' | 'viewport' | 'auto';
@@ -178,7 +178,6 @@ export interface IconSymbolizer extends BasePointSymbolizer {
   ignorePlacement?: boolean;
   image?: string;
   keepUpright?: boolean;
-  offset?: [number, number];
   optional?: boolean;
   padding?: number;
   pitchAlignment?: 'map' | 'viewport' | 'auto';
