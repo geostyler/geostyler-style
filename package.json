@@ -4,19 +4,14 @@
   "description": "",
   "main": "index.d.ts",
   "scripts": {
-    "pretest": "npm run lint",
-    "test": "jest",
-    "lint": "tslint --project tsconfig.json --config tslint.json && tsc --noEmit --project tsconfig.json ",
+    "lint": "tslint --project tsconfig.json --config tslint.json && tsc --noEmit --project tsconfig.json",
     "release": "np --no-yarn && git push https://github.com/terrestris/geostyler-style.git master --tags"
   },
   "devDependencies": {
-    "@types/jest": "23.3.11",
-    "@types/node": "11.9.3",
-    "jest": "23.1.0",
+    "@types/node": "11.9.4",
     "np": "4.0.2",
-    "ts-jest": "23.10.5",
-    "tslint": "5.10.0",
-    "typescript": "2.9.1"
+    "tslint": "5.12.1",
+    "typescript": "3.3.3"
   },
   "repository": {
     "type": "git",
@@ -25,18 +20,7 @@
   "author": "",
   "license": "BSD-2-Clause",
   "bugs": {
-    "url": "https://github.com/terrestris/geostyler-style/issues"
+    "url": "https://github.com/terrestris/geostyler/issues"
   },
-  "homepage": "https://github.com/terrestris/geostyler-style#readme",
-  "jest": {
-    "moduleFileExtensions": [
-      "ts",
-      "js"
-    ],
-    "transform": {
-      "\\.(ts)$": "ts-jest"
-    },
-    "testRegex": "/.*\\.spec.(ts|js)$",
-    "testURL": "http://localhost/"
-  }
+  "homepage": "https://github.com/terrestris/geostyler-style#readme"
 }
