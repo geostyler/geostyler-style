@@ -8,7 +8,7 @@
     "release": "np --no-yarn && git push https://github.com/terrestris/geostyler-style.git master --tags"
   },
   "devDependencies": {
-    "@types/node": "11.9.4",
+    "@types/node": "11.9.5",
     "np": "4.0.2",
     "tslint": "5.12.1",
     "typescript": "3.3.3"
