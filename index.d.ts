@@ -16,7 +16,7 @@ export interface ScaleDenominator {
 /**
  * The type of the Style.
  */
-export type StyleType = 'Point' | 'Fill' | 'Line';
+export type StyleType = 'Point' | 'Fill' | 'Line' | 'Raster';
 
 /**
  * The possible Operator used for comparison Filters.
