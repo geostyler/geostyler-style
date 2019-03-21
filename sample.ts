@@ -91,6 +91,24 @@ const sampleStyle: Style = {
         graphicFill: {
           kind: 'Icon'
         }
+      }, {
+        kind: 'Raster',
+        opacity: 1,
+        colorMap: {
+          colorMapEntries: [
+            {
+              color: '#00FFFF',
+              quantity: 100
+            }
+          ],
+          extended: false,
+          type: "ramp"
+        },
+        channelSelection: {
+          grayChannel: {
+            sourceChannelName: '1'
+          }
+        }
       }]
     }
   ]
