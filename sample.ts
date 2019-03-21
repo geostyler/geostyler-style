@@ -102,7 +102,7 @@ const sampleStyle: Style = {
             }
           ],
           extended: false,
-          type: "ramp"
+          type: 'ramp'
         },
         channelSelection: {
           grayChannel: {

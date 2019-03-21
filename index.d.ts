@@ -287,6 +287,8 @@ export interface GrayChannel {
   grayChannel: Channel;
 }
 
+export type ChannelSelection = RGBChannel | GrayChannel;
+
 /**
  * A RasterSymbolizer defines the style representation of RASTER data.
  */
@@ -294,7 +296,7 @@ export interface RasterSymbolizer {
   kind: 'Raster';
   opacity?: number;
   colorMap?: ColorMap;
-  channelSelection?: RGBChannel | GrayChannel;
+  channelSelection?: ChannelSelection;
   contrastEnhancement?: ContrastEnhancement;
 }
 
