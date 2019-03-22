@@ -54,7 +54,9 @@ const sampleStyle: Style = {
         rotationAlignment: 'map',
         spacing: 21,
         haloColor: '#ff00aa',
-        haloWidth: 4
+        haloWidth: 4,
+        fontStyle: 'normal',
+        fontWeight: 'bold'
       }]
     },
     {
