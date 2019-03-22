@@ -145,6 +145,8 @@ export interface TextSymbolizer extends BasePointSymbolizer {
   anchor?: 'center' | 'left' | 'right' | 'top' | 'bottom' | 'top-left' | 'top-right' | 'bottom-left' | 'bottom-right';
   label?: string;
   font?: string[];
+  fontWeight?: string;
+  fontStyle?: string;
   haloBlur?: number;
   haloColor?: string;
   haloWidth?: number;
