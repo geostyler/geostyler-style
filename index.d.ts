@@ -244,7 +244,7 @@ export interface ColorMapEntry {
 /**
  * The Types that are allowed in a ColorMap.
  */
-export type ColorMapType = 'ramp'|'intervals'|'values';
+export type ColorMapType = 'ramp' | 'intervals' | 'values';
 
 /**
  * A ColorMap defines the color values for the pixels of a raster image.
