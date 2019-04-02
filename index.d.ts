@@ -16,7 +16,7 @@ export interface ScaleDenominator {
 /**
  * The type of the Style.
  */
-export type StyleType = 'Point' | 'Fill' | 'Line';
+export type StyleType = 'Point' | 'Fill' | 'Line' | 'Raster';
 
 /**
  * The possible Operator used for comparison Filters.
@@ -86,7 +86,7 @@ export interface NegationFilter extends Filter  {
 /**
  * The kind of the Symbolizer
  */
-export type SymbolizerKind = 'Fill' | 'Icon' | 'Line' | 'Text' | 'Mark';
+export type SymbolizerKind = 'Fill' | 'Icon' | 'Line' | 'Text' | 'Mark' | 'Raster';
 
 /**
  * A Symbolizer describes the style representation of geographical data.
@@ -232,9 +232,78 @@ export interface LineSymbolizer extends BaseSymbolizer {
 export type PointSymbolizer = IconSymbolizer | MarkSymbolizer | TextSymbolizer;
 
 /**
+ * A single entry for the ColorMap.
+ */
+export interface ColorMapEntry {
+  color: string;
+  quantity?: number;
+  label?: string;
+  opacity?: number;
+}
+
+/**
+ * The Types that are allowed in a ColorMap.
+ */
+export type ColorMapType = 'ramp' | 'intervals' | 'values';
+
+/**
+ * A ColorMap defines the color values for the pixels of a raster image.
+ */
+export interface ColorMap {
+    type: ColorMapType;
+    colorMapEntries?: ColorMapEntry[];
+    extended?: boolean;
+}
+
+/**
+ * A ContrastEnhancement defines how the contrast of image data should be enhanced.
+ */
+export interface ContrastEnhancement {
+  enhancementType?: 'normalize' | 'histogram';
+  gammaValue?: number;
+}
+
+/**
+ * A Channel defines the properties for a color channel.
+ */
+export interface Channel {
+  sourceChannelName?: string;
+  contrastEnhancement?: ContrastEnhancement;
+}
+
+/**
+ * A RGBChannel defines how dataset bands are mapped to image color channels.
+ */
+export interface RGBChannel {
+  redChannel: Channel;
+  blueChannel: Channel;
+  greenChannel: Channel;
+}
+
+/**
+ * A GrayChannel defines how a single dataset band is mapped to a grayscale channel.
+ */
+export interface GrayChannel {
+  grayChannel: Channel;
+}
+
+export type ChannelSelection = RGBChannel | GrayChannel;
+
+/**
+ * A RasterSymbolizer defines the style representation of RASTER data.
+ */
+export interface RasterSymbolizer {
+  kind: 'Raster';
+  opacity?: number;
+  colorMap?: ColorMap;
+  channelSelection?: ChannelSelection;
+  contrastEnhancement?: ContrastEnhancement;
+}
+
+/**
  * All operators.
  */
-export type Symbolizer = PointSymbolizer | LineSymbolizer | FillSymbolizer;
+export type Symbolizer = PointSymbolizer | LineSymbolizer | FillSymbolizer | RasterSymbolizer;
 
 /**
  * A Rule combines a specific amount of data (defined by a filter and a
@@ -279,6 +348,7 @@ export interface UnsupportedProperties {
     FillSymbolizer?: any;
     MarkSymbolizer?: any;
     IconSymbolizer?: any;
+    RasterSymbolizer?: any;
   }
 }
 
