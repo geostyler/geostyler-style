@@ -30,7 +30,13 @@ const sampleRasterStyle: Style = {
           grayChannel: {
             sourceChannelName: '1'
           }
-        }
+        },
+        brightnessMax: 1,
+        brightnessMin: 0,
+        saturation: 1,
+        contrast: 1,
+        resampling: 'linear',
+        fadeDuration: 200
       }]
     }
   ]

@@ -294,10 +294,18 @@ export type ChannelSelection = RGBChannel | GrayChannel;
  */
 export interface RasterSymbolizer {
   kind: 'Raster';
+  visibility?: boolean;
   opacity?: number;
   colorMap?: ColorMap;
   channelSelection?: ChannelSelection;
   contrastEnhancement?: ContrastEnhancement;
+  hueRotate?: number;
+  brightnessMin?: number;
+  brightnessMax?: number;
+  saturation?: number;
+  contrast?: number;
+  resampling?: 'linear' | 'nearest';
+  fadeDuration?: number;
 }
 
 /**
