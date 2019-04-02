@@ -365,6 +365,11 @@ export interface UnsupportedProperties {
  */
 export interface StyleParser {
   /**
+   * The name of the Parser
+   */
+  title: string;
+
+  /**
    * Parses the inputStyle and transforms it to the GeoStyler Style
    *
    * @param inputStyle
@@ -447,13 +452,3 @@ export interface StyleParser {
   unsupportedProperties?: UnsupportedProperties;
 }
 
-export interface StyleParserConstructable extends StyleParser {
-  /**
-   * Constructor interface
-   */
-  new(): StyleParser;
-  /**
-   * The name of the Parser instance
-   */
-  title: string;
-}
