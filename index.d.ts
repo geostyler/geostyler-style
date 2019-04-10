@@ -162,6 +162,8 @@ export interface TextSymbolizer extends BasePointSymbolizer {
   rotationAlignment?: 'map' | 'viewport' | 'auto';
   size?: number;
   transform?: 'none' | 'uppercase' | 'lowercase';
+  fontStyle?: 'normal' | 'italic' | 'oblique';
+  fontWeight?: 'normal' | 'bold';
 }
 
 /**
