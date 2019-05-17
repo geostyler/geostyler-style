@@ -45,7 +45,7 @@ export interface Filter extends Array<any> {}
 
 /**
  * A FunctionFilter that expects a string (propertyName) as second arguement and
- * a regular expression as third argument. An acutal parser implementation has to
+ * a regular expression as third argument. An actual parser implementation has to
  * return a value for this function expression.
  */
 export interface StrMatchesFunctionFilter extends Filter {
