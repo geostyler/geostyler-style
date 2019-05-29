@@ -63,7 +63,7 @@ export interface PropertyName {
  */
 export interface FunctionCall {
   name: string;
-  arguments: Expression[];
+  args: Expression[];
 }
 
 /**
