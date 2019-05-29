@@ -44,29 +44,40 @@ export type Operator = ComparisonOperator | CombinationOperator | NegationOperat
 export interface Filter extends Array<any> {}
 
 /**
- * A FunctionFilter that expects a string (propertyName) as second arguement and
- * a regular expression as third argument. An actual parser implementation has to
- * return a value for this function expression.
+ * Expression that evaluates to the given value.
  */
-export interface StrMatchesFunctionFilter extends Filter {
-  0: 'FN_strMatches';
-  1: string;
-  2: RegExp;
+export interface LiteralValue {
+  value: RegExp|string|number|boolean|null;
 }
 
 /**
- * A Filter that expresses a function.
+ * Expression that evaluates to the value of the given property.
  */
-export type FunctionFilter = StrMatchesFunctionFilter;
+export interface PropertyName {
+  name: string;
+}
 
 /**
- * A ComparisonFilter compares a value of an object (by key) with an expected
- * value.
+ * Expression that evaluates to the result of a function call on
+ * a list of argument expressions.
+ */
+export interface FunctionCall {
+  name: string;
+  arguments: Expression[];
+}
+
+/**
+ * Expressions can be a literal value, a property name or a function call.
+ */
+export type Expression = LiteralValue | PropertyName | FunctionCall;
+
+/**
+ * A ComparisonFilter compares two expressions.
  */
 export interface ComparisonFilter extends Filter {
   0: ComparisonOperator;
-  1: string | FunctionFilter;
-  2: string|number|boolean|null;
+  1: Expression;
+  2: Expression;
 }
 
 /**
