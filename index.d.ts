@@ -102,7 +102,7 @@ export interface NegationFilter extends Filter  {
 /**
  * The kind of the Symbolizer
  */
-export type SymbolizerKind = 'Fill' | 'Icon' | 'Line' | 'Text' | 'Mark' | 'Raster';
+export type SymbolizerKind = 'Fill' | 'Icon' | 'FontIcon' | 'Line' | 'Text' | 'Mark' | 'Raster';
 
 /**
  * A Symbolizer describes the style representation of geographical data.
@@ -207,6 +207,30 @@ export interface IconSymbolizer extends BasePointSymbolizer {
 }
 
 /**
+ * An FontIconSymbolizer describes the style representation of POINT data if styled with
+ * an specific fonticon.
+ */
+export interface FontIconSymbolizer extends BasePointSymbolizer {
+  kind: 'FontIcon';
+  allowOverlap?: boolean;
+  anchor?: 'center' | 'left' | 'right' | 'top' | 'bottom' | 'top-left' | 'top-right' | 'bottom-left' | 'bottom-right';
+  haloBlur?: number;
+  haloColor?: string;
+  haloWidth?: number;
+  ignorePlacement?: boolean;
+  image?: string;
+  keepUpright?: boolean;
+  optional?: boolean;
+  padding?: number;
+  pitchAlignment?: 'map' | 'viewport' | 'auto';
+  rotate?: number;
+  rotationAlignment?: 'map' | 'viewport' | 'auto';
+  size?: number;
+  textFit?: 'none' | 'width' | 'height' | 'both';
+  textFitPadding?: [number, number, number, number];
+}
+
+/**
  * A FillSymbolizer describes the style representation of POLYGON data.
  */
 export interface FillSymbolizer extends BaseSymbolizer {
@@ -221,7 +245,7 @@ export interface FillSymbolizer extends BaseSymbolizer {
 /**
  * The Types that are allowed in a graphic
  */
-export type GraphicType = 'Mark' | 'Icon';
+export type GraphicType = 'Mark' | 'Icon' | 'FontIcon';
 
 /**
  * A LineSymbolizer describes the style representation of LINESTRING data.
@@ -247,7 +271,7 @@ export interface LineSymbolizer extends BaseSymbolizer {
 /**
  * Operators used for Point symbolization.
  */
-export type PointSymbolizer = IconSymbolizer | MarkSymbolizer | TextSymbolizer;
+export type PointSymbolizer = IconSymbolizer | FontIconSymbolizer | MarkSymbolizer | TextSymbolizer;
 
 /**
  * A single entry for the ColorMap.
@@ -374,6 +398,7 @@ export interface UnsupportedProperties {
     FillSymbolizer?: any;
     MarkSymbolizer?: any;
     IconSymbolizer?: any;
+    FontIconSymbolizer?: any;
     RasterSymbolizer?: any;
   }
 }
