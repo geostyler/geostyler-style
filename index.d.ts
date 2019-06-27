@@ -44,17 +44,26 @@ export type Operator = ComparisonOperator | CombinationOperator | NegationOperat
 export interface Filter extends Array<any> {}
 
 /**
+ * A base interface for expressions.
+ */
+export interface AbstractExpression {
+  type: string;
+}
+
+/**
  * Expression that evaluates to the given value.
  */
-export interface LiteralValue {
+export interface LiteralValue extends AbstractExpression {
   value: RegExp|string|number|boolean|null;
+  type: 'literal';
 }
 
 /**
  * Expression that evaluates to the value of the given property.
  */
-export interface PropertyName {
+export interface PropertyName extends AbstractExpression {
   name: string;
+  type: 'property';
 }
 
 /**
@@ -64,6 +73,7 @@ export interface PropertyName {
 export interface FunctionCall {
   name: string;
   args: Expression[];
+  type: 'functioncall';
 }
 
 /**
