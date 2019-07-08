@@ -108,11 +108,32 @@ export type SymbolizerKind = 'Fill' | 'Icon' | 'Line' | 'Text' | 'Mark' | 'Raste
  * A Symbolizer describes the style representation of geographical data.
  */
 interface BaseSymbolizer {
+  /**
+   * Describes the type of the kind of the Symbolizer.
+   */
   kind: SymbolizerKind;
+  /**
+   * A color defined as a hex-color string.
+   */
   color?: string;
+  /**
+   * A value between 0 and 1. 0 is none opaque and 1 is full opaque.
+   */
   opacity?: number;
+  /**
+   * The offset of the Symbolizer as [x, y] coordinates. Positive values indicate
+   * right and down, while negative values indicate left and up.
+   * TODO: Duplicate with offset
+   */
   translate?: [number, number];
+  /**
+   * Property relevant for mapbox-styles.
+   * Compare https://docs.mapbox.com/mapbox-gl-js/style-spec/#paint-symbol-icon-translate-anchor
+   */
   translateAnchor?: 'map' | 'viewport';
+  /**
+   * Defines whether the Symbolizer should be visibile or not.
+   */
   visibility?: boolean;
 }
 
@@ -120,8 +141,21 @@ interface BaseSymbolizer {
  * A PointSymbolizer describes the style representation of POINT data.
  */
 export interface BasePointSymbolizer extends BaseSymbolizer {
+  /**
+   * This is a property relevant if using tiled datasets.
+   * If true, the symbols will not cross tile edges to avoid mutual collisions.
+   */
   avoidEdges?: boolean;
+  /**
+   * Distance between two symbol anchors in pixels.
+   * TODO: Move to LineSymbolizer
+   */
   spacing?: number;
+  /**
+   * The offset of the Symbolizer as [x, y] coordinates. Positive values indicate
+   * right and down, while negative values indicate left and up.
+   * TODO: Duplicate with translate
+   */
   offset?: [number, number];
 }
 
@@ -134,75 +168,240 @@ export type WellKnownName = 'Circle' | 'Square' | 'Triangle' | 'Star' | 'Cross' 
                             | 'shape://times' | 'shape://oarrow' | 'shape://carrow' ;
 
 /**
- * MarkSymbolizer describes the style representation of POINT data, if styled as with
- * a regular geometry.
+ * MarkSymbolizer describes the style representation of POINT data, if styled as
+ * with a regular geometry.
  */
 export interface MarkSymbolizer extends BasePointSymbolizer {
   kind: 'Mark';
+  /**
+   * The WellKnownName of the MarkSymbolizer.
+   */
   wellKnownName: WellKnownName;
+  /**
+   * The radius of the Symbolizer. Values describing the full size of the Symbolizer
+   * have to be divided by two.
+   */
   radius?: number;
+  /**
+   * The rotation of the Symbolizer in degrees. Value should be between 0 and 360.
+   */
   rotate?: number;
+  /**
+   * The color of the stroke represented as a hex-color string.
+   */
   strokeColor?: string;
+  /**
+   * The opacity of the stroke. A value between 0 and 1.
+   * 0 is none opaque and 1 is full opaque.
+   */
   strokeOpacity?: number;
+  /**
+   * The width of the stroke in pixels.
+   */
   strokeWidth?: number;
+  /**
+   * Amount to blur the Symbolizer. 1 blurs the Symbolizer such that only the
+   * centerpoint has full opacity. Mostly relevant for circles.
+   */
   blur?: number;
+  /**
+   * Property relevant for mapbox-styles.
+   * Compare https://docs.mapbox.com/mapbox-gl-js/style-spec/#paint-circle-circle-pitch-alignment
+   */
   pitchAlignment?: 'map' | 'viewport';
+  /**
+   * Property relevant for mapbox-styles.
+   * Compare https://docs.mapbox.com/mapbox-gl-js/style-spec/#paint-circle-circle-pitch-scale
+   */
   pitchScale?: 'map' | 'viewport';
 }
 
-
 /**
- * The TextSymbolizer describes the style representation of point data, if styled with
- * a text.
+ * The TextSymbolizer describes the style representation of point data, if styled
+ * with a text.
  */
 export interface TextSymbolizer extends BasePointSymbolizer {
   kind: 'Text';
+  /**
+   * If true, the text will be visible even if it collides with other previously
+   * drawn symbols.
+   * TODO: Duplicate of ignorePlacement
+   */
   allowOverlap?: boolean;
+  /**
+   * The anchor position of the label referred to the center of the geometry.
+   */
   anchor?: 'center' | 'left' | 'right' | 'top' | 'bottom' | 'top-left' | 'top-right' | 'bottom-left' | 'bottom-right';
+  /**
+   * Template string where {{PROPERTYNAME}} can be used to be replaced by values
+   * from the dataset.
+   * e.g.: "Name {{country_name}}"
+   */
   label?: string;
+  /**
+   * An Array of fonts. Comparable to https://www.w3schools.com/cssref/pr_font_font-family.asp
+   */
   font?: string[];
+  /**
+   * The halo's fadeout distance towards the outside.
+   */
   haloBlur?: number;
+  /**
+   * The color of the text's halo, which helps it stand out from backgrounds
+   * represented as a hex-color string.
+   */
   haloColor?: string;
+  /**
+   * Distance of halo to the font outline in pixels.
+   */
   haloWidth?: number;
+  /**
+   * TODO: Duplicate of allowOverlap?
+   */
   ignorePlacement?: boolean;
+  /**
+   * Text justification option to align the text.
+   */
   justify?: 'left' | 'center' | 'right';
+  /**
+   * If true, the text will be kept upright.
+   */
   keepUpright?: boolean;
+  /**
+   * Sets the spacing between text characters in pixels.
+   */
   letterSpacing?: number;
+  /**
+   * Sets the line height in pixels.
+   */
   lineHeight?: number;
+  /**
+   * Maximum angle change between adjacent characters in degrees.
+   */
   maxAngle?: number;
+  /**
+   * The maximum line width for text wrapping.
+   */
   maxWidth?: number;
+  /**
+   * TODO: CHECK where this property came from and if we need it
+   */
   optional?: boolean;
+  /**
+   * Size of the additional area around the text bounding box used for detecting
+   * symbol collisions.
+   */
   padding?: number;
+  /**
+   * Property relevant for mapbox-styles.
+   * Compare https://docs.mapbox.com/mapbox-gl-js/style-spec/#layout-symbol-text-pitch-alignment
+   */
   pitchAlignment?: 'map' | 'viewport' | 'auto';
+  /**
+   * The rotation of the Symbolizer in degrees. Value should be between 0 and 360.
+   */
   rotate?: number;
+  /**
+   * Property relevant for mapbox-styles.
+   * Compare https://docs.mapbox.com/mapbox-gl-js/style-spec/#layout-symbol-text-rotation-alignment
+   */
   rotationAlignment?: 'map' | 'viewport' | 'auto';
+  /**
+   * The FontSize in pixels.
+   */
   size?: number;
+  /**
+   * Specifies how to capitalize text, similar to the CSS text-transform property.
+   */
   transform?: 'none' | 'uppercase' | 'lowercase';
+  /**
+   * Specifies whether a font should be styled with a normal, italic, or oblique
+   * face from its font-family.
+   */
   fontStyle?: 'normal' | 'italic' | 'oblique';
+  /**
+   * Specifies the weight (or boldness) of the font. The weights available depend
+   * on the font-family you are using.
+   */
   fontWeight?: 'normal' | 'bold';
 }
 
 /**
- * An IconSymbolizer describes the style representation of POINT data if styled with
- * an specific icon.
+ * An IconSymbolizer describes the style representation of POINT data if styled
+ * with a specific icon.
  */
 export interface IconSymbolizer extends BasePointSymbolizer {
   kind: 'Icon';
+  /**
+   * If true, the icon will be visible even if it collides with other previously
+   * drawn symbols.
+   */
   allowOverlap?: boolean;
+  /**
+   * Part of the icon placed closest to the anchor. This may conflict with a set
+   * offset/translation.
+   */
   anchor?: 'center' | 'left' | 'right' | 'top' | 'bottom' | 'top-left' | 'top-right' | 'bottom-left' | 'bottom-right';
+  /**
+   * The halo's fadeout distance towards the outside.
+   */
   haloBlur?: number;
+  /**
+   * The color of the icons halo, which helps it stand out from backgrounds represented
+   * as a hex-color string.
+   */
   haloColor?: string;
+  /**
+   * Distance of halo to the font outline in pixels.
+   */
   haloWidth?: number;
+  /**
+   * TODO: Duplicate of allowOverlap?
+   */
   ignorePlacement?: boolean;
+  /**
+   * A path/URL to the icon image file.
+   */
   image?: string;
+  /**
+   * If true, the icon will be kept upright.
+   */
   keepUpright?: boolean;
+  /**
+   * TODO: CHECK where this property came from and if we need it
+   */
   optional?: boolean;
+  /**
+   * Size of the additional area around the icon used for detecting symbol collisions.
+   */
   padding?: number;
+  /**
+   * Property relevant for mapbox-styles.
+   * Compare https://docs.mapbox.com/mapbox-gl-js/style-spec/#layout-symbol-icon-pitch-alignment
+   */
   pitchAlignment?: 'map' | 'viewport' | 'auto';
+  /**
+   * The rotation of the Symbolizer in degrees. Value should be between 0 and 360.
+   */
   rotate?: number;
+  /**
+   * Property relevant for mapbox-styles.
+   * Compare https://docs.mapbox.com/mapbox-gl-js/style-spec/#layout-symbol-icon-rotation-alignment
+   */
   rotationAlignment?: 'map' | 'viewport' | 'auto';
+  /**
+   * The Symbolizer size in pixels.
+   */
   size?: number;
+  /**
+   * Property relevant for mapbox-styles.
+   * Compare https://docs.mapbox.com/mapbox-gl-js/style-spec/#layout-symbol-icon-text-fit
+   */
   textFit?: 'none' | 'width' | 'height' | 'both';
+  /**
+   * Property relevant for mapbox-styles.
+   * Compare https://docs.mapbox.com/mapbox-gl-js/style-spec/#layout-symbol-icon-text-fit-padding
+   */
   textFitPadding?: [number, number, number, number];
 }
 
@@ -211,10 +410,29 @@ export interface IconSymbolizer extends BasePointSymbolizer {
  */
 export interface FillSymbolizer extends BaseSymbolizer {
   kind: 'Fill';
+  /**
+   * Whether the fill should be antialiased or not .
+   */
   antialias?: boolean;
+  /**
+   * The outline color as a hex-color string. Matches the value of fill-color if
+   * unspecified.
+   */
   outlineColor?: string;
+  /**
+   * The outline width in pixels.
+   */
   outlineWidth?: number;
+  /**
+   * Encodes a dash pattern as an array of numbers. Odd-indexed numbers (first,
+   * third, etc) determine the length in pixels to draw the line, and even-indexed
+   * numbers (second, fourth, etc) determine the length in pixels to blank out
+   * the line. Default is an unbroken line.
+   */
   outlineDasharray?: number[];
+  /**
+   * Renders the fill of the polygon with a repeated pattern of PointSymbolizer.
+   */
   graphicFill?: PointSymbolizer;
 }
 
@@ -229,18 +447,68 @@ export type GraphicType = 'Mark' | 'Icon';
 export interface LineSymbolizer extends BaseSymbolizer {
   kind: 'Line';
   blur?: number;
+  /**
+   * Determines how lines are rendered at their ends. Possible values are butt
+   * (sharp square edge), round (rounded edge), and square (slightly elongated
+   * square edge).
+   */
   cap?: 'butt' | 'round' | 'square';
+  /**
+   * Encodes a dash pattern as an array of numbers. Odd-indexed numbers (first,
+   * third, etc) determine the length in pixels to draw the line, and even-indexed
+   * numbers (second, fourth, etc) determine the length in pixels to blank out
+   * the line. Default is an unbroken line.
+   */
   dasharray?: number[];
-  gapWidth?: number;
-  gradient?: any[];
-  graphicStroke?: PointSymbolizer;
-  graphicFill?: PointSymbolizer;
-  join?: 'bevel' | 'round' | 'miter';
-  miterLimit?: number;
-  perpendicularOffset?: number;
+  /**
+   * Number of pixels into the dasharray to offset the drawing of the dash,
+   * used to shift the location of the lines and gaps in a dash.
+   */
   dashOffset?: number;
+  /**
+   * Draws a line casing outside of a line's actual path. Value indicates the
+   * width of the inner gap in pixels.
+   */
+  gapWidth?: number;
+  /**
+   * Defines a gradient with which to color a line feature.
+   */
+  gradient?: any[];
+  /**
+   * Renders the line with a repeated linear PointSymbolizer.
+   */
+  graphicStroke?: PointSymbolizer;
+  /**
+   * Renders the pixels of the line with a repeated pattern.
+   */
+  graphicFill?: PointSymbolizer;
+  /**
+   * Determines how lines are rendered at intersections of line segments.
+   * Possible values are mitre (sharp corner),  round (rounded corner), and bevel
+   * diagonal corner).
+   */
+  join?: 'bevel' | 'round' | 'miter';
+  /**
+   * Used to automatically convert miter joins to bevel joins for sharp angles.
+   */
+  miterLimit?: number;
+  /**
+   * If present, it makes the renderer draw a line parallel to the original one,
+   * at the given distance. When applied on lines, positive values generate a
+   * parallel line on the left hand side, negative values on the right hand side.
+   */
+  perpendicularOffset?: number;
+  /**
+   * Used to automatically convert round joins to miter joins for shallow angles.
+   */
   roundLimit?: number;
+  /**
+   * TODO: CHECK where this property came from and if we need it
+   */
   type?: string;
+  /**
+   * The width of the Line in pixels.
+   */
   width?: number;
 }
 
@@ -332,8 +600,8 @@ export interface RasterSymbolizer {
 export type Symbolizer = PointSymbolizer | LineSymbolizer | FillSymbolizer | RasterSymbolizer;
 
 /**
- * A Rule combines a specific amount of data (defined by a filter and a
- * scaleDenominator) and an associated symbolizer.
+ * A Rule combines a specific amount of data (defined by a Filter and a
+ * ScaleDenominator) and an associated Symbolizer.
  */
 export interface Rule {
   name: string;
