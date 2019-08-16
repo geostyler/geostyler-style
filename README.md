@@ -14,7 +14,7 @@ The *Geostyler Style* is not primarily intended to be a new standard for styling
 
 The main task of the format is to be an **exchange format** for all the other standards. It should be
 capable of storing the styling possibilities of SLD, OpenLayers-Styles, MapBox-Styles, CartoCSS, …
-while beeing easy read- and writable.
+while being easily read- and writable.
 
 On the other hand it is used by the [GeoStyler](https://github.com/terrestris/geostyler) to build the UI components. This
 way you should be able to configure any type of style via UI and also translate between all supported formats (in theory :grin:).
