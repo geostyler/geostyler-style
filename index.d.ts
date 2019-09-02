@@ -272,7 +272,9 @@ export interface TextSymbolizer extends BasePointSymbolizer {
    */
   maxWidth?: number;
   /**
-   * TODO: CHECK where this property came from and if we need it
+   * Property relevant for mapbox-styles.
+   * If true, icons will display without their corresponding text when the text
+   * collides with other symbols and the icon does not.
    */
   optional?: boolean;
   /**
@@ -352,7 +354,9 @@ export interface IconSymbolizer extends BasePointSymbolizer {
    */
   keepUpright?: boolean;
   /**
-   * TODO: CHECK where this property came from and if we need it
+   * Property relevant for mapbox-styles.
+   * If true, text will display without their corresponding icons when the icon
+   * collides with other symbols and the text does not.
    */
   optional?: boolean;
   /**
