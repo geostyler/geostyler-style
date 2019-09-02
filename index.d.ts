@@ -121,17 +121,6 @@ interface BaseSymbolizer {
    */
   opacity?: number;
   /**
-   * The offset of the Symbolizer as [x, y] coordinates. Positive values indicate
-   * right and down, while negative values indicate left and up.
-   * TODO: Duplicate with offset
-   */
-  translate?: [number, number];
-  /**
-   * Property relevant for mapbox-styles.
-   * Compare https://docs.mapbox.com/mapbox-gl-js/style-spec/#paint-symbol-icon-translate-anchor
-   */
-  translateAnchor?: 'map' | 'viewport';
-  /**
    * Defines whether the Symbolizer should be visibile or not.
    */
   visibility?: boolean;
@@ -149,9 +138,13 @@ export interface BasePointSymbolizer extends BaseSymbolizer {
   /**
    * The offset of the Symbolizer as [x, y] coordinates. Positive values indicate
    * right and down, while negative values indicate left and up.
-   * TODO: Duplicate with translate
    */
   offset?: [number, number];
+  /**
+   * Property relevant for mapbox-styles.
+   * Compare https://docs.mapbox.com/mapbox-gl-js/style-spec/#paint-symbol-icon-translate-anchor
+   */
+  offsetAnchor?: 'map' | 'viewport';
 }
 
 /**
@@ -339,7 +332,7 @@ export interface IconSymbolizer extends BasePointSymbolizer {
   allowOverlap?: boolean;
   /**
    * Part of the icon placed closest to the anchor. This may conflict with a set
-   * offset/translation.
+   * offset.
    */
   anchor?: 'center' | 'left' | 'right' | 'top' | 'bottom' | 'top-left' | 'top-right' | 'bottom-left' | 'bottom-right';
   /**
