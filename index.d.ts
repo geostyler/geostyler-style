@@ -147,11 +147,6 @@ export interface BasePointSymbolizer extends BaseSymbolizer {
    */
   avoidEdges?: boolean;
   /**
-   * Distance between two symbol anchors in pixels.
-   * TODO: Move to LineSymbolizer
-   */
-  spacing?: number;
-  /**
    * The offset of the Symbolizer as [x, y] coordinates. Positive values indicate
    * right and down, while negative values indicate left and up.
    * TODO: Duplicate with translate
@@ -502,6 +497,10 @@ export interface LineSymbolizer extends BaseSymbolizer {
    * Used to automatically convert round joins to miter joins for shallow angles.
    */
   roundLimit?: number;
+  /**
+   * Distance between two symbol anchors in pixels.
+   */
+  spacing?: number;
   /**
    * TODO: CHECK where this property came from and if we need it
    */
