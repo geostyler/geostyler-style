@@ -117,6 +117,7 @@ interface BaseSymbolizer {
    */
   color?: string;
   /**
+   * Determines the total opacity for the Symbolizer.
    * A value between 0 and 1. 0 is none opaque and 1 is full opaque.
    */
   opacity?: number;
