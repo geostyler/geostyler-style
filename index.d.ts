@@ -505,10 +505,6 @@ export interface LineSymbolizer extends BaseSymbolizer {
    */
   spacing?: number;
   /**
-   * TODO: CHECK where this property came from and if we need it
-   */
-  type?: string;
-  /**
    * The width of the Line in pixels.
    */
   width?: number;
