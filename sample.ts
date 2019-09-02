@@ -17,10 +17,8 @@ const sampleStyle: Style = {
         kind: 'Icon',
         visibility: false,
         allowOverlap: true,
-        ignorePlacement: false,
         optional: false,
-        rotationAlignment: 'map',
-        spacing: 21
+        rotationAlignment: 'map'
       }, {
         kind: 'Line',
         blur: 3,
@@ -28,6 +26,7 @@ const sampleStyle: Style = {
         join: 'round',
         perpendicularOffset: 10,
         width: 9,
+        spacing: 21,
         graphicStroke: {
           kind: 'Mark',
           wellKnownName: 'Square'
@@ -49,10 +48,8 @@ const sampleStyle: Style = {
         visibility: false,
         allowOverlap: true,
         letterSpacing: 12,
-        ignorePlacement: false,
         optional: false,
         rotationAlignment: 'map',
-        spacing: 21,
         haloColor: '#ff00aa',
         haloWidth: 4,
         fontStyle: 'italic',
@@ -73,8 +70,7 @@ const sampleStyle: Style = {
         kind: 'Mark',
         wellKnownName: 'Circle',
         visibility: false,
-        radius: 5,
-        spacing: 21
+        radius: 5
       }]
     },
     {
