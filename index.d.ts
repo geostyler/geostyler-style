@@ -182,6 +182,11 @@ export interface MarkSymbolizer extends BasePointSymbolizer {
    */
   rotate?: number;
   /**
+   * The opacity of the fill. A value between 0 and 1.
+   * 0 is none opaque and 1 is full opaque.
+   */
+  fillOpacity?: number;
+  /**
    * The color of the stroke represented as a hex-color string.
    */
   strokeColor?: string;
@@ -410,10 +415,20 @@ export interface FillSymbolizer extends BaseSymbolizer {
    */
   antialias?: boolean;
   /**
+   * The opacity of the fill. A value between 0 and 1.
+   * 0 is none opaque and 1 is full opaque.
+   */
+  fillOpacity?: number;
+  /**
    * The outline color as a hex-color string. Matches the value of fill-color if
    * unspecified.
    */
   outlineColor?: string;
+  /**
+   * The opacity of the outline. A value between 0 and 1.
+   * 0 is none opaque and 1 is full opaque.
+   */
+  outlineOpacity?: number;
   /**
    * The outline width in pixels.
    */
