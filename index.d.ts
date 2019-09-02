@@ -218,7 +218,6 @@ export interface TextSymbolizer extends BasePointSymbolizer {
   /**
    * If true, the text will be visible even if it collides with other previously
    * drawn symbols.
-   * TODO: Duplicate of ignorePlacement
    */
   allowOverlap?: boolean;
   /**
@@ -248,10 +247,6 @@ export interface TextSymbolizer extends BasePointSymbolizer {
    * Distance of halo to the font outline in pixels.
    */
   haloWidth?: number;
-  /**
-   * TODO: Duplicate of allowOverlap?
-   */
-  ignorePlacement?: boolean;
   /**
    * Text justification option to align the text.
    */
@@ -348,10 +343,6 @@ export interface IconSymbolizer extends BasePointSymbolizer {
    * Distance of halo to the font outline in pixels.
    */
   haloWidth?: number;
-  /**
-   * TODO: Duplicate of allowOverlap?
-   */
-  ignorePlacement?: boolean;
   /**
    * A path/URL to the icon image file.
    */
