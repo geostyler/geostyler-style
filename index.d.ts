@@ -117,20 +117,10 @@ interface BaseSymbolizer {
    */
   color?: string;
   /**
+   * Determines the total opacity for the Symbolizer.
    * A value between 0 and 1. 0 is none opaque and 1 is full opaque.
    */
   opacity?: number;
-  /**
-   * The offset of the Symbolizer as [x, y] coordinates. Positive values indicate
-   * right and down, while negative values indicate left and up.
-   * TODO: Duplicate with offset
-   */
-  translate?: [number, number];
-  /**
-   * Property relevant for mapbox-styles.
-   * Compare https://docs.mapbox.com/mapbox-gl-js/style-spec/#paint-symbol-icon-translate-anchor
-   */
-  translateAnchor?: 'map' | 'viewport';
   /**
    * Defines whether the Symbolizer should be visibile or not.
    */
@@ -147,16 +137,15 @@ export interface BasePointSymbolizer extends BaseSymbolizer {
    */
   avoidEdges?: boolean;
   /**
-   * Distance between two symbol anchors in pixels.
-   * TODO: Move to LineSymbolizer
-   */
-  spacing?: number;
-  /**
    * The offset of the Symbolizer as [x, y] coordinates. Positive values indicate
    * right and down, while negative values indicate left and up.
-   * TODO: Duplicate with translate
    */
   offset?: [number, number];
+  /**
+   * Property relevant for mapbox-styles.
+   * Compare https://docs.mapbox.com/mapbox-gl-js/style-spec/#paint-symbol-icon-translate-anchor
+   */
+  offsetAnchor?: 'map' | 'viewport';
 }
 
 /**
@@ -186,6 +175,11 @@ export interface MarkSymbolizer extends BasePointSymbolizer {
    * The rotation of the Symbolizer in degrees. Value should be between 0 and 360.
    */
   rotate?: number;
+  /**
+   * The opacity of the fill. A value between 0 and 1.
+   * 0 is none opaque and 1 is full opaque.
+   */
+  fillOpacity?: number;
   /**
    * The color of the stroke represented as a hex-color string.
    */
@@ -225,7 +219,6 @@ export interface TextSymbolizer extends BasePointSymbolizer {
   /**
    * If true, the text will be visible even if it collides with other previously
    * drawn symbols.
-   * TODO: Duplicate of ignorePlacement
    */
   allowOverlap?: boolean;
   /**
@@ -256,10 +249,6 @@ export interface TextSymbolizer extends BasePointSymbolizer {
    */
   haloWidth?: number;
   /**
-   * TODO: Duplicate of allowOverlap?
-   */
-  ignorePlacement?: boolean;
-  /**
    * Text justification option to align the text.
    */
   justify?: 'left' | 'center' | 'right';
@@ -284,7 +273,9 @@ export interface TextSymbolizer extends BasePointSymbolizer {
    */
   maxWidth?: number;
   /**
-   * TODO: CHECK where this property came from and if we need it
+   * Property relevant for mapbox-styles.
+   * If true, icons will display without their corresponding text when the text
+   * collides with other symbols and the icon does not.
    */
   optional?: boolean;
   /**
@@ -339,7 +330,7 @@ export interface IconSymbolizer extends BasePointSymbolizer {
   allowOverlap?: boolean;
   /**
    * Part of the icon placed closest to the anchor. This may conflict with a set
-   * offset/translation.
+   * offset.
    */
   anchor?: 'center' | 'left' | 'right' | 'top' | 'bottom' | 'top-left' | 'top-right' | 'bottom-left' | 'bottom-right';
   /**
@@ -356,10 +347,6 @@ export interface IconSymbolizer extends BasePointSymbolizer {
    */
   haloWidth?: number;
   /**
-   * TODO: Duplicate of allowOverlap?
-   */
-  ignorePlacement?: boolean;
-  /**
    * A path/URL to the icon image file.
    */
   image?: string;
@@ -368,7 +355,9 @@ export interface IconSymbolizer extends BasePointSymbolizer {
    */
   keepUpright?: boolean;
   /**
-   * TODO: CHECK where this property came from and if we need it
+   * Property relevant for mapbox-styles.
+   * If true, text will display without their corresponding icons when the icon
+   * collides with other symbols and the text does not.
    */
   optional?: boolean;
   /**
@@ -415,10 +404,20 @@ export interface FillSymbolizer extends BaseSymbolizer {
    */
   antialias?: boolean;
   /**
+   * The opacity of the fill. A value between 0 and 1.
+   * 0 is none opaque and 1 is full opaque.
+   */
+  fillOpacity?: number;
+  /**
    * The outline color as a hex-color string. Matches the value of fill-color if
    * unspecified.
    */
   outlineColor?: string;
+  /**
+   * The opacity of the outline. A value between 0 and 1.
+   * 0 is none opaque and 1 is full opaque.
+   */
+  outlineOpacity?: number;
   /**
    * The outline width in pixels.
    */
@@ -503,9 +502,9 @@ export interface LineSymbolizer extends BaseSymbolizer {
    */
   roundLimit?: number;
   /**
-   * TODO: CHECK where this property came from and if we need it
+   * Distance between two symbol anchors in pixels.
    */
-  type?: string;
+  spacing?: number;
   /**
    * The width of the Line in pixels.
    */
