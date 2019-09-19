@@ -1,12 +1,12 @@
 # geostyler-style
 
-[![Greenkeeper badge](https://badges.greenkeeper.io/terrestris/geostyler-style.svg)](https://greenkeeper.io/)
-[![Build Status](https://travis-ci.com/terrestris/geostyler-style.svg?branch=master)](https://travis-ci.com/terrestris/geostyler-style)
+[![Greenkeeper badge](https://badges.greenkeeper.io/geostyler/geostyler-style.svg)](https://greenkeeper.io/)
+[![Build Status](https://travis-ci.com/geostyler/geostyler-style.svg?branch=master)](https://travis-ci.com/geostyler/geostyler-style)
 
-TypeScript Declaration File for the the [GeoStyler](https://github.com/terrestris/geostyler) Style.
+TypeScript Declaration File for the the [GeoStyler](https://github.com/geostyler/geostyler) Style.
 
 ### Issues
-Please provide related issues here https://github.com/terrestris/geostyler/issues
+Please provide related issues here https://github.com/geostyler/geostyler/issues
 
 ### Why another style format?
 
@@ -16,5 +16,5 @@ The main task of the format is to be an **exchange format** for all the other st
 capable of storing the styling possibilities of SLD, OpenLayers-Styles, MapBox-Styles, CartoCSS (and others)
 while being easily read- and writable.
 
-On the other hand it is used by the [GeoStyler](https://github.com/terrestris/geostyler) to build the UI components. This
+On the other hand it is used by the [GeoStyler](https://github.com/geostyler/geostyler) to build the UI components. This
 way you should be able to configure any type of style via UI and also translate between all supported formats (in theory :grin:).
