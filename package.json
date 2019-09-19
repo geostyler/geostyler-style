@@ -11,7 +11,7 @@
   ],
   "scripts": {
     "lint": "tslint --project tsconfig.json --config tslint.json && tsc --noEmit --project tsconfig.json",
-    "release": "np --no-yarn && git push https://github.com/terrestris/geostyler-style.git master --tags"
+    "release": "np --no-yarn && git push https://github.com/geostyler/geostyler-style.git master --tags"
   },
   "devDependencies": {
     "np": "^5.0.3",
@@ -20,12 +20,12 @@
   },
   "repository": {
     "type": "git",
-    "url": "git+https://github.com/terrestris/geostyler-style.git"
+    "url": "git+https://github.com/geostyler/geostyler-style.git"
   },
   "author": "",
   "license": "BSD-2-Clause",
   "bugs": {
-    "url": "https://github.com/terrestris/geostyler/issues"
+    "url": "https://github.com/geostyler/geostyler/issues"
   },
-  "homepage": "https://github.com/terrestris/geostyler-style#readme"
+  "homepage": "https://github.com/geostyler/geostyler-style#readme"
 }
