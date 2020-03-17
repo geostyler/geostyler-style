@@ -15,7 +15,7 @@
   },
   "devDependencies": {
     "np": "^6.2.0",
-    "tslint": "^5.18.0",
+    "tslint": "^6.1.0",
     "typescript": "^3.5.2"
   },
   "repository": {
