@@ -152,9 +152,9 @@ export interface BasePointSymbolizer extends BaseSymbolizer {
  * Supported WellKnownNames
  */
 export type WellKnownName = 'Circle' | 'Square' | 'Triangle' | 'Star' | 'Cross' | 'X'
-                            | 'shape://vertline' | 'shape://horline' | 'shape://slash'
-                            | 'shape://backslash' | 'shape://dot' | 'shape://plus'
-                            | 'shape://times' | 'shape://oarrow' | 'shape://carrow' ;
+| 'shape://vertline' | 'shape://horline' | 'shape://slash'
+| 'shape://backslash' | 'shape://dot' | 'shape://plus'
+| 'shape://times' | 'shape://oarrow' | 'shape://carrow' ;
 
 /**
  * MarkSymbolizer describes the style representation of POINT data, if styled as
@@ -535,9 +535,9 @@ export type ColorMapType = 'ramp' | 'intervals' | 'values';
  * A ColorMap defines the color values for the pixels of a raster image.
  */
 export interface ColorMap {
-    type: ColorMapType;
-    colorMapEntries?: ColorMapEntry[];
-    extended?: boolean;
+  type: ColorMapType;
+  colorMapEntries?: ColorMapEntry[];
+  extended?: boolean;
 }
 
 /**
@@ -642,7 +642,7 @@ export interface UnsupportedProperties {
     MarkSymbolizer?: any;
     IconSymbolizer?: any;
     RasterSymbolizer?: any;
-  }
+  };
 }
 
 /**
@@ -653,6 +653,12 @@ export interface StyleParser {
    * The name of the Parser
    */
   title: string;
+
+  /**
+   * Object specifying which properties are not supported. MUST be a static
+   * class attribute.
+   */
+  unsupportedProperties?: UnsupportedProperties;
 
   /**
    * Parses the inputStyle and transforms it to the GeoStyler Style
@@ -729,11 +735,4 @@ export interface StyleParser {
    * @param geoStylerSymbolizer Symbolizer
    */
   writeSymbolizer?(geoStylerSymbolizer: Symbolizer): Promise<any>;
-
-  /**
-   * Object specifying which properties are not supported. MUST be a static
-   * class attribute.
-   */
-  unsupportedProperties?: UnsupportedProperties;
 }
-
