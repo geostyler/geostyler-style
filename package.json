@@ -10,13 +10,16 @@
     "README.md"
   ],
   "scripts": {
-    "lint": "tslint --project tsconfig.json --config tslint.json && tsc --noEmit --project tsconfig.json",
+    "lint": "eslint -c .eslintrc.js --ext .ts . && tsc --noEmit --project tsconfig.json",
     "release": "np --no-yarn && git push https://github.com/geostyler/geostyler-style.git master --tags"
   },
   "devDependencies": {
+    "@typescript-eslint/eslint-plugin": "^2.26.0",
+    "@typescript-eslint/eslint-plugin-tslint": "^2.26.0",
+    "@typescript-eslint/parser": "^2.26.0",
+    "eslint": "^6.8.0",
     "np": "^6.2.0",
-    "tslint": "^5.18.0",
-    "typescript": "^3.5.2"
+    "typescript": "^3.8.3"
   },
   "repository": {
     "type": "git",
@@ -27,5 +30,6 @@
   "bugs": {
     "url": "https://github.com/geostyler/geostyler/issues"
   },
-  "homepage": "https://github.com/geostyler/geostyler-style#readme"
+  "homepage": "https://github.com/geostyler/geostyler-style#readme",
+  "dependencies": {}
 }
