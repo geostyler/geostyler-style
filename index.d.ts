@@ -150,11 +150,20 @@ export interface BasePointSymbolizer extends BaseSymbolizer {
 
 /**
  * Supported WellKnownNames
+ * Note that due to TypeScript limitations any string will be valid for this type; this will not change
+ * until regexp or equivalent is supported, see:
+ * https://github.com/microsoft/TypeScript/issues/6579
+ *
+ * Important: Geostyler Style Parsers are only expected to support the values listed below,
+ * as well as font-based symbols following Geotools/Geoserver syntax:
+ * ttf://<font name>#<hex code>
  */
 export type WellKnownName = 'Circle' | 'Square' | 'Triangle' | 'Star' | 'Cross' | 'X'
 | 'shape://vertline' | 'shape://horline' | 'shape://slash'
 | 'shape://backslash' | 'shape://dot' | 'shape://plus'
-| 'shape://times' | 'shape://oarrow' | 'shape://carrow' ;
+| 'shape://times' | 'shape://oarrow' | 'shape://carrow'
+| 'ttf://Webdings#0x0064'
+| string;
 
 /**
  * MarkSymbolizer describes the style representation of POINT data, if styled as

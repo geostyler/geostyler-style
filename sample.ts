@@ -71,6 +71,13 @@ const sampleStyle: Style = {
         wellKnownName: 'Circle',
         visibility: false,
         radius: 5
+      }, {
+        kind: 'Mark',
+        wellKnownName: 'ttf://Webdings#0x68',
+        radius: 12,
+        color: '#8a000e',
+        strokeOpacity: 0.7,
+        strokeColor: '#ffffff'
       }]
     },
     {
