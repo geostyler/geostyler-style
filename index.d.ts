@@ -626,31 +626,49 @@ export interface Style {
 
 /**
  * Interface for defining unsupported properties in the parsers.
- * Value of each property must either be 'undefined', or an object whose (sub-)subproperties have the value 'undefined'.
  */
 export interface UnsupportedProperties {
-  ScaleDenominator?: 'unsupported';
-  Filter?: {
-    '&&'?: 'unsupported';
-    '!'?: 'unsupported';
-    '||'?: 'unsupported';
-    '>'?: 'unsupported';
-    '>='?: 'unsupported';
-    '=='?: 'unsupported';
-    '<'?: 'unsupported';
-    '<='?: 'unsupported';
-    '!='?: 'unsupported';
-    '*='?: 'unsupported';
+  ScaleDenominator?: SupportDef;
+  Filter?: SupportDef | {
+    '&&'?: SupportDef;
+    '!'?: SupportDef;
+    '||'?: SupportDef;
+    '>'?: SupportDef;
+    '>='?: SupportDef;
+    '=='?: SupportDef;
+    '<'?: SupportDef;
+    '<='?: SupportDef;
+    '!='?: SupportDef;
+    '*='?: SupportDef;
   };
-  Symbolizer?: {
-    PointSymbolizer?: any;
-    LineSymbolizer?: any;
-    FillSymbolizer?: any;
-    MarkSymbolizer?: any;
-    IconSymbolizer?: any;
-    RasterSymbolizer?: any;
+  Symbolizer?: SupportDef | {
+    PointSymbolizer?: {
+      [key in keyof Required<PointSymbolizer>]?: SupportDef
+    };
+    LineSymbolizer?: {
+      [key in keyof Required<LineSymbolizer>]?: SupportDef
+    };
+    FillSymbolizer?: {
+      [key in keyof Required<FillSymbolizer>]?: SupportDef
+    };
+    MarkSymbolizer?: {
+      [key in keyof Required<MarkSymbolizer>]?: SupportDef
+    };
+    IconSymbolizer?: {
+      [key in keyof Required<IconSymbolizer>]?: SupportDef
+    };
+    RasterSymbolizer?: {
+      [key in keyof Required<RasterSymbolizer>]?: SupportDef
+    };
   };
 }
+
+export type SupportLevel = 'full' | 'partial' | 'none';
+export type SupportInfo = {
+  support: SupportLevel;
+  info?: string;
+};
+export type SupportDef = SupportInfo | SupportLevel;
 
 /**
  * Interface, which has to be implemented by all GeoStyler style parser classes.
@@ -662,8 +680,7 @@ export interface StyleParser {
   title: string;
 
   /**
-   * Object specifying which properties are not supported. MUST be a static
-   * class attribute.
+   * Object specifying which properties are not or just supported.
    */
   unsupportedProperties?: UnsupportedProperties;
 
