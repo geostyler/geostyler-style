@@ -5,21 +5,27 @@
   "main": "index.d.ts",
   "files": [
     "index.d.ts",
+    "schema.json",
     "rastersample.ts",
     "sample.ts",
     "README.md"
   ],
   "scripts": {
     "lint": "eslint -c .eslintrc.js --ext .ts . && tsc --noEmit --project tsconfig.json",
-    "release": "np --no-yarn && git push https://github.com/geostyler/geostyler-style.git master --tags"
+    "release": "np --no-yarn",
+    "generate-schema": "typescript-json-schema index.d.ts Style --id http://geostyler/geostyler-style.json > schema.json",
+    "prepublishOnly": "npm run generate-schema"
   },
   "devDependencies": {
-    "@typescript-eslint/eslint-plugin": "^2.26.0",
-    "@typescript-eslint/eslint-plugin-tslint": "^2.26.0",
-    "@typescript-eslint/parser": "^2.26.0",
-    "eslint": "^6.8.0",
-    "np": "^6.2.0",
-    "typescript": "^3.8.3"
+    "@terrestris/eslint-config-typescript": "^1.0.0",
+    "@typescript-eslint/eslint-plugin": "^4.18.0",
+    "@typescript-eslint/eslint-plugin-tslint": "^4.18.0",
+    "@typescript-eslint/parser": "^4.18.0",
+    "eslint": "^7.22.0",
+    "eslint-plugin-react-hooks": "^4.2.0",
+    "np": "^7.4.0",
+    "typescript": "^4.2.3",
+    "typescript-json-schema": "^0.50.0"
   },
   "repository": {
     "type": "git",
