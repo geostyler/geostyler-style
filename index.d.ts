@@ -19,6 +19,16 @@ export interface ScaleDenominator {
 export type StyleType = 'Point' | 'Fill' | 'Line' | 'Raster';
 
 /**
+ * A name of a property of the data.
+ */
+export type PropertyName = string;
+
+/**
+ * A value of a property of the data.
+ */
+export type PropertyValue = string|number|boolean|null;
+
+/**
  * The possible Operator used for comparison Filters.
  */
 export type ComparisonOperator = '==' | '*=' | '!=' | '<' | '<=' | '>' | '>=';
@@ -34,25 +44,25 @@ export type CombinationOperator = '&&' | '||';
 export type NegationOperator = '!';
 
 /**
- * All operators.
+ * The Operator used for functional Filters.
  */
-export type Operator = ComparisonOperator | CombinationOperator | NegationOperator;
+export type StrMatchesFunctionOperator = 'FN_strMatches';
 
 /**
- * A base interface for Filter.
+ * All operators.
  */
-export interface Filter extends Array<any> {}
+export type Operator = ComparisonOperator | CombinationOperator | NegationOperator | StrMatchesFunctionOperator;
 
 /**
  * A FunctionFilter that expects a string (propertyName) as second arguement and
  * a regular expression as third argument. An actual parser implementation has to
  * return a value for this function expression.
  */
-export interface StrMatchesFunctionFilter extends Filter {
-  0: 'FN_strMatches';
-  1: string;
-  2: RegExp;
-}
+export type StrMatchesFunctionFilter = [
+  StrMatchesFunctionOperator,
+  PropertyName,
+  RegExp
+];
 
 /**
  * A Filter that expresses a function.
@@ -63,11 +73,11 @@ export type FunctionFilter = StrMatchesFunctionFilter;
  * A ComparisonFilter compares a value of an object (by key) with an expected
  * value.
  */
-export interface ComparisonFilter extends Filter {
-  0: ComparisonOperator;
-  1: string | FunctionFilter;
-  2: string|number|boolean|null;
-}
+export type ComparisonFilter = [
+  ComparisonOperator,
+  PropertyName | FunctionFilter,
+  PropertyValue
+];
 
 /**
  * A CombinationFilter combines N Filters with a logical OR / AND operator.
@@ -76,28 +86,20 @@ export interface ComparisonFilter extends Filter {
  * type 'rest' parameters of an array. Nevertheless, theoreticaly you can
  * combine >10 filters.
  */
-export interface CombinationFilter extends Filter  {
-  0: CombinationOperator;
-  1: Filter;
-  2: Filter;
-  3?: Filter;
-  4?: Filter;
-  5?: Filter;
-  6?: Filter;
-  7?: Filter;
-  8?: Filter;
-  9?: Filter;
-  10?: Filter;
-  11?: Filter;
-}
+export type CombinationFilter = [
+  CombinationOperator,
+  ...Filter[]
+];
 
 /**
  * A NegationFilter negates a given Filter.
  */
-export interface NegationFilter extends Filter  {
-  0: NegationOperator;
-  1: Filter;
-}
+export type NegationFilter = [
+  NegationOperator,
+  Filter
+];
+
+export type Filter = FunctionFilter | ComparisonFilter | NegationFilter | CombinationFilter;
 
 /**
  * The kind of the Symbolizer
