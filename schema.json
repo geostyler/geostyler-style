@@ -59,6 +59,24 @@
             ],
             "type": "string"
         },
+        "CombinationFilter": {
+            "additionalItems": {
+                "$ref": "http://geostyler/geostyler-style.json#/definitions/Filter"
+            },
+            "description": "A CombinationFilter combines N Filters with a logical OR / AND operator.",
+            "items": [
+                {
+                    "description": "The possible Operators used for combination Filters.",
+                    "enum": [
+                        "&&",
+                        "||"
+                    ],
+                    "type": "string"
+                }
+            ],
+            "minItems": 1,
+            "type": "array"
+        },
         "ContrastEnhancement": {
             "description": "A ContrastEnhancement defines how the contrast of image data should be enhanced.",
             "properties": {
@@ -140,6 +158,106 @@
                 }
             },
             "type": "object"
+        },
+        "Filter": {
+            "anyOf": [
+                {
+                    "description": "A FunctionFilter that expects a string (propertyName) as second argument and\na regular expression as third argument. An actual parser implementation has to\nreturn a value for this function expression.",
+                    "items": [
+                        {
+                            "enum": [
+                                "FN_strMatches"
+                            ],
+                            "type": "string"
+                        },
+                        {
+                            "type": "string"
+                        },
+                        {
+                            "$ref": "http://geostyler/geostyler-style.json#/definitions/RegExp"
+                        }
+                    ],
+                    "maxItems": 3,
+                    "minItems": 3,
+                    "type": "array"
+                },
+                {
+                    "description": "A ComparisonFilter compares a value of an object (by key) with an expected\nvalue.",
+                    "items": [
+                        {
+                            "description": "The possible Operators used for comparison Filters.",
+                            "enum": [
+                                "!=",
+                                "*=",
+                                "<",
+                                "<=",
+                                "==",
+                                ">",
+                                ">="
+                            ],
+                            "type": "string"
+                        },
+                        {
+                            "anyOf": [
+                                {
+                                    "description": "A FunctionFilter that expects a string (propertyName) as second argument and\na regular expression as third argument. An actual parser implementation has to\nreturn a value for this function expression.",
+                                    "items": [
+                                        {
+                                            "enum": [
+                                                "FN_strMatches"
+                                            ],
+                                            "type": "string"
+                                        },
+                                        {
+                                            "type": "string"
+                                        },
+                                        {
+                                            "$ref": "http://geostyler/geostyler-style.json#/definitions/RegExp"
+                                        }
+                                    ],
+                                    "maxItems": 3,
+                                    "minItems": 3,
+                                    "type": "array"
+                                },
+                                {
+                                    "type": "string"
+                                }
+                            ]
+                        },
+                        {
+                            "description": "A value of a property of the data.",
+                            "type": [
+                                "string",
+                                "number",
+                                "boolean"
+                            ]
+                        }
+                    ],
+                    "maxItems": 3,
+                    "minItems": 3,
+                    "type": "array"
+                },
+                {
+                    "$ref": "http://geostyler/geostyler-style.json#/definitions/CombinationFilter"
+                },
+                {
+                    "description": "A NegationFilter negates a given Filter.",
+                    "items": [
+                        {
+                            "enum": [
+                                "!"
+                            ],
+                            "type": "string"
+                        },
+                        {
+                            "$ref": "http://geostyler/geostyler-style.json#/definitions/Filter"
+                        }
+                    ],
+                    "maxItems": 2,
+                    "minItems": 2,
+                    "type": "array"
+                }
+            ]
         },
         "GrayChannel": {
             "description": "A GrayChannel defines how a single dataset band is mapped to a grayscale channel.",
@@ -592,17 +710,43 @@
             },
             "type": "object"
         },
+        "RegExp": {
+            "properties": {
+                "dotAll": {
+                    "type": "boolean"
+                },
+                "flags": {
+                    "type": "string"
+                },
+                "global": {
+                    "type": "boolean"
+                },
+                "ignoreCase": {
+                    "type": "boolean"
+                },
+                "lastIndex": {
+                    "type": "number"
+                },
+                "multiline": {
+                    "type": "boolean"
+                },
+                "source": {
+                    "type": "string"
+                },
+                "sticky": {
+                    "type": "boolean"
+                },
+                "unicode": {
+                    "type": "boolean"
+                }
+            },
+            "type": "object"
+        },
         "Rule": {
             "description": "A Rule combines a specific amount of data (defined by a Filter and a\nScaleDenominator) and an associated Symbolizer.",
             "properties": {
                 "filter": {
-                    "additionalProperties": false,
-                    "description": "A base interface for Filter.",
-                    "patternProperties": {
-                        "^[0-9]+$": {
-                        }
-                    },
-                    "type": "object"
+                    "$ref": "http://geostyler/geostyler-style.json#/definitions/Filter"
                 },
                 "name": {
                     "type": "string"
@@ -850,3 +994,4 @@
     },
     "type": "object"
 }
+
