@@ -26,7 +26,7 @@ export type PropertyName = string;
 /**
  * A value of a property of the data.
  */
-export type PropertyValue = string|number|boolean|null;
+export type PropertyValue = string | number | boolean | null;
 
 /**
  * The possible Operators used for comparison Filters.
