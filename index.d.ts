@@ -29,12 +29,12 @@ export type PropertyName = string;
 export type PropertyValue = string|number|boolean|null;
 
 /**
- * The possible Operator used for comparison Filters.
+ * The possible Operators used for comparison Filters.
  */
 export type ComparisonOperator = '==' | '*=' | '!=' | '<' | '<=' | '>' | '>=';
 
 /**
- * The possible Operator used for combination Filters.
+ * The possible Operators used for combination Filters.
  */
 export type CombinationOperator = '&&' | '||';
 
@@ -54,7 +54,7 @@ export type StrMatchesFunctionOperator = 'FN_strMatches';
 export type Operator = ComparisonOperator | CombinationOperator | NegationOperator | StrMatchesFunctionOperator;
 
 /**
- * A FunctionFilter that expects a string (propertyName) as second arguement and
+ * A FunctionFilter that expects a string (propertyName) as second argument and
  * a regular expression as third argument. An actual parser implementation has to
  * return a value for this function expression.
  */
@@ -81,10 +81,6 @@ export type ComparisonFilter = [
 
 /**
  * A CombinationFilter combines N Filters with a logical OR / AND operator.
- *
- * This is just type secure for a maximum of 10 combined filters as you can't
- * type 'rest' parameters of an array. Nevertheless, theoreticaly you can
- * combine >10 filters.
  */
 export type CombinationFilter = [
   CombinationOperator,
