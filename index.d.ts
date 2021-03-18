@@ -663,11 +663,23 @@ export interface UnsupportedProperties {
   };
 }
 
+/**
+ * Level of support for a functionality.
+ */
 export type SupportLevel = 'full' | 'partial' | 'none';
+
+/**
+ * Detailed information about the support of a functionality.
+ * Can contain an info text.
+ */
 export type SupportInfo = {
   support: SupportLevel;
   info?: string;
 };
+
+/**
+ * Defines in which way a functionality is supported.
+ */
 export type SupportDef = SupportInfo | SupportLevel;
 
 /**
