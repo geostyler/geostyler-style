@@ -692,7 +692,7 @@ export interface StyleParser {
   title: string;
 
   /**
-   * Object specifying which properties are not or just supported.
+   * Object specifying which properties are not or just partially supported.
    */
   unsupportedProperties?: UnsupportedProperties;
 
