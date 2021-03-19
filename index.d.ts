@@ -666,7 +666,7 @@ export interface UnsupportedProperties {
 /**
  * Level of support for a functionality.
  */
-export type SupportLevel = 'full' | 'partial' | 'none';
+export type SupportLevel = 'partial' | 'none';
 
 /**
  * Detailed information about the support of a functionality.
