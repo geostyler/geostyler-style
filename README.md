@@ -15,3 +15,11 @@ while being easily read- and writable.
 
 On the other hand it is used by the [GeoStyler](https://github.com/geostyler/geostyler) to build the UI components. This
 way you should be able to configure any type of style via UI and also translate between all supported formats (in theory :grin:).
+
+### TypeGuards
+
+In addition to the definition itself, there are some custom [TypeGuards](https://basarat.gitbook.io/typescript/type-system/typeguard#user-defined-type-guards) that can be used as utility methods to enhance the coding experience with the geostyler-style.
+
+```typescript
+import { isFilter, isSymbolizer } from 'geostyler-style/typeguards';
+```
