@@ -642,22 +642,22 @@ export interface UnsupportedProperties {
     '*='?: SupportDef;
   };
   Symbolizer?: SupportDef | {
-    PointSymbolizer?: {
+    PointSymbolizer?: SupportDef | {
       [key in keyof Required<PointSymbolizer>]?: SupportDef
     };
-    LineSymbolizer?: {
+    LineSymbolizer?: SupportDef | {
       [key in keyof Required<LineSymbolizer>]?: SupportDef
     };
-    FillSymbolizer?: {
+    FillSymbolizer?: SupportDef | {
       [key in keyof Required<FillSymbolizer>]?: SupportDef
     };
-    MarkSymbolizer?: {
+    MarkSymbolizer?: SupportDef | {
       [key in keyof Required<MarkSymbolizer>]?: SupportDef
     };
-    IconSymbolizer?: {
+    IconSymbolizer?: SupportDef | {
       [key in keyof Required<IconSymbolizer>]?: SupportDef
     };
-    RasterSymbolizer?: {
+    RasterSymbolizer?: SupportDef | {
       [key in keyof Required<RasterSymbolizer>]?: SupportDef
     };
   };
