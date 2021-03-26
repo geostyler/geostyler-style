@@ -38,6 +38,7 @@
   },
   "homepage": "https://github.com/geostyler/geostyler-style#readme",
   "dependencies": {
+    "@types/lodash": "^4.14.168",
     "lodash": "^4.17.21"
   }
 }

@@ -107,7 +107,7 @@ export const isTextSymbolizer = (got: any): got is TextSymbolizer => {
   return got.kind === 'Text';
 };
 export const isMarkSymbolizer = (got: any): got is MarkSymbolizer => {
-  return got.kind === 'Mark';
+  return got.kind === 'Mark' && _isString(got.wellKnownName);
 };
 export const isLineSymbolizer = (got: any): got is LineSymbolizer => {
   return got.kind === 'Line';
