@@ -5,9 +5,9 @@
   "main": "index.d.ts",
   "files": [
     "index.d.ts",
+    "examples/**",
     "schema.json",
-    "rastersample.ts",
-    "sample.ts",
+    "typeguards.ts",
     "README.md"
   ],
   "scripts": {
@@ -37,5 +37,7 @@
     "url": "https://github.com/geostyler/geostyler/issues"
   },
   "homepage": "https://github.com/geostyler/geostyler-style#readme",
-  "dependencies": {}
+  "dependencies": {
+    "lodash": "^4.17.21"
+  }
 }
