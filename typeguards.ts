@@ -34,7 +34,7 @@ import {
 
 // PropertyValue
 export const isPropertyValue = (got: any): got is PropertyValue => {
-  return _isString(got) || _isNumber(got) || _isBoolean() || got === null;
+  return _isString(got) || _isNumber(got) || _isBoolean(got) || got === null;
 };
 
 // ScaleDenominator
@@ -68,7 +68,8 @@ export const isStrMatchesFunctionOperator = (got: any): got is StrMatchesFunctio
 export const isFilter = (got: any): got is Filter => {
   return isComparisonFilter(got) ||
     isCombinationFilter(got) ||
-    isFunctionFilter(got);
+    isFunctionFilter(got) ||
+    isNegationFilter(got);
 };
 export const isComparisonFilter = (got: any): got is ComparisonFilter => {
   return Array.isArray(got) &&
@@ -81,7 +82,7 @@ export const isCombinationFilter = (got: any): got is CombinationFilter => {
   return Array.isArray(got) &&
     got.length >= 3 &&
     isCombinationOperator(got[0]) &&
-    got.every(arg => isFilter(arg));
+    got.every((arg, index) => index === 0 || isFilter(arg));
 };
 export const isNegationFilter = (got: any): got is NegationFilter => {
   return Array.isArray(got) &&
