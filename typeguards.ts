@@ -102,7 +102,7 @@ export const isSymbolizer = (got: any): got is BaseSymbolizer => {
   return ['Fill', 'Icon', 'Line', 'Text', 'Mark', 'Raster'].includes(got?.kind);
 };
 export const isPointSymbolizer = (got: any): got is BasePointSymbolizer => {
-  return ['Icon', 'Text', 'Mark'].includes(got.kind);
+  return ['Icon', 'Text', 'Mark'].includes(got?.kind);
 };
 export const isIconSymbolizer = (got: any): got is IconSymbolizer => {
   return got?.kind === 'Icon';
@@ -111,7 +111,7 @@ export const isTextSymbolizer = (got: any): got is TextSymbolizer => {
   return got?.kind === 'Text';
 };
 export const isMarkSymbolizer = (got: any): got is MarkSymbolizer => {
-  return got?.kind === 'Mark' && _isString(got.wellKnownName);
+  return got?.kind === 'Mark' && _isString(got?.wellKnownName);
 };
 export const isLineSymbolizer = (got: any): got is LineSymbolizer => {
   return got?.kind === 'Line';
@@ -127,6 +127,6 @@ export const isRasterSymbolizer = (got: any): got is RasterSymbolizer => {
 export const isRule = (got: any): got is Rule => {
   return _isString(got?.name) &&
     (got?.filter ? isFilter(got.filter) : true) &&
-    (got.scaleDenominator ? isScaleDenominator(got.scaleDenominator) : true) &&
-    got.symbolizers.every((arg: any) => isSymbolizer(arg));
+    (got?.scaleDenominator ? isScaleDenominator(got.scaleDenominator) : true) &&
+    got?.symbolizers.every((arg: any) => isSymbolizer(arg));
 };
