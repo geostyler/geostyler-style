@@ -82,7 +82,7 @@ export const isCombinationFilter = (got: any): got is CombinationFilter => {
   return Array.isArray(got) &&
     got.length >= 3 &&
     isCombinationOperator(got[0]) &&
-    got.every((arg, index) => index === 0 ||isFilter(arg));
+    got.every((arg, index) => index === 0 || isFilter(arg));
 };
 export const isNegationFilter = (got: any): got is NegationFilter => {
   return Array.isArray(got) &&
