@@ -44,7 +44,7 @@ export const isScaleDenominator = (got: any): got is ScaleDenominator => {
     (got.max ? isFilter(got.max) : true);
 };
 
-// Opeartors
+// Operators
 export const isOperator = (got: any): got is Operator => {
   return isComparisonOperator(got) ||
     isCombinationOperator(got) ||
@@ -72,22 +72,26 @@ export const isFilter = (got: any): got is Filter => {
 };
 export const isComparisonFilter = (got: any): got is ComparisonFilter => {
   return Array.isArray(got) &&
+    got.length === 3 &&
     isComparisonOperator(got[0]) &&
     (isFunctionFilter(got[1]) || _isString(got[1])) &&
     isPropertyValue(got[2]);
 };
 export const isCombinationFilter = (got: any): got is CombinationFilter => {
   return Array.isArray(got) &&
+    got.length >= 3 &&
     isCombinationOperator(got[0]) &&
-    !got.some(arg => !isFilter(arg)); // does not contain anything that is not a filter
+    got.every(arg => isFilter(arg));
 };
 export const isNegationFilter = (got: any): got is NegationFilter => {
   return Array.isArray(got) &&
+    got.length === 2 &&
     isNegationOpeartor(got[0]) &&
     isFilter(got[1]);
 };
 export const isFunctionFilter = (got: any): got is FunctionFilter => {
   return Array.isArray(got) &&
+    got.length === 3 &&
     isStrMatchesFunctionOperator(got[0]) &&
     _isString(got[1]) &&
     _isRegExp(got[2]);
@@ -124,5 +128,5 @@ export const isRule = (got: any): got is Rule => {
   return _isString(got.name) &&
     (got.filter ? isFilter(got.filter) : true) &&
     (got.scaleDenominator ? isScaleDenominator(got.scaleDenominator) : true) &&
-    !got.symbolizers.some((arg: any) => !isSymbolizer(arg)); // does not contain anything that is not a symbolizer
+    got.symbolizers.every((arg: any) => isSymbolizer(arg));
 };
