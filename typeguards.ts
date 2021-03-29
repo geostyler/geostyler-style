@@ -39,7 +39,7 @@ export const isPropertyValue = (got: any): got is PropertyValue => {
 
 // ScaleDenominator
 export const isScaleDenominator = (got: any): got is ScaleDenominator => {
-  return (got.min || got.max) &&
+  return (got?.min || got?.max) &&
     (got.min ? isFilter(got.min) : true) &&
     (got.max ? isFilter(got.max) : true);
 };
@@ -99,34 +99,34 @@ export const isFunctionFilter = (got: any): got is FunctionFilter => {
 
 // Symbolizers
 export const isSymbolizer = (got: any): got is BaseSymbolizer => {
-  return ['Fill', 'Icon', 'Line', 'Text', 'Mark', 'Raster'].includes(got.kind);
+  return ['Fill', 'Icon', 'Line', 'Text', 'Mark', 'Raster'].includes(got?.kind);
 };
 export const isPointSymbolizer = (got: any): got is BasePointSymbolizer => {
   return ['Icon', 'Text', 'Mark'].includes(got.kind);
 };
 export const isIconSymbolizer = (got: any): got is IconSymbolizer => {
-  return got.kind === 'Icon';
+  return got?.kind === 'Icon';
 };
 export const isTextSymbolizer = (got: any): got is TextSymbolizer => {
-  return got.kind === 'Text';
+  return got?.kind === 'Text';
 };
 export const isMarkSymbolizer = (got: any): got is MarkSymbolizer => {
-  return got.kind === 'Mark' && _isString(got.wellKnownName);
+  return got?.kind === 'Mark' && _isString(got.wellKnownName);
 };
 export const isLineSymbolizer = (got: any): got is LineSymbolizer => {
-  return got.kind === 'Line';
+  return got?.kind === 'Line';
 };
 export const isFillSymbolizer = (got: any): got is FillSymbolizer => {
-  return got.kind === 'Fill';
+  return got?.kind === 'Fill';
 };
 export const isRasterSymbolizer = (got: any): got is RasterSymbolizer => {
-  return got.kind === 'Raster';
+  return got?.kind === 'Raster';
 };
 
 // Rule
 export const isRule = (got: any): got is Rule => {
   return _isString(got.name) &&
-    (got.filter ? isFilter(got.filter) : true) &&
+    (got?.filter ? isFilter(got.filter) : true) &&
     (got.scaleDenominator ? isScaleDenominator(got.scaleDenominator) : true) &&
     got.symbolizers.every((arg: any) => isSymbolizer(arg));
 };
