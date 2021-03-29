@@ -49,7 +49,7 @@ export const isOperator = (got: any): got is Operator => {
   return isComparisonOperator(got) ||
     isCombinationOperator(got) ||
     isStrMatchesFunctionOperator(got) ||
-    isNegationOpeartor(got);
+    isNegationOperator(got);
 };
 export const isComparisonOperator = (got: any): got is ComparisonOperator => {
   return ['==', '*=' , '!=' , '<' , '<=' , '>' , '>='].includes(got);
@@ -57,7 +57,7 @@ export const isComparisonOperator = (got: any): got is ComparisonOperator => {
 export const isCombinationOperator = (got: any): got is CombinationOperator => {
   return ['&&', '||'].includes(got);
 };
-export const isNegationOpeartor = (got: any): got is NegationOperator => {
+export const isNegationOperator = (got: any): got is NegationOperator => {
   return got === '!';
 };
 export const isStrMatchesFunctionOperator = (got: any): got is StrMatchesFunctionOperator => {
@@ -86,7 +86,7 @@ export const isCombinationFilter = (got: any): got is CombinationFilter => {
 export const isNegationFilter = (got: any): got is NegationFilter => {
   return Array.isArray(got) &&
     got.length === 2 &&
-    isNegationOpeartor(got[0]) &&
+    isNegationOperator(got[0]) &&
     isFilter(got[1]);
 };
 export const isFunctionFilter = (got: any): got is FunctionFilter => {

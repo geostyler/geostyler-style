@@ -3,7 +3,7 @@ import {
   isCombinationOperator,
   isComparisonOperator,
   isFilter,
-  isNegationOpeartor,
+  isNegationOperator,
   isOperator,
   isStrMatchesFunctionOperator
 } from '../typeguards';
@@ -14,7 +14,7 @@ import {
  */
 const comparisonOperator: any = '<';
 const negationOperator: any = '!';
-const combinationOpertor: any = '&&';
+const combinationOperator: any = '&&';
 const strMatchesFunctionOperator: any = 'FN_strMatches';
 const filter: any[] = [comparisonOperator, 'a', 12];
 if (isFilter(filter)) {
@@ -26,8 +26,8 @@ if (isFilter(filter)) {
 if (isOperator(comparisonOperator)) {
   console.log(`${comparisonOperator} is an Operator`);
 }
-if (isOperator(combinationOpertor)) {
-  console.log(`${combinationOpertor} is an Operator`);
+if (isOperator(combinationOperator)) {
+  console.log(`${combinationOperator} is an Operator`);
 }
 if (isOperator(negationOperator)) {
   console.log(`${negationOperator} is an Operator`);
@@ -39,10 +39,10 @@ if (isOperator(strMatchesFunctionOperator)) {
 if (isComparisonOperator(comparisonOperator)) {
   console.log(`${comparisonOperator} is a ComparisonOperator`);
 }
-if (isCombinationOperator(combinationOpertor)) {
-  console.log(`${combinationOpertor} is a CombinationOperator`);
+if (isCombinationOperator(combinationOperator)) {
+  console.log(`${combinationOperator} is a CombinationOperator`);
 }
-if (isNegationOpeartor(negationOperator)) {
+if (isNegationOperator(negationOperator)) {
   console.log(`${negationOperator} is a NegationOperator`);
 }
 if (isStrMatchesFunctionOperator(strMatchesFunctionOperator)) {
