@@ -12,7 +12,7 @@
   ],
   "scripts": {
     "lint": "eslint -c .eslintrc.js --ext .ts . && tsc --noEmit --project tsconfig.json",
-    "release": "np --no-yarn",
+    "release": "np --no-yarn && git push upstream master",
     "generate-schema": "typescript-json-schema index.d.ts Style --id http://geostyler/geostyler-style.json > schema.json",
     "prepublishOnly": "npm run generate-schema"
   },
