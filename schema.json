@@ -630,8 +630,35 @@
                     "type": "boolean"
                 },
                 "wellKnownName": {
-                    "description": "The WellKnownName of the MarkSymbolizer.",
-                    "type": "string"
+                    "anyOf": [
+                        {
+                            "items": {
+                                "type": "string"
+                            },
+                            "type": "array"
+                        },
+                        {
+                            "enum": [
+                                "circle",
+                                "cross",
+                                "shape://backslash",
+                                "shape://carrow",
+                                "shape://dot",
+                                "shape://horline",
+                                "shape://oarrow",
+                                "shape://plus",
+                                "shape://slash",
+                                "shape://times",
+                                "shape://vertline",
+                                "square",
+                                "star",
+                                "triangle",
+                                "x"
+                            ],
+                            "type": "string"
+                        }
+                    ],
+                    "description": "The WellKnownName of the MarkSymbolizer."
                 }
             },
             "type": "object"
