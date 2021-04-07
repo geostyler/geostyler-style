@@ -6,3 +6,6 @@
 # misc
 npm-debug.log*
 *.log
+
+# dist
+dist

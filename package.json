@@ -5,16 +5,17 @@
   "main": "index.d.ts",
   "files": [
     "index.d.ts",
+    "dist/typeguards*",
     "examples/**",
     "schema.json",
-    "typeguards.ts",
     "README.md"
   ],
   "scripts": {
-    "lint": "eslint -c .eslintrc.js --ext .ts . && tsc --noEmit --project tsconfig.json",
+    "lint": "eslint -c .eslintrc.js --ext .ts . && tsc --noEmit",
+    "build": "tsc",
     "release": "np --no-yarn && git push upstream master",
     "generate-schema": "typescript-json-schema index.d.ts Style --id http://geostyler/geostyler-style.json > schema.json",
-    "prepublishOnly": "npm run generate-schema"
+    "prepublishOnly": "npm run build && npm run generate-schema"
   },
   "devDependencies": {
     "@terrestris/eslint-config-typescript": "^1.0.0",
