@@ -23,6 +23,7 @@
     "node_modules",
     "build",
     "scripts",
+    "dist",
     "acceptance-tests",
     "webpack",
     "jest",
