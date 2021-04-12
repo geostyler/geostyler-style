@@ -29,7 +29,7 @@ const sampleStyle: Style = {
         spacing: 21,
         graphicStroke: {
           kind: 'Mark',
-          wellKnownName: 'Square'
+          wellKnownName: 'square'
         }
       }]
     },
@@ -68,7 +68,7 @@ const sampleStyle: Style = {
       },
       symbolizers: [{
         kind: 'Mark',
-        wellKnownName: 'Circle',
+        wellKnownName: 'circle',
         visibility: false,
         radius: 5
       }, {
