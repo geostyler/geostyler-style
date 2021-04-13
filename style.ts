@@ -105,7 +105,7 @@ export type SymbolizerKind = 'Fill' | 'Icon' | 'Line' | 'Text' | 'Mark' | 'Raste
 /**
  * A Symbolizer describes the style representation of geographical data.
  */
-interface BaseSymbolizer {
+export interface BaseSymbolizer {
   /**
    * Describes the type of the kind of the Symbolizer.
    */

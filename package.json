@@ -2,10 +2,10 @@
   "name": "geostyler-style",
   "version": "4.0.0",
   "description": "",
-  "main": "index.d.ts",
+  "main": "dist/index.js",
+  "types": "dist/index.d.ts",
   "files": [
-    "index.d.ts",
-    "dist/typeguards*",
+    "dist/*",
     "examples/**",
     "schema.json",
     "README.md"
