@@ -6,7 +6,8 @@
             "description": "A Channel defines the properties for a color channel.",
             "properties": {
                 "contrastEnhancement": {
-                    "$ref": "http://geostyler/geostyler-style.json#/definitions/ContrastEnhancement"
+                    "$ref": "http://geostyler/geostyler-style.json#/definitions/ContrastEnhancement",
+                    "description": "A ContrastEnhancement defines how the contrast of image data should be enhanced."
                 },
                 "sourceChannelName": {
                     "type": "string"
@@ -227,6 +228,7 @@
                         {
                             "description": "A value of a property of the data.",
                             "type": [
+                                "null",
                                 "string",
                                 "number",
                                 "boolean"
@@ -663,6 +665,23 @@
             },
             "type": "object"
         },
+        "NegationFilter": {
+            "description": "A NegationFilter negates a given Filter.",
+            "items": [
+                {
+                    "enum": [
+                        "!"
+                    ],
+                    "type": "string"
+                },
+                {
+                    "$ref": "http://geostyler/geostyler-style.json#/definitions/Filter"
+                }
+            ],
+            "maxItems": 2,
+            "minItems": 2,
+            "type": "array"
+        },
         "RGBChannel": {
             "description": "A RGBChannel defines how dataset bands are mapped to image color channels.",
             "properties": {
@@ -698,13 +717,15 @@
                     ]
                 },
                 "colorMap": {
-                    "$ref": "http://geostyler/geostyler-style.json#/definitions/ColorMap"
+                    "$ref": "http://geostyler/geostyler-style.json#/definitions/ColorMap",
+                    "description": "A ColorMap defines the color values for the pixels of a raster image."
                 },
                 "contrast": {
                     "type": "number"
                 },
                 "contrastEnhancement": {
-                    "$ref": "http://geostyler/geostyler-style.json#/definitions/ContrastEnhancement"
+                    "$ref": "http://geostyler/geostyler-style.json#/definitions/ContrastEnhancement",
+                    "description": "A ContrastEnhancement defines how the contrast of image data should be enhanced."
                 },
                 "fadeDuration": {
                     "type": "number"
@@ -773,13 +794,100 @@
             "description": "A Rule combines a specific amount of data (defined by a Filter and a\nScaleDenominator) and an associated Symbolizer.",
             "properties": {
                 "filter": {
-                    "$ref": "http://geostyler/geostyler-style.json#/definitions/Filter"
+                    "anyOf": [
+                        {
+                            "description": "A FunctionFilter that expects a string (propertyName) as second argument and\na regular expression as third argument. An actual parser implementation has to\nreturn a value for this function expression.",
+                            "items": [
+                                {
+                                    "enum": [
+                                        "FN_strMatches"
+                                    ],
+                                    "type": "string"
+                                },
+                                {
+                                    "type": "string"
+                                },
+                                {
+                                    "$ref": "http://geostyler/geostyler-style.json#/definitions/RegExp"
+                                }
+                            ],
+                            "maxItems": 3,
+                            "minItems": 3,
+                            "type": "array"
+                        },
+                        {
+                            "description": "A ComparisonFilter compares a value of an object (by key) with an expected\nvalue.",
+                            "items": [
+                                {
+                                    "description": "The possible Operators used for comparison Filters.",
+                                    "enum": [
+                                        "!=",
+                                        "*=",
+                                        "<",
+                                        "<=",
+                                        "==",
+                                        ">",
+                                        ">="
+                                    ],
+                                    "type": "string"
+                                },
+                                {
+                                    "anyOf": [
+                                        {
+                                            "description": "A FunctionFilter that expects a string (propertyName) as second argument and\na regular expression as third argument. An actual parser implementation has to\nreturn a value for this function expression.",
+                                            "items": [
+                                                {
+                                                    "enum": [
+                                                        "FN_strMatches"
+                                                    ],
+                                                    "type": "string"
+                                                },
+                                                {
+                                                    "type": "string"
+                                                },
+                                                {
+                                                    "$ref": "http://geostyler/geostyler-style.json#/definitions/RegExp"
+                                                }
+                                            ],
+                                            "maxItems": 3,
+                                            "minItems": 3,
+                                            "type": "array"
+                                        },
+                                        {
+                                            "type": "string"
+                                        }
+                                    ]
+                                },
+                                {
+                                    "description": "A value of a property of the data.",
+                                    "type": [
+                                        "null",
+                                        "string",
+                                        "number",
+                                        "boolean"
+                                    ]
+                                }
+                            ],
+                            "maxItems": 3,
+                            "minItems": 3,
+                            "type": "array"
+                        },
+                        {
+                            "$ref": "http://geostyler/geostyler-style.json#/definitions/CombinationFilter",
+                            "description": "A CombinationFilter combines N Filters with a logical OR / AND operator."
+                        },
+                        {
+                            "$ref": "http://geostyler/geostyler-style.json#/definitions/NegationFilter",
+                            "description": "A NegationFilter negates a given Filter."
+                        }
+                    ]
                 },
                 "name": {
                     "type": "string"
                 },
                 "scaleDenominator": {
-                    "$ref": "http://geostyler/geostyler-style.json#/definitions/ScaleDenominator"
+                    "$ref": "http://geostyler/geostyler-style.json#/definitions/ScaleDenominator",
+                    "description": "The ScaleDenominator defines a range of scales."
                 },
                 "symbolizers": {
                     "items": {
