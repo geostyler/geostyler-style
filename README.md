@@ -21,5 +21,5 @@ way you should be able to configure any type of style via UI and also translate 
 In addition to the definition itself, there are some custom [TypeGuards](https://basarat.gitbook.io/typescript/type-system/typeguard#user-defined-type-guards) that can be used as utility methods to enhance the coding experience with the geostyler-style.
 
 ```typescript
-import { isFilter, isSymbolizer } from 'geostyler-style/typeguards';
+import { isFilter, isSymbolizer } from 'geostyler-style/dist/typeguards';
 ```
