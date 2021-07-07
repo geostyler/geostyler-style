@@ -18,7 +18,7 @@
     "prepublishOnly": "npm run build && npm run generate-schema"
   },
   "devDependencies": {
-    "@terrestris/eslint-config-typescript": "^1.0.0",
+    "@terrestris/eslint-config-typescript": "^2.0.0",
     "@typescript-eslint/eslint-plugin": "^4.18.0",
     "@typescript-eslint/eslint-plugin-tslint": "^4.18.0",
     "@typescript-eslint/parser": "^4.18.0",
