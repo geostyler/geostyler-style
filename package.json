@@ -22,6 +22,7 @@
     "@typescript-eslint/eslint-plugin": "^4.18.0",
     "@typescript-eslint/eslint-plugin-tslint": "^4.18.0",
     "@typescript-eslint/parser": "^4.18.0",
+    "core-js": "^2.6.12",
     "eslint": "^7.22.0",
     "eslint-plugin-react-hooks": "^4.2.0",
     "np": "^7.4.0",

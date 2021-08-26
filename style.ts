@@ -14,14 +14,47 @@ export interface ScaleDenominator {
 }
 
 /**
+ * A base interface for expressions.
+ */
+export interface AbstractExpression {
+  type: string;
+};
+
+/**
+ * Expression that evaluates to the given value.
+ */
+export interface LiteralValue extends AbstractExpression {
+  type: 'literal';
+  value: string;
+};
+
+/**
+ * Expression that evaluates to the value of the given property.
+ */
+export interface PropertyName extends AbstractExpression {
+  type: 'property';
+  name: string;
+};
+
+/**
+ * Expression that evaluates to the result of a function
+ * call on a list of argument expressions.
+ */
+export interface FunctionCall extends AbstractExpression {
+  type: 'functioncall';
+  name: string;
+  args: Expression[];
+};
+
+/**
+ * Expressions can be a literal value, a property name or a function call.
+ */
+export type Expression = LiteralValue | PropertyName | FunctionCall;
+
+/**
  * The type of the Style.
  */
 export type StyleType = 'Point' | 'Fill' | 'Line' | 'Raster';
-
-/**
- * A name of a property of the data.
- */
-export type PropertyName = string;
 
 /**
  * A value of a property of the data.
@@ -49,20 +82,37 @@ export type NegationOperator = '!';
 export type StrMatchesFunctionOperator = 'FN_strMatches';
 
 /**
+ * The Operator used for functional Filters.
+ */
+export type CategorizeFunctionOperator = 'Categorize';
+
+/**
  * All operators.
  */
 export type Operator = ComparisonOperator | CombinationOperator | NegationOperator | StrMatchesFunctionOperator;
 
 /**
- * A FunctionFilter that expects a string (propertyName) as second argument and
- * a regular expression as third argument. An actual parser implementation has to
- * return a value for this function expression.
+ * A FunctionFilter that expects an Expression as second and
+ * third argument. The function checks, if the evaluation of
+ * the second argument matches the evaluation of the third one.
+ * An actual parser implementation has to return a value for
+ * this function expression.
  */
 export type StrMatchesFunctionFilter = [
   StrMatchesFunctionOperator,
-  PropertyName,
+  // TODO just a temporary quick fix
+  string,
   RegExp
 ];
+
+/**
+ * A FunctionFilter for categorizing continuous values.
+ * See https://geoserver-pdf.readthedocs.io/en/latest/filter/function_reference.html#transformation-functions
+ * for a detailed description.
+ */
+export interface CategorizeFunctionFilter extends FunctionCall {
+  name: CategorizeFunctionOperator;
+};
 
 /**
  * A Filter that expresses a function.
@@ -75,7 +125,8 @@ export type FunctionFilter = StrMatchesFunctionFilter;
  */
 export type ComparisonFilter = [
   ComparisonOperator,
-  PropertyName | FunctionFilter,
+  // TODO just a temporary quick fix
+  string | FunctionFilter,
   PropertyValue
 ];
 
@@ -113,7 +164,7 @@ export interface BaseSymbolizer {
   /**
    * A color defined as a hex-color string.
    */
-  color?: string;
+  color?: string | Expression;
   /**
    * Determines the total opacity for the Symbolizer.
    * A value between 0 and 1. 0 is none opaque and 1 is full opaque.
@@ -192,7 +243,7 @@ export interface MarkSymbolizer extends BasePointSymbolizer {
   /**
    * The color of the stroke represented as a hex-color string.
    */
-  strokeColor?: string;
+  strokeColor?: string | Expression;
   /**
    * The opacity of the stroke. A value between 0 and 1.
    * 0 is none opaque and 1 is full opaque.
@@ -252,7 +303,7 @@ export interface TextSymbolizer extends BasePointSymbolizer {
    * The color of the text's halo, which helps it stand out from backgrounds
    * represented as a hex-color string.
    */
-  haloColor?: string;
+  haloColor?: string | Expression;
   /**
    * Distance of halo to the font outline in pixels.
    */
@@ -350,7 +401,7 @@ export interface IconSymbolizer extends BasePointSymbolizer {
    * The color of the icons halo, which helps it stand out from backgrounds represented
    * as a hex-color string.
    */
-  haloColor?: string;
+  haloColor?: string | Expression;
   /**
    * Distance of halo to the font outline in pixels.
    */
@@ -421,7 +472,7 @@ export interface FillSymbolizer extends BaseSymbolizer {
    * The outline color as a hex-color string. Matches the value of fill-color if
    * unspecified.
    */
-  outlineColor?: string;
+  outlineColor?: string | Expression;
   /**
    * The opacity of the outline. A value between 0 and 1.
    * 0 is none opaque and 1 is full opaque.
