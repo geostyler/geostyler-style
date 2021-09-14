@@ -685,9 +685,53 @@ export type SupportInfo = {
 export type SupportDef = SupportInfo | SupportLevel;
 
 /**
+ * The Result of the readStyle function of a StyleParser.
+ */
+export type ReadStyleResult = {
+  /**
+   * A list of warnings occured while reading the stlye.
+   */
+  warnings?: String[];
+  /**
+   * A list of unsupportedProperties used while reading the stlye.
+   */
+  unsupportedProperties?: UnsupportedProperties;
+  /**
+   * The geostyler-style as read by the parser.
+   */
+  output?: Style;
+  /**
+   * A list of errors occured while reading the stlye.
+   */
+  errors?: Error[];
+};
+
+/**
+ * The Result of the writeStyle function of a StyleParser.
+ */
+export type WriteStyleResult<T = any> = {
+  /**
+   * A list of warnings occured while reading the stlye.
+   */
+  warnings?: String[];
+  /**
+   * A list of unsupportedProperties used while reading the stlye.
+   */
+  unsupportedProperties?: UnsupportedProperties;
+  /**
+   * The target-style as written by the parser.
+   */
+  output?: T;
+  /**
+   * A list of errors occured while reading the stlye.
+   */
+  errors?: Error[];
+};
+
+/**
  * Interface, which has to be implemented by all GeoStyler style parser classes.
  */
-export interface StyleParser {
+export interface StyleParser<T = any> {
   /**
    * The name of the Parser
    */
@@ -703,7 +747,7 @@ export interface StyleParser {
    *
    * @param inputStyle
    */
-  readStyle(inputStyle: any): Promise<Style>;
+  readStyle(inputStyle: T): Promise<ReadStyleResult>;
 
   /**
    * Reads the GeoStyler Style and transforms it to the target Style
@@ -711,7 +755,7 @@ export interface StyleParser {
    *
    * @param geoStylerStyle Style
    */
-  writeStyle(geoStylerStyle: Style): Promise<any>;
+  writeStyle(geoStylerStyle: Style): Promise<WriteStyleResult<T>>;
 
   /**
    * Parses an input Rule and transforms it to a GeoStyler Rule
