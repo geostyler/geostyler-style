@@ -691,9 +691,9 @@ export type ReadStyleResult = {
   /**
    * A list of warnings occured while reading the stlye.
    */
-  warnings?: String[];
+  warnings?: string[];
   /**
-   * A list of unsupportedProperties used while reading the stlye.
+   * A list of unsupportedProperties used while reading the style.
    */
   unsupportedProperties?: UnsupportedProperties;
   /**
@@ -701,7 +701,7 @@ export type ReadStyleResult = {
    */
   output?: Style;
   /**
-   * A list of errors occured while reading the stlye.
+   * A list of errors occured while reading the style.
    */
   errors?: Error[];
 };
@@ -711,11 +711,11 @@ export type ReadStyleResult = {
  */
 export type WriteStyleResult<T = any> = {
   /**
-   * A list of warnings occured while reading the stlye.
+   * A list of warnings occured while writing the style.
    */
-  warnings?: String[];
+  warnings?: string[];
   /**
-   * A list of unsupportedProperties used while reading the stlye.
+   * A list of unsupportedProperties used while writing the style.
    */
   unsupportedProperties?: UnsupportedProperties;
   /**
@@ -723,7 +723,7 @@ export type WriteStyleResult<T = any> = {
    */
   output?: T;
   /**
-   * A list of errors occured while reading the stlye.
+   * A list of errors occured while writing the style.
    */
   errors?: Error[];
 };
