@@ -150,8 +150,16 @@
                     "type": "number"
                 },
                 "outlineWidth": {
-                    "description": "The outline width in pixels.",
+                    "description": "The outline width (pixels if outlineWidthUnit is not defined).",
                     "type": "number"
+                },
+                "outlineWidthUnit": {
+                    "description": "Unit to use for the outlineWidth.",
+                    "enum": [
+                        "m",
+                        "px"
+                    ],
+                    "type": "string"
                 },
                 "visibility": {
                     "description": "Defines whether the Symbolizer should be visibile or not.",
@@ -309,8 +317,16 @@
                     "type": "string"
                 },
                 "haloWidth": {
-                    "description": "Distance of halo to the font outline in pixels.",
+                    "description": "Distance of halo to the font outline (pixels if haloWidthUnit is not defined).",
                     "type": "number"
+                },
+                "haloWidthUnit": {
+                    "description": "Unit to use for the haloWidth.",
+                    "enum": [
+                        "m",
+                        "px"
+                    ],
+                    "type": "string"
                 },
                 "image": {
                     "description": "A path/URL to the icon image file.",
@@ -384,8 +400,16 @@
                     "type": "string"
                 },
                 "size": {
-                    "description": "The Symbolizer size in pixels.",
+                    "description": "The Symbolizer size (pixels if sizeUnit is not defined).",
                     "type": "number"
+                },
+                "sizeUnit": {
+                    "description": "Unit to use for the size.",
+                    "enum": [
+                        "m",
+                        "px"
+                    ],
+                    "type": "string"
                 },
                 "textFit": {
                     "description": "Property relevant for mapbox-styles.\nCompare https://docs.mapbox.com/mapbox-gl-js/style-spec/#layout-symbol-icon-text-fit",
@@ -455,8 +479,16 @@
                     "type": "array"
                 },
                 "gapWidth": {
-                    "description": "Draws a line casing outside of a line's actual path. Value indicates the\nwidth of the inner gap in pixels.",
+                    "description": "Draws a line casing outside of a line's actual path. Value indicates the\nwidth of the inner gap (pixels if gapWidthUnit is not defined).",
                     "type": "number"
+                },
+                "gapWidthUnit": {
+                    "description": "Unit to use for the gapWidth.",
+                    "enum": [
+                        "m",
+                        "px"
+                    ],
+                    "type": "string"
                 },
                 "gradient": {
                     "description": "Defines a gradient with which to color a line feature.",
@@ -525,16 +557,33 @@
                     "type": "number"
                 },
                 "spacing": {
-                    "description": "Distance between two symbol anchors in pixels.",
+                    "description": "Distance between two symbol anchors (pixels if spacingUnit is not defined).",
                     "type": "number"
+                },
+                "spacingUnit": {
+                    "description": "Unit to use for the spacing.\n'em' -> fontsize",
+                    "enum": [
+                        "em",
+                        "m",
+                        "px"
+                    ],
+                    "type": "string"
                 },
                 "visibility": {
                     "description": "Defines whether the Symbolizer should be visibile or not.",
                     "type": "boolean"
                 },
                 "width": {
-                    "description": "The width of the Line in pixels.",
+                    "description": "The width of the Line (pixels if widthUnit is not defined).",
                     "type": "number"
+                },
+                "widthUnit": {
+                    "description": "Unit to use for the width.",
+                    "enum": [
+                        "m",
+                        "px"
+                    ],
+                    "type": "string"
                 }
             },
             "type": "object"
@@ -608,8 +657,16 @@
                     "type": "string"
                 },
                 "radius": {
-                    "description": "The radius of the Symbolizer. Values describing the full size of the Symbolizer\nhave to be divided by two.",
+                    "description": "The radius of the Symbolizer. Values describing the full size of the Symbolizer\nhave to be divided by two (pixels if radiusUnit is not defined).",
                     "type": "number"
+                },
+                "radiusUnit": {
+                    "description": "Unit to use for the radius.",
+                    "enum": [
+                        "m",
+                        "px"
+                    ],
+                    "type": "string"
                 },
                 "rotate": {
                     "description": "The rotation of the Symbolizer in degrees. Value should be between 0 and 360.",
@@ -624,8 +681,16 @@
                     "type": "number"
                 },
                 "strokeWidth": {
-                    "description": "The width of the stroke in pixels.",
+                    "description": "The width of the stroke (pixels if strokeWidthUnit is not defined).",
                     "type": "number"
+                },
+                "strokeWidthUnit": {
+                    "description": "Unit to use for the strokeWidth.",
+                    "enum": [
+                        "m",
+                        "px"
+                    ],
+                    "type": "string"
                 },
                 "visibility": {
                     "description": "Defines whether the Symbolizer should be visibile or not.",
@@ -995,8 +1060,16 @@
                     "type": "string"
                 },
                 "haloWidth": {
-                    "description": "Distance of halo to the font outline in pixels.",
+                    "description": "Distance of halo to the font outline (pixels if haloWidthUnit is not defined).",
                     "type": "number"
+                },
+                "haloWidthUnit": {
+                    "description": "Unit to use for the haloWidth.",
+                    "enum": [
+                        "m",
+                        "px"
+                    ],
+                    "type": "string"
                 },
                 "justify": {
                     "description": "Text justification option to align the text.",
@@ -1023,12 +1096,30 @@
                     "type": "string"
                 },
                 "letterSpacing": {
-                    "description": "Sets the spacing between text characters in pixels.",
+                    "description": "Sets the spacing between text characters (pixels if letterSpacingUnit is not defined).",
                     "type": "number"
                 },
+                "letterSpacingUnit": {
+                    "description": "Unit to use for the letterSpacing.",
+                    "enum": [
+                        "em",
+                        "m",
+                        "px"
+                    ],
+                    "type": "string"
+                },
                 "lineHeight": {
-                    "description": "Sets the line height in pixels.",
+                    "description": "Sets the line height (pixels if lineHeightUnit is not defined).\n'em' -> fontsize",
                     "type": "number"
+                },
+                "lineHeightUnit": {
+                    "description": "Unit to use for the lineHeight.\n'em' -> fontsize",
+                    "enum": [
+                        "em",
+                        "m",
+                        "px"
+                    ],
+                    "type": "string"
                 },
                 "maxAngle": {
                     "description": "Maximum angle change between adjacent characters in degrees.",
@@ -1095,7 +1186,7 @@
                     "type": "string"
                 },
                 "size": {
-                    "description": "The FontSize in pixels.",
+                    "description": "The fontsize in pixels.",
                     "type": "number"
                 },
                 "transform": {
