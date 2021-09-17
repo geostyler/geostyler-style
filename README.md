@@ -5,6 +5,10 @@
 
 TypeScript Declaration File for the the [GeoStyler](https://github.com/geostyler/geostyler) Style.
 
+### Documentation
+
+https://geostyler.github.io/geostyler-style/docs/master/
+
 ### Why another style format?
 
 The *Geostyler Style* is not primarily intended to be a new standard for styling geographic data.
