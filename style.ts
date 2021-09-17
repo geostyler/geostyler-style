@@ -166,6 +166,14 @@ export type WellKnownName = 'circle' | 'square' | 'triangle' | 'star' | 'cross' 
 | FontSpec;
 
 /**
+ * Unit that defines how to handle the corresponding symbolizer property.
+ * Default should be pixel in your parser.
+ * 'px' => pixel
+ * 'm' => meter
+ */
+export type DistanceUnit = 'px' | 'm';
+
+/**
  * MarkSymbolizer describes the style representation of POINT data, if styled as
  * with a regular geometry.
  */
@@ -177,9 +185,13 @@ export interface MarkSymbolizer extends BasePointSymbolizer {
   wellKnownName: WellKnownName;
   /**
    * The radius of the Symbolizer. Values describing the full size of the Symbolizer
-   * have to be divided by two.
+   * have to be divided by two (pixels if radiusUnit is not defined).
    */
   radius?: number;
+  /**
+   * Unit to use for the radius.
+   */
+  radiusUnit?: DistanceUnit;
   /**
    * The rotation of the Symbolizer in degrees. Value should be between 0 and 360.
    */
@@ -199,9 +211,13 @@ export interface MarkSymbolizer extends BasePointSymbolizer {
    */
   strokeOpacity?: number;
   /**
-   * The width of the stroke in pixels.
+   * The width of the stroke (pixels if strokeWidthUnit is not defined).
    */
   strokeWidth?: number;
+  /**
+   * Unit to use for the strokeWidth.
+   */
+  strokeWidthUnit?: DistanceUnit;
   /**
    * Amount to blur the Symbolizer. 1 blurs the Symbolizer such that only the
    * centerpoint has full opacity. Mostly relevant for circles.
@@ -254,9 +270,13 @@ export interface TextSymbolizer extends BasePointSymbolizer {
    */
   haloColor?: string;
   /**
-   * Distance of halo to the font outline in pixels.
+   * Distance of halo to the font outline (pixels if haloWidthUnit is not defined).
    */
   haloWidth?: number;
+  /**
+   * Unit to use for the haloWidth.
+   */
+  haloWidthUnit?: DistanceUnit;
   /**
    * Text justification option to align the text.
    */
@@ -266,13 +286,23 @@ export interface TextSymbolizer extends BasePointSymbolizer {
    */
   keepUpright?: boolean;
   /**
-   * Sets the spacing between text characters in pixels.
+   * Sets the spacing between text characters (pixels if letterSpacingUnit is not defined).
    */
   letterSpacing?: number;
   /**
-   * Sets the line height in pixels.
+   * Unit to use for the letterSpacing.
+   */
+  letterSpacingUnit?: DistanceUnit | 'em';
+  /**
+   * Sets the line height (pixels if lineHeightUnit is not defined).
+   * 'em' -> fontsize
    */
   lineHeight?: number;
+  /**
+   * Unit to use for the lineHeight.
+   * 'em' -> fontsize
+   */
+  lineHeightUnit?: DistanceUnit | 'em';
   /**
    * Maximum angle change between adjacent characters in degrees.
    */
@@ -307,7 +337,7 @@ export interface TextSymbolizer extends BasePointSymbolizer {
    */
   rotationAlignment?: 'map' | 'viewport' | 'auto';
   /**
-   * The FontSize in pixels.
+   * The fontsize in pixels.
    */
   size?: number;
   /**
@@ -352,9 +382,13 @@ export interface IconSymbolizer extends BasePointSymbolizer {
    */
   haloColor?: string;
   /**
-   * Distance of halo to the font outline in pixels.
+   * Distance of halo to the font outline (pixels if haloWidthUnit is not defined).
    */
   haloWidth?: number;
+  /**
+   * Unit to use for the haloWidth.
+   */
+  haloWidthUnit?: DistanceUnit;
   /**
    * A path/URL to the icon image file.
    */
@@ -388,9 +422,13 @@ export interface IconSymbolizer extends BasePointSymbolizer {
    */
   rotationAlignment?: 'map' | 'viewport' | 'auto';
   /**
-   * The Symbolizer size in pixels.
+   * The Symbolizer size (pixels if sizeUnit is not defined).
    */
   size?: number;
+  /**
+   * Unit to use for the size.
+   */
+  sizeUnit?: DistanceUnit;
   /**
    * Property relevant for mapbox-styles.
    * Compare https://docs.mapbox.com/mapbox-gl-js/style-spec/#layout-symbol-icon-text-fit
@@ -428,9 +466,13 @@ export interface FillSymbolizer extends BaseSymbolizer {
    */
   outlineOpacity?: number;
   /**
-   * The outline width in pixels.
+   * The outline width (pixels if outlineWidthUnit is not defined).
    */
   outlineWidth?: number;
+  /**
+   * Unit to use for the outlineWidth.
+   */
+  outlineWidthUnit?: DistanceUnit;
   /**
    * Encodes a dash pattern as an array of numbers. Odd-indexed numbers (first,
    * third, etc) determine the length in pixels to draw the line, and even-indexed
@@ -475,9 +517,13 @@ export interface LineSymbolizer extends BaseSymbolizer {
   dashOffset?: number;
   /**
    * Draws a line casing outside of a line's actual path. Value indicates the
-   * width of the inner gap in pixels.
+   * width of the inner gap (pixels if gapWidthUnit is not defined).
    */
   gapWidth?: number;
+  /**
+   * Unit to use for the gapWidth.
+   */
+  gapWidthUnit?: DistanceUnit;
   /**
    * Defines a gradient with which to color a line feature.
    */
@@ -511,13 +557,22 @@ export interface LineSymbolizer extends BaseSymbolizer {
    */
   roundLimit?: number;
   /**
-   * Distance between two symbol anchors in pixels.
+   * Distance between two symbol anchors (pixels if spacingUnit is not defined).
    */
   spacing?: number;
   /**
-   * The width of the Line in pixels.
+   * Unit to use for the spacing.
+   * 'em' -> fontsize
+   */
+  spacingUnit?: DistanceUnit | 'em';
+  /**
+   * The width of the Line (pixels if widthUnit is not defined).
    */
   width?: number;
+  /**
+   * Unit to use for the width.
+   */
+  widthUnit?: DistanceUnit;
 }
 
 /**
