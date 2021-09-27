@@ -8,7 +8,7 @@ const sampleStyle: Style = {
       filter: ['&&',
         ['==', 'name', 'Peter'],
         ['<=', 'age', 12],
-        ['<x<', 'height', 1, 2]
+        ['<=x<=', 'height', 1, 2]
       ],
       scaleDenominator: {
         min: 500,
