@@ -1,4 +1,4 @@
-import { Style } from 'index';
+import { Style } from '../index';
 
 const sampleRasterStyle: Style = {
   name: 'Sample Raster Style',

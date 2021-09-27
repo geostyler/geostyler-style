@@ -1,4 +1,4 @@
-import { Style } from 'index';
+import { Style } from '../index';
 
 const sampleStyle: Style = {
   name: 'Sample Point Style',
@@ -7,7 +7,8 @@ const sampleStyle: Style = {
       name: 'Young Peter',
       filter: ['&&',
         ['==', 'name', 'Peter'],
-        ['<=', 'age', 12]
+        ['<=', 'age', 12],
+        ['<x<', 'height', 1, 2]
       ],
       scaleDenominator: {
         min: 500,

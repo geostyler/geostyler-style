@@ -1,4 +1,5 @@
-import { Style, StyleParser, UnsupportedProperties } from 'index';
+import { Style, StyleParser, UnsupportedProperties } from '../index';
+import { ReadStyleResult, WriteStyleResult } from '../style';
 
 export class SampleParser implements StyleParser {
 
@@ -20,15 +21,21 @@ export class SampleParser implements StyleParser {
 
   title = 'Sample Parser';
 
-  writeStyle(geoStylerStyle: Style): Promise<string> {
-    return new Promise<string>(() => 'sample');
+  writeStyle(geoStylerStyle: Style): Promise<WriteStyleResult> {
+    return new Promise<WriteStyleResult>(() => {
+      return {
+        output: 'sample'
+      };
+    });
   }
 
-  readStyle(sldString: string): Promise<Style> {
-    return new Promise<Style>(() => {
+  readStyle(sldString: string): Promise<ReadStyleResult> {
+    return new Promise<ReadStyleResult>(() => {
       return {
-        name: 'Samplestyle',
-        rules: []
+        output: {
+          name: 'Samplestyle',
+          rules: []
+        }
       };
     });
   }
