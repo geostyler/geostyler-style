@@ -699,9 +699,6 @@ export interface UnsupportedProperties {
     '*='?: SupportDef;
   };
   Symbolizer?: SupportDef | {
-    PointSymbolizer?: SupportDef | {
-      [key in keyof Required<PointSymbolizer>]?: SupportDef
-    };
     LineSymbolizer?: SupportDef | {
       [key in keyof Required<LineSymbolizer>]?: SupportDef
     };
@@ -713,6 +710,9 @@ export interface UnsupportedProperties {
     };
     IconSymbolizer?: SupportDef | {
       [key in keyof Required<IconSymbolizer>]?: SupportDef
+    };
+    TextSymbolizer?: SupportDef | {
+      [key in keyof Required<TextSymbolizer>]?: SupportDef
     };
     RasterSymbolizer?: SupportDef | {
       [key in keyof Required<RasterSymbolizer>]?: SupportDef
