@@ -52,7 +52,7 @@ export const isOperator = (got: any): got is Operator => {
     isNegationOperator(got);
 };
 export const isComparisonOperator = (got: any): got is ComparisonOperator => {
-  return ['==', '*=' , '!=' , '<' , '<=' , '>' , '>='].includes(got);
+  return ['==', '*=' , '!=' , '<' , '<=' , '>' , '>=', '<=x<='].includes(got);
 };
 export const isCombinationOperator = (got: any): got is CombinationOperator => {
   return ['&&', '||'].includes(got);
@@ -72,11 +72,13 @@ export const isFilter = (got: any): got is Filter => {
     isNegationFilter(got);
 };
 export const isComparisonFilter = (got: any): got is ComparisonFilter => {
+  const expectedLength = got[0] === '<=x<=' ? 4 : 3;
   return Array.isArray(got) &&
-    got.length === 3 &&
+    got.length === expectedLength &&
     isComparisonOperator(got[0]) &&
     (isFunctionFilter(got[1]) || _isString(got[1])) &&
-    isPropertyValue(got[2]);
+    isPropertyValue(got[2]) &&
+    (got[0] !== '<=x<=' || _isNumber(got[3]));
 };
 export const isCombinationFilter = (got: any): got is CombinationFilter => {
   return Array.isArray(got) &&
