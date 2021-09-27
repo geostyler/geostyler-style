@@ -31,7 +31,7 @@ export type PropertyValue = string | number | boolean | null;
 /**
  * The possible Operators used for comparison Filters.
  */
-export type ComparisonOperator = '==' | '*=' | '!=' | '<' | '<=' | '>' | '>=';
+export type ComparisonOperator = '==' | '*=' | '!=' | '<' | '<=' | '>' | '>=' | '<x<';
 
 /**
  * The possible Operators used for combination Filters.
@@ -70,6 +70,11 @@ export type StrMatchesFunctionFilter = [
 export type FunctionFilter = StrMatchesFunctionFilter;
 
 /**
+ * A Filter that checks if a property value is between to values.
+ */
+export type BetweenFilter = ['<x<', PropertyName | FunctionFilter, number, number];
+
+/**
  * A ComparisonFilter compares a value of an object (by key) with an expected
  * value.
  */
@@ -77,7 +82,7 @@ export type ComparisonFilter = [
   ComparisonOperator,
   PropertyName | FunctionFilter,
   PropertyValue
-];
+] | BetweenFilter;
 
 /**
  * A CombinationFilter combines N Filters with a logical OR / AND operator.
