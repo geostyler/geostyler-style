@@ -19,7 +19,9 @@ const sampleStyle: Style = {
         visibility: false,
         allowOverlap: true,
         optional: false,
-        rotationAlignment: 'map'
+        rotationAlignment: 'map',
+        image: 'http://myserver/getImage',
+        format: 'image/png'
       }, {
         kind: 'Line',
         blur: 3,
@@ -95,7 +97,8 @@ const sampleStyle: Style = {
         kind: 'Fill',
         color: '#FF0000',
         graphicFill: {
-          kind: 'Icon'
+          kind: 'Icon',
+          image: '/myimage.png'
         }
       }, {
         kind: 'Raster',
