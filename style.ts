@@ -399,6 +399,11 @@ export interface IconSymbolizer extends BasePointSymbolizer {
    */
   image?: string;
   /**
+   * An optional configuration for the image format as MIME type.
+   * This might be needed if the image(path) has no filending specified. e.g. http://myserver/getImage
+   */
+  format?: `image/${'png' | 'jpg' | 'jpeg' | 'gif' | 'svg+xml'}`;
+  /**
    * If true, the icon will be kept upright.
    */
   keepUpright?: boolean;
