@@ -21,7 +21,7 @@
   "devDependencies": {
     "@terrestris/eslint-config-typescript": "^2.0.0",
     "@typescript-eslint/eslint-plugin": "^4.18.0",
-    "@typescript-eslint/eslint-plugin-tslint": "^4.18.0",
+    "@typescript-eslint/eslint-plugin-tslint": "^5.0.0",
     "@typescript-eslint/parser": "^4.18.0",
     "eslint": "^7.22.0",
     "eslint-plugin-react-hooks": "^4.2.0",
