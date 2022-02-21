@@ -6,7 +6,7 @@ export class SampleParser implements StyleParser {
   public static unsupportedProperties: UnsupportedProperties = {
     ScaleDenominator: 'partial',
     Symbolizer: {
-      PointSymbolizer: {
+      IconSymbolizer: {
         color: 'partial'
       },
       LineSymbolizer: {
