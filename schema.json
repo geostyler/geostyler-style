@@ -550,8 +550,7 @@
                 },
                 "gradient": {
                     "description": "Defines a gradient with which to color a line feature.",
-                    "items": {
-                    },
+                    "items": {},
                     "type": "array"
                 },
                 "graphicFill": {
