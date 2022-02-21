@@ -72,7 +72,7 @@ export const isFilter = (got: any): got is Filter => {
     isNegationFilter(got);
 };
 export const isComparisonFilter = (got: any): got is ComparisonFilter => {
-  const expectedLength = got[0] === '<=x<=' ? 4 : 3;
+  const expectedLength = got && got[0] === '<=x<=' ? 4 : 3;
   return Array.isArray(got) &&
     got.length === expectedLength &&
     isComparisonOperator(got[0]) &&
