@@ -19,15 +19,15 @@
     "prepublishOnly": "npm run build && npm run generate-schema"
   },
   "devDependencies": {
-    "@terrestris/eslint-config-typescript": "^2.0.0",
-    "@typescript-eslint/eslint-plugin": "^5.12.0",
-    "@typescript-eslint/eslint-plugin-tslint": "^5.12.0",
-    "@typescript-eslint/parser": "^5.12.0",
-    "eslint": "^8.9.0",
-    "eslint-plugin-react-hooks": "^4.3.0",
-    "np": "^7.6.0",
-    "typedoc": "^0.22.12",
-    "typescript": "^4.5.5",
+    "@terrestris/eslint-config-typescript": "^2.1.0",
+    "@typescript-eslint/eslint-plugin": "^5.22.0",
+    "@typescript-eslint/eslint-plugin-tslint": "^5.22.0",
+    "@typescript-eslint/parser": "^5.22.0",
+    "eslint": "^8.14.0",
+    "eslint-plugin-react-hooks": "^4.5.0",
+    "np": "^7.6.1",
+    "typedoc": "^0.22.15",
+    "typescript": "^4.6.4",
     "typescript-json-schema": "^0.53.0"
   },
   "repository": {
