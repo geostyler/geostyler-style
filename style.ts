@@ -25,7 +25,7 @@ export interface AbstractExpression {
  */
 export interface LiteralValue extends AbstractExpression {
   type: 'literal';
-  value: string;
+  value: string | number;
 };
 
 /**
@@ -122,7 +122,7 @@ export type FunctionFilter = StrMatchesFunctionFilter;
 /**
  * A Filter that checks if a property is in a range of two values (inclusive).
  */
-export type RangeFilter = ['<=x<=', Expression | FunctionFilter, number, number];
+export type RangeFilter = ['<=x<=', Expression | FunctionFilter | string, number | Expression, number | Expression];
 
 /**
  * A ComparisonFilter compares a value of an object (by key) with an expected
@@ -130,8 +130,8 @@ export type RangeFilter = ['<=x<=', Expression | FunctionFilter, number, number]
  */
 export type ComparisonFilter = [
   ComparisonOperator,
-  Expression,
-  Expression
+  Expression | string | number,
+  Expression | string | number
 ] | RangeFilter;
 
 /**
@@ -310,7 +310,7 @@ export interface TextSymbolizer extends BasePointSymbolizer {
    * from the dataset.
    * e.g.: "Name {{country_name}}"
    */
-  label?: string | Expression;
+  label?: string;
   /**
    * An Array of fonts. Comparable to https://www.w3schools.com/cssref/pr_font_font-family.asp
    */
