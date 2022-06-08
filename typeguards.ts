@@ -11,6 +11,7 @@ import _isRegExp from 'lodash/isRegExp';
 import {
   BasePointSymbolizer,
   BaseSymbolizer,
+  ChannelSelection,
   CombinationFilter,
   CombinationOperator,
   ComparisonFilter,
@@ -18,6 +19,7 @@ import {
   FillSymbolizer,
   Filter,
   FunctionFilter,
+  GrayChannel,
   IconSymbolizer,
   LineSymbolizer,
   MarkSymbolizer,
@@ -26,11 +28,12 @@ import {
   Operator,
   PropertyValue,
   RasterSymbolizer,
+  RGBChannel,
   Rule,
   ScaleDenominator,
   StrMatchesFunctionOperator,
   TextSymbolizer
-} from './index';
+} from './style';
 
 // PropertyValue
 export const isPropertyValue = (got: any): got is PropertyValue => {
@@ -132,4 +135,22 @@ export const isRule = (got: any): got is Rule => {
     (got?.filter ? isFilter(got.filter) : true) &&
     (got?.scaleDenominator ? isScaleDenominator(got.scaleDenominator) : true) &&
     got?.symbolizers.every((arg: any) => isSymbolizer(arg));
+};
+
+/**
+ * Checks if ChannelSelection is of type RGBChannel.
+ */
+export const isRgbChannel = (channels: ChannelSelection): channels is RGBChannel => {
+  return (
+    (channels as RGBChannel).redChannel !== undefined
+      || (channels as RGBChannel).greenChannel !== undefined
+      || (channels as RGBChannel).blueChannel !== undefined
+  );
+};
+
+/**
+ * Checks if ChannelSelection is of type GrayChannel.
+ */
+export const isGrayChannel = (channels: ChannelSelection): channels is GrayChannel => {
+  return (channels as GrayChannel).grayChannel !== undefined;
 };
