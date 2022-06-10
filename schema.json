@@ -100,13 +100,22 @@
                 "antialias": {
                     "anyOf": [
                         {
-                            "$ref": "http://geostyler/geostyler-style.json#/definitions/LiteralValue"
-                        },
-                        {
                             "$ref": "http://geostyler/geostyler-style.json#/definitions/PropertyName"
                         },
                         {
                             "$ref": "http://geostyler/geostyler-style.json#/definitions/FunctionCall"
+                        },
+                        {
+                            "$ref": "http://geostyler/geostyler-style.json#/definitions/LiteralValue<string>"
+                        },
+                        {
+                            "$ref": "http://geostyler/geostyler-style.json#/definitions/LiteralValue<number>"
+                        },
+                        {
+                            "$ref": "http://geostyler/geostyler-style.json#/definitions/LiteralValue<boolean>"
+                        },
+                        {
+                            "$ref": "http://geostyler/geostyler-style.json#/definitions/LiteralValue<null>"
                         },
                         {
                             "type": "boolean"
@@ -117,13 +126,22 @@
                 "color": {
                     "anyOf": [
                         {
-                            "$ref": "http://geostyler/geostyler-style.json#/definitions/LiteralValue"
-                        },
-                        {
                             "$ref": "http://geostyler/geostyler-style.json#/definitions/PropertyName"
                         },
                         {
                             "$ref": "http://geostyler/geostyler-style.json#/definitions/FunctionCall"
+                        },
+                        {
+                            "$ref": "http://geostyler/geostyler-style.json#/definitions/LiteralValue<string>"
+                        },
+                        {
+                            "$ref": "http://geostyler/geostyler-style.json#/definitions/LiteralValue<number>"
+                        },
+                        {
+                            "$ref": "http://geostyler/geostyler-style.json#/definitions/LiteralValue<boolean>"
+                        },
+                        {
+                            "$ref": "http://geostyler/geostyler-style.json#/definitions/LiteralValue<null>"
                         },
                         {
                             "type": "string"
@@ -134,13 +152,22 @@
                 "fillOpacity": {
                     "anyOf": [
                         {
-                            "$ref": "http://geostyler/geostyler-style.json#/definitions/LiteralValue"
-                        },
-                        {
                             "$ref": "http://geostyler/geostyler-style.json#/definitions/PropertyName"
                         },
                         {
                             "$ref": "http://geostyler/geostyler-style.json#/definitions/FunctionCall"
+                        },
+                        {
+                            "$ref": "http://geostyler/geostyler-style.json#/definitions/LiteralValue<string>"
+                        },
+                        {
+                            "$ref": "http://geostyler/geostyler-style.json#/definitions/LiteralValue<number>"
+                        },
+                        {
+                            "$ref": "http://geostyler/geostyler-style.json#/definitions/LiteralValue<boolean>"
+                        },
+                        {
+                            "$ref": "http://geostyler/geostyler-style.json#/definitions/LiteralValue<null>"
                         },
                         {
                             "type": "number"
@@ -172,13 +199,22 @@
                 "opacity": {
                     "anyOf": [
                         {
-                            "$ref": "http://geostyler/geostyler-style.json#/definitions/LiteralValue"
-                        },
-                        {
                             "$ref": "http://geostyler/geostyler-style.json#/definitions/PropertyName"
                         },
                         {
                             "$ref": "http://geostyler/geostyler-style.json#/definitions/FunctionCall"
+                        },
+                        {
+                            "$ref": "http://geostyler/geostyler-style.json#/definitions/LiteralValue<string>"
+                        },
+                        {
+                            "$ref": "http://geostyler/geostyler-style.json#/definitions/LiteralValue<number>"
+                        },
+                        {
+                            "$ref": "http://geostyler/geostyler-style.json#/definitions/LiteralValue<boolean>"
+                        },
+                        {
+                            "$ref": "http://geostyler/geostyler-style.json#/definitions/LiteralValue<null>"
                         },
                         {
                             "type": "number"
@@ -189,13 +225,22 @@
                 "outlineColor": {
                     "anyOf": [
                         {
-                            "$ref": "http://geostyler/geostyler-style.json#/definitions/LiteralValue"
-                        },
-                        {
                             "$ref": "http://geostyler/geostyler-style.json#/definitions/PropertyName"
                         },
                         {
                             "$ref": "http://geostyler/geostyler-style.json#/definitions/FunctionCall"
+                        },
+                        {
+                            "$ref": "http://geostyler/geostyler-style.json#/definitions/LiteralValue<string>"
+                        },
+                        {
+                            "$ref": "http://geostyler/geostyler-style.json#/definitions/LiteralValue<number>"
+                        },
+                        {
+                            "$ref": "http://geostyler/geostyler-style.json#/definitions/LiteralValue<boolean>"
+                        },
+                        {
+                            "$ref": "http://geostyler/geostyler-style.json#/definitions/LiteralValue<null>"
                         },
                         {
                             "type": "string"
@@ -213,13 +258,22 @@
                 "outlineOpacity": {
                     "anyOf": [
                         {
-                            "$ref": "http://geostyler/geostyler-style.json#/definitions/LiteralValue"
-                        },
-                        {
                             "$ref": "http://geostyler/geostyler-style.json#/definitions/PropertyName"
                         },
                         {
                             "$ref": "http://geostyler/geostyler-style.json#/definitions/FunctionCall"
+                        },
+                        {
+                            "$ref": "http://geostyler/geostyler-style.json#/definitions/LiteralValue<string>"
+                        },
+                        {
+                            "$ref": "http://geostyler/geostyler-style.json#/definitions/LiteralValue<number>"
+                        },
+                        {
+                            "$ref": "http://geostyler/geostyler-style.json#/definitions/LiteralValue<boolean>"
+                        },
+                        {
+                            "$ref": "http://geostyler/geostyler-style.json#/definitions/LiteralValue<null>"
                         },
                         {
                             "type": "number"
@@ -230,13 +284,22 @@
                 "outlineWidth": {
                     "anyOf": [
                         {
-                            "$ref": "http://geostyler/geostyler-style.json#/definitions/LiteralValue"
-                        },
-                        {
                             "$ref": "http://geostyler/geostyler-style.json#/definitions/PropertyName"
                         },
                         {
                             "$ref": "http://geostyler/geostyler-style.json#/definitions/FunctionCall"
+                        },
+                        {
+                            "$ref": "http://geostyler/geostyler-style.json#/definitions/LiteralValue<string>"
+                        },
+                        {
+                            "$ref": "http://geostyler/geostyler-style.json#/definitions/LiteralValue<number>"
+                        },
+                        {
+                            "$ref": "http://geostyler/geostyler-style.json#/definitions/LiteralValue<boolean>"
+                        },
+                        {
+                            "$ref": "http://geostyler/geostyler-style.json#/definitions/LiteralValue<null>"
                         },
                         {
                             "type": "number"
@@ -255,13 +318,22 @@
                 "visibility": {
                     "anyOf": [
                         {
-                            "$ref": "http://geostyler/geostyler-style.json#/definitions/LiteralValue"
-                        },
-                        {
                             "$ref": "http://geostyler/geostyler-style.json#/definitions/PropertyName"
                         },
                         {
                             "$ref": "http://geostyler/geostyler-style.json#/definitions/FunctionCall"
+                        },
+                        {
+                            "$ref": "http://geostyler/geostyler-style.json#/definitions/LiteralValue<string>"
+                        },
+                        {
+                            "$ref": "http://geostyler/geostyler-style.json#/definitions/LiteralValue<number>"
+                        },
+                        {
+                            "$ref": "http://geostyler/geostyler-style.json#/definitions/LiteralValue<boolean>"
+                        },
+                        {
+                            "$ref": "http://geostyler/geostyler-style.json#/definitions/LiteralValue<null>"
                         },
                         {
                             "type": "boolean"
@@ -306,13 +378,22 @@
                         {
                             "anyOf": [
                                 {
-                                    "$ref": "http://geostyler/geostyler-style.json#/definitions/LiteralValue"
-                                },
-                                {
                                     "$ref": "http://geostyler/geostyler-style.json#/definitions/PropertyName"
                                 },
                                 {
                                     "$ref": "http://geostyler/geostyler-style.json#/definitions/FunctionCall"
+                                },
+                                {
+                                    "$ref": "http://geostyler/geostyler-style.json#/definitions/LiteralValue<string>"
+                                },
+                                {
+                                    "$ref": "http://geostyler/geostyler-style.json#/definitions/LiteralValue<number>"
+                                },
+                                {
+                                    "$ref": "http://geostyler/geostyler-style.json#/definitions/LiteralValue<boolean>"
+                                },
+                                {
+                                    "$ref": "http://geostyler/geostyler-style.json#/definitions/LiteralValue<null>"
                                 },
                                 {
                                     "description": "A FunctionFilter that expects an Expression as second and\nthird argument. The function checks, if the evaluation of\nthe second argument matches the evaluation of the third one.\nAn actual parser implementation has to return a value for\nthis function expression.",
@@ -342,13 +423,22 @@
                         {
                             "anyOf": [
                                 {
-                                    "$ref": "http://geostyler/geostyler-style.json#/definitions/LiteralValue"
-                                },
-                                {
                                     "$ref": "http://geostyler/geostyler-style.json#/definitions/PropertyName"
                                 },
                                 {
                                     "$ref": "http://geostyler/geostyler-style.json#/definitions/FunctionCall"
+                                },
+                                {
+                                    "$ref": "http://geostyler/geostyler-style.json#/definitions/LiteralValue<string>"
+                                },
+                                {
+                                    "$ref": "http://geostyler/geostyler-style.json#/definitions/LiteralValue<number>"
+                                },
+                                {
+                                    "$ref": "http://geostyler/geostyler-style.json#/definitions/LiteralValue<boolean>"
+                                },
+                                {
+                                    "$ref": "http://geostyler/geostyler-style.json#/definitions/LiteralValue<null>"
                                 },
                                 {
                                     "type": "number"
@@ -358,13 +448,22 @@
                         {
                             "anyOf": [
                                 {
-                                    "$ref": "http://geostyler/geostyler-style.json#/definitions/LiteralValue"
-                                },
-                                {
                                     "$ref": "http://geostyler/geostyler-style.json#/definitions/PropertyName"
                                 },
                                 {
                                     "$ref": "http://geostyler/geostyler-style.json#/definitions/FunctionCall"
+                                },
+                                {
+                                    "$ref": "http://geostyler/geostyler-style.json#/definitions/LiteralValue<string>"
+                                },
+                                {
+                                    "$ref": "http://geostyler/geostyler-style.json#/definitions/LiteralValue<number>"
+                                },
+                                {
+                                    "$ref": "http://geostyler/geostyler-style.json#/definitions/LiteralValue<boolean>"
+                                },
+                                {
+                                    "$ref": "http://geostyler/geostyler-style.json#/definitions/LiteralValue<null>"
                                 },
                                 {
                                     "type": "number"
@@ -395,13 +494,22 @@
                         {
                             "anyOf": [
                                 {
-                                    "$ref": "http://geostyler/geostyler-style.json#/definitions/LiteralValue"
-                                },
-                                {
                                     "$ref": "http://geostyler/geostyler-style.json#/definitions/PropertyName"
                                 },
                                 {
                                     "$ref": "http://geostyler/geostyler-style.json#/definitions/FunctionCall"
+                                },
+                                {
+                                    "$ref": "http://geostyler/geostyler-style.json#/definitions/LiteralValue<string>"
+                                },
+                                {
+                                    "$ref": "http://geostyler/geostyler-style.json#/definitions/LiteralValue<number>"
+                                },
+                                {
+                                    "$ref": "http://geostyler/geostyler-style.json#/definitions/LiteralValue<boolean>"
+                                },
+                                {
+                                    "$ref": "http://geostyler/geostyler-style.json#/definitions/LiteralValue<null>"
                                 },
                                 {
                                     "type": [
@@ -414,13 +522,22 @@
                         {
                             "anyOf": [
                                 {
-                                    "$ref": "http://geostyler/geostyler-style.json#/definitions/LiteralValue"
-                                },
-                                {
                                     "$ref": "http://geostyler/geostyler-style.json#/definitions/PropertyName"
                                 },
                                 {
                                     "$ref": "http://geostyler/geostyler-style.json#/definitions/FunctionCall"
+                                },
+                                {
+                                    "$ref": "http://geostyler/geostyler-style.json#/definitions/LiteralValue<string>"
+                                },
+                                {
+                                    "$ref": "http://geostyler/geostyler-style.json#/definitions/LiteralValue<number>"
+                                },
+                                {
+                                    "$ref": "http://geostyler/geostyler-style.json#/definitions/LiteralValue<boolean>"
+                                },
+                                {
+                                    "$ref": "http://geostyler/geostyler-style.json#/definitions/LiteralValue<null>"
                                 },
                                 {
                                     "type": [
@@ -464,13 +581,22 @@
                     "items": {
                         "anyOf": [
                             {
-                                "$ref": "http://geostyler/geostyler-style.json#/definitions/LiteralValue"
-                            },
-                            {
                                 "$ref": "http://geostyler/geostyler-style.json#/definitions/PropertyName"
                             },
                             {
                                 "$ref": "http://geostyler/geostyler-style.json#/definitions/FunctionCall"
+                            },
+                            {
+                                "$ref": "http://geostyler/geostyler-style.json#/definitions/LiteralValue<string>"
+                            },
+                            {
+                                "$ref": "http://geostyler/geostyler-style.json#/definitions/LiteralValue<number>"
+                            },
+                            {
+                                "$ref": "http://geostyler/geostyler-style.json#/definitions/LiteralValue<boolean>"
+                            },
+                            {
+                                "$ref": "http://geostyler/geostyler-style.json#/definitions/LiteralValue<null>"
                             }
                         ],
                         "description": "Expressions can be a literal value, a property name or a function call."
@@ -504,13 +630,22 @@
                 "allowOverlap": {
                     "anyOf": [
                         {
-                            "$ref": "http://geostyler/geostyler-style.json#/definitions/LiteralValue"
-                        },
-                        {
                             "$ref": "http://geostyler/geostyler-style.json#/definitions/PropertyName"
                         },
                         {
                             "$ref": "http://geostyler/geostyler-style.json#/definitions/FunctionCall"
+                        },
+                        {
+                            "$ref": "http://geostyler/geostyler-style.json#/definitions/LiteralValue<string>"
+                        },
+                        {
+                            "$ref": "http://geostyler/geostyler-style.json#/definitions/LiteralValue<number>"
+                        },
+                        {
+                            "$ref": "http://geostyler/geostyler-style.json#/definitions/LiteralValue<boolean>"
+                        },
+                        {
+                            "$ref": "http://geostyler/geostyler-style.json#/definitions/LiteralValue<null>"
                         },
                         {
                             "type": "boolean"
@@ -536,13 +671,22 @@
                 "avoidEdges": {
                     "anyOf": [
                         {
-                            "$ref": "http://geostyler/geostyler-style.json#/definitions/LiteralValue"
-                        },
-                        {
                             "$ref": "http://geostyler/geostyler-style.json#/definitions/PropertyName"
                         },
                         {
                             "$ref": "http://geostyler/geostyler-style.json#/definitions/FunctionCall"
+                        },
+                        {
+                            "$ref": "http://geostyler/geostyler-style.json#/definitions/LiteralValue<string>"
+                        },
+                        {
+                            "$ref": "http://geostyler/geostyler-style.json#/definitions/LiteralValue<number>"
+                        },
+                        {
+                            "$ref": "http://geostyler/geostyler-style.json#/definitions/LiteralValue<boolean>"
+                        },
+                        {
+                            "$ref": "http://geostyler/geostyler-style.json#/definitions/LiteralValue<null>"
                         },
                         {
                             "type": "boolean"
@@ -553,13 +697,22 @@
                 "color": {
                     "anyOf": [
                         {
-                            "$ref": "http://geostyler/geostyler-style.json#/definitions/LiteralValue"
-                        },
-                        {
                             "$ref": "http://geostyler/geostyler-style.json#/definitions/PropertyName"
                         },
                         {
                             "$ref": "http://geostyler/geostyler-style.json#/definitions/FunctionCall"
+                        },
+                        {
+                            "$ref": "http://geostyler/geostyler-style.json#/definitions/LiteralValue<string>"
+                        },
+                        {
+                            "$ref": "http://geostyler/geostyler-style.json#/definitions/LiteralValue<number>"
+                        },
+                        {
+                            "$ref": "http://geostyler/geostyler-style.json#/definitions/LiteralValue<boolean>"
+                        },
+                        {
+                            "$ref": "http://geostyler/geostyler-style.json#/definitions/LiteralValue<null>"
                         },
                         {
                             "type": "string"
@@ -581,13 +734,22 @@
                 "haloBlur": {
                     "anyOf": [
                         {
-                            "$ref": "http://geostyler/geostyler-style.json#/definitions/LiteralValue"
-                        },
-                        {
                             "$ref": "http://geostyler/geostyler-style.json#/definitions/PropertyName"
                         },
                         {
                             "$ref": "http://geostyler/geostyler-style.json#/definitions/FunctionCall"
+                        },
+                        {
+                            "$ref": "http://geostyler/geostyler-style.json#/definitions/LiteralValue<string>"
+                        },
+                        {
+                            "$ref": "http://geostyler/geostyler-style.json#/definitions/LiteralValue<number>"
+                        },
+                        {
+                            "$ref": "http://geostyler/geostyler-style.json#/definitions/LiteralValue<boolean>"
+                        },
+                        {
+                            "$ref": "http://geostyler/geostyler-style.json#/definitions/LiteralValue<null>"
                         },
                         {
                             "type": "number"
@@ -598,13 +760,22 @@
                 "haloColor": {
                     "anyOf": [
                         {
-                            "$ref": "http://geostyler/geostyler-style.json#/definitions/LiteralValue"
-                        },
-                        {
                             "$ref": "http://geostyler/geostyler-style.json#/definitions/PropertyName"
                         },
                         {
                             "$ref": "http://geostyler/geostyler-style.json#/definitions/FunctionCall"
+                        },
+                        {
+                            "$ref": "http://geostyler/geostyler-style.json#/definitions/LiteralValue<string>"
+                        },
+                        {
+                            "$ref": "http://geostyler/geostyler-style.json#/definitions/LiteralValue<number>"
+                        },
+                        {
+                            "$ref": "http://geostyler/geostyler-style.json#/definitions/LiteralValue<boolean>"
+                        },
+                        {
+                            "$ref": "http://geostyler/geostyler-style.json#/definitions/LiteralValue<null>"
                         },
                         {
                             "type": "string"
@@ -615,13 +786,22 @@
                 "haloWidth": {
                     "anyOf": [
                         {
-                            "$ref": "http://geostyler/geostyler-style.json#/definitions/LiteralValue"
-                        },
-                        {
                             "$ref": "http://geostyler/geostyler-style.json#/definitions/PropertyName"
                         },
                         {
                             "$ref": "http://geostyler/geostyler-style.json#/definitions/FunctionCall"
+                        },
+                        {
+                            "$ref": "http://geostyler/geostyler-style.json#/definitions/LiteralValue<string>"
+                        },
+                        {
+                            "$ref": "http://geostyler/geostyler-style.json#/definitions/LiteralValue<number>"
+                        },
+                        {
+                            "$ref": "http://geostyler/geostyler-style.json#/definitions/LiteralValue<boolean>"
+                        },
+                        {
+                            "$ref": "http://geostyler/geostyler-style.json#/definitions/LiteralValue<null>"
                         },
                         {
                             "type": "number"
@@ -640,13 +820,22 @@
                 "image": {
                     "anyOf": [
                         {
-                            "$ref": "http://geostyler/geostyler-style.json#/definitions/LiteralValue"
-                        },
-                        {
                             "$ref": "http://geostyler/geostyler-style.json#/definitions/PropertyName"
                         },
                         {
                             "$ref": "http://geostyler/geostyler-style.json#/definitions/FunctionCall"
+                        },
+                        {
+                            "$ref": "http://geostyler/geostyler-style.json#/definitions/LiteralValue<string>"
+                        },
+                        {
+                            "$ref": "http://geostyler/geostyler-style.json#/definitions/LiteralValue<number>"
+                        },
+                        {
+                            "$ref": "http://geostyler/geostyler-style.json#/definitions/LiteralValue<boolean>"
+                        },
+                        {
+                            "$ref": "http://geostyler/geostyler-style.json#/definitions/LiteralValue<null>"
                         },
                         {
                             "type": "string"
@@ -657,13 +846,22 @@
                 "keepUpright": {
                     "anyOf": [
                         {
-                            "$ref": "http://geostyler/geostyler-style.json#/definitions/LiteralValue"
-                        },
-                        {
                             "$ref": "http://geostyler/geostyler-style.json#/definitions/PropertyName"
                         },
                         {
                             "$ref": "http://geostyler/geostyler-style.json#/definitions/FunctionCall"
+                        },
+                        {
+                            "$ref": "http://geostyler/geostyler-style.json#/definitions/LiteralValue<string>"
+                        },
+                        {
+                            "$ref": "http://geostyler/geostyler-style.json#/definitions/LiteralValue<number>"
+                        },
+                        {
+                            "$ref": "http://geostyler/geostyler-style.json#/definitions/LiteralValue<boolean>"
+                        },
+                        {
+                            "$ref": "http://geostyler/geostyler-style.json#/definitions/LiteralValue<null>"
                         },
                         {
                             "type": "boolean"
@@ -684,13 +882,22 @@
                         {
                             "anyOf": [
                                 {
-                                    "$ref": "http://geostyler/geostyler-style.json#/definitions/LiteralValue"
-                                },
-                                {
                                     "$ref": "http://geostyler/geostyler-style.json#/definitions/PropertyName"
                                 },
                                 {
                                     "$ref": "http://geostyler/geostyler-style.json#/definitions/FunctionCall"
+                                },
+                                {
+                                    "$ref": "http://geostyler/geostyler-style.json#/definitions/LiteralValue<string>"
+                                },
+                                {
+                                    "$ref": "http://geostyler/geostyler-style.json#/definitions/LiteralValue<number>"
+                                },
+                                {
+                                    "$ref": "http://geostyler/geostyler-style.json#/definitions/LiteralValue<boolean>"
+                                },
+                                {
+                                    "$ref": "http://geostyler/geostyler-style.json#/definitions/LiteralValue<null>"
                                 },
                                 {
                                     "type": "number"
@@ -700,13 +907,22 @@
                         {
                             "anyOf": [
                                 {
-                                    "$ref": "http://geostyler/geostyler-style.json#/definitions/LiteralValue"
-                                },
-                                {
                                     "$ref": "http://geostyler/geostyler-style.json#/definitions/PropertyName"
                                 },
                                 {
                                     "$ref": "http://geostyler/geostyler-style.json#/definitions/FunctionCall"
+                                },
+                                {
+                                    "$ref": "http://geostyler/geostyler-style.json#/definitions/LiteralValue<string>"
+                                },
+                                {
+                                    "$ref": "http://geostyler/geostyler-style.json#/definitions/LiteralValue<number>"
+                                },
+                                {
+                                    "$ref": "http://geostyler/geostyler-style.json#/definitions/LiteralValue<boolean>"
+                                },
+                                {
+                                    "$ref": "http://geostyler/geostyler-style.json#/definitions/LiteralValue<null>"
                                 },
                                 {
                                     "type": "number"
@@ -729,13 +945,22 @@
                 "opacity": {
                     "anyOf": [
                         {
-                            "$ref": "http://geostyler/geostyler-style.json#/definitions/LiteralValue"
-                        },
-                        {
                             "$ref": "http://geostyler/geostyler-style.json#/definitions/PropertyName"
                         },
                         {
                             "$ref": "http://geostyler/geostyler-style.json#/definitions/FunctionCall"
+                        },
+                        {
+                            "$ref": "http://geostyler/geostyler-style.json#/definitions/LiteralValue<string>"
+                        },
+                        {
+                            "$ref": "http://geostyler/geostyler-style.json#/definitions/LiteralValue<number>"
+                        },
+                        {
+                            "$ref": "http://geostyler/geostyler-style.json#/definitions/LiteralValue<boolean>"
+                        },
+                        {
+                            "$ref": "http://geostyler/geostyler-style.json#/definitions/LiteralValue<null>"
                         },
                         {
                             "type": "number"
@@ -746,13 +971,22 @@
                 "optional": {
                     "anyOf": [
                         {
-                            "$ref": "http://geostyler/geostyler-style.json#/definitions/LiteralValue"
-                        },
-                        {
                             "$ref": "http://geostyler/geostyler-style.json#/definitions/PropertyName"
                         },
                         {
                             "$ref": "http://geostyler/geostyler-style.json#/definitions/FunctionCall"
+                        },
+                        {
+                            "$ref": "http://geostyler/geostyler-style.json#/definitions/LiteralValue<string>"
+                        },
+                        {
+                            "$ref": "http://geostyler/geostyler-style.json#/definitions/LiteralValue<number>"
+                        },
+                        {
+                            "$ref": "http://geostyler/geostyler-style.json#/definitions/LiteralValue<boolean>"
+                        },
+                        {
+                            "$ref": "http://geostyler/geostyler-style.json#/definitions/LiteralValue<null>"
                         },
                         {
                             "type": "boolean"
@@ -763,13 +997,22 @@
                 "padding": {
                     "anyOf": [
                         {
-                            "$ref": "http://geostyler/geostyler-style.json#/definitions/LiteralValue"
-                        },
-                        {
                             "$ref": "http://geostyler/geostyler-style.json#/definitions/PropertyName"
                         },
                         {
                             "$ref": "http://geostyler/geostyler-style.json#/definitions/FunctionCall"
+                        },
+                        {
+                            "$ref": "http://geostyler/geostyler-style.json#/definitions/LiteralValue<string>"
+                        },
+                        {
+                            "$ref": "http://geostyler/geostyler-style.json#/definitions/LiteralValue<number>"
+                        },
+                        {
+                            "$ref": "http://geostyler/geostyler-style.json#/definitions/LiteralValue<boolean>"
+                        },
+                        {
+                            "$ref": "http://geostyler/geostyler-style.json#/definitions/LiteralValue<null>"
                         },
                         {
                             "type": "number"
@@ -789,13 +1032,22 @@
                 "rotate": {
                     "anyOf": [
                         {
-                            "$ref": "http://geostyler/geostyler-style.json#/definitions/LiteralValue"
-                        },
-                        {
                             "$ref": "http://geostyler/geostyler-style.json#/definitions/PropertyName"
                         },
                         {
                             "$ref": "http://geostyler/geostyler-style.json#/definitions/FunctionCall"
+                        },
+                        {
+                            "$ref": "http://geostyler/geostyler-style.json#/definitions/LiteralValue<string>"
+                        },
+                        {
+                            "$ref": "http://geostyler/geostyler-style.json#/definitions/LiteralValue<number>"
+                        },
+                        {
+                            "$ref": "http://geostyler/geostyler-style.json#/definitions/LiteralValue<boolean>"
+                        },
+                        {
+                            "$ref": "http://geostyler/geostyler-style.json#/definitions/LiteralValue<null>"
                         },
                         {
                             "type": "number"
@@ -815,13 +1067,22 @@
                 "size": {
                     "anyOf": [
                         {
-                            "$ref": "http://geostyler/geostyler-style.json#/definitions/LiteralValue"
-                        },
-                        {
                             "$ref": "http://geostyler/geostyler-style.json#/definitions/PropertyName"
                         },
                         {
                             "$ref": "http://geostyler/geostyler-style.json#/definitions/FunctionCall"
+                        },
+                        {
+                            "$ref": "http://geostyler/geostyler-style.json#/definitions/LiteralValue<string>"
+                        },
+                        {
+                            "$ref": "http://geostyler/geostyler-style.json#/definitions/LiteralValue<number>"
+                        },
+                        {
+                            "$ref": "http://geostyler/geostyler-style.json#/definitions/LiteralValue<boolean>"
+                        },
+                        {
+                            "$ref": "http://geostyler/geostyler-style.json#/definitions/LiteralValue<null>"
                         },
                         {
                             "type": "number"
@@ -870,13 +1131,22 @@
                 "visibility": {
                     "anyOf": [
                         {
-                            "$ref": "http://geostyler/geostyler-style.json#/definitions/LiteralValue"
-                        },
-                        {
                             "$ref": "http://geostyler/geostyler-style.json#/definitions/PropertyName"
                         },
                         {
                             "$ref": "http://geostyler/geostyler-style.json#/definitions/FunctionCall"
+                        },
+                        {
+                            "$ref": "http://geostyler/geostyler-style.json#/definitions/LiteralValue<string>"
+                        },
+                        {
+                            "$ref": "http://geostyler/geostyler-style.json#/definitions/LiteralValue<number>"
+                        },
+                        {
+                            "$ref": "http://geostyler/geostyler-style.json#/definitions/LiteralValue<boolean>"
+                        },
+                        {
+                            "$ref": "http://geostyler/geostyler-style.json#/definitions/LiteralValue<null>"
                         },
                         {
                             "type": "boolean"
@@ -893,13 +1163,22 @@
                 "blur": {
                     "anyOf": [
                         {
-                            "$ref": "http://geostyler/geostyler-style.json#/definitions/LiteralValue"
-                        },
-                        {
                             "$ref": "http://geostyler/geostyler-style.json#/definitions/PropertyName"
                         },
                         {
                             "$ref": "http://geostyler/geostyler-style.json#/definitions/FunctionCall"
+                        },
+                        {
+                            "$ref": "http://geostyler/geostyler-style.json#/definitions/LiteralValue<string>"
+                        },
+                        {
+                            "$ref": "http://geostyler/geostyler-style.json#/definitions/LiteralValue<number>"
+                        },
+                        {
+                            "$ref": "http://geostyler/geostyler-style.json#/definitions/LiteralValue<boolean>"
+                        },
+                        {
+                            "$ref": "http://geostyler/geostyler-style.json#/definitions/LiteralValue<null>"
                         },
                         {
                             "type": "number"
@@ -918,13 +1197,22 @@
                 "color": {
                     "anyOf": [
                         {
-                            "$ref": "http://geostyler/geostyler-style.json#/definitions/LiteralValue"
-                        },
-                        {
                             "$ref": "http://geostyler/geostyler-style.json#/definitions/PropertyName"
                         },
                         {
                             "$ref": "http://geostyler/geostyler-style.json#/definitions/FunctionCall"
+                        },
+                        {
+                            "$ref": "http://geostyler/geostyler-style.json#/definitions/LiteralValue<string>"
+                        },
+                        {
+                            "$ref": "http://geostyler/geostyler-style.json#/definitions/LiteralValue<number>"
+                        },
+                        {
+                            "$ref": "http://geostyler/geostyler-style.json#/definitions/LiteralValue<boolean>"
+                        },
+                        {
+                            "$ref": "http://geostyler/geostyler-style.json#/definitions/LiteralValue<null>"
                         },
                         {
                             "type": "string"
@@ -935,13 +1223,22 @@
                 "dashOffset": {
                     "anyOf": [
                         {
-                            "$ref": "http://geostyler/geostyler-style.json#/definitions/LiteralValue"
-                        },
-                        {
                             "$ref": "http://geostyler/geostyler-style.json#/definitions/PropertyName"
                         },
                         {
                             "$ref": "http://geostyler/geostyler-style.json#/definitions/FunctionCall"
+                        },
+                        {
+                            "$ref": "http://geostyler/geostyler-style.json#/definitions/LiteralValue<string>"
+                        },
+                        {
+                            "$ref": "http://geostyler/geostyler-style.json#/definitions/LiteralValue<number>"
+                        },
+                        {
+                            "$ref": "http://geostyler/geostyler-style.json#/definitions/LiteralValue<boolean>"
+                        },
+                        {
+                            "$ref": "http://geostyler/geostyler-style.json#/definitions/LiteralValue<null>"
                         },
                         {
                             "type": "number"
@@ -959,13 +1256,22 @@
                 "gapWidth": {
                     "anyOf": [
                         {
-                            "$ref": "http://geostyler/geostyler-style.json#/definitions/LiteralValue"
-                        },
-                        {
                             "$ref": "http://geostyler/geostyler-style.json#/definitions/PropertyName"
                         },
                         {
                             "$ref": "http://geostyler/geostyler-style.json#/definitions/FunctionCall"
+                        },
+                        {
+                            "$ref": "http://geostyler/geostyler-style.json#/definitions/LiteralValue<string>"
+                        },
+                        {
+                            "$ref": "http://geostyler/geostyler-style.json#/definitions/LiteralValue<number>"
+                        },
+                        {
+                            "$ref": "http://geostyler/geostyler-style.json#/definitions/LiteralValue<boolean>"
+                        },
+                        {
+                            "$ref": "http://geostyler/geostyler-style.json#/definitions/LiteralValue<null>"
                         },
                         {
                             "type": "number"
@@ -1033,13 +1339,22 @@
                 "miterLimit": {
                     "anyOf": [
                         {
-                            "$ref": "http://geostyler/geostyler-style.json#/definitions/LiteralValue"
-                        },
-                        {
                             "$ref": "http://geostyler/geostyler-style.json#/definitions/PropertyName"
                         },
                         {
                             "$ref": "http://geostyler/geostyler-style.json#/definitions/FunctionCall"
+                        },
+                        {
+                            "$ref": "http://geostyler/geostyler-style.json#/definitions/LiteralValue<string>"
+                        },
+                        {
+                            "$ref": "http://geostyler/geostyler-style.json#/definitions/LiteralValue<number>"
+                        },
+                        {
+                            "$ref": "http://geostyler/geostyler-style.json#/definitions/LiteralValue<boolean>"
+                        },
+                        {
+                            "$ref": "http://geostyler/geostyler-style.json#/definitions/LiteralValue<null>"
                         },
                         {
                             "type": "number"
@@ -1050,13 +1365,22 @@
                 "opacity": {
                     "anyOf": [
                         {
-                            "$ref": "http://geostyler/geostyler-style.json#/definitions/LiteralValue"
-                        },
-                        {
                             "$ref": "http://geostyler/geostyler-style.json#/definitions/PropertyName"
                         },
                         {
                             "$ref": "http://geostyler/geostyler-style.json#/definitions/FunctionCall"
+                        },
+                        {
+                            "$ref": "http://geostyler/geostyler-style.json#/definitions/LiteralValue<string>"
+                        },
+                        {
+                            "$ref": "http://geostyler/geostyler-style.json#/definitions/LiteralValue<number>"
+                        },
+                        {
+                            "$ref": "http://geostyler/geostyler-style.json#/definitions/LiteralValue<boolean>"
+                        },
+                        {
+                            "$ref": "http://geostyler/geostyler-style.json#/definitions/LiteralValue<null>"
                         },
                         {
                             "type": "number"
@@ -1067,13 +1391,22 @@
                 "perpendicularOffset": {
                     "anyOf": [
                         {
-                            "$ref": "http://geostyler/geostyler-style.json#/definitions/LiteralValue"
-                        },
-                        {
                             "$ref": "http://geostyler/geostyler-style.json#/definitions/PropertyName"
                         },
                         {
                             "$ref": "http://geostyler/geostyler-style.json#/definitions/FunctionCall"
+                        },
+                        {
+                            "$ref": "http://geostyler/geostyler-style.json#/definitions/LiteralValue<string>"
+                        },
+                        {
+                            "$ref": "http://geostyler/geostyler-style.json#/definitions/LiteralValue<number>"
+                        },
+                        {
+                            "$ref": "http://geostyler/geostyler-style.json#/definitions/LiteralValue<boolean>"
+                        },
+                        {
+                            "$ref": "http://geostyler/geostyler-style.json#/definitions/LiteralValue<null>"
                         },
                         {
                             "type": "number"
@@ -1084,13 +1417,22 @@
                 "roundLimit": {
                     "anyOf": [
                         {
-                            "$ref": "http://geostyler/geostyler-style.json#/definitions/LiteralValue"
-                        },
-                        {
                             "$ref": "http://geostyler/geostyler-style.json#/definitions/PropertyName"
                         },
                         {
                             "$ref": "http://geostyler/geostyler-style.json#/definitions/FunctionCall"
+                        },
+                        {
+                            "$ref": "http://geostyler/geostyler-style.json#/definitions/LiteralValue<string>"
+                        },
+                        {
+                            "$ref": "http://geostyler/geostyler-style.json#/definitions/LiteralValue<number>"
+                        },
+                        {
+                            "$ref": "http://geostyler/geostyler-style.json#/definitions/LiteralValue<boolean>"
+                        },
+                        {
+                            "$ref": "http://geostyler/geostyler-style.json#/definitions/LiteralValue<null>"
                         },
                         {
                             "type": "number"
@@ -1101,13 +1443,22 @@
                 "spacing": {
                     "anyOf": [
                         {
-                            "$ref": "http://geostyler/geostyler-style.json#/definitions/LiteralValue"
-                        },
-                        {
                             "$ref": "http://geostyler/geostyler-style.json#/definitions/PropertyName"
                         },
                         {
                             "$ref": "http://geostyler/geostyler-style.json#/definitions/FunctionCall"
+                        },
+                        {
+                            "$ref": "http://geostyler/geostyler-style.json#/definitions/LiteralValue<string>"
+                        },
+                        {
+                            "$ref": "http://geostyler/geostyler-style.json#/definitions/LiteralValue<number>"
+                        },
+                        {
+                            "$ref": "http://geostyler/geostyler-style.json#/definitions/LiteralValue<boolean>"
+                        },
+                        {
+                            "$ref": "http://geostyler/geostyler-style.json#/definitions/LiteralValue<null>"
                         },
                         {
                             "type": "number"
@@ -1127,13 +1478,22 @@
                 "visibility": {
                     "anyOf": [
                         {
-                            "$ref": "http://geostyler/geostyler-style.json#/definitions/LiteralValue"
-                        },
-                        {
                             "$ref": "http://geostyler/geostyler-style.json#/definitions/PropertyName"
                         },
                         {
                             "$ref": "http://geostyler/geostyler-style.json#/definitions/FunctionCall"
+                        },
+                        {
+                            "$ref": "http://geostyler/geostyler-style.json#/definitions/LiteralValue<string>"
+                        },
+                        {
+                            "$ref": "http://geostyler/geostyler-style.json#/definitions/LiteralValue<number>"
+                        },
+                        {
+                            "$ref": "http://geostyler/geostyler-style.json#/definitions/LiteralValue<boolean>"
+                        },
+                        {
+                            "$ref": "http://geostyler/geostyler-style.json#/definitions/LiteralValue<null>"
                         },
                         {
                             "type": "boolean"
@@ -1144,13 +1504,22 @@
                 "width": {
                     "anyOf": [
                         {
-                            "$ref": "http://geostyler/geostyler-style.json#/definitions/LiteralValue"
-                        },
-                        {
                             "$ref": "http://geostyler/geostyler-style.json#/definitions/PropertyName"
                         },
                         {
                             "$ref": "http://geostyler/geostyler-style.json#/definitions/FunctionCall"
+                        },
+                        {
+                            "$ref": "http://geostyler/geostyler-style.json#/definitions/LiteralValue<string>"
+                        },
+                        {
+                            "$ref": "http://geostyler/geostyler-style.json#/definitions/LiteralValue<number>"
+                        },
+                        {
+                            "$ref": "http://geostyler/geostyler-style.json#/definitions/LiteralValue<boolean>"
+                        },
+                        {
+                            "$ref": "http://geostyler/geostyler-style.json#/definitions/LiteralValue<null>"
                         },
                         {
                             "type": "number"
@@ -1169,7 +1538,7 @@
             },
             "type": "object"
         },
-        "LiteralValue": {
+        "LiteralValue<boolean>": {
             "description": "Expression that evaluates to the given value.",
             "properties": {
                 "type": {
@@ -1179,11 +1548,52 @@
                     "type": "string"
                 },
                 "value": {
-                    "type": [
-                        "string",
-                        "number",
-                        "boolean"
-                    ]
+                    "type": "boolean"
+                }
+            },
+            "type": "object"
+        },
+        "LiteralValue<null>": {
+            "description": "Expression that evaluates to the given value.",
+            "properties": {
+                "type": {
+                    "enum": [
+                        "literal"
+                    ],
+                    "type": "string"
+                },
+                "value": {
+                    "type": "null"
+                }
+            },
+            "type": "object"
+        },
+        "LiteralValue<number>": {
+            "description": "Expression that evaluates to the given value.",
+            "properties": {
+                "type": {
+                    "enum": [
+                        "literal"
+                    ],
+                    "type": "string"
+                },
+                "value": {
+                    "type": "number"
+                }
+            },
+            "type": "object"
+        },
+        "LiteralValue<string>": {
+            "description": "Expression that evaluates to the given value.",
+            "properties": {
+                "type": {
+                    "enum": [
+                        "literal"
+                    ],
+                    "type": "string"
+                },
+                "value": {
+                    "type": "string"
                 }
             },
             "type": "object"
@@ -1194,13 +1604,22 @@
                 "avoidEdges": {
                     "anyOf": [
                         {
-                            "$ref": "http://geostyler/geostyler-style.json#/definitions/LiteralValue"
-                        },
-                        {
                             "$ref": "http://geostyler/geostyler-style.json#/definitions/PropertyName"
                         },
                         {
                             "$ref": "http://geostyler/geostyler-style.json#/definitions/FunctionCall"
+                        },
+                        {
+                            "$ref": "http://geostyler/geostyler-style.json#/definitions/LiteralValue<string>"
+                        },
+                        {
+                            "$ref": "http://geostyler/geostyler-style.json#/definitions/LiteralValue<number>"
+                        },
+                        {
+                            "$ref": "http://geostyler/geostyler-style.json#/definitions/LiteralValue<boolean>"
+                        },
+                        {
+                            "$ref": "http://geostyler/geostyler-style.json#/definitions/LiteralValue<null>"
                         },
                         {
                             "type": "boolean"
@@ -1211,13 +1630,22 @@
                 "blur": {
                     "anyOf": [
                         {
-                            "$ref": "http://geostyler/geostyler-style.json#/definitions/LiteralValue"
-                        },
-                        {
                             "$ref": "http://geostyler/geostyler-style.json#/definitions/PropertyName"
                         },
                         {
                             "$ref": "http://geostyler/geostyler-style.json#/definitions/FunctionCall"
+                        },
+                        {
+                            "$ref": "http://geostyler/geostyler-style.json#/definitions/LiteralValue<string>"
+                        },
+                        {
+                            "$ref": "http://geostyler/geostyler-style.json#/definitions/LiteralValue<number>"
+                        },
+                        {
+                            "$ref": "http://geostyler/geostyler-style.json#/definitions/LiteralValue<boolean>"
+                        },
+                        {
+                            "$ref": "http://geostyler/geostyler-style.json#/definitions/LiteralValue<null>"
                         },
                         {
                             "type": "number"
@@ -1228,13 +1656,22 @@
                 "color": {
                     "anyOf": [
                         {
-                            "$ref": "http://geostyler/geostyler-style.json#/definitions/LiteralValue"
-                        },
-                        {
                             "$ref": "http://geostyler/geostyler-style.json#/definitions/PropertyName"
                         },
                         {
                             "$ref": "http://geostyler/geostyler-style.json#/definitions/FunctionCall"
+                        },
+                        {
+                            "$ref": "http://geostyler/geostyler-style.json#/definitions/LiteralValue<string>"
+                        },
+                        {
+                            "$ref": "http://geostyler/geostyler-style.json#/definitions/LiteralValue<number>"
+                        },
+                        {
+                            "$ref": "http://geostyler/geostyler-style.json#/definitions/LiteralValue<boolean>"
+                        },
+                        {
+                            "$ref": "http://geostyler/geostyler-style.json#/definitions/LiteralValue<null>"
                         },
                         {
                             "type": "string"
@@ -1245,13 +1682,22 @@
                 "fillOpacity": {
                     "anyOf": [
                         {
-                            "$ref": "http://geostyler/geostyler-style.json#/definitions/LiteralValue"
-                        },
-                        {
                             "$ref": "http://geostyler/geostyler-style.json#/definitions/PropertyName"
                         },
                         {
                             "$ref": "http://geostyler/geostyler-style.json#/definitions/FunctionCall"
+                        },
+                        {
+                            "$ref": "http://geostyler/geostyler-style.json#/definitions/LiteralValue<string>"
+                        },
+                        {
+                            "$ref": "http://geostyler/geostyler-style.json#/definitions/LiteralValue<number>"
+                        },
+                        {
+                            "$ref": "http://geostyler/geostyler-style.json#/definitions/LiteralValue<boolean>"
+                        },
+                        {
+                            "$ref": "http://geostyler/geostyler-style.json#/definitions/LiteralValue<null>"
                         },
                         {
                             "type": "number"
@@ -1272,13 +1718,22 @@
                         {
                             "anyOf": [
                                 {
-                                    "$ref": "http://geostyler/geostyler-style.json#/definitions/LiteralValue"
-                                },
-                                {
                                     "$ref": "http://geostyler/geostyler-style.json#/definitions/PropertyName"
                                 },
                                 {
                                     "$ref": "http://geostyler/geostyler-style.json#/definitions/FunctionCall"
+                                },
+                                {
+                                    "$ref": "http://geostyler/geostyler-style.json#/definitions/LiteralValue<string>"
+                                },
+                                {
+                                    "$ref": "http://geostyler/geostyler-style.json#/definitions/LiteralValue<number>"
+                                },
+                                {
+                                    "$ref": "http://geostyler/geostyler-style.json#/definitions/LiteralValue<boolean>"
+                                },
+                                {
+                                    "$ref": "http://geostyler/geostyler-style.json#/definitions/LiteralValue<null>"
                                 },
                                 {
                                     "type": "number"
@@ -1288,13 +1743,22 @@
                         {
                             "anyOf": [
                                 {
-                                    "$ref": "http://geostyler/geostyler-style.json#/definitions/LiteralValue"
-                                },
-                                {
                                     "$ref": "http://geostyler/geostyler-style.json#/definitions/PropertyName"
                                 },
                                 {
                                     "$ref": "http://geostyler/geostyler-style.json#/definitions/FunctionCall"
+                                },
+                                {
+                                    "$ref": "http://geostyler/geostyler-style.json#/definitions/LiteralValue<string>"
+                                },
+                                {
+                                    "$ref": "http://geostyler/geostyler-style.json#/definitions/LiteralValue<number>"
+                                },
+                                {
+                                    "$ref": "http://geostyler/geostyler-style.json#/definitions/LiteralValue<boolean>"
+                                },
+                                {
+                                    "$ref": "http://geostyler/geostyler-style.json#/definitions/LiteralValue<null>"
                                 },
                                 {
                                     "type": "number"
@@ -1317,13 +1781,22 @@
                 "opacity": {
                     "anyOf": [
                         {
-                            "$ref": "http://geostyler/geostyler-style.json#/definitions/LiteralValue"
-                        },
-                        {
                             "$ref": "http://geostyler/geostyler-style.json#/definitions/PropertyName"
                         },
                         {
                             "$ref": "http://geostyler/geostyler-style.json#/definitions/FunctionCall"
+                        },
+                        {
+                            "$ref": "http://geostyler/geostyler-style.json#/definitions/LiteralValue<string>"
+                        },
+                        {
+                            "$ref": "http://geostyler/geostyler-style.json#/definitions/LiteralValue<number>"
+                        },
+                        {
+                            "$ref": "http://geostyler/geostyler-style.json#/definitions/LiteralValue<boolean>"
+                        },
+                        {
+                            "$ref": "http://geostyler/geostyler-style.json#/definitions/LiteralValue<null>"
                         },
                         {
                             "type": "number"
@@ -1350,13 +1823,22 @@
                 "radius": {
                     "anyOf": [
                         {
-                            "$ref": "http://geostyler/geostyler-style.json#/definitions/LiteralValue"
-                        },
-                        {
                             "$ref": "http://geostyler/geostyler-style.json#/definitions/PropertyName"
                         },
                         {
                             "$ref": "http://geostyler/geostyler-style.json#/definitions/FunctionCall"
+                        },
+                        {
+                            "$ref": "http://geostyler/geostyler-style.json#/definitions/LiteralValue<string>"
+                        },
+                        {
+                            "$ref": "http://geostyler/geostyler-style.json#/definitions/LiteralValue<number>"
+                        },
+                        {
+                            "$ref": "http://geostyler/geostyler-style.json#/definitions/LiteralValue<boolean>"
+                        },
+                        {
+                            "$ref": "http://geostyler/geostyler-style.json#/definitions/LiteralValue<null>"
                         },
                         {
                             "type": "number"
@@ -1375,13 +1857,22 @@
                 "rotate": {
                     "anyOf": [
                         {
-                            "$ref": "http://geostyler/geostyler-style.json#/definitions/LiteralValue"
-                        },
-                        {
                             "$ref": "http://geostyler/geostyler-style.json#/definitions/PropertyName"
                         },
                         {
                             "$ref": "http://geostyler/geostyler-style.json#/definitions/FunctionCall"
+                        },
+                        {
+                            "$ref": "http://geostyler/geostyler-style.json#/definitions/LiteralValue<string>"
+                        },
+                        {
+                            "$ref": "http://geostyler/geostyler-style.json#/definitions/LiteralValue<number>"
+                        },
+                        {
+                            "$ref": "http://geostyler/geostyler-style.json#/definitions/LiteralValue<boolean>"
+                        },
+                        {
+                            "$ref": "http://geostyler/geostyler-style.json#/definitions/LiteralValue<null>"
                         },
                         {
                             "type": "number"
@@ -1392,13 +1883,22 @@
                 "strokeColor": {
                     "anyOf": [
                         {
-                            "$ref": "http://geostyler/geostyler-style.json#/definitions/LiteralValue"
-                        },
-                        {
                             "$ref": "http://geostyler/geostyler-style.json#/definitions/PropertyName"
                         },
                         {
                             "$ref": "http://geostyler/geostyler-style.json#/definitions/FunctionCall"
+                        },
+                        {
+                            "$ref": "http://geostyler/geostyler-style.json#/definitions/LiteralValue<string>"
+                        },
+                        {
+                            "$ref": "http://geostyler/geostyler-style.json#/definitions/LiteralValue<number>"
+                        },
+                        {
+                            "$ref": "http://geostyler/geostyler-style.json#/definitions/LiteralValue<boolean>"
+                        },
+                        {
+                            "$ref": "http://geostyler/geostyler-style.json#/definitions/LiteralValue<null>"
                         },
                         {
                             "type": "string"
@@ -1409,13 +1909,22 @@
                 "strokeOpacity": {
                     "anyOf": [
                         {
-                            "$ref": "http://geostyler/geostyler-style.json#/definitions/LiteralValue"
-                        },
-                        {
                             "$ref": "http://geostyler/geostyler-style.json#/definitions/PropertyName"
                         },
                         {
                             "$ref": "http://geostyler/geostyler-style.json#/definitions/FunctionCall"
+                        },
+                        {
+                            "$ref": "http://geostyler/geostyler-style.json#/definitions/LiteralValue<string>"
+                        },
+                        {
+                            "$ref": "http://geostyler/geostyler-style.json#/definitions/LiteralValue<number>"
+                        },
+                        {
+                            "$ref": "http://geostyler/geostyler-style.json#/definitions/LiteralValue<boolean>"
+                        },
+                        {
+                            "$ref": "http://geostyler/geostyler-style.json#/definitions/LiteralValue<null>"
                         },
                         {
                             "type": "number"
@@ -1426,13 +1935,22 @@
                 "strokeWidth": {
                     "anyOf": [
                         {
-                            "$ref": "http://geostyler/geostyler-style.json#/definitions/LiteralValue"
-                        },
-                        {
                             "$ref": "http://geostyler/geostyler-style.json#/definitions/PropertyName"
                         },
                         {
                             "$ref": "http://geostyler/geostyler-style.json#/definitions/FunctionCall"
+                        },
+                        {
+                            "$ref": "http://geostyler/geostyler-style.json#/definitions/LiteralValue<string>"
+                        },
+                        {
+                            "$ref": "http://geostyler/geostyler-style.json#/definitions/LiteralValue<number>"
+                        },
+                        {
+                            "$ref": "http://geostyler/geostyler-style.json#/definitions/LiteralValue<boolean>"
+                        },
+                        {
+                            "$ref": "http://geostyler/geostyler-style.json#/definitions/LiteralValue<null>"
                         },
                         {
                             "type": "number"
@@ -1451,13 +1969,22 @@
                 "visibility": {
                     "anyOf": [
                         {
-                            "$ref": "http://geostyler/geostyler-style.json#/definitions/LiteralValue"
-                        },
-                        {
                             "$ref": "http://geostyler/geostyler-style.json#/definitions/PropertyName"
                         },
                         {
                             "$ref": "http://geostyler/geostyler-style.json#/definitions/FunctionCall"
+                        },
+                        {
+                            "$ref": "http://geostyler/geostyler-style.json#/definitions/LiteralValue<string>"
+                        },
+                        {
+                            "$ref": "http://geostyler/geostyler-style.json#/definitions/LiteralValue<number>"
+                        },
+                        {
+                            "$ref": "http://geostyler/geostyler-style.json#/definitions/LiteralValue<boolean>"
+                        },
+                        {
+                            "$ref": "http://geostyler/geostyler-style.json#/definitions/LiteralValue<null>"
                         },
                         {
                             "type": "boolean"
@@ -1676,13 +2203,22 @@
                                 {
                                     "anyOf": [
                                         {
-                                            "$ref": "http://geostyler/geostyler-style.json#/definitions/LiteralValue"
-                                        },
-                                        {
                                             "$ref": "http://geostyler/geostyler-style.json#/definitions/PropertyName"
                                         },
                                         {
                                             "$ref": "http://geostyler/geostyler-style.json#/definitions/FunctionCall"
+                                        },
+                                        {
+                                            "$ref": "http://geostyler/geostyler-style.json#/definitions/LiteralValue<string>"
+                                        },
+                                        {
+                                            "$ref": "http://geostyler/geostyler-style.json#/definitions/LiteralValue<number>"
+                                        },
+                                        {
+                                            "$ref": "http://geostyler/geostyler-style.json#/definitions/LiteralValue<boolean>"
+                                        },
+                                        {
+                                            "$ref": "http://geostyler/geostyler-style.json#/definitions/LiteralValue<null>"
                                         },
                                         {
                                             "description": "A FunctionFilter that expects an Expression as second and\nthird argument. The function checks, if the evaluation of\nthe second argument matches the evaluation of the third one.\nAn actual parser implementation has to return a value for\nthis function expression.",
@@ -1712,13 +2248,22 @@
                                 {
                                     "anyOf": [
                                         {
-                                            "$ref": "http://geostyler/geostyler-style.json#/definitions/LiteralValue"
-                                        },
-                                        {
                                             "$ref": "http://geostyler/geostyler-style.json#/definitions/PropertyName"
                                         },
                                         {
                                             "$ref": "http://geostyler/geostyler-style.json#/definitions/FunctionCall"
+                                        },
+                                        {
+                                            "$ref": "http://geostyler/geostyler-style.json#/definitions/LiteralValue<string>"
+                                        },
+                                        {
+                                            "$ref": "http://geostyler/geostyler-style.json#/definitions/LiteralValue<number>"
+                                        },
+                                        {
+                                            "$ref": "http://geostyler/geostyler-style.json#/definitions/LiteralValue<boolean>"
+                                        },
+                                        {
+                                            "$ref": "http://geostyler/geostyler-style.json#/definitions/LiteralValue<null>"
                                         },
                                         {
                                             "type": "number"
@@ -1728,13 +2273,22 @@
                                 {
                                     "anyOf": [
                                         {
-                                            "$ref": "http://geostyler/geostyler-style.json#/definitions/LiteralValue"
-                                        },
-                                        {
                                             "$ref": "http://geostyler/geostyler-style.json#/definitions/PropertyName"
                                         },
                                         {
                                             "$ref": "http://geostyler/geostyler-style.json#/definitions/FunctionCall"
+                                        },
+                                        {
+                                            "$ref": "http://geostyler/geostyler-style.json#/definitions/LiteralValue<string>"
+                                        },
+                                        {
+                                            "$ref": "http://geostyler/geostyler-style.json#/definitions/LiteralValue<number>"
+                                        },
+                                        {
+                                            "$ref": "http://geostyler/geostyler-style.json#/definitions/LiteralValue<boolean>"
+                                        },
+                                        {
+                                            "$ref": "http://geostyler/geostyler-style.json#/definitions/LiteralValue<null>"
                                         },
                                         {
                                             "type": "number"
@@ -1765,13 +2319,22 @@
                                 {
                                     "anyOf": [
                                         {
-                                            "$ref": "http://geostyler/geostyler-style.json#/definitions/LiteralValue"
-                                        },
-                                        {
                                             "$ref": "http://geostyler/geostyler-style.json#/definitions/PropertyName"
                                         },
                                         {
                                             "$ref": "http://geostyler/geostyler-style.json#/definitions/FunctionCall"
+                                        },
+                                        {
+                                            "$ref": "http://geostyler/geostyler-style.json#/definitions/LiteralValue<string>"
+                                        },
+                                        {
+                                            "$ref": "http://geostyler/geostyler-style.json#/definitions/LiteralValue<number>"
+                                        },
+                                        {
+                                            "$ref": "http://geostyler/geostyler-style.json#/definitions/LiteralValue<boolean>"
+                                        },
+                                        {
+                                            "$ref": "http://geostyler/geostyler-style.json#/definitions/LiteralValue<null>"
                                         },
                                         {
                                             "type": [
@@ -1784,13 +2347,22 @@
                                 {
                                     "anyOf": [
                                         {
-                                            "$ref": "http://geostyler/geostyler-style.json#/definitions/LiteralValue"
-                                        },
-                                        {
                                             "$ref": "http://geostyler/geostyler-style.json#/definitions/PropertyName"
                                         },
                                         {
                                             "$ref": "http://geostyler/geostyler-style.json#/definitions/FunctionCall"
+                                        },
+                                        {
+                                            "$ref": "http://geostyler/geostyler-style.json#/definitions/LiteralValue<string>"
+                                        },
+                                        {
+                                            "$ref": "http://geostyler/geostyler-style.json#/definitions/LiteralValue<number>"
+                                        },
+                                        {
+                                            "$ref": "http://geostyler/geostyler-style.json#/definitions/LiteralValue<boolean>"
+                                        },
+                                        {
+                                            "$ref": "http://geostyler/geostyler-style.json#/definitions/LiteralValue<null>"
                                         },
                                         {
                                             "type": [
@@ -1871,13 +2443,22 @@
                 "allowOverlap": {
                     "anyOf": [
                         {
-                            "$ref": "http://geostyler/geostyler-style.json#/definitions/LiteralValue"
-                        },
-                        {
                             "$ref": "http://geostyler/geostyler-style.json#/definitions/PropertyName"
                         },
                         {
                             "$ref": "http://geostyler/geostyler-style.json#/definitions/FunctionCall"
+                        },
+                        {
+                            "$ref": "http://geostyler/geostyler-style.json#/definitions/LiteralValue<string>"
+                        },
+                        {
+                            "$ref": "http://geostyler/geostyler-style.json#/definitions/LiteralValue<number>"
+                        },
+                        {
+                            "$ref": "http://geostyler/geostyler-style.json#/definitions/LiteralValue<boolean>"
+                        },
+                        {
+                            "$ref": "http://geostyler/geostyler-style.json#/definitions/LiteralValue<null>"
                         },
                         {
                             "type": "boolean"
@@ -1903,13 +2484,22 @@
                 "avoidEdges": {
                     "anyOf": [
                         {
-                            "$ref": "http://geostyler/geostyler-style.json#/definitions/LiteralValue"
-                        },
-                        {
                             "$ref": "http://geostyler/geostyler-style.json#/definitions/PropertyName"
                         },
                         {
                             "$ref": "http://geostyler/geostyler-style.json#/definitions/FunctionCall"
+                        },
+                        {
+                            "$ref": "http://geostyler/geostyler-style.json#/definitions/LiteralValue<string>"
+                        },
+                        {
+                            "$ref": "http://geostyler/geostyler-style.json#/definitions/LiteralValue<number>"
+                        },
+                        {
+                            "$ref": "http://geostyler/geostyler-style.json#/definitions/LiteralValue<boolean>"
+                        },
+                        {
+                            "$ref": "http://geostyler/geostyler-style.json#/definitions/LiteralValue<null>"
                         },
                         {
                             "type": "boolean"
@@ -1920,13 +2510,22 @@
                 "color": {
                     "anyOf": [
                         {
-                            "$ref": "http://geostyler/geostyler-style.json#/definitions/LiteralValue"
-                        },
-                        {
                             "$ref": "http://geostyler/geostyler-style.json#/definitions/PropertyName"
                         },
                         {
                             "$ref": "http://geostyler/geostyler-style.json#/definitions/FunctionCall"
+                        },
+                        {
+                            "$ref": "http://geostyler/geostyler-style.json#/definitions/LiteralValue<string>"
+                        },
+                        {
+                            "$ref": "http://geostyler/geostyler-style.json#/definitions/LiteralValue<number>"
+                        },
+                        {
+                            "$ref": "http://geostyler/geostyler-style.json#/definitions/LiteralValue<boolean>"
+                        },
+                        {
+                            "$ref": "http://geostyler/geostyler-style.json#/definitions/LiteralValue<null>"
                         },
                         {
                             "type": "string"
@@ -1961,13 +2560,22 @@
                 "haloBlur": {
                     "anyOf": [
                         {
-                            "$ref": "http://geostyler/geostyler-style.json#/definitions/LiteralValue"
-                        },
-                        {
                             "$ref": "http://geostyler/geostyler-style.json#/definitions/PropertyName"
                         },
                         {
                             "$ref": "http://geostyler/geostyler-style.json#/definitions/FunctionCall"
+                        },
+                        {
+                            "$ref": "http://geostyler/geostyler-style.json#/definitions/LiteralValue<string>"
+                        },
+                        {
+                            "$ref": "http://geostyler/geostyler-style.json#/definitions/LiteralValue<number>"
+                        },
+                        {
+                            "$ref": "http://geostyler/geostyler-style.json#/definitions/LiteralValue<boolean>"
+                        },
+                        {
+                            "$ref": "http://geostyler/geostyler-style.json#/definitions/LiteralValue<null>"
                         },
                         {
                             "type": "number"
@@ -1978,13 +2586,22 @@
                 "haloColor": {
                     "anyOf": [
                         {
-                            "$ref": "http://geostyler/geostyler-style.json#/definitions/LiteralValue"
-                        },
-                        {
                             "$ref": "http://geostyler/geostyler-style.json#/definitions/PropertyName"
                         },
                         {
                             "$ref": "http://geostyler/geostyler-style.json#/definitions/FunctionCall"
+                        },
+                        {
+                            "$ref": "http://geostyler/geostyler-style.json#/definitions/LiteralValue<string>"
+                        },
+                        {
+                            "$ref": "http://geostyler/geostyler-style.json#/definitions/LiteralValue<number>"
+                        },
+                        {
+                            "$ref": "http://geostyler/geostyler-style.json#/definitions/LiteralValue<boolean>"
+                        },
+                        {
+                            "$ref": "http://geostyler/geostyler-style.json#/definitions/LiteralValue<null>"
                         },
                         {
                             "type": "string"
@@ -1995,13 +2612,22 @@
                 "haloWidth": {
                     "anyOf": [
                         {
-                            "$ref": "http://geostyler/geostyler-style.json#/definitions/LiteralValue"
-                        },
-                        {
                             "$ref": "http://geostyler/geostyler-style.json#/definitions/PropertyName"
                         },
                         {
                             "$ref": "http://geostyler/geostyler-style.json#/definitions/FunctionCall"
+                        },
+                        {
+                            "$ref": "http://geostyler/geostyler-style.json#/definitions/LiteralValue<string>"
+                        },
+                        {
+                            "$ref": "http://geostyler/geostyler-style.json#/definitions/LiteralValue<number>"
+                        },
+                        {
+                            "$ref": "http://geostyler/geostyler-style.json#/definitions/LiteralValue<boolean>"
+                        },
+                        {
+                            "$ref": "http://geostyler/geostyler-style.json#/definitions/LiteralValue<null>"
                         },
                         {
                             "type": "number"
@@ -2029,13 +2655,22 @@
                 "keepUpright": {
                     "anyOf": [
                         {
-                            "$ref": "http://geostyler/geostyler-style.json#/definitions/LiteralValue"
-                        },
-                        {
                             "$ref": "http://geostyler/geostyler-style.json#/definitions/PropertyName"
                         },
                         {
                             "$ref": "http://geostyler/geostyler-style.json#/definitions/FunctionCall"
+                        },
+                        {
+                            "$ref": "http://geostyler/geostyler-style.json#/definitions/LiteralValue<string>"
+                        },
+                        {
+                            "$ref": "http://geostyler/geostyler-style.json#/definitions/LiteralValue<number>"
+                        },
+                        {
+                            "$ref": "http://geostyler/geostyler-style.json#/definitions/LiteralValue<boolean>"
+                        },
+                        {
+                            "$ref": "http://geostyler/geostyler-style.json#/definitions/LiteralValue<null>"
                         },
                         {
                             "type": "boolean"
@@ -2057,13 +2692,22 @@
                 "letterSpacing": {
                     "anyOf": [
                         {
-                            "$ref": "http://geostyler/geostyler-style.json#/definitions/LiteralValue"
-                        },
-                        {
                             "$ref": "http://geostyler/geostyler-style.json#/definitions/PropertyName"
                         },
                         {
                             "$ref": "http://geostyler/geostyler-style.json#/definitions/FunctionCall"
+                        },
+                        {
+                            "$ref": "http://geostyler/geostyler-style.json#/definitions/LiteralValue<string>"
+                        },
+                        {
+                            "$ref": "http://geostyler/geostyler-style.json#/definitions/LiteralValue<number>"
+                        },
+                        {
+                            "$ref": "http://geostyler/geostyler-style.json#/definitions/LiteralValue<boolean>"
+                        },
+                        {
+                            "$ref": "http://geostyler/geostyler-style.json#/definitions/LiteralValue<null>"
                         },
                         {
                             "type": "number"
@@ -2083,13 +2727,22 @@
                 "lineHeight": {
                     "anyOf": [
                         {
-                            "$ref": "http://geostyler/geostyler-style.json#/definitions/LiteralValue"
-                        },
-                        {
                             "$ref": "http://geostyler/geostyler-style.json#/definitions/PropertyName"
                         },
                         {
                             "$ref": "http://geostyler/geostyler-style.json#/definitions/FunctionCall"
+                        },
+                        {
+                            "$ref": "http://geostyler/geostyler-style.json#/definitions/LiteralValue<string>"
+                        },
+                        {
+                            "$ref": "http://geostyler/geostyler-style.json#/definitions/LiteralValue<number>"
+                        },
+                        {
+                            "$ref": "http://geostyler/geostyler-style.json#/definitions/LiteralValue<boolean>"
+                        },
+                        {
+                            "$ref": "http://geostyler/geostyler-style.json#/definitions/LiteralValue<null>"
                         },
                         {
                             "type": "number"
@@ -2109,13 +2762,22 @@
                 "maxAngle": {
                     "anyOf": [
                         {
-                            "$ref": "http://geostyler/geostyler-style.json#/definitions/LiteralValue"
-                        },
-                        {
                             "$ref": "http://geostyler/geostyler-style.json#/definitions/PropertyName"
                         },
                         {
                             "$ref": "http://geostyler/geostyler-style.json#/definitions/FunctionCall"
+                        },
+                        {
+                            "$ref": "http://geostyler/geostyler-style.json#/definitions/LiteralValue<string>"
+                        },
+                        {
+                            "$ref": "http://geostyler/geostyler-style.json#/definitions/LiteralValue<number>"
+                        },
+                        {
+                            "$ref": "http://geostyler/geostyler-style.json#/definitions/LiteralValue<boolean>"
+                        },
+                        {
+                            "$ref": "http://geostyler/geostyler-style.json#/definitions/LiteralValue<null>"
                         },
                         {
                             "type": "number"
@@ -2126,13 +2788,22 @@
                 "maxWidth": {
                     "anyOf": [
                         {
-                            "$ref": "http://geostyler/geostyler-style.json#/definitions/LiteralValue"
-                        },
-                        {
                             "$ref": "http://geostyler/geostyler-style.json#/definitions/PropertyName"
                         },
                         {
                             "$ref": "http://geostyler/geostyler-style.json#/definitions/FunctionCall"
+                        },
+                        {
+                            "$ref": "http://geostyler/geostyler-style.json#/definitions/LiteralValue<string>"
+                        },
+                        {
+                            "$ref": "http://geostyler/geostyler-style.json#/definitions/LiteralValue<number>"
+                        },
+                        {
+                            "$ref": "http://geostyler/geostyler-style.json#/definitions/LiteralValue<boolean>"
+                        },
+                        {
+                            "$ref": "http://geostyler/geostyler-style.json#/definitions/LiteralValue<null>"
                         },
                         {
                             "type": "number"
@@ -2146,13 +2817,22 @@
                         {
                             "anyOf": [
                                 {
-                                    "$ref": "http://geostyler/geostyler-style.json#/definitions/LiteralValue"
-                                },
-                                {
                                     "$ref": "http://geostyler/geostyler-style.json#/definitions/PropertyName"
                                 },
                                 {
                                     "$ref": "http://geostyler/geostyler-style.json#/definitions/FunctionCall"
+                                },
+                                {
+                                    "$ref": "http://geostyler/geostyler-style.json#/definitions/LiteralValue<string>"
+                                },
+                                {
+                                    "$ref": "http://geostyler/geostyler-style.json#/definitions/LiteralValue<number>"
+                                },
+                                {
+                                    "$ref": "http://geostyler/geostyler-style.json#/definitions/LiteralValue<boolean>"
+                                },
+                                {
+                                    "$ref": "http://geostyler/geostyler-style.json#/definitions/LiteralValue<null>"
                                 },
                                 {
                                     "type": "number"
@@ -2162,13 +2842,22 @@
                         {
                             "anyOf": [
                                 {
-                                    "$ref": "http://geostyler/geostyler-style.json#/definitions/LiteralValue"
-                                },
-                                {
                                     "$ref": "http://geostyler/geostyler-style.json#/definitions/PropertyName"
                                 },
                                 {
                                     "$ref": "http://geostyler/geostyler-style.json#/definitions/FunctionCall"
+                                },
+                                {
+                                    "$ref": "http://geostyler/geostyler-style.json#/definitions/LiteralValue<string>"
+                                },
+                                {
+                                    "$ref": "http://geostyler/geostyler-style.json#/definitions/LiteralValue<number>"
+                                },
+                                {
+                                    "$ref": "http://geostyler/geostyler-style.json#/definitions/LiteralValue<boolean>"
+                                },
+                                {
+                                    "$ref": "http://geostyler/geostyler-style.json#/definitions/LiteralValue<null>"
                                 },
                                 {
                                     "type": "number"
@@ -2191,13 +2880,22 @@
                 "opacity": {
                     "anyOf": [
                         {
-                            "$ref": "http://geostyler/geostyler-style.json#/definitions/LiteralValue"
-                        },
-                        {
                             "$ref": "http://geostyler/geostyler-style.json#/definitions/PropertyName"
                         },
                         {
                             "$ref": "http://geostyler/geostyler-style.json#/definitions/FunctionCall"
+                        },
+                        {
+                            "$ref": "http://geostyler/geostyler-style.json#/definitions/LiteralValue<string>"
+                        },
+                        {
+                            "$ref": "http://geostyler/geostyler-style.json#/definitions/LiteralValue<number>"
+                        },
+                        {
+                            "$ref": "http://geostyler/geostyler-style.json#/definitions/LiteralValue<boolean>"
+                        },
+                        {
+                            "$ref": "http://geostyler/geostyler-style.json#/definitions/LiteralValue<null>"
                         },
                         {
                             "type": "number"
@@ -2208,13 +2906,22 @@
                 "optional": {
                     "anyOf": [
                         {
-                            "$ref": "http://geostyler/geostyler-style.json#/definitions/LiteralValue"
-                        },
-                        {
                             "$ref": "http://geostyler/geostyler-style.json#/definitions/PropertyName"
                         },
                         {
                             "$ref": "http://geostyler/geostyler-style.json#/definitions/FunctionCall"
+                        },
+                        {
+                            "$ref": "http://geostyler/geostyler-style.json#/definitions/LiteralValue<string>"
+                        },
+                        {
+                            "$ref": "http://geostyler/geostyler-style.json#/definitions/LiteralValue<number>"
+                        },
+                        {
+                            "$ref": "http://geostyler/geostyler-style.json#/definitions/LiteralValue<boolean>"
+                        },
+                        {
+                            "$ref": "http://geostyler/geostyler-style.json#/definitions/LiteralValue<null>"
                         },
                         {
                             "type": "boolean"
@@ -2225,13 +2932,22 @@
                 "padding": {
                     "anyOf": [
                         {
-                            "$ref": "http://geostyler/geostyler-style.json#/definitions/LiteralValue"
-                        },
-                        {
                             "$ref": "http://geostyler/geostyler-style.json#/definitions/PropertyName"
                         },
                         {
                             "$ref": "http://geostyler/geostyler-style.json#/definitions/FunctionCall"
+                        },
+                        {
+                            "$ref": "http://geostyler/geostyler-style.json#/definitions/LiteralValue<string>"
+                        },
+                        {
+                            "$ref": "http://geostyler/geostyler-style.json#/definitions/LiteralValue<number>"
+                        },
+                        {
+                            "$ref": "http://geostyler/geostyler-style.json#/definitions/LiteralValue<boolean>"
+                        },
+                        {
+                            "$ref": "http://geostyler/geostyler-style.json#/definitions/LiteralValue<null>"
                         },
                         {
                             "type": "number"
@@ -2251,13 +2967,22 @@
                 "rotate": {
                     "anyOf": [
                         {
-                            "$ref": "http://geostyler/geostyler-style.json#/definitions/LiteralValue"
-                        },
-                        {
                             "$ref": "http://geostyler/geostyler-style.json#/definitions/PropertyName"
                         },
                         {
                             "$ref": "http://geostyler/geostyler-style.json#/definitions/FunctionCall"
+                        },
+                        {
+                            "$ref": "http://geostyler/geostyler-style.json#/definitions/LiteralValue<string>"
+                        },
+                        {
+                            "$ref": "http://geostyler/geostyler-style.json#/definitions/LiteralValue<number>"
+                        },
+                        {
+                            "$ref": "http://geostyler/geostyler-style.json#/definitions/LiteralValue<boolean>"
+                        },
+                        {
+                            "$ref": "http://geostyler/geostyler-style.json#/definitions/LiteralValue<null>"
                         },
                         {
                             "type": "number"
@@ -2277,13 +3002,22 @@
                 "size": {
                     "anyOf": [
                         {
-                            "$ref": "http://geostyler/geostyler-style.json#/definitions/LiteralValue"
-                        },
-                        {
                             "$ref": "http://geostyler/geostyler-style.json#/definitions/PropertyName"
                         },
                         {
                             "$ref": "http://geostyler/geostyler-style.json#/definitions/FunctionCall"
+                        },
+                        {
+                            "$ref": "http://geostyler/geostyler-style.json#/definitions/LiteralValue<string>"
+                        },
+                        {
+                            "$ref": "http://geostyler/geostyler-style.json#/definitions/LiteralValue<number>"
+                        },
+                        {
+                            "$ref": "http://geostyler/geostyler-style.json#/definitions/LiteralValue<boolean>"
+                        },
+                        {
+                            "$ref": "http://geostyler/geostyler-style.json#/definitions/LiteralValue<null>"
                         },
                         {
                             "type": "number"
@@ -2303,13 +3037,22 @@
                 "visibility": {
                     "anyOf": [
                         {
-                            "$ref": "http://geostyler/geostyler-style.json#/definitions/LiteralValue"
-                        },
-                        {
                             "$ref": "http://geostyler/geostyler-style.json#/definitions/PropertyName"
                         },
                         {
                             "$ref": "http://geostyler/geostyler-style.json#/definitions/FunctionCall"
+                        },
+                        {
+                            "$ref": "http://geostyler/geostyler-style.json#/definitions/LiteralValue<string>"
+                        },
+                        {
+                            "$ref": "http://geostyler/geostyler-style.json#/definitions/LiteralValue<number>"
+                        },
+                        {
+                            "$ref": "http://geostyler/geostyler-style.json#/definitions/LiteralValue<boolean>"
+                        },
+                        {
+                            "$ref": "http://geostyler/geostyler-style.json#/definitions/LiteralValue<null>"
                         },
                         {
                             "type": "boolean"

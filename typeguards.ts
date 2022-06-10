@@ -44,7 +44,12 @@ import {
 import _ from 'lodash';
 
 export const isExpression = (got: any): got is Expression => {
-  return isFunctionCall(got) || isLiteralValue(got) || isPropertyName(got);
+  return isFunctionCall(got) ||
+  isLiteralStringValue(got) ||
+  isLiteralNumberValue(got) ||
+  isLiteralBooleanValue(got) ||
+  isLiteralNullValue(got) ||
+  isPropertyName(got);
 };
 
 export const isFunctionCall = (got: any): got is FunctionCall => {
@@ -56,14 +61,41 @@ export const isFunctionCall = (got: any): got is FunctionCall => {
     got.args.every((arg: any) => isExpression(arg));
 };
 
-export const isLiteralValue = (got: any): got is LiteralValue => {
+export const isLiteralValue = (val: any): boolean => {
+  return isLiteralStringValue(val) ||
+  isLiteralNumberValue(val) ||
+  isLiteralBooleanValue(val) ||
+  isLiteralNullValue(val);
+};
+
+export const isLiteralStringValue = (got: any): got is LiteralValue<string> => {
   return got.type === 'literal' &&
     got.hasOwnProperty('value') &&
     (
-      _isRegExp(got.value) ||
-      _isString(got.value) ||
-      _isNumber(got.value) ||
-      _isBoolean(got.value) ||
+      _isString(got.value)
+    );
+};
+
+export const isLiteralNumberValue = (got: any): got is LiteralValue<number> => {
+  return got.type === 'literal' &&
+    got.hasOwnProperty('value') &&
+    (
+      _isNumber(got.value)
+    );
+};
+
+export const isLiteralBooleanValue = (got: any): got is LiteralValue<boolean> => {
+  return got.type === 'literal' &&
+    got.hasOwnProperty('value') &&
+    (
+      _isBoolean(got.value)
+    );
+};
+
+export const isLiteralNullValue = (got: any): got is LiteralValue<null> => {
+  return got.type === 'literal' &&
+    got.hasOwnProperty('value') &&
+    (
       _isNull(got.value)
     );
 };

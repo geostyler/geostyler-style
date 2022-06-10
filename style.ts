@@ -23,9 +23,9 @@ export interface AbstractExpression {
 /**
  * Expression that evaluates to the given value.
  */
-export interface LiteralValue extends AbstractExpression {
+export interface LiteralValue<T> extends AbstractExpression {
   type: 'literal';
-  value: string | number | boolean;
+  value: T;
 };
 
 /**
@@ -49,7 +49,12 @@ export interface FunctionCall extends AbstractExpression {
 /**
  * Expressions can be a literal value, a property name or a function call.
  */
-export type Expression = LiteralValue | PropertyName | FunctionCall;
+export type Expression = LiteralValue<string> |
+  LiteralValue<number> |
+  LiteralValue<boolean> |
+  LiteralValue<null> |
+  PropertyName |
+  FunctionCall;
 
 /**
  * The type of the Style.
