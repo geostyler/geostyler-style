@@ -98,16 +98,55 @@
             "description": "A FillSymbolizer describes the style representation of POLYGON data.",
             "properties": {
                 "antialias": {
-                    "description": "Whether the fill should be antialiased or not .",
-                    "type": "boolean"
+                    "anyOf": [
+                        {
+                            "$ref": "http://geostyler/geostyler-style.json#/definitions/LiteralValue"
+                        },
+                        {
+                            "$ref": "http://geostyler/geostyler-style.json#/definitions/PropertyName"
+                        },
+                        {
+                            "$ref": "http://geostyler/geostyler-style.json#/definitions/FunctionCall"
+                        },
+                        {
+                            "type": "boolean"
+                        }
+                    ],
+                    "description": "Whether the fill should be antialiased or not ."
                 },
                 "color": {
-                    "description": "A color defined as a hex-color string.",
-                    "type": "string"
+                    "anyOf": [
+                        {
+                            "$ref": "http://geostyler/geostyler-style.json#/definitions/LiteralValue"
+                        },
+                        {
+                            "$ref": "http://geostyler/geostyler-style.json#/definitions/PropertyName"
+                        },
+                        {
+                            "$ref": "http://geostyler/geostyler-style.json#/definitions/FunctionCall"
+                        },
+                        {
+                            "type": "string"
+                        }
+                    ],
+                    "description": "A color defined as a hex-color string."
                 },
                 "fillOpacity": {
-                    "description": "The opacity of the fill. A value between 0 and 1.\n0 is none opaque and 1 is full opaque.",
-                    "type": "number"
+                    "anyOf": [
+                        {
+                            "$ref": "http://geostyler/geostyler-style.json#/definitions/LiteralValue"
+                        },
+                        {
+                            "$ref": "http://geostyler/geostyler-style.json#/definitions/PropertyName"
+                        },
+                        {
+                            "$ref": "http://geostyler/geostyler-style.json#/definitions/FunctionCall"
+                        },
+                        {
+                            "type": "number"
+                        }
+                    ],
+                    "description": "The opacity of the fill. A value between 0 and 1.\n0 is none opaque and 1 is full opaque."
                 },
                 "graphicFill": {
                     "anyOf": [
@@ -131,12 +170,38 @@
                     "type": "string"
                 },
                 "opacity": {
-                    "description": "Determines the total opacity for the Symbolizer.\nA value between 0 and 1. 0 is none opaque and 1 is full opaque.",
-                    "type": "number"
+                    "anyOf": [
+                        {
+                            "$ref": "http://geostyler/geostyler-style.json#/definitions/LiteralValue"
+                        },
+                        {
+                            "$ref": "http://geostyler/geostyler-style.json#/definitions/PropertyName"
+                        },
+                        {
+                            "$ref": "http://geostyler/geostyler-style.json#/definitions/FunctionCall"
+                        },
+                        {
+                            "type": "number"
+                        }
+                    ],
+                    "description": "Determines the total opacity for the Symbolizer.\nA value between 0 and 1. 0 is none opaque and 1 is full opaque."
                 },
                 "outlineColor": {
-                    "description": "The outline color as a hex-color string. Matches the value of fill-color if\nunspecified.",
-                    "type": "string"
+                    "anyOf": [
+                        {
+                            "$ref": "http://geostyler/geostyler-style.json#/definitions/LiteralValue"
+                        },
+                        {
+                            "$ref": "http://geostyler/geostyler-style.json#/definitions/PropertyName"
+                        },
+                        {
+                            "$ref": "http://geostyler/geostyler-style.json#/definitions/FunctionCall"
+                        },
+                        {
+                            "type": "string"
+                        }
+                    ],
+                    "description": "The outline color as a hex-color string. Matches the value of fill-color if\nunspecified."
                 },
                 "outlineDasharray": {
                     "description": "Encodes a dash pattern as an array of numbers. Odd-indexed numbers (first,\nthird, etc) determine the length in pixels to draw the line, and even-indexed\nnumbers (second, fourth, etc) determine the length in pixels to blank out\nthe line. Default is an unbroken line.",
@@ -146,12 +211,38 @@
                     "type": "array"
                 },
                 "outlineOpacity": {
-                    "description": "The opacity of the outline. A value between 0 and 1.\n0 is none opaque and 1 is full opaque.",
-                    "type": "number"
+                    "anyOf": [
+                        {
+                            "$ref": "http://geostyler/geostyler-style.json#/definitions/LiteralValue"
+                        },
+                        {
+                            "$ref": "http://geostyler/geostyler-style.json#/definitions/PropertyName"
+                        },
+                        {
+                            "$ref": "http://geostyler/geostyler-style.json#/definitions/FunctionCall"
+                        },
+                        {
+                            "type": "number"
+                        }
+                    ],
+                    "description": "The opacity of the outline. A value between 0 and 1.\n0 is none opaque and 1 is full opaque."
                 },
                 "outlineWidth": {
-                    "description": "The outline width (pixels if outlineWidthUnit is not defined).",
-                    "type": "number"
+                    "anyOf": [
+                        {
+                            "$ref": "http://geostyler/geostyler-style.json#/definitions/LiteralValue"
+                        },
+                        {
+                            "$ref": "http://geostyler/geostyler-style.json#/definitions/PropertyName"
+                        },
+                        {
+                            "$ref": "http://geostyler/geostyler-style.json#/definitions/FunctionCall"
+                        },
+                        {
+                            "type": "number"
+                        }
+                    ],
+                    "description": "The outline width (pixels if outlineWidthUnit is not defined)."
                 },
                 "outlineWidthUnit": {
                     "description": "Unit to use for the outlineWidth.",
@@ -162,8 +253,21 @@
                     "type": "string"
                 },
                 "visibility": {
-                    "description": "Defines whether the Symbolizer should be visibile or not.",
-                    "type": "boolean"
+                    "anyOf": [
+                        {
+                            "$ref": "http://geostyler/geostyler-style.json#/definitions/LiteralValue"
+                        },
+                        {
+                            "$ref": "http://geostyler/geostyler-style.json#/definitions/PropertyName"
+                        },
+                        {
+                            "$ref": "http://geostyler/geostyler-style.json#/definitions/FunctionCall"
+                        },
+                        {
+                            "type": "boolean"
+                        }
+                    ],
+                    "description": "Defines whether the Symbolizer should be visibile or not."
                 }
             },
             "type": "object"
@@ -171,7 +275,7 @@
         "Filter": {
             "anyOf": [
                 {
-                    "description": "A FunctionFilter that expects a string (propertyName) as second argument and\na regular expression as third argument. An actual parser implementation has to\nreturn a value for this function expression.",
+                    "description": "A FunctionFilter that expects an Expression as second and\nthird argument. The function checks, if the evaluation of\nthe second argument matches the evaluation of the third one.\nAn actual parser implementation has to return a value for\nthis function expression.",
                     "items": [
                         {
                             "enum": [
@@ -202,7 +306,16 @@
                         {
                             "anyOf": [
                                 {
-                                    "description": "A FunctionFilter that expects a string (propertyName) as second argument and\na regular expression as third argument. An actual parser implementation has to\nreturn a value for this function expression.",
+                                    "$ref": "http://geostyler/geostyler-style.json#/definitions/LiteralValue"
+                                },
+                                {
+                                    "$ref": "http://geostyler/geostyler-style.json#/definitions/PropertyName"
+                                },
+                                {
+                                    "$ref": "http://geostyler/geostyler-style.json#/definitions/FunctionCall"
+                                },
+                                {
+                                    "description": "A FunctionFilter that expects an Expression as second and\nthird argument. The function checks, if the evaluation of\nthe second argument matches the evaluation of the third one.\nAn actual parser implementation has to return a value for\nthis function expression.",
                                     "items": [
                                         {
                                             "enum": [
@@ -227,10 +340,36 @@
                             ]
                         },
                         {
-                            "type": "number"
+                            "anyOf": [
+                                {
+                                    "$ref": "http://geostyler/geostyler-style.json#/definitions/LiteralValue"
+                                },
+                                {
+                                    "$ref": "http://geostyler/geostyler-style.json#/definitions/PropertyName"
+                                },
+                                {
+                                    "$ref": "http://geostyler/geostyler-style.json#/definitions/FunctionCall"
+                                },
+                                {
+                                    "type": "number"
+                                }
+                            ]
                         },
                         {
-                            "type": "number"
+                            "anyOf": [
+                                {
+                                    "$ref": "http://geostyler/geostyler-style.json#/definitions/LiteralValue"
+                                },
+                                {
+                                    "$ref": "http://geostyler/geostyler-style.json#/definitions/PropertyName"
+                                },
+                                {
+                                    "$ref": "http://geostyler/geostyler-style.json#/definitions/FunctionCall"
+                                },
+                                {
+                                    "type": "number"
+                                }
+                            ]
                         }
                     ],
                     "maxItems": 4,
@@ -256,37 +395,39 @@
                         {
                             "anyOf": [
                                 {
-                                    "description": "A FunctionFilter that expects a string (propertyName) as second argument and\na regular expression as third argument. An actual parser implementation has to\nreturn a value for this function expression.",
-                                    "items": [
-                                        {
-                                            "enum": [
-                                                "FN_strMatches"
-                                            ],
-                                            "type": "string"
-                                        },
-                                        {
-                                            "type": "string"
-                                        },
-                                        {
-                                            "$ref": "http://geostyler/geostyler-style.json#/definitions/RegExp"
-                                        }
-                                    ],
-                                    "maxItems": 3,
-                                    "minItems": 3,
-                                    "type": "array"
+                                    "$ref": "http://geostyler/geostyler-style.json#/definitions/LiteralValue"
                                 },
                                 {
-                                    "type": "string"
+                                    "$ref": "http://geostyler/geostyler-style.json#/definitions/PropertyName"
+                                },
+                                {
+                                    "$ref": "http://geostyler/geostyler-style.json#/definitions/FunctionCall"
+                                },
+                                {
+                                    "type": [
+                                        "string",
+                                        "number"
+                                    ]
                                 }
                             ]
                         },
                         {
-                            "description": "A value of a property of the data.",
-                            "type": [
-                                "null",
-                                "string",
-                                "number",
-                                "boolean"
+                            "anyOf": [
+                                {
+                                    "$ref": "http://geostyler/geostyler-style.json#/definitions/LiteralValue"
+                                },
+                                {
+                                    "$ref": "http://geostyler/geostyler-style.json#/definitions/PropertyName"
+                                },
+                                {
+                                    "$ref": "http://geostyler/geostyler-style.json#/definitions/FunctionCall"
+                                },
+                                {
+                                    "type": [
+                                        "string",
+                                        "number"
+                                    ]
+                                }
                             ]
                         }
                     ],
@@ -316,6 +457,38 @@
                 }
             ]
         },
+        "FunctionCall": {
+            "description": "Expression that evaluates to the result of a function\ncall on a list of argument expressions.",
+            "properties": {
+                "args": {
+                    "items": {
+                        "anyOf": [
+                            {
+                                "$ref": "http://geostyler/geostyler-style.json#/definitions/LiteralValue"
+                            },
+                            {
+                                "$ref": "http://geostyler/geostyler-style.json#/definitions/PropertyName"
+                            },
+                            {
+                                "$ref": "http://geostyler/geostyler-style.json#/definitions/FunctionCall"
+                            }
+                        ],
+                        "description": "Expressions can be a literal value, a property name or a function call."
+                    },
+                    "type": "array"
+                },
+                "name": {
+                    "type": "string"
+                },
+                "type": {
+                    "enum": [
+                        "functioncall"
+                    ],
+                    "type": "string"
+                }
+            },
+            "type": "object"
+        },
         "GrayChannel": {
             "description": "A GrayChannel defines how a single dataset band is mapped to a grayscale channel.",
             "properties": {
@@ -329,8 +502,21 @@
             "description": "An IconSymbolizer describes the style representation of POINT data if styled\nwith a specific icon.",
             "properties": {
                 "allowOverlap": {
-                    "description": "If true, the icon will be visible even if it collides with other previously\ndrawn symbols.",
-                    "type": "boolean"
+                    "anyOf": [
+                        {
+                            "$ref": "http://geostyler/geostyler-style.json#/definitions/LiteralValue"
+                        },
+                        {
+                            "$ref": "http://geostyler/geostyler-style.json#/definitions/PropertyName"
+                        },
+                        {
+                            "$ref": "http://geostyler/geostyler-style.json#/definitions/FunctionCall"
+                        },
+                        {
+                            "type": "boolean"
+                        }
+                    ],
+                    "description": "If true, the icon will be visible even if it collides with other previously\ndrawn symbols."
                 },
                 "anchor": {
                     "description": "Part of the icon placed closest to the anchor. This may conflict with a set\noffset.",
@@ -348,12 +534,38 @@
                     "type": "string"
                 },
                 "avoidEdges": {
-                    "description": "This is a property relevant if using tiled datasets.\nIf true, the symbols will not cross tile edges to avoid mutual collisions.",
-                    "type": "boolean"
+                    "anyOf": [
+                        {
+                            "$ref": "http://geostyler/geostyler-style.json#/definitions/LiteralValue"
+                        },
+                        {
+                            "$ref": "http://geostyler/geostyler-style.json#/definitions/PropertyName"
+                        },
+                        {
+                            "$ref": "http://geostyler/geostyler-style.json#/definitions/FunctionCall"
+                        },
+                        {
+                            "type": "boolean"
+                        }
+                    ],
+                    "description": "This is a property relevant if using tiled datasets.\nIf true, the symbols will not cross tile edges to avoid mutual collisions."
                 },
                 "color": {
-                    "description": "A color defined as a hex-color string.",
-                    "type": "string"
+                    "anyOf": [
+                        {
+                            "$ref": "http://geostyler/geostyler-style.json#/definitions/LiteralValue"
+                        },
+                        {
+                            "$ref": "http://geostyler/geostyler-style.json#/definitions/PropertyName"
+                        },
+                        {
+                            "$ref": "http://geostyler/geostyler-style.json#/definitions/FunctionCall"
+                        },
+                        {
+                            "type": "string"
+                        }
+                    ],
+                    "description": "A color defined as a hex-color string."
                 },
                 "format": {
                     "description": "An optional configuration for the image format as MIME type.\nThis might be needed if the image(path) has no filending specified. e.g. http://myserver/getImage",
@@ -367,16 +579,55 @@
                     "type": "string"
                 },
                 "haloBlur": {
-                    "description": "The halo's fadeout distance towards the outside.",
-                    "type": "number"
+                    "anyOf": [
+                        {
+                            "$ref": "http://geostyler/geostyler-style.json#/definitions/LiteralValue"
+                        },
+                        {
+                            "$ref": "http://geostyler/geostyler-style.json#/definitions/PropertyName"
+                        },
+                        {
+                            "$ref": "http://geostyler/geostyler-style.json#/definitions/FunctionCall"
+                        },
+                        {
+                            "type": "number"
+                        }
+                    ],
+                    "description": "The halo's fadeout distance towards the outside."
                 },
                 "haloColor": {
-                    "description": "The color of the icons halo, which helps it stand out from backgrounds represented\nas a hex-color string.",
-                    "type": "string"
+                    "anyOf": [
+                        {
+                            "$ref": "http://geostyler/geostyler-style.json#/definitions/LiteralValue"
+                        },
+                        {
+                            "$ref": "http://geostyler/geostyler-style.json#/definitions/PropertyName"
+                        },
+                        {
+                            "$ref": "http://geostyler/geostyler-style.json#/definitions/FunctionCall"
+                        },
+                        {
+                            "type": "string"
+                        }
+                    ],
+                    "description": "The color of the icons halo, which helps it stand out from backgrounds represented\nas a hex-color string."
                 },
                 "haloWidth": {
-                    "description": "Distance of halo to the font outline (pixels if haloWidthUnit is not defined).",
-                    "type": "number"
+                    "anyOf": [
+                        {
+                            "$ref": "http://geostyler/geostyler-style.json#/definitions/LiteralValue"
+                        },
+                        {
+                            "$ref": "http://geostyler/geostyler-style.json#/definitions/PropertyName"
+                        },
+                        {
+                            "$ref": "http://geostyler/geostyler-style.json#/definitions/FunctionCall"
+                        },
+                        {
+                            "type": "number"
+                        }
+                    ],
+                    "description": "Distance of halo to the font outline (pixels if haloWidthUnit is not defined)."
                 },
                 "haloWidthUnit": {
                     "description": "Unit to use for the haloWidth.",
@@ -387,12 +638,38 @@
                     "type": "string"
                 },
                 "image": {
-                    "description": "A path/URL to the icon image file.",
-                    "type": "string"
+                    "anyOf": [
+                        {
+                            "$ref": "http://geostyler/geostyler-style.json#/definitions/LiteralValue"
+                        },
+                        {
+                            "$ref": "http://geostyler/geostyler-style.json#/definitions/PropertyName"
+                        },
+                        {
+                            "$ref": "http://geostyler/geostyler-style.json#/definitions/FunctionCall"
+                        },
+                        {
+                            "type": "string"
+                        }
+                    ],
+                    "description": "A path/URL to the icon image file."
                 },
                 "keepUpright": {
-                    "description": "If true, the icon will be kept upright.",
-                    "type": "boolean"
+                    "anyOf": [
+                        {
+                            "$ref": "http://geostyler/geostyler-style.json#/definitions/LiteralValue"
+                        },
+                        {
+                            "$ref": "http://geostyler/geostyler-style.json#/definitions/PropertyName"
+                        },
+                        {
+                            "$ref": "http://geostyler/geostyler-style.json#/definitions/FunctionCall"
+                        },
+                        {
+                            "type": "boolean"
+                        }
+                    ],
+                    "description": "If true, the icon will be kept upright."
                 },
                 "kind": {
                     "description": "Describes the type of the kind of the Symbolizer.",
@@ -405,10 +682,36 @@
                     "description": "The offset of the Symbolizer as [x, y] coordinates. Positive values indicate\nright and down, while negative values indicate left and up.",
                     "items": [
                         {
-                            "type": "number"
+                            "anyOf": [
+                                {
+                                    "$ref": "http://geostyler/geostyler-style.json#/definitions/LiteralValue"
+                                },
+                                {
+                                    "$ref": "http://geostyler/geostyler-style.json#/definitions/PropertyName"
+                                },
+                                {
+                                    "$ref": "http://geostyler/geostyler-style.json#/definitions/FunctionCall"
+                                },
+                                {
+                                    "type": "number"
+                                }
+                            ]
                         },
                         {
-                            "type": "number"
+                            "anyOf": [
+                                {
+                                    "$ref": "http://geostyler/geostyler-style.json#/definitions/LiteralValue"
+                                },
+                                {
+                                    "$ref": "http://geostyler/geostyler-style.json#/definitions/PropertyName"
+                                },
+                                {
+                                    "$ref": "http://geostyler/geostyler-style.json#/definitions/FunctionCall"
+                                },
+                                {
+                                    "type": "number"
+                                }
+                            ]
                         }
                     ],
                     "maxItems": 2,
@@ -424,16 +727,55 @@
                     "type": "string"
                 },
                 "opacity": {
-                    "description": "Determines the total opacity for the Symbolizer.\nA value between 0 and 1. 0 is none opaque and 1 is full opaque.",
-                    "type": "number"
+                    "anyOf": [
+                        {
+                            "$ref": "http://geostyler/geostyler-style.json#/definitions/LiteralValue"
+                        },
+                        {
+                            "$ref": "http://geostyler/geostyler-style.json#/definitions/PropertyName"
+                        },
+                        {
+                            "$ref": "http://geostyler/geostyler-style.json#/definitions/FunctionCall"
+                        },
+                        {
+                            "type": "number"
+                        }
+                    ],
+                    "description": "Determines the total opacity for the Symbolizer.\nA value between 0 and 1. 0 is none opaque and 1 is full opaque."
                 },
                 "optional": {
-                    "description": "Property relevant for mapbox-styles.\nIf true, text will display without their corresponding icons when the icon\ncollides with other symbols and the text does not.",
-                    "type": "boolean"
+                    "anyOf": [
+                        {
+                            "$ref": "http://geostyler/geostyler-style.json#/definitions/LiteralValue"
+                        },
+                        {
+                            "$ref": "http://geostyler/geostyler-style.json#/definitions/PropertyName"
+                        },
+                        {
+                            "$ref": "http://geostyler/geostyler-style.json#/definitions/FunctionCall"
+                        },
+                        {
+                            "type": "boolean"
+                        }
+                    ],
+                    "description": "Property relevant for mapbox-styles.\nIf true, text will display without their corresponding icons when the icon\ncollides with other symbols and the text does not."
                 },
                 "padding": {
-                    "description": "Size of the additional area around the icon used for detecting symbol collisions.",
-                    "type": "number"
+                    "anyOf": [
+                        {
+                            "$ref": "http://geostyler/geostyler-style.json#/definitions/LiteralValue"
+                        },
+                        {
+                            "$ref": "http://geostyler/geostyler-style.json#/definitions/PropertyName"
+                        },
+                        {
+                            "$ref": "http://geostyler/geostyler-style.json#/definitions/FunctionCall"
+                        },
+                        {
+                            "type": "number"
+                        }
+                    ],
+                    "description": "Size of the additional area around the icon used for detecting symbol collisions."
                 },
                 "pitchAlignment": {
                     "description": "Property relevant for mapbox-styles.\nCompare https://docs.mapbox.com/mapbox-gl-js/style-spec/#layout-symbol-icon-pitch-alignment",
@@ -445,8 +787,21 @@
                     "type": "string"
                 },
                 "rotate": {
-                    "description": "The rotation of the Symbolizer in degrees. Value should be between 0 and 360.",
-                    "type": "number"
+                    "anyOf": [
+                        {
+                            "$ref": "http://geostyler/geostyler-style.json#/definitions/LiteralValue"
+                        },
+                        {
+                            "$ref": "http://geostyler/geostyler-style.json#/definitions/PropertyName"
+                        },
+                        {
+                            "$ref": "http://geostyler/geostyler-style.json#/definitions/FunctionCall"
+                        },
+                        {
+                            "type": "number"
+                        }
+                    ],
+                    "description": "The rotation of the Symbolizer in degrees. Value should be between 0 and 360."
                 },
                 "rotationAlignment": {
                     "description": "Property relevant for mapbox-styles.\nCompare https://docs.mapbox.com/mapbox-gl-js/style-spec/#layout-symbol-icon-rotation-alignment",
@@ -458,8 +813,21 @@
                     "type": "string"
                 },
                 "size": {
-                    "description": "The Symbolizer size (pixels if sizeUnit is not defined).",
-                    "type": "number"
+                    "anyOf": [
+                        {
+                            "$ref": "http://geostyler/geostyler-style.json#/definitions/LiteralValue"
+                        },
+                        {
+                            "$ref": "http://geostyler/geostyler-style.json#/definitions/PropertyName"
+                        },
+                        {
+                            "$ref": "http://geostyler/geostyler-style.json#/definitions/FunctionCall"
+                        },
+                        {
+                            "type": "number"
+                        }
+                    ],
+                    "description": "The Symbolizer size (pixels if sizeUnit is not defined)."
                 },
                 "sizeUnit": {
                     "description": "Unit to use for the size.",
@@ -500,8 +868,21 @@
                     "type": "array"
                 },
                 "visibility": {
-                    "description": "Defines whether the Symbolizer should be visibile or not.",
-                    "type": "boolean"
+                    "anyOf": [
+                        {
+                            "$ref": "http://geostyler/geostyler-style.json#/definitions/LiteralValue"
+                        },
+                        {
+                            "$ref": "http://geostyler/geostyler-style.json#/definitions/PropertyName"
+                        },
+                        {
+                            "$ref": "http://geostyler/geostyler-style.json#/definitions/FunctionCall"
+                        },
+                        {
+                            "type": "boolean"
+                        }
+                    ],
+                    "description": "Defines whether the Symbolizer should be visibile or not."
                 }
             },
             "type": "object"
@@ -510,7 +891,20 @@
             "description": "A LineSymbolizer describes the style representation of LINESTRING data.",
             "properties": {
                 "blur": {
-                    "type": "number"
+                    "anyOf": [
+                        {
+                            "$ref": "http://geostyler/geostyler-style.json#/definitions/LiteralValue"
+                        },
+                        {
+                            "$ref": "http://geostyler/geostyler-style.json#/definitions/PropertyName"
+                        },
+                        {
+                            "$ref": "http://geostyler/geostyler-style.json#/definitions/FunctionCall"
+                        },
+                        {
+                            "type": "number"
+                        }
+                    ]
                 },
                 "cap": {
                     "description": "Determines how lines are rendered at their ends. Possible values are butt\n(sharp square edge), round (rounded edge), and square (slightly elongated\nsquare edge).",
@@ -522,12 +916,38 @@
                     "type": "string"
                 },
                 "color": {
-                    "description": "A color defined as a hex-color string.",
-                    "type": "string"
+                    "anyOf": [
+                        {
+                            "$ref": "http://geostyler/geostyler-style.json#/definitions/LiteralValue"
+                        },
+                        {
+                            "$ref": "http://geostyler/geostyler-style.json#/definitions/PropertyName"
+                        },
+                        {
+                            "$ref": "http://geostyler/geostyler-style.json#/definitions/FunctionCall"
+                        },
+                        {
+                            "type": "string"
+                        }
+                    ],
+                    "description": "A color defined as a hex-color string."
                 },
                 "dashOffset": {
-                    "description": "Number of pixels into the dasharray to offset the drawing of the dash,\nused to shift the location of the lines and gaps in a dash.",
-                    "type": "number"
+                    "anyOf": [
+                        {
+                            "$ref": "http://geostyler/geostyler-style.json#/definitions/LiteralValue"
+                        },
+                        {
+                            "$ref": "http://geostyler/geostyler-style.json#/definitions/PropertyName"
+                        },
+                        {
+                            "$ref": "http://geostyler/geostyler-style.json#/definitions/FunctionCall"
+                        },
+                        {
+                            "type": "number"
+                        }
+                    ],
+                    "description": "Number of pixels into the dasharray to offset the drawing of the dash,\nused to shift the location of the lines and gaps in a dash."
                 },
                 "dasharray": {
                     "description": "Encodes a dash pattern as an array of numbers. Odd-indexed numbers (first,\nthird, etc) determine the length in pixels to draw the line, and even-indexed\nnumbers (second, fourth, etc) determine the length in pixels to blank out\nthe line. Default is an unbroken line.",
@@ -537,8 +957,21 @@
                     "type": "array"
                 },
                 "gapWidth": {
-                    "description": "Draws a line casing outside of a line's actual path. Value indicates the\nwidth of the inner gap (pixels if gapWidthUnit is not defined).",
-                    "type": "number"
+                    "anyOf": [
+                        {
+                            "$ref": "http://geostyler/geostyler-style.json#/definitions/LiteralValue"
+                        },
+                        {
+                            "$ref": "http://geostyler/geostyler-style.json#/definitions/PropertyName"
+                        },
+                        {
+                            "$ref": "http://geostyler/geostyler-style.json#/definitions/FunctionCall"
+                        },
+                        {
+                            "type": "number"
+                        }
+                    ],
+                    "description": "Draws a line casing outside of a line's actual path. Value indicates the\nwidth of the inner gap (pixels if gapWidthUnit is not defined)."
                 },
                 "gapWidthUnit": {
                     "description": "Unit to use for the gapWidth.",
@@ -598,24 +1031,89 @@
                     "type": "string"
                 },
                 "miterLimit": {
-                    "description": "Used to automatically convert miter joins to bevel joins for sharp angles.",
-                    "type": "number"
+                    "anyOf": [
+                        {
+                            "$ref": "http://geostyler/geostyler-style.json#/definitions/LiteralValue"
+                        },
+                        {
+                            "$ref": "http://geostyler/geostyler-style.json#/definitions/PropertyName"
+                        },
+                        {
+                            "$ref": "http://geostyler/geostyler-style.json#/definitions/FunctionCall"
+                        },
+                        {
+                            "type": "number"
+                        }
+                    ],
+                    "description": "Used to automatically convert miter joins to bevel joins for sharp angles."
                 },
                 "opacity": {
-                    "description": "Determines the total opacity for the Symbolizer.\nA value between 0 and 1. 0 is none opaque and 1 is full opaque.",
-                    "type": "number"
+                    "anyOf": [
+                        {
+                            "$ref": "http://geostyler/geostyler-style.json#/definitions/LiteralValue"
+                        },
+                        {
+                            "$ref": "http://geostyler/geostyler-style.json#/definitions/PropertyName"
+                        },
+                        {
+                            "$ref": "http://geostyler/geostyler-style.json#/definitions/FunctionCall"
+                        },
+                        {
+                            "type": "number"
+                        }
+                    ],
+                    "description": "Determines the total opacity for the Symbolizer.\nA value between 0 and 1. 0 is none opaque and 1 is full opaque."
                 },
                 "perpendicularOffset": {
-                    "description": "If present, it makes the renderer draw a line parallel to the original one,\nat the given distance. When applied on lines, positive values generate a\nparallel line on the left hand side, negative values on the right hand side.",
-                    "type": "number"
+                    "anyOf": [
+                        {
+                            "$ref": "http://geostyler/geostyler-style.json#/definitions/LiteralValue"
+                        },
+                        {
+                            "$ref": "http://geostyler/geostyler-style.json#/definitions/PropertyName"
+                        },
+                        {
+                            "$ref": "http://geostyler/geostyler-style.json#/definitions/FunctionCall"
+                        },
+                        {
+                            "type": "number"
+                        }
+                    ],
+                    "description": "If present, it makes the renderer draw a line parallel to the original one,\nat the given distance. When applied on lines, positive values generate a\nparallel line on the left hand side, negative values on the right hand side."
                 },
                 "roundLimit": {
-                    "description": "Used to automatically convert round joins to miter joins for shallow angles.",
-                    "type": "number"
+                    "anyOf": [
+                        {
+                            "$ref": "http://geostyler/geostyler-style.json#/definitions/LiteralValue"
+                        },
+                        {
+                            "$ref": "http://geostyler/geostyler-style.json#/definitions/PropertyName"
+                        },
+                        {
+                            "$ref": "http://geostyler/geostyler-style.json#/definitions/FunctionCall"
+                        },
+                        {
+                            "type": "number"
+                        }
+                    ],
+                    "description": "Used to automatically convert round joins to miter joins for shallow angles."
                 },
                 "spacing": {
-                    "description": "Distance between two symbol anchors (pixels if spacingUnit is not defined).",
-                    "type": "number"
+                    "anyOf": [
+                        {
+                            "$ref": "http://geostyler/geostyler-style.json#/definitions/LiteralValue"
+                        },
+                        {
+                            "$ref": "http://geostyler/geostyler-style.json#/definitions/PropertyName"
+                        },
+                        {
+                            "$ref": "http://geostyler/geostyler-style.json#/definitions/FunctionCall"
+                        },
+                        {
+                            "type": "number"
+                        }
+                    ],
+                    "description": "Distance between two symbol anchors (pixels if spacingUnit is not defined)."
                 },
                 "spacingUnit": {
                     "description": "Unit to use for the spacing.\n'em' -> fontsize",
@@ -627,12 +1125,38 @@
                     "type": "string"
                 },
                 "visibility": {
-                    "description": "Defines whether the Symbolizer should be visibile or not.",
-                    "type": "boolean"
+                    "anyOf": [
+                        {
+                            "$ref": "http://geostyler/geostyler-style.json#/definitions/LiteralValue"
+                        },
+                        {
+                            "$ref": "http://geostyler/geostyler-style.json#/definitions/PropertyName"
+                        },
+                        {
+                            "$ref": "http://geostyler/geostyler-style.json#/definitions/FunctionCall"
+                        },
+                        {
+                            "type": "boolean"
+                        }
+                    ],
+                    "description": "Defines whether the Symbolizer should be visibile or not."
                 },
                 "width": {
-                    "description": "The width of the Line (pixels if widthUnit is not defined).",
-                    "type": "number"
+                    "anyOf": [
+                        {
+                            "$ref": "http://geostyler/geostyler-style.json#/definitions/LiteralValue"
+                        },
+                        {
+                            "$ref": "http://geostyler/geostyler-style.json#/definitions/PropertyName"
+                        },
+                        {
+                            "$ref": "http://geostyler/geostyler-style.json#/definitions/FunctionCall"
+                        },
+                        {
+                            "type": "number"
+                        }
+                    ],
+                    "description": "The width of the Line (pixels if widthUnit is not defined)."
                 },
                 "widthUnit": {
                     "description": "Unit to use for the width.",
@@ -645,24 +1169,94 @@
             },
             "type": "object"
         },
+        "LiteralValue": {
+            "description": "Expression that evaluates to the given value.",
+            "properties": {
+                "type": {
+                    "enum": [
+                        "literal"
+                    ],
+                    "type": "string"
+                },
+                "value": {
+                    "type": [
+                        "string",
+                        "number"
+                    ]
+                }
+            },
+            "type": "object"
+        },
         "MarkSymbolizer": {
             "description": "MarkSymbolizer describes the style representation of POINT data, if styled as\nwith a regular geometry.",
             "properties": {
                 "avoidEdges": {
-                    "description": "This is a property relevant if using tiled datasets.\nIf true, the symbols will not cross tile edges to avoid mutual collisions.",
-                    "type": "boolean"
+                    "anyOf": [
+                        {
+                            "$ref": "http://geostyler/geostyler-style.json#/definitions/LiteralValue"
+                        },
+                        {
+                            "$ref": "http://geostyler/geostyler-style.json#/definitions/PropertyName"
+                        },
+                        {
+                            "$ref": "http://geostyler/geostyler-style.json#/definitions/FunctionCall"
+                        },
+                        {
+                            "type": "boolean"
+                        }
+                    ],
+                    "description": "This is a property relevant if using tiled datasets.\nIf true, the symbols will not cross tile edges to avoid mutual collisions."
                 },
                 "blur": {
-                    "description": "Amount to blur the Symbolizer. 1 blurs the Symbolizer such that only the\ncenterpoint has full opacity. Mostly relevant for circles.",
-                    "type": "number"
+                    "anyOf": [
+                        {
+                            "$ref": "http://geostyler/geostyler-style.json#/definitions/LiteralValue"
+                        },
+                        {
+                            "$ref": "http://geostyler/geostyler-style.json#/definitions/PropertyName"
+                        },
+                        {
+                            "$ref": "http://geostyler/geostyler-style.json#/definitions/FunctionCall"
+                        },
+                        {
+                            "type": "number"
+                        }
+                    ],
+                    "description": "Amount to blur the Symbolizer. 1 blurs the Symbolizer such that only the\ncenterpoint has full opacity. Mostly relevant for circles."
                 },
                 "color": {
-                    "description": "A color defined as a hex-color string.",
-                    "type": "string"
+                    "anyOf": [
+                        {
+                            "$ref": "http://geostyler/geostyler-style.json#/definitions/LiteralValue"
+                        },
+                        {
+                            "$ref": "http://geostyler/geostyler-style.json#/definitions/PropertyName"
+                        },
+                        {
+                            "$ref": "http://geostyler/geostyler-style.json#/definitions/FunctionCall"
+                        },
+                        {
+                            "type": "string"
+                        }
+                    ],
+                    "description": "A color defined as a hex-color string."
                 },
                 "fillOpacity": {
-                    "description": "The opacity of the fill. A value between 0 and 1.\n0 is none opaque and 1 is full opaque.",
-                    "type": "number"
+                    "anyOf": [
+                        {
+                            "$ref": "http://geostyler/geostyler-style.json#/definitions/LiteralValue"
+                        },
+                        {
+                            "$ref": "http://geostyler/geostyler-style.json#/definitions/PropertyName"
+                        },
+                        {
+                            "$ref": "http://geostyler/geostyler-style.json#/definitions/FunctionCall"
+                        },
+                        {
+                            "type": "number"
+                        }
+                    ],
+                    "description": "The opacity of the fill. A value between 0 and 1.\n0 is none opaque and 1 is full opaque."
                 },
                 "kind": {
                     "description": "Describes the type of the kind of the Symbolizer.",
@@ -675,10 +1269,36 @@
                     "description": "The offset of the Symbolizer as [x, y] coordinates. Positive values indicate\nright and down, while negative values indicate left and up.",
                     "items": [
                         {
-                            "type": "number"
+                            "anyOf": [
+                                {
+                                    "$ref": "http://geostyler/geostyler-style.json#/definitions/LiteralValue"
+                                },
+                                {
+                                    "$ref": "http://geostyler/geostyler-style.json#/definitions/PropertyName"
+                                },
+                                {
+                                    "$ref": "http://geostyler/geostyler-style.json#/definitions/FunctionCall"
+                                },
+                                {
+                                    "type": "number"
+                                }
+                            ]
                         },
                         {
-                            "type": "number"
+                            "anyOf": [
+                                {
+                                    "$ref": "http://geostyler/geostyler-style.json#/definitions/LiteralValue"
+                                },
+                                {
+                                    "$ref": "http://geostyler/geostyler-style.json#/definitions/PropertyName"
+                                },
+                                {
+                                    "$ref": "http://geostyler/geostyler-style.json#/definitions/FunctionCall"
+                                },
+                                {
+                                    "type": "number"
+                                }
+                            ]
                         }
                     ],
                     "maxItems": 2,
@@ -694,8 +1314,21 @@
                     "type": "string"
                 },
                 "opacity": {
-                    "description": "Determines the total opacity for the Symbolizer.\nA value between 0 and 1. 0 is none opaque and 1 is full opaque.",
-                    "type": "number"
+                    "anyOf": [
+                        {
+                            "$ref": "http://geostyler/geostyler-style.json#/definitions/LiteralValue"
+                        },
+                        {
+                            "$ref": "http://geostyler/geostyler-style.json#/definitions/PropertyName"
+                        },
+                        {
+                            "$ref": "http://geostyler/geostyler-style.json#/definitions/FunctionCall"
+                        },
+                        {
+                            "type": "number"
+                        }
+                    ],
+                    "description": "Determines the total opacity for the Symbolizer.\nA value between 0 and 1. 0 is none opaque and 1 is full opaque."
                 },
                 "pitchAlignment": {
                     "description": "Property relevant for mapbox-styles.\nCompare https://docs.mapbox.com/mapbox-gl-js/style-spec/#paint-circle-circle-pitch-alignment",
@@ -714,8 +1347,21 @@
                     "type": "string"
                 },
                 "radius": {
-                    "description": "The radius of the Symbolizer. Values describing the full size of the Symbolizer\nhave to be divided by two (pixels if radiusUnit is not defined).",
-                    "type": "number"
+                    "anyOf": [
+                        {
+                            "$ref": "http://geostyler/geostyler-style.json#/definitions/LiteralValue"
+                        },
+                        {
+                            "$ref": "http://geostyler/geostyler-style.json#/definitions/PropertyName"
+                        },
+                        {
+                            "$ref": "http://geostyler/geostyler-style.json#/definitions/FunctionCall"
+                        },
+                        {
+                            "type": "number"
+                        }
+                    ],
+                    "description": "The radius of the Symbolizer. Values describing the full size of the Symbolizer\nhave to be divided by two (pixels if radiusUnit is not defined)."
                 },
                 "radiusUnit": {
                     "description": "Unit to use for the radius.",
@@ -726,20 +1372,72 @@
                     "type": "string"
                 },
                 "rotate": {
-                    "description": "The rotation of the Symbolizer in degrees. Value should be between 0 and 360.",
-                    "type": "number"
+                    "anyOf": [
+                        {
+                            "$ref": "http://geostyler/geostyler-style.json#/definitions/LiteralValue"
+                        },
+                        {
+                            "$ref": "http://geostyler/geostyler-style.json#/definitions/PropertyName"
+                        },
+                        {
+                            "$ref": "http://geostyler/geostyler-style.json#/definitions/FunctionCall"
+                        },
+                        {
+                            "type": "number"
+                        }
+                    ],
+                    "description": "The rotation of the Symbolizer in degrees. Value should be between 0 and 360."
                 },
                 "strokeColor": {
-                    "description": "The color of the stroke represented as a hex-color string.",
-                    "type": "string"
+                    "anyOf": [
+                        {
+                            "$ref": "http://geostyler/geostyler-style.json#/definitions/LiteralValue"
+                        },
+                        {
+                            "$ref": "http://geostyler/geostyler-style.json#/definitions/PropertyName"
+                        },
+                        {
+                            "$ref": "http://geostyler/geostyler-style.json#/definitions/FunctionCall"
+                        },
+                        {
+                            "type": "string"
+                        }
+                    ],
+                    "description": "The color of the stroke represented as a hex-color string."
                 },
                 "strokeOpacity": {
-                    "description": "The opacity of the stroke. A value between 0 and 1.\n0 is none opaque and 1 is full opaque.",
-                    "type": "number"
+                    "anyOf": [
+                        {
+                            "$ref": "http://geostyler/geostyler-style.json#/definitions/LiteralValue"
+                        },
+                        {
+                            "$ref": "http://geostyler/geostyler-style.json#/definitions/PropertyName"
+                        },
+                        {
+                            "$ref": "http://geostyler/geostyler-style.json#/definitions/FunctionCall"
+                        },
+                        {
+                            "type": "number"
+                        }
+                    ],
+                    "description": "The opacity of the stroke. A value between 0 and 1.\n0 is none opaque and 1 is full opaque."
                 },
                 "strokeWidth": {
-                    "description": "The width of the stroke (pixels if strokeWidthUnit is not defined).",
-                    "type": "number"
+                    "anyOf": [
+                        {
+                            "$ref": "http://geostyler/geostyler-style.json#/definitions/LiteralValue"
+                        },
+                        {
+                            "$ref": "http://geostyler/geostyler-style.json#/definitions/PropertyName"
+                        },
+                        {
+                            "$ref": "http://geostyler/geostyler-style.json#/definitions/FunctionCall"
+                        },
+                        {
+                            "type": "number"
+                        }
+                    ],
+                    "description": "The width of the stroke (pixels if strokeWidthUnit is not defined)."
                 },
                 "strokeWidthUnit": {
                     "description": "Unit to use for the strokeWidth.",
@@ -750,8 +1448,21 @@
                     "type": "string"
                 },
                 "visibility": {
-                    "description": "Defines whether the Symbolizer should be visibile or not.",
-                    "type": "boolean"
+                    "anyOf": [
+                        {
+                            "$ref": "http://geostyler/geostyler-style.json#/definitions/LiteralValue"
+                        },
+                        {
+                            "$ref": "http://geostyler/geostyler-style.json#/definitions/PropertyName"
+                        },
+                        {
+                            "$ref": "http://geostyler/geostyler-style.json#/definitions/FunctionCall"
+                        },
+                        {
+                            "type": "boolean"
+                        }
+                    ],
+                    "description": "Defines whether the Symbolizer should be visibile or not."
                 },
                 "wellKnownName": {
                     "anyOf": [
@@ -803,6 +1514,21 @@
             "maxItems": 2,
             "minItems": 2,
             "type": "array"
+        },
+        "PropertyName": {
+            "description": "Expression that evaluates to the value of the given property.",
+            "properties": {
+                "name": {
+                    "type": "string"
+                },
+                "type": {
+                    "enum": [
+                        "property"
+                    ],
+                    "type": "string"
+                }
+            },
+            "type": "object"
         },
         "RGBChannel": {
             "description": "A RGBChannel defines how dataset bands are mapped to image color channels.",
@@ -918,7 +1644,7 @@
                 "filter": {
                     "anyOf": [
                         {
-                            "description": "A FunctionFilter that expects a string (propertyName) as second argument and\na regular expression as third argument. An actual parser implementation has to\nreturn a value for this function expression.",
+                            "description": "A FunctionFilter that expects an Expression as second and\nthird argument. The function checks, if the evaluation of\nthe second argument matches the evaluation of the third one.\nAn actual parser implementation has to return a value for\nthis function expression.",
                             "items": [
                                 {
                                     "enum": [
@@ -949,7 +1675,16 @@
                                 {
                                     "anyOf": [
                                         {
-                                            "description": "A FunctionFilter that expects a string (propertyName) as second argument and\na regular expression as third argument. An actual parser implementation has to\nreturn a value for this function expression.",
+                                            "$ref": "http://geostyler/geostyler-style.json#/definitions/LiteralValue"
+                                        },
+                                        {
+                                            "$ref": "http://geostyler/geostyler-style.json#/definitions/PropertyName"
+                                        },
+                                        {
+                                            "$ref": "http://geostyler/geostyler-style.json#/definitions/FunctionCall"
+                                        },
+                                        {
+                                            "description": "A FunctionFilter that expects an Expression as second and\nthird argument. The function checks, if the evaluation of\nthe second argument matches the evaluation of the third one.\nAn actual parser implementation has to return a value for\nthis function expression.",
                                             "items": [
                                                 {
                                                     "enum": [
@@ -974,10 +1709,36 @@
                                     ]
                                 },
                                 {
-                                    "type": "number"
+                                    "anyOf": [
+                                        {
+                                            "$ref": "http://geostyler/geostyler-style.json#/definitions/LiteralValue"
+                                        },
+                                        {
+                                            "$ref": "http://geostyler/geostyler-style.json#/definitions/PropertyName"
+                                        },
+                                        {
+                                            "$ref": "http://geostyler/geostyler-style.json#/definitions/FunctionCall"
+                                        },
+                                        {
+                                            "type": "number"
+                                        }
+                                    ]
                                 },
                                 {
-                                    "type": "number"
+                                    "anyOf": [
+                                        {
+                                            "$ref": "http://geostyler/geostyler-style.json#/definitions/LiteralValue"
+                                        },
+                                        {
+                                            "$ref": "http://geostyler/geostyler-style.json#/definitions/PropertyName"
+                                        },
+                                        {
+                                            "$ref": "http://geostyler/geostyler-style.json#/definitions/FunctionCall"
+                                        },
+                                        {
+                                            "type": "number"
+                                        }
+                                    ]
                                 }
                             ],
                             "maxItems": 4,
@@ -1003,37 +1764,39 @@
                                 {
                                     "anyOf": [
                                         {
-                                            "description": "A FunctionFilter that expects a string (propertyName) as second argument and\na regular expression as third argument. An actual parser implementation has to\nreturn a value for this function expression.",
-                                            "items": [
-                                                {
-                                                    "enum": [
-                                                        "FN_strMatches"
-                                                    ],
-                                                    "type": "string"
-                                                },
-                                                {
-                                                    "type": "string"
-                                                },
-                                                {
-                                                    "$ref": "http://geostyler/geostyler-style.json#/definitions/RegExp"
-                                                }
-                                            ],
-                                            "maxItems": 3,
-                                            "minItems": 3,
-                                            "type": "array"
+                                            "$ref": "http://geostyler/geostyler-style.json#/definitions/LiteralValue"
                                         },
                                         {
-                                            "type": "string"
+                                            "$ref": "http://geostyler/geostyler-style.json#/definitions/PropertyName"
+                                        },
+                                        {
+                                            "$ref": "http://geostyler/geostyler-style.json#/definitions/FunctionCall"
+                                        },
+                                        {
+                                            "type": [
+                                                "string",
+                                                "number"
+                                            ]
                                         }
                                     ]
                                 },
                                 {
-                                    "description": "A value of a property of the data.",
-                                    "type": [
-                                        "null",
-                                        "string",
-                                        "number",
-                                        "boolean"
+                                    "anyOf": [
+                                        {
+                                            "$ref": "http://geostyler/geostyler-style.json#/definitions/LiteralValue"
+                                        },
+                                        {
+                                            "$ref": "http://geostyler/geostyler-style.json#/definitions/PropertyName"
+                                        },
+                                        {
+                                            "$ref": "http://geostyler/geostyler-style.json#/definitions/FunctionCall"
+                                        },
+                                        {
+                                            "type": [
+                                                "string",
+                                                "number"
+                                            ]
+                                        }
                                     ]
                                 }
                             ],
@@ -1105,8 +1868,21 @@
             "description": "The TextSymbolizer describes the style representation of point data, if styled\nwith a text.",
             "properties": {
                 "allowOverlap": {
-                    "description": "If true, the text will be visible even if it collides with other previously\ndrawn symbols.",
-                    "type": "boolean"
+                    "anyOf": [
+                        {
+                            "$ref": "http://geostyler/geostyler-style.json#/definitions/LiteralValue"
+                        },
+                        {
+                            "$ref": "http://geostyler/geostyler-style.json#/definitions/PropertyName"
+                        },
+                        {
+                            "$ref": "http://geostyler/geostyler-style.json#/definitions/FunctionCall"
+                        },
+                        {
+                            "type": "boolean"
+                        }
+                    ],
+                    "description": "If true, the text will be visible even if it collides with other previously\ndrawn symbols."
                 },
                 "anchor": {
                     "description": "The anchor position of the label referred to the center of the geometry.",
@@ -1124,12 +1900,38 @@
                     "type": "string"
                 },
                 "avoidEdges": {
-                    "description": "This is a property relevant if using tiled datasets.\nIf true, the symbols will not cross tile edges to avoid mutual collisions.",
-                    "type": "boolean"
+                    "anyOf": [
+                        {
+                            "$ref": "http://geostyler/geostyler-style.json#/definitions/LiteralValue"
+                        },
+                        {
+                            "$ref": "http://geostyler/geostyler-style.json#/definitions/PropertyName"
+                        },
+                        {
+                            "$ref": "http://geostyler/geostyler-style.json#/definitions/FunctionCall"
+                        },
+                        {
+                            "type": "boolean"
+                        }
+                    ],
+                    "description": "This is a property relevant if using tiled datasets.\nIf true, the symbols will not cross tile edges to avoid mutual collisions."
                 },
                 "color": {
-                    "description": "A color defined as a hex-color string.",
-                    "type": "string"
+                    "anyOf": [
+                        {
+                            "$ref": "http://geostyler/geostyler-style.json#/definitions/LiteralValue"
+                        },
+                        {
+                            "$ref": "http://geostyler/geostyler-style.json#/definitions/PropertyName"
+                        },
+                        {
+                            "$ref": "http://geostyler/geostyler-style.json#/definitions/FunctionCall"
+                        },
+                        {
+                            "type": "string"
+                        }
+                    ],
+                    "description": "A color defined as a hex-color string."
                 },
                 "font": {
                     "description": "An Array of fonts. Comparable to https://www.w3schools.com/cssref/pr_font_font-family.asp",
@@ -1156,16 +1958,55 @@
                     "type": "string"
                 },
                 "haloBlur": {
-                    "description": "The halo's fadeout distance towards the outside.",
-                    "type": "number"
+                    "anyOf": [
+                        {
+                            "$ref": "http://geostyler/geostyler-style.json#/definitions/LiteralValue"
+                        },
+                        {
+                            "$ref": "http://geostyler/geostyler-style.json#/definitions/PropertyName"
+                        },
+                        {
+                            "$ref": "http://geostyler/geostyler-style.json#/definitions/FunctionCall"
+                        },
+                        {
+                            "type": "number"
+                        }
+                    ],
+                    "description": "The halo's fadeout distance towards the outside."
                 },
                 "haloColor": {
-                    "description": "The color of the text's halo, which helps it stand out from backgrounds\nrepresented as a hex-color string.",
-                    "type": "string"
+                    "anyOf": [
+                        {
+                            "$ref": "http://geostyler/geostyler-style.json#/definitions/LiteralValue"
+                        },
+                        {
+                            "$ref": "http://geostyler/geostyler-style.json#/definitions/PropertyName"
+                        },
+                        {
+                            "$ref": "http://geostyler/geostyler-style.json#/definitions/FunctionCall"
+                        },
+                        {
+                            "type": "string"
+                        }
+                    ],
+                    "description": "The color of the text's halo, which helps it stand out from backgrounds\nrepresented as a hex-color string."
                 },
                 "haloWidth": {
-                    "description": "Distance of halo to the font outline (pixels if haloWidthUnit is not defined).",
-                    "type": "number"
+                    "anyOf": [
+                        {
+                            "$ref": "http://geostyler/geostyler-style.json#/definitions/LiteralValue"
+                        },
+                        {
+                            "$ref": "http://geostyler/geostyler-style.json#/definitions/PropertyName"
+                        },
+                        {
+                            "$ref": "http://geostyler/geostyler-style.json#/definitions/FunctionCall"
+                        },
+                        {
+                            "type": "number"
+                        }
+                    ],
+                    "description": "Distance of halo to the font outline (pixels if haloWidthUnit is not defined)."
                 },
                 "haloWidthUnit": {
                     "description": "Unit to use for the haloWidth.",
@@ -1185,8 +2026,21 @@
                     "type": "string"
                 },
                 "keepUpright": {
-                    "description": "If true, the text will be kept upright.",
-                    "type": "boolean"
+                    "anyOf": [
+                        {
+                            "$ref": "http://geostyler/geostyler-style.json#/definitions/LiteralValue"
+                        },
+                        {
+                            "$ref": "http://geostyler/geostyler-style.json#/definitions/PropertyName"
+                        },
+                        {
+                            "$ref": "http://geostyler/geostyler-style.json#/definitions/FunctionCall"
+                        },
+                        {
+                            "type": "boolean"
+                        }
+                    ],
+                    "description": "If true, the text will be kept upright."
                 },
                 "kind": {
                     "description": "Describes the type of the kind of the Symbolizer.",
@@ -1200,8 +2054,21 @@
                     "type": "string"
                 },
                 "letterSpacing": {
-                    "description": "Sets the spacing between text characters (pixels if letterSpacingUnit is not defined).",
-                    "type": "number"
+                    "anyOf": [
+                        {
+                            "$ref": "http://geostyler/geostyler-style.json#/definitions/LiteralValue"
+                        },
+                        {
+                            "$ref": "http://geostyler/geostyler-style.json#/definitions/PropertyName"
+                        },
+                        {
+                            "$ref": "http://geostyler/geostyler-style.json#/definitions/FunctionCall"
+                        },
+                        {
+                            "type": "number"
+                        }
+                    ],
+                    "description": "Sets the spacing between text characters (pixels if letterSpacingUnit is not defined)."
                 },
                 "letterSpacingUnit": {
                     "description": "Unit to use for the letterSpacing.",
@@ -1213,8 +2080,21 @@
                     "type": "string"
                 },
                 "lineHeight": {
-                    "description": "Sets the line height (pixels if lineHeightUnit is not defined).\n'em' -> fontsize",
-                    "type": "number"
+                    "anyOf": [
+                        {
+                            "$ref": "http://geostyler/geostyler-style.json#/definitions/LiteralValue"
+                        },
+                        {
+                            "$ref": "http://geostyler/geostyler-style.json#/definitions/PropertyName"
+                        },
+                        {
+                            "$ref": "http://geostyler/geostyler-style.json#/definitions/FunctionCall"
+                        },
+                        {
+                            "type": "number"
+                        }
+                    ],
+                    "description": "Sets the line height (pixels if lineHeightUnit is not defined).\n'em' -> fontsize"
                 },
                 "lineHeightUnit": {
                     "description": "Unit to use for the lineHeight.\n'em' -> fontsize",
@@ -1226,21 +2106,73 @@
                     "type": "string"
                 },
                 "maxAngle": {
-                    "description": "Maximum angle change between adjacent characters in degrees.",
-                    "type": "number"
+                    "anyOf": [
+                        {
+                            "$ref": "http://geostyler/geostyler-style.json#/definitions/LiteralValue"
+                        },
+                        {
+                            "$ref": "http://geostyler/geostyler-style.json#/definitions/PropertyName"
+                        },
+                        {
+                            "$ref": "http://geostyler/geostyler-style.json#/definitions/FunctionCall"
+                        },
+                        {
+                            "type": "number"
+                        }
+                    ],
+                    "description": "Maximum angle change between adjacent characters in degrees."
                 },
                 "maxWidth": {
-                    "description": "The maximum line width for text wrapping.",
-                    "type": "number"
+                    "anyOf": [
+                        {
+                            "$ref": "http://geostyler/geostyler-style.json#/definitions/LiteralValue"
+                        },
+                        {
+                            "$ref": "http://geostyler/geostyler-style.json#/definitions/PropertyName"
+                        },
+                        {
+                            "$ref": "http://geostyler/geostyler-style.json#/definitions/FunctionCall"
+                        },
+                        {
+                            "type": "number"
+                        }
+                    ],
+                    "description": "The maximum line width for text wrapping."
                 },
                 "offset": {
                     "description": "The offset of the Symbolizer as [x, y] coordinates. Positive values indicate\nright and down, while negative values indicate left and up.",
                     "items": [
                         {
-                            "type": "number"
+                            "anyOf": [
+                                {
+                                    "$ref": "http://geostyler/geostyler-style.json#/definitions/LiteralValue"
+                                },
+                                {
+                                    "$ref": "http://geostyler/geostyler-style.json#/definitions/PropertyName"
+                                },
+                                {
+                                    "$ref": "http://geostyler/geostyler-style.json#/definitions/FunctionCall"
+                                },
+                                {
+                                    "type": "number"
+                                }
+                            ]
                         },
                         {
-                            "type": "number"
+                            "anyOf": [
+                                {
+                                    "$ref": "http://geostyler/geostyler-style.json#/definitions/LiteralValue"
+                                },
+                                {
+                                    "$ref": "http://geostyler/geostyler-style.json#/definitions/PropertyName"
+                                },
+                                {
+                                    "$ref": "http://geostyler/geostyler-style.json#/definitions/FunctionCall"
+                                },
+                                {
+                                    "type": "number"
+                                }
+                            ]
                         }
                     ],
                     "maxItems": 2,
@@ -1256,16 +2188,55 @@
                     "type": "string"
                 },
                 "opacity": {
-                    "description": "Determines the total opacity for the Symbolizer.\nA value between 0 and 1. 0 is none opaque and 1 is full opaque.",
-                    "type": "number"
+                    "anyOf": [
+                        {
+                            "$ref": "http://geostyler/geostyler-style.json#/definitions/LiteralValue"
+                        },
+                        {
+                            "$ref": "http://geostyler/geostyler-style.json#/definitions/PropertyName"
+                        },
+                        {
+                            "$ref": "http://geostyler/geostyler-style.json#/definitions/FunctionCall"
+                        },
+                        {
+                            "type": "number"
+                        }
+                    ],
+                    "description": "Determines the total opacity for the Symbolizer.\nA value between 0 and 1. 0 is none opaque and 1 is full opaque."
                 },
                 "optional": {
-                    "description": "Property relevant for mapbox-styles.\nIf true, icons will display without their corresponding text when the text\ncollides with other symbols and the icon does not.",
-                    "type": "boolean"
+                    "anyOf": [
+                        {
+                            "$ref": "http://geostyler/geostyler-style.json#/definitions/LiteralValue"
+                        },
+                        {
+                            "$ref": "http://geostyler/geostyler-style.json#/definitions/PropertyName"
+                        },
+                        {
+                            "$ref": "http://geostyler/geostyler-style.json#/definitions/FunctionCall"
+                        },
+                        {
+                            "type": "boolean"
+                        }
+                    ],
+                    "description": "Property relevant for mapbox-styles.\nIf true, icons will display without their corresponding text when the text\ncollides with other symbols and the icon does not."
                 },
                 "padding": {
-                    "description": "Size of the additional area around the text bounding box used for detecting\nsymbol collisions.",
-                    "type": "number"
+                    "anyOf": [
+                        {
+                            "$ref": "http://geostyler/geostyler-style.json#/definitions/LiteralValue"
+                        },
+                        {
+                            "$ref": "http://geostyler/geostyler-style.json#/definitions/PropertyName"
+                        },
+                        {
+                            "$ref": "http://geostyler/geostyler-style.json#/definitions/FunctionCall"
+                        },
+                        {
+                            "type": "number"
+                        }
+                    ],
+                    "description": "Size of the additional area around the text bounding box used for detecting\nsymbol collisions."
                 },
                 "pitchAlignment": {
                     "description": "Property relevant for mapbox-styles.\nCompare https://docs.mapbox.com/mapbox-gl-js/style-spec/#layout-symbol-text-pitch-alignment",
@@ -1277,8 +2248,21 @@
                     "type": "string"
                 },
                 "rotate": {
-                    "description": "The rotation of the Symbolizer in degrees. Value should be between 0 and 360.",
-                    "type": "number"
+                    "anyOf": [
+                        {
+                            "$ref": "http://geostyler/geostyler-style.json#/definitions/LiteralValue"
+                        },
+                        {
+                            "$ref": "http://geostyler/geostyler-style.json#/definitions/PropertyName"
+                        },
+                        {
+                            "$ref": "http://geostyler/geostyler-style.json#/definitions/FunctionCall"
+                        },
+                        {
+                            "type": "number"
+                        }
+                    ],
+                    "description": "The rotation of the Symbolizer in degrees. Value should be between 0 and 360."
                 },
                 "rotationAlignment": {
                     "description": "Property relevant for mapbox-styles.\nCompare https://docs.mapbox.com/mapbox-gl-js/style-spec/#layout-symbol-text-rotation-alignment",
@@ -1290,8 +2274,21 @@
                     "type": "string"
                 },
                 "size": {
-                    "description": "The fontsize in pixels.",
-                    "type": "number"
+                    "anyOf": [
+                        {
+                            "$ref": "http://geostyler/geostyler-style.json#/definitions/LiteralValue"
+                        },
+                        {
+                            "$ref": "http://geostyler/geostyler-style.json#/definitions/PropertyName"
+                        },
+                        {
+                            "$ref": "http://geostyler/geostyler-style.json#/definitions/FunctionCall"
+                        },
+                        {
+                            "type": "number"
+                        }
+                    ],
+                    "description": "The fontsize in pixels."
                 },
                 "transform": {
                     "description": "Specifies how to capitalize text, similar to the CSS text-transform property.",
@@ -1303,8 +2300,21 @@
                     "type": "string"
                 },
                 "visibility": {
-                    "description": "Defines whether the Symbolizer should be visibile or not.",
-                    "type": "boolean"
+                    "anyOf": [
+                        {
+                            "$ref": "http://geostyler/geostyler-style.json#/definitions/LiteralValue"
+                        },
+                        {
+                            "$ref": "http://geostyler/geostyler-style.json#/definitions/PropertyName"
+                        },
+                        {
+                            "$ref": "http://geostyler/geostyler-style.json#/definitions/FunctionCall"
+                        },
+                        {
+                            "type": "boolean"
+                        }
+                    ],
+                    "description": "Defines whether the Symbolizer should be visibile or not."
                 }
             },
             "type": "object"
