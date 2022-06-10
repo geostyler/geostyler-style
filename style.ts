@@ -25,7 +25,7 @@ export interface AbstractExpression {
  */
 export interface LiteralValue extends AbstractExpression {
   type: 'literal';
-  value: string | number;
+  value: string | number | boolean;
 };
 
 /**
