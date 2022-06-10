@@ -41,7 +41,6 @@ import {
   LiteralValue,
   PropertyName
 } from './index';
-import _ from 'lodash';
 
 export const isExpression = (got: any): got is Expression => {
   return isFunctionCall(got) ||
