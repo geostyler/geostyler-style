@@ -7,6 +7,7 @@ import _isString from 'lodash/isString';
 import _isNumber from 'lodash/isNumber';
 import _isBoolean from 'lodash/isBoolean';
 import _isRegExp from 'lodash/isRegExp';
+import _isNull from 'lodash/isNull';
 
 import {
   BasePointSymbolizer,
@@ -32,8 +33,77 @@ import {
   Rule,
   ScaleDenominator,
   StrMatchesFunctionOperator,
-  TextSymbolizer
-} from './style';
+  TextSymbolizer,
+  CategorizeFunctionFilter,
+  CategorizeFunctionOperator,
+  Expression,
+  FunctionCall,
+  LiteralValue,
+  PropertyName
+} from './index';
+
+export const isExpression = (got: any): got is Expression => {
+  return isFunctionCall(got) ||
+  isLiteralStringValue(got) ||
+  isLiteralNumberValue(got) ||
+  isLiteralBooleanValue(got) ||
+  isLiteralNullValue(got) ||
+  isPropertyName(got);
+};
+
+export const isFunctionCall = (got: any): got is FunctionCall => {
+  return got.type === 'functioncall' &&
+    got.hasOwnProperty('name') &&
+    _isString(got.name) &&
+    got.hasOwnProperty('args') &&
+    Array.isArray(got.args) &&
+    got.args.every((arg: any) => isExpression(arg));
+};
+
+export const isLiteralValue = (val: any): boolean => {
+  return isLiteralStringValue(val) ||
+  isLiteralNumberValue(val) ||
+  isLiteralBooleanValue(val) ||
+  isLiteralNullValue(val);
+};
+
+export const isLiteralStringValue = (got: any): got is LiteralValue<string> => {
+  return got.type === 'literal' &&
+    got.hasOwnProperty('value') &&
+    (
+      _isString(got.value)
+    );
+};
+
+export const isLiteralNumberValue = (got: any): got is LiteralValue<number> => {
+  return got.type === 'literal' &&
+    got.hasOwnProperty('value') &&
+    (
+      _isNumber(got.value)
+    );
+};
+
+export const isLiteralBooleanValue = (got: any): got is LiteralValue<boolean> => {
+  return got.type === 'literal' &&
+    got.hasOwnProperty('value') &&
+    (
+      _isBoolean(got.value)
+    );
+};
+
+export const isLiteralNullValue = (got: any): got is LiteralValue<null> => {
+  return got.type === 'literal' &&
+    got.hasOwnProperty('value') &&
+    (
+      _isNull(got.value)
+    );
+};
+
+export const isPropertyName = (got: any): got is PropertyName => {
+  return got.type === 'property' &&
+    got.hasOwnProperty('name') &&
+    _isString(got.name);
+};
 
 // PropertyValue
 export const isPropertyValue = (got: any): got is PropertyValue => {
@@ -65,6 +135,9 @@ export const isNegationOperator = (got: any): got is NegationOperator => {
 };
 export const isStrMatchesFunctionOperator = (got: any): got is StrMatchesFunctionOperator => {
   return got === 'FN_strMatches';
+};
+export const isCategorizeFunctionOperator = (got: any): got is CategorizeFunctionOperator => {
+  return got === 'Categorize';
 };
 
 // Filters
@@ -101,6 +174,11 @@ export const isFunctionFilter = (got: any): got is FunctionFilter => {
     isStrMatchesFunctionOperator(got[0]) &&
     _isString(got[1]) &&
     _isRegExp(got[2]);
+};
+
+// Function filters
+export const isCategorizeFunctionFilter = (got: any): got is CategorizeFunctionFilter => {
+  return isFunctionCall(got) && isCategorizeFunctionOperator(got.name);
 };
 
 // Symbolizers
