@@ -3,6 +3,7 @@ import {
   FunctionCall,
   Expression
 } from './style';
+
 export type GeoStylerNumberFunction = Fabs |
 Fabs_2 |
 Fabs_3 |
