@@ -1,3 +1,9 @@
+import {
+  GeoStylerBooleanFunction,
+  GeoStylerNumberFunction,
+  GeoStylerStringFunction
+} from './functions';
+
 /**
  * The ScaleDenominator defines a range of scales.
  */
@@ -20,13 +26,6 @@ export interface AbstractExpression {
   type: string;
 };
 
-/**
- * Expression that evaluates to the given value.
- */
-export interface LiteralValue<T> extends AbstractExpression {
-  type: 'literal';
-  value: T;
-};
 
 /**
  * Expression that evaluates to the value of the given property.
@@ -36,13 +35,15 @@ export interface PropertyName extends AbstractExpression {
   name: Expression<string>;
 };
 
+type FunctionCallType = 'stringfunction' | 'numberfunction' | 'booleanfunction' | 'voidfunction';
+
 /**
  * Expression that evaluates to the result of a function
  * call on a list of argument expressions.
  */
-export interface FunctionCall<T> extends AbstractExpression {
-  type: 'functioncall';
-  name: Expression<string>;
+export interface FunctionCall extends AbstractExpression {
+  type: FunctionCallType;
+  name: GeoStylerStringFunction['name'] | GeoStylerNumberFunction['name'] | GeoStylerBooleanFunction['name'];
   args: Expression<PropertyValue>[];
 };
 
@@ -50,11 +51,11 @@ export interface FunctionCall<T> extends AbstractExpression {
  * Expressions can be a literal value, a property name or a function call.
  */
 export type Expression<T extends PropertyValue> =
-  T |
-  LiteralValue<T> |
-  PropertyName |
-  // TODO: This should be a GeoStylerFunction (from functions.ts). Fix the typing here.
-  FunctionCall<T>;
+  T extends string ? PropertyName | T | GeoStylerStringFunction :
+  T extends number ? PropertyName | T | GeoStylerNumberFunction :
+  T extends boolean ? PropertyName | T | GeoStylerBooleanFunction :
+  T extends null | undefined ? null | undefined :
+  PropertyName | T;
 
 /**
  * The type of the Style.
@@ -82,54 +83,16 @@ export type CombinationOperator = '&&' | '||';
 export type NegationOperator = '!';
 
 /**
- * The Operator used for functional Filters.
- */
-export type StrMatchesFunctionOperator = 'FN_strMatches';
-
-/**
- * The Operator used for functional Filters.
- */
-export type CategorizeFunctionOperator = 'Categorize';
-
-/**
  * All operators.
  */
-export type Operator = ComparisonOperator | CombinationOperator | NegationOperator | StrMatchesFunctionOperator;
-
-/**
- * A FunctionFilter that expects an Expression as second and
- * third argument. The function checks, if the evaluation of
- * the second argument matches the evaluation of the third one.
- * An actual parser implementation has to return a value for
- * this function expression.
- */
-export type StrMatchesFunctionFilter = [
-  StrMatchesFunctionOperator,
-  // TODO just a temporary quick fix
-  string,
-  RegExp
-];
-
-/**
- * A FunctionFilter for categorizing continuous values.
- * See https://geoserver-pdf.readthedocs.io/en/latest/filter/function_reference.html#transformation-functions
- * for a detailed description.
- */
-export interface CategorizeFunctionFilter extends FunctionCall<string> {
-  name: CategorizeFunctionOperator;
-};
-
-/**
- * A Filter that expresses a function.
- */
-export type FunctionFilter = StrMatchesFunctionFilter;
+export type Operator = ComparisonOperator | CombinationOperator | NegationOperator;
 
 /**
  * A Filter that checks if a property is in a range of two values (inclusive).
  */
 export type RangeFilter = [
   '<=x<=',
-  FunctionFilter | Expression<string | number>,
+  Expression<string>,
   Expression<number>,
   Expression<number>
 ];
@@ -140,8 +103,8 @@ export type RangeFilter = [
  */
 export type ComparisonFilter = [
   ComparisonOperator,
-  Expression<string | number>,
-  Expression<string | number>
+  Expression<string | number | boolean>,
+  Expression<string | number | boolean>
 ] | RangeFilter;
 
 /**
@@ -160,7 +123,7 @@ export type NegationFilter = [
   Filter
 ];
 
-export type Filter = FunctionFilter | ComparisonFilter | NegationFilter | CombinationFilter;
+export type Filter = ComparisonFilter | NegationFilter | CombinationFilter | GeoStylerBooleanFunction;
 
 /**
  * The kind of the Symbolizer

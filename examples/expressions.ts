@@ -6,24 +6,17 @@ const sampleExpressionStyle: Style = {
     {
       name: 'Very old Peter',
       symbolizers: [{
-        kind: 'Line',
-        width: {
-          type: 'functioncall',
-          name: 'peter',
-          args: [{
-            type: 'literal',
-            value: 7
-          }, {
-            type: 'property',
-            name: 'myProp'
-          }, {
-            type: 'functioncall',
-            name: 'hans',
-            args: [{
-              type: 'literal',
-              value: 12
-            }]
-          }]
+        kind: 'Text',
+        lineHeight: {
+          type: 'numberfunction',
+          name: 'strLength',
+          args: [
+            {
+              type: 'stringfunction',
+              name: 'strConcat',
+              args: ['pre', 'name']
+            }
+          ]
         }
       }]
     }

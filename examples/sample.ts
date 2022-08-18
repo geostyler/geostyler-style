@@ -39,7 +39,17 @@ const sampleStyle: Style = {
     {
       name: 'Twelve year old Peter',
       filter: ['&&',
-        ['==', ['FN_strMatches', 'name', /Peter/], true],
+        {
+          type: 'booleanfunction',
+          name: 'strMatches',
+          args: [
+            {
+              type: 'property',
+              name: 'name'
+            },
+            'Peter'
+          ]
+        },
         ['==', 'age', 12]
       ],
       scaleDenominator: {
