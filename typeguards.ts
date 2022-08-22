@@ -43,7 +43,7 @@ export const isExpression = (got: any): got is Expression<any> => {
   isPropertyName(got);
 };
 
-export const isFunctionCall = (got: any): got is FunctionCall => {
+export const isFunctionCall = (got: any): got is FunctionCall<any> => {
   return got.type === 'functioncall' &&
     got.hasOwnProperty('name') &&
     _isString(got.name) &&

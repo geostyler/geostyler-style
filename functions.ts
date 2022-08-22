@@ -5,49 +5,25 @@ import {
 } from './style';
 
 export type GeoStylerNumberFunction = Fabs |
-Fabs_2 |
-Fabs_3 |
-Fabs_4 |
 Facos |
 Fasin |
 Fatan |
 Fatan2 |
 Fceil |
 Fcos |
-Fdisjoint3D |
-Fdistance |
-Fdistance3D |
-FendAngle |
 Fexp |
 Ffloor |
-Fint2ddouble |
-Fintersects3D |
-FisWithinDistance3D |
-Flength |
 Flog |
 Fmax |
-Fmax_2 |
-Fmax_3 |
-Fmax_4 |
 Fmin |
-Fmin_2 |
-Fmin_3 |
-Fmin_4 |
 Fmodulo |
-FparseDouble |
-FparseInt |
-FparseLong |
 Fpi |
 Fpow |
 Frandom |
 Frint |
 Fround |
-Fround_2 |
-FroundDouble |
 Fsin |
-Fsize |
 Fsqrt |
-FstartAngle |
 FstrIndexOf |
 FstrLastIndexOf |
 FstrLength |
@@ -55,99 +31,35 @@ Ftan |
 FtoDegrees |
 FtoRadians;
 
-export type GeoStylerStringFunction = Farray |
-FattributeCount |
-FboundedBy |
-Fclassify |
-Fcontrast |
-Fconvert |
-Fdarken |
-Fdesaturate |
-Fdifference |
-FendPoint |
-Fenv |
-Fgrayscale |
-Fhsl |
-Fid |
-Fif_then_else |
-Fintersection |
-FjsonPointer |
-Flapply |
-Flighten |
-Flist |
-FlistMultiply |
-Flitem |
-Fliterate |
-FmapGet |
-Fmix |
-FnumberFormat |
-FnumberFormat2 |
-Foverlaps |
-Fparameter |
+export type GeoStylerStringFunction = FnumberFormat |
 Fproperty |
-Frelate |
-FrescaleToPixels |
-Fsaturate |
-Fshade |
-Fspin |
-FstartPoint |
 FstrAbbreviate |
 FstrCapitalize |
 FstrConcat |
 FstrDefaultIfBlank |
-FstringTemplate |
-FstrPosition |
 FstrReplace |
 FstrStripAccents |
 FstrSubstring |
 FstrSubstringStart |
 FstrToLowerCase |
 FstrToUpperCase |
-FstrTrim |
-FstrTrim2 |
-FstrURLEncode |
-Ftint;
+FstrTrim;
 
 export type GeoStylerBooleanFunction = Fbetween |
-Fcontains |
-Fcrosses |
-Fdisjoint |
 Fdouble2bool |
-FequalsExact |
-FequalsExactTolerance |
-FequalTo |
-FgreaterEqualThan |
-FgreaterThan |
 Fin |
-Fin10 |
-Fin2 |
-Fin3 |
-Fin4 |
-Fin5 |
-Fin6 |
-Fin7 |
-Fin8 |
-Fin9 |
-FinArray |
-Fint2bbool |
-Fintersects |
-FisCached |
-FisCoverage |
-FisInstanceOf |
-FisLike |
-FisNull |
-FisWithinDistance |
-FlessEqualThan |
-FlessThan |
-Fnot |
-FnotEqualTo |
 FparseBoolean |
 FstrEndsWith |
 FstrEqualsIgnoreCase |
 FstrMatches |
 FstrStartsWith;
 
-export interface Fabs extends FunctionCall {
+export type GeoStylerVoidFunction = unknown;
+
+/**
+ * The absolute value of the specified number value
+ */
+export interface Fabs extends FunctionCall<number> {
   type: 'numberfunction';
   name: 'abs';
   args: [
@@ -155,31 +67,10 @@ export interface Fabs extends FunctionCall {
   ];
 };
 
-export interface Fabs_2 extends FunctionCall {
-  type: 'numberfunction';
-  name: 'abs_2';
-  args: [
-    Expression<number>
-  ];
-};
-
-export interface Fabs_3 extends FunctionCall {
-  type: 'numberfunction';
-  name: 'abs_3';
-  args: [
-    Expression<number>
-  ];
-};
-
-export interface Fabs_4 extends FunctionCall {
-  type: 'numberfunction';
-  name: 'abs_4';
-  args: [
-    Expression<number>
-  ];
-};
-
-export interface Facos extends FunctionCall {
+/**
+ * Returns the arc cosine of an angle in radians, in the range of 0.0 through PI
+ */
+export interface Facos extends FunctionCall<number> {
   type: 'numberfunction';
   name: 'acos';
   args: [
@@ -187,12 +78,10 @@ export interface Facos extends FunctionCall {
   ];
 };
 
-export interface Farray extends FunctionCall {
-  type: 'stringfunction';
-  name: 'array';
-};
-
-export interface Fasin extends FunctionCall {
+/**
+ * Returns the arc sine of an angle in radians, in the range of -PI / 2 through PI / 2
+ */
+export interface Fasin extends FunctionCall<number> {
   type: 'numberfunction';
   name: 'asin';
   args: [
@@ -200,7 +89,10 @@ export interface Fasin extends FunctionCall {
   ];
 };
 
-export interface Fatan extends FunctionCall {
+/**
+ * Returns the arc tangent of an angle in radians, in the range of -PI/2 through PI/2
+ */
+export interface Fatan extends FunctionCall<number> {
   type: 'numberfunction';
   name: 'atan';
   args: [
@@ -208,7 +100,10 @@ export interface Fatan extends FunctionCall {
   ];
 };
 
-export interface Fatan2 extends FunctionCall {
+/**
+ * Converts a rectangular coordinate (x, y) to polar (r, theta) and returns theta.
+ */
+export interface Fatan2 extends FunctionCall<number> {
   type: 'numberfunction';
   name: 'atan2';
   args: [
@@ -217,15 +112,10 @@ export interface Fatan2 extends FunctionCall {
   ];
 };
 
-export interface FattributeCount extends FunctionCall {
-  type: 'stringfunction';
-  name: 'attributeCount';
-  args: [
-    Expression<string>
-  ];
-};
-
-export interface Fbetween extends FunctionCall {
+/**
+ * Returns true if arg1 <= arg0 <= arg2
+ */
+export interface Fbetween extends FunctionCall<boolean> {
   type: 'booleanfunction';
   name: 'between';
   args: [
@@ -235,12 +125,11 @@ export interface Fbetween extends FunctionCall {
   ];
 };
 
-export interface FboundedBy extends FunctionCall {
-  type: 'stringfunction';
-  name: 'boundedBy';
-};
-
-export interface Fceil extends FunctionCall {
+/**
+ * Returns the smallest (closest to negative infinity) number value that is greater than or equal to
+ * x and is equal to a mathematical integer.
+ */
+export interface Fceil extends FunctionCall<number> {
   type: 'numberfunction';
   name: 'ceil';
   args: [
@@ -248,45 +137,10 @@ export interface Fceil extends FunctionCall {
   ];
 };
 
-export interface Fclassify extends FunctionCall {
-  type: 'stringfunction';
-  name: 'classify';
-  args: [
-    Expression<string>,
-    Expression<string>
-  ];
-};
-
-export interface Fcontains extends FunctionCall {
-  type: 'booleanfunction';
-  name: 'contains';
-  args: [
-    Expression<string>,
-    Expression<string>
-  ];
-};
-
-export interface Fcontrast extends FunctionCall {
-  type: 'stringfunction';
-  name: 'contrast';
-  args: [
-    Expression<string>,
-    Expression<string>,
-    Expression<string>,
-    Expression<number>
-  ];
-};
-
-export interface Fconvert extends FunctionCall {
-  type: 'stringfunction';
-  name: 'convert';
-  args: [
-    Expression<string>,
-    Expression<string>
-  ];
-};
-
-export interface Fcos extends FunctionCall {
+/**
+ * Returns the cosine of an angle expressed in radians
+ */
+export interface Fcos extends FunctionCall<number> {
   type: 'numberfunction';
   name: 'cos';
   args: [
@@ -294,81 +148,10 @@ export interface Fcos extends FunctionCall {
   ];
 };
 
-export interface Fcrosses extends FunctionCall {
-  type: 'booleanfunction';
-  name: 'crosses';
-  args: [
-    Expression<string>,
-    Expression<string>
-  ];
-};
-
-export interface Fdarken extends FunctionCall {
-  type: 'stringfunction';
-  name: 'darken';
-  args: [
-    Expression<string>,
-    Expression<number>,
-    Expression<string>
-  ];
-};
-
-export interface Fdesaturate extends FunctionCall {
-  type: 'stringfunction';
-  name: 'desaturate';
-  args: [
-    Expression<string>,
-    Expression<number>,
-    Expression<string>
-  ];
-};
-
-export interface Fdifference extends FunctionCall {
-  type: 'stringfunction';
-  name: 'difference';
-  args: [
-    Expression<string>,
-    Expression<string>
-  ];
-};
-
-export interface Fdisjoint extends FunctionCall {
-  type: 'booleanfunction';
-  name: 'disjoint';
-  args: [
-    Expression<string>,
-    Expression<string>
-  ];
-};
-
-export interface Fdisjoint3D extends FunctionCall {
-  type: 'numberfunction';
-  name: 'disjoint3D';
-  args: [
-    Expression<string>,
-    Expression<string>
-  ];
-};
-
-export interface Fdistance extends FunctionCall {
-  type: 'numberfunction';
-  name: 'distance';
-  args: [
-    Expression<string>,
-    Expression<string>
-  ];
-};
-
-export interface Fdistance3D extends FunctionCall {
-  type: 'numberfunction';
-  name: 'distance3D';
-  args: [
-    Expression<string>,
-    Expression<string>
-  ];
-};
-
-export interface Fdouble2bool extends FunctionCall {
+/**
+ * Returns true if x is zero, false otherwise
+ */
+export interface Fdouble2bool extends FunctionCall<boolean> {
   type: 'booleanfunction';
   name: 'double2bool';
   args: [
@@ -376,60 +159,10 @@ export interface Fdouble2bool extends FunctionCall {
   ];
 };
 
-export interface FendAngle extends FunctionCall {
-  type: 'numberfunction';
-  name: 'endAngle';
-  args: [
-    Expression<string>
-  ];
-};
-
-export interface FendPoint extends FunctionCall {
-  type: 'stringfunction';
-  name: 'endPoint';
-  args: [
-    Expression<string>
-  ];
-};
-
-export interface Fenv extends FunctionCall {
-  type: 'stringfunction';
-  name: 'env';
-  args: [
-    Expression<string>
-  ];
-};
-
-export interface FequalsExact extends FunctionCall {
-  type: 'booleanfunction';
-  name: 'equalsExact';
-  args: [
-    Expression<string>,
-    Expression<string>
-  ];
-};
-
-export interface FequalsExactTolerance extends FunctionCall {
-  type: 'booleanfunction';
-  name: 'equalsExactTolerance';
-  args: [
-    Expression<string>,
-    Expression<string>,
-    Expression<number>
-  ];
-};
-
-export interface FequalTo extends FunctionCall {
-  type: 'booleanfunction';
-  name: 'equalTo';
-  args: [
-    Expression<string>,
-    Expression<string>,
-    Expression<string>
-  ];
-};
-
-export interface Fexp extends FunctionCall {
+/**
+ * Returns Euler’s number e raised to the power of x
+ */
+export interface Fexp extends FunctionCall<number> {
   type: 'numberfunction';
   name: 'exp';
   args: [
@@ -437,7 +170,11 @@ export interface Fexp extends FunctionCall {
   ];
 };
 
-export interface Ffloor extends FunctionCall {
+/**
+ * Returns the largest (closest to positive infinity) value that is less than or equal to x and is
+ * equal to a mathematical integer
+ */
+export interface Ffloor extends FunctionCall<number> {
   type: 'numberfunction';
   name: 'floor';
   args: [
@@ -445,393 +182,20 @@ export interface Ffloor extends FunctionCall {
   ];
 };
 
-export interface Fgrayscale extends FunctionCall {
-  type: 'stringfunction';
-  name: 'grayscale';
-  args: [
-    Expression<string>
-  ];
-};
-
-export interface FgreaterEqualThan extends FunctionCall {
-  type: 'booleanfunction';
-  name: 'greaterEqualThan';
-  args: [
-    Expression<string>,
-    Expression<string>
-  ];
-};
-
-export interface FgreaterThan extends FunctionCall {
-  type: 'booleanfunction';
-  name: 'greaterThan';
-  args: [
-    Expression<string>,
-    Expression<string>
-  ];
-};
-
-export interface Fhsl extends FunctionCall {
-  type: 'stringfunction';
-  name: 'hsl';
-  args: [
-    Expression<number>,
-    Expression<number>,
-    Expression<number>
-  ];
-};
-
-export interface Fid extends FunctionCall {
-  type: 'stringfunction';
-  name: 'id';
-};
-
-export interface Fif_then_else extends FunctionCall {
-  type: 'stringfunction';
-  name: 'if_then_else';
-  args: [
-    Expression<boolean>,
-    Expression<string>,
-    Expression<string>
-  ];
-};
-
-export interface Fin extends FunctionCall {
+/**
+ * Returns true if arguments[0] is equal to one of the arguments[1], …, arguments[n] values. Use the
+ * function name matching the number of arguments specified.
+ */
+export interface Fin extends FunctionCall<boolean> {
   type: 'booleanfunction';
   name: 'in';
-  args: [
-    Expression<string>,
-    Expression<string>
-  ];
+  args: Expression<string>[];
 };
 
-export interface Fin10 extends FunctionCall {
-  type: 'booleanfunction';
-  name: 'in10';
-  args: [
-    Expression<string>,
-    Expression<string>,
-    Expression<string>,
-    Expression<string>,
-    Expression<string>,
-    Expression<string>,
-    Expression<string>,
-    Expression<string>,
-    Expression<string>,
-    Expression<string>,
-    Expression<string>
-  ];
-};
-
-export interface Fin2 extends FunctionCall {
-  type: 'booleanfunction';
-  name: 'in2';
-  args: [
-    Expression<string>,
-    Expression<string>,
-    Expression<string>
-  ];
-};
-
-export interface Fin3 extends FunctionCall {
-  type: 'booleanfunction';
-  name: 'in3';
-  args: [
-    Expression<string>,
-    Expression<string>,
-    Expression<string>,
-    Expression<string>
-  ];
-};
-
-export interface Fin4 extends FunctionCall {
-  type: 'booleanfunction';
-  name: 'in4';
-  args: [
-    Expression<string>,
-    Expression<string>,
-    Expression<string>,
-    Expression<string>,
-    Expression<string>
-  ];
-};
-
-export interface Fin5 extends FunctionCall {
-  type: 'booleanfunction';
-  name: 'in5';
-  args: [
-    Expression<string>,
-    Expression<string>,
-    Expression<string>,
-    Expression<string>,
-    Expression<string>,
-    Expression<string>
-  ];
-};
-
-export interface Fin6 extends FunctionCall {
-  type: 'booleanfunction';
-  name: 'in6';
-  args: [
-    Expression<string>,
-    Expression<string>,
-    Expression<string>,
-    Expression<string>,
-    Expression<string>,
-    Expression<string>,
-    Expression<string>
-  ];
-};
-
-export interface Fin7 extends FunctionCall {
-  type: 'booleanfunction';
-  name: 'in7';
-  args: [
-    Expression<string>,
-    Expression<string>,
-    Expression<string>,
-    Expression<string>,
-    Expression<string>,
-    Expression<string>,
-    Expression<string>,
-    Expression<string>
-  ];
-};
-
-export interface Fin8 extends FunctionCall {
-  type: 'booleanfunction';
-  name: 'in8';
-  args: [
-    Expression<string>,
-    Expression<string>,
-    Expression<string>,
-    Expression<string>,
-    Expression<string>,
-    Expression<string>,
-    Expression<string>,
-    Expression<string>,
-    Expression<string>
-  ];
-};
-
-export interface Fin9 extends FunctionCall {
-  type: 'booleanfunction';
-  name: 'in9';
-  args: [
-    Expression<string>,
-    Expression<string>,
-    Expression<string>,
-    Expression<string>,
-    Expression<string>,
-    Expression<string>,
-    Expression<string>,
-    Expression<string>,
-    Expression<string>,
-    Expression<string>
-  ];
-};
-
-export interface FinArray extends FunctionCall {
-  type: 'booleanfunction';
-  name: 'inArray';
-  args: [
-    Expression<string>,
-    Expression<string>
-  ];
-};
-
-export interface Fint2bbool extends FunctionCall {
-  type: 'booleanfunction';
-  name: 'int2bbool';
-  args: [
-    Expression<number>
-  ];
-};
-
-export interface Fint2ddouble extends FunctionCall {
-  type: 'numberfunction';
-  name: 'int2ddouble';
-  args: [
-    Expression<number>
-  ];
-};
-
-export interface Fintersection extends FunctionCall {
-  type: 'stringfunction';
-  name: 'intersection';
-  args: [
-    Expression<string>,
-    Expression<string>
-  ];
-};
-
-export interface Fintersects extends FunctionCall {
-  type: 'booleanfunction';
-  name: 'intersects';
-  args: [
-    Expression<string>,
-    Expression<string>
-  ];
-};
-
-export interface Fintersects3D extends FunctionCall {
-  type: 'numberfunction';
-  name: 'intersects3D';
-  args: [
-    Expression<string>,
-    Expression<string>
-  ];
-};
-
-export interface FisCached extends FunctionCall {
-  type: 'booleanfunction';
-  name: 'isCached';
-  args: [
-    Expression<string>
-  ];
-};
-
-export interface FisCoverage extends FunctionCall {
-  type: 'booleanfunction';
-  name: 'isCoverage';
-};
-
-export interface FisInstanceOf extends FunctionCall {
-  type: 'booleanfunction';
-  name: 'isInstanceOf';
-  args: [
-    Expression<string>
-  ];
-};
-
-export interface FisLike extends FunctionCall {
-  type: 'booleanfunction';
-  name: 'isLike';
-  args: [
-    Expression<string>,
-    Expression<string>
-  ];
-};
-
-export interface FisNull extends FunctionCall {
-  type: 'booleanfunction';
-  name: 'isNull';
-  args: [
-    Expression<string>
-  ];
-};
-
-export interface FisWithinDistance extends FunctionCall {
-  type: 'booleanfunction';
-  name: 'isWithinDistance';
-  args: [
-    Expression<string>,
-    Expression<string>,
-    Expression<number>
-  ];
-};
-
-export interface FisWithinDistance3D extends FunctionCall {
-  type: 'numberfunction';
-  name: 'isWithinDistance3D';
-  args: [
-    Expression<string>,
-    Expression<string>,
-    Expression<number>
-  ];
-};
-
-export interface FjsonPointer extends FunctionCall {
-  type: 'stringfunction';
-  name: 'jsonPointer';
-  args: [
-    Expression<string>,
-    Expression<string>
-  ];
-};
-
-export interface Flapply extends FunctionCall {
-  type: 'stringfunction';
-  name: 'lapply';
-  args: [
-    Expression<string>,
-    Expression<string>
-  ];
-};
-
-export interface Flength extends FunctionCall {
-  type: 'numberfunction';
-  name: 'length';
-  args: [
-    Expression<string>
-  ];
-};
-
-export interface FlessEqualThan extends FunctionCall {
-  type: 'booleanfunction';
-  name: 'lessEqualThan';
-  args: [
-    Expression<number>,
-    Expression<number>
-  ];
-};
-
-export interface FlessThan extends FunctionCall {
-  type: 'booleanfunction';
-  name: 'lessThan';
-  args: [
-    Expression<number>,
-    Expression<number>
-  ];
-};
-
-export interface Flighten extends FunctionCall {
-  type: 'stringfunction';
-  name: 'lighten';
-  args: [
-    Expression<string>,
-    Expression<number>,
-    Expression<string>
-  ];
-};
-
-export interface Flist extends FunctionCall {
-  type: 'stringfunction';
-  name: 'list';
-  args: [
-    Expression<string>
-  ];
-};
-
-export interface FlistMultiply extends FunctionCall {
-  type: 'stringfunction';
-  name: 'listMultiply';
-  args: [
-    Expression<number>,
-    Expression<string>
-  ];
-};
-
-export interface Flitem extends FunctionCall {
-  type: 'stringfunction';
-  name: 'litem';
-  args: [
-    Expression<string>,
-    Expression<number>
-  ];
-};
-
-export interface Fliterate extends FunctionCall {
-  type: 'stringfunction';
-  name: 'literate';
-  args: [
-    Expression<string>,
-    Expression<number>,
-    Expression<string>
-  ];
-};
-
-export interface Flog extends FunctionCall {
+/**
+ * Returns the natural logarithm (base e) of x
+ */
+export interface Flog extends FunctionCall<number> {
   type: 'numberfunction';
   name: 'log';
   args: [
@@ -839,98 +203,25 @@ export interface Flog extends FunctionCall {
   ];
 };
 
-export interface FmapGet extends FunctionCall {
-  type: 'stringfunction';
-  name: 'mapGet';
-  args: [
-    Expression<string>,
-    Expression<string>
-  ];
-};
-
-export interface Fmax extends FunctionCall {
+/**
+ * Returns the maximum between argument[0], …, argument[n]
+ */
+export interface Fmax extends FunctionCall<number> {
   type: 'numberfunction';
   name: 'max';
-  args: [
-    Expression<number>,
-    Expression<number>
-  ];
+  args: Expression<number>[];
 };
 
-export interface Fmax_2 extends FunctionCall {
-  type: 'numberfunction';
-  name: 'max_2';
-  args: [
-    Expression<number>,
-    Expression<number>
-  ];
-};
-
-export interface Fmax_3 extends FunctionCall {
-  type: 'numberfunction';
-  name: 'max_3';
-  args: [
-    Expression<number>,
-    Expression<number>
-  ];
-};
-
-export interface Fmax_4 extends FunctionCall {
-  type: 'numberfunction';
-  name: 'max_4';
-  args: [
-    Expression<number>,
-    Expression<number>
-  ];
-};
-
-export interface Fmin extends FunctionCall {
+/**
+ * Returns the minimum between argument[0], …, argument[n]
+ */
+export interface Fmin extends FunctionCall<number> {
   type: 'numberfunction';
   name: 'min';
-  args: [
-    Expression<number>,
-    Expression<number>
-  ];
+  args: Expression<number>[];
 };
 
-export interface Fmin_2 extends FunctionCall {
-  type: 'numberfunction';
-  name: 'min_2';
-  args: [
-    Expression<number>,
-    Expression<number>
-  ];
-};
-
-export interface Fmin_3 extends FunctionCall {
-  type: 'numberfunction';
-  name: 'min_3';
-  args: [
-    Expression<number>,
-    Expression<number>
-  ];
-};
-
-export interface Fmin_4 extends FunctionCall {
-  type: 'numberfunction';
-  name: 'min_4';
-  args: [
-    Expression<number>,
-    Expression<number>
-  ];
-};
-
-export interface Fmix extends FunctionCall {
-  type: 'stringfunction';
-  name: 'mix';
-  args: [
-    Expression<string>,
-    Expression<string>,
-    Expression<number>
-  ];
-};
-
-export interface Fmodulo extends FunctionCall {
+export interface Fmodulo extends FunctionCall<number> {
   type: 'numberfunction';
   name: 'modulo';
   args: [
@@ -939,24 +230,12 @@ export interface Fmodulo extends FunctionCall {
   ];
 };
 
-export interface Fnot extends FunctionCall {
-  type: 'booleanfunction';
-  name: 'not';
-  args: [
-    Expression<boolean>
-  ];
-};
-
-export interface FnotEqualTo extends FunctionCall {
-  type: 'booleanfunction';
-  name: 'notEqualTo';
-  args: [
-    Expression<string>,
-    Expression<string>
-  ];
-};
-
-export interface FnumberFormat extends FunctionCall {
+/**
+ * Formats the number (argument[1]) according to the specified format (arguments[0]) using the default locale
+ * or the one provided (argument[2]) as an optional argument. The format syntax can be found
+ * in the Java DecimalFormat javadocs
+ */
+export interface FnumberFormat extends FunctionCall<string> {
   type: 'stringfunction';
   name: 'numberFormat';
   args: [
@@ -966,37 +245,11 @@ export interface FnumberFormat extends FunctionCall {
   ];
 };
 
-export interface FnumberFormat2 extends FunctionCall {
-  type: 'stringfunction';
-  name: 'numberFormat2';
-  args: [
-    Expression<string>,
-    Expression<number>,
-    Expression<string>,
-    Expression<string>,
-    Expression<string>
-  ];
-};
-
-export interface Foverlaps extends FunctionCall {
-  type: 'stringfunction';
-  name: 'overlaps';
-  args: [
-    Expression<string>,
-    Expression<string>
-  ];
-};
-
-export interface Fparameter extends FunctionCall {
-  type: 'stringfunction';
-  name: 'parameter';
-  args: [
-    Expression<string>,
-    Expression<string>
-  ];
-};
-
-export interface FparseBoolean extends FunctionCall {
+/**
+ * Parses a string into a boolean. The empty string, f, 0.0 and 0 are considered false, everything
+ * else is considered true.
+ */
+export interface FparseBoolean extends FunctionCall<boolean> {
   type: 'booleanfunction';
   name: 'parseBoolean';
   args: [
@@ -1004,36 +257,18 @@ export interface FparseBoolean extends FunctionCall {
   ];
 };
 
-export interface FparseDouble extends FunctionCall {
-  type: 'numberfunction';
-  name: 'parseDouble';
-  args: [
-    Expression<string>
-  ];
-};
-
-export interface FparseInt extends FunctionCall {
-  type: 'numberfunction';
-  name: 'parseInt';
-  args: [
-    Expression<string>
-  ];
-};
-
-export interface FparseLong extends FunctionCall {
-  type: 'numberfunction';
-  name: 'parseLong';
-  args: [
-    Expression<string>
-  ];
-};
-
-export interface Fpi extends FunctionCall {
+/**
+ * Returns an approximation of pi, the ratio of the circumference of a circle to its diameter
+ */
+export interface Fpi extends FunctionCall<number> {
   type: 'numberfunction';
   name: 'pi';
 };
 
-export interface Fpow extends FunctionCall {
+/**
+ * Returns the value of base (argument[0]) raised to the power of exponent (arguments[1])
+ */
+export interface Fpow extends FunctionCall<number> {
   type: 'numberfunction';
   name: 'pow';
   args: [
@@ -1042,7 +277,11 @@ export interface Fpow extends FunctionCall {
   ];
 };
 
-export interface Fproperty extends FunctionCall {
+/**
+ * Returns the value of the property propertyName. Allows property names to be compute
+ *  or specified by Variable substitution in SLD.
+ */
+export interface Fproperty extends FunctionCall<string> {
   type: 'stringfunction';
   name: 'property';
   args: [
@@ -1050,32 +289,20 @@ export interface Fproperty extends FunctionCall {
   ];
 };
 
-export interface Frandom extends FunctionCall {
+/**
+ * Returns a Double value with a positive sign, greater than or equal to 0.0 and less than 1.0.
+ */
+export interface Frandom extends FunctionCall<number> {
   type: 'numberfunction';
   name: 'random';
 };
 
-export interface Frelate extends FunctionCall {
-  type: 'stringfunction';
-  name: 'relate';
-  args: [
-    Expression<string>,
-    Expression<string>
-  ];
-};
-
-export interface FrescaleToPixels extends FunctionCall {
-  type: 'stringfunction';
-  name: 'rescaleToPixels';
-  args: [
-    Expression<string>,
-    Expression<string>,
-    Expression<number>,
-    Expression<string>
-  ];
-};
-
-export interface Frint extends FunctionCall {
+/**
+ * Returns the Double value that is closest in value to the argument and is equal to a mathematical
+ * integer. If two double values that are mathematical integers are equally close, the result is the
+ * integer value that is even.
+ */
+export interface Frint extends FunctionCall<number> {
   type: 'numberfunction';
   name: 'rint';
   args: [
@@ -1083,7 +310,10 @@ export interface Frint extends FunctionCall {
   ];
 };
 
-export interface Fround extends FunctionCall {
+/**
+ * Returns the closest number to argument[0].
+ */
+export interface Fround extends FunctionCall<number> {
   type: 'numberfunction';
   name: 'round';
   args: [
@@ -1091,42 +321,10 @@ export interface Fround extends FunctionCall {
   ];
 };
 
-export interface Fround_2 extends FunctionCall {
-  type: 'numberfunction';
-  name: 'round_2';
-  args: [
-    Expression<number>
-  ];
-};
-
-export interface FroundDouble extends FunctionCall {
-  type: 'numberfunction';
-  name: 'roundDouble';
-  args: [
-    Expression<number>
-  ];
-};
-
-export interface Fsaturate extends FunctionCall {
-  type: 'stringfunction';
-  name: 'saturate';
-  args: [
-    Expression<string>,
-    Expression<number>,
-    Expression<string>
-  ];
-};
-
-export interface Fshade extends FunctionCall {
-  type: 'stringfunction';
-  name: 'shade';
-  args: [
-    Expression<string>,
-    Expression<number>
-  ];
-};
-
-export interface Fsin extends FunctionCall {
+/**
+ * Returns the sine of an angle expressed in radians
+ */
+export interface Fsin extends FunctionCall<number> {
   type: 'numberfunction';
   name: 'sin';
   args: [
@@ -1134,24 +332,10 @@ export interface Fsin extends FunctionCall {
   ];
 };
 
-export interface Fsize extends FunctionCall {
-  type: 'numberfunction';
-  name: 'size';
-  args: [
-    Expression<string>
-  ];
-};
-
-export interface Fspin extends FunctionCall {
-  type: 'stringfunction';
-  name: 'spin';
-  args: [
-    Expression<string>,
-    Expression<number>
-  ];
-};
-
-export interface Fsqrt extends FunctionCall {
+/**
+ * Returns the square root of argument[0]
+ */
+export interface Fsqrt extends FunctionCall<number> {
   type: 'numberfunction';
   name: 'sqrt';
   args: [
@@ -1159,23 +343,11 @@ export interface Fsqrt extends FunctionCall {
   ];
 };
 
-export interface FstartAngle extends FunctionCall {
-  type: 'numberfunction';
-  name: 'startAngle';
-  args: [
-    Expression<string>
-  ];
-};
-
-export interface FstartPoint extends FunctionCall {
-  type: 'stringfunction';
-  name: 'startPoint';
-  args: [
-    Expression<string>
-  ];
-};
-
-export interface FstrAbbreviate extends FunctionCall {
+/**
+ * Abbreviates the sentence (argument[0]) at first space beyond lower (argument[1])
+ * or at upper (argument[2]) if no space.Appends append (argument[3]) if string is abbreviated.
+ */
+export interface FstrAbbreviate extends FunctionCall<string> {
   type: 'stringfunction';
   name: 'strAbbreviate';
   args: [
@@ -1186,7 +358,10 @@ export interface FstrAbbreviate extends FunctionCall {
   ];
 };
 
-export interface FstrCapitalize extends FunctionCall {
+/**
+ * Fully capitalizes the sentence. For example, “HoW aRe YOU?” will be turned into “How Are You?”
+ */
+export interface FstrCapitalize extends FunctionCall<string> {
   type: 'stringfunction';
   name: 'strCapitalize';
   args: [
@@ -1194,7 +369,10 @@ export interface FstrCapitalize extends FunctionCall {
   ];
 };
 
-export interface FstrConcat extends FunctionCall {
+/**
+ * Concatenates the two strings into one
+ */
+export interface FstrConcat extends FunctionCall<string> {
   type: 'stringfunction';
   name: 'strConcat';
   args: [
@@ -1203,7 +381,10 @@ export interface FstrConcat extends FunctionCall {
   ];
 };
 
-export interface FstrDefaultIfBlank extends FunctionCall {
+/**
+ * Returns default (argument[1]) if str (argument[0]) is empty, blank or null
+ */
+export interface FstrDefaultIfBlank extends FunctionCall<string> {
   type: 'stringfunction';
   name: 'strDefaultIfBlank';
   args: [
@@ -1212,7 +393,10 @@ export interface FstrDefaultIfBlank extends FunctionCall {
   ];
 };
 
-export interface FstrEndsWith extends FunctionCall {
+/**
+ * Returns true if string (argument[0]) ends with suffix (argument[1])
+  */
+export interface FstrEndsWith extends FunctionCall<boolean> {
   type: 'booleanfunction';
   name: 'strEndsWith';
   args: [
@@ -1221,7 +405,10 @@ export interface FstrEndsWith extends FunctionCall {
   ];
 };
 
-export interface FstrEqualsIgnoreCase extends FunctionCall {
+/**
+ * Returns true if the two strings are equal ignoring case considerations
+ */
+export interface FstrEqualsIgnoreCase extends FunctionCall<boolean> {
   type: 'booleanfunction';
   name: 'strEqualsIgnoreCase';
   args: [
@@ -1230,7 +417,11 @@ export interface FstrEqualsIgnoreCase extends FunctionCall {
   ];
 };
 
-export interface FstrIndexOf extends FunctionCall {
+/**
+ * Returns the index within this string (argument[0]) of the first occurrence of the specified
+ * substring (argument[1]), or -1 if not found
+ */
+export interface FstrIndexOf extends FunctionCall<number> {
   type: 'numberfunction';
   name: 'strIndexOf';
   args: [
@@ -1239,18 +430,11 @@ export interface FstrIndexOf extends FunctionCall {
   ];
 };
 
-export interface FstringTemplate extends FunctionCall {
-  type: 'stringfunction';
-  name: 'stringTemplate';
-  args: [
-    Expression<string>,
-    Expression<string>,
-    Expression<string>,
-    Expression<string>
-  ];
-};
-
-export interface FstrLastIndexOf extends FunctionCall {
+/**
+ * Returns the index within this string (arguments[0]) of the last occurrence of the specified
+ * substring (arguments[1]), or -1 if not found
+ */
+export interface FstrLastIndexOf extends FunctionCall<number> {
   type: 'numberfunction';
   name: 'strLastIndexOf';
   args: [
@@ -1259,7 +443,10 @@ export interface FstrLastIndexOf extends FunctionCall {
   ];
 };
 
-export interface FstrLength extends FunctionCall{
+/**
+ * Returns the string length
+ */
+export interface FstrLength extends FunctionCall<number>{
   type: 'numberfunction';
   name: 'strLength';
   args: [
@@ -1267,7 +454,11 @@ export interface FstrLength extends FunctionCall{
   ];
 };
 
-export interface FstrMatches extends FunctionCall {
+/**
+ * Returns true if the string (arguments[0]) matches the specified regular expression (arguments[1]).
+ * For the full syntax of the pattern specification see the Java Pattern class javadocs
+ */
+export interface FstrMatches extends FunctionCall<boolean> {
   type: 'booleanfunction';
   name: 'strMatches';
   args: [
@@ -1276,17 +467,13 @@ export interface FstrMatches extends FunctionCall {
   ];
 };
 
-export interface FstrPosition extends FunctionCall {
-  type: 'stringfunction';
-  name: 'strPosition';
-  args: [
-    Expression<string>,
-    Expression<string>,
-    Expression<string>
-  ];
-};
-
-export interface FstrReplace extends FunctionCall {
+/**
+ * Returns the string (argument[0]) with the pattern (argument[1]) replaced with the given
+ * replacement (argument[2]) text. If the global argument (argument[3]) is true then all occurrences of the pattern
+ * will be replaced, otherwise only the first. For the full syntax of the pattern specification see
+ * the Java Pattern class javadocs
+ */
+export interface FstrReplace extends FunctionCall<string> {
   type: 'stringfunction';
   name: 'strReplace';
   args: [
@@ -1297,7 +484,10 @@ export interface FstrReplace extends FunctionCall {
   ];
 };
 
-export interface FstrStartsWith extends FunctionCall {
+/**
+ * Returns true if string (argument[0]) starts with prefix (argument[1]).
+ */
+export interface FstrStartsWith extends FunctionCall<boolean> {
   type: 'booleanfunction';
   name: 'strStartsWith';
   args: [
@@ -1306,7 +496,10 @@ export interface FstrStartsWith extends FunctionCall {
   ];
 };
 
-export interface FstrStripAccents extends FunctionCall {
+/**
+ * Removes diacritics (~= accents) from a string. The case will not be altered.
+ */
+export interface FstrStripAccents extends FunctionCall<string> {
   type: 'stringfunction';
   name: 'strStripAccents';
   args: [
@@ -1314,7 +507,12 @@ export interface FstrStripAccents extends FunctionCall {
   ];
 };
 
-export interface FstrSubstring extends FunctionCall {
+/**
+ * Returns a new string that is a substring of this string (argument[0]). The substring begins
+ * at the specified begin (argument[1]) and extends to the character at index endIndex (argument[2]) - 1
+ * (indexes are zero-based).
+ */
+export interface FstrSubstring extends FunctionCall<string> {
   type: 'stringfunction';
   name: 'strSubstring';
   args: [
@@ -1324,7 +522,11 @@ export interface FstrSubstring extends FunctionCall {
   ];
 };
 
-export interface FstrSubstringStart extends FunctionCall {
+/**
+ * Returns a new string that is a substring of this string (argument[0]). The substring begins
+ * at the specified begin (arguments[1]) and extends to the last character of the string
+ */
+export interface FstrSubstringStart extends FunctionCall<string> {
   type: 'stringfunction';
   name: 'strSubstringStart';
   args: [
@@ -1333,7 +535,10 @@ export interface FstrSubstringStart extends FunctionCall {
   ];
 };
 
-export interface FstrToLowerCase extends FunctionCall {
+/**
+ * Returns the lower case version of the string
+ */
+export interface FstrToLowerCase extends FunctionCall<string> {
   type: 'stringfunction';
   name: 'strToLowerCase';
   args: [
@@ -1341,7 +546,10 @@ export interface FstrToLowerCase extends FunctionCall {
   ];
 };
 
-export interface FstrToUpperCase extends FunctionCall {
+/**
+ * Returns the upper case version of the string
+ */
+export interface FstrToUpperCase extends FunctionCall<string> {
   type: 'stringfunction';
   name: 'strToUpperCase';
   args: [
@@ -1349,7 +557,10 @@ export interface FstrToUpperCase extends FunctionCall {
   ];
 };
 
-export interface FstrTrim extends FunctionCall {
+/**
+ * Returns a copy of the string, with leading and trailing blank-space omitted
+ */
+export interface FstrTrim extends FunctionCall<string> {
   type: 'stringfunction';
   name: 'strTrim';
   args: [
@@ -1357,26 +568,10 @@ export interface FstrTrim extends FunctionCall {
   ];
 };
 
-export interface FstrTrim2 extends FunctionCall {
-  type: 'stringfunction';
-  name: 'strTrim2';
-  args: [
-    Expression<string>,
-    Expression<string>,
-    Expression<string>
-  ];
-};
-
-export interface FstrURLEncode extends FunctionCall {
-  type: 'stringfunction';
-  name: 'strURLEncode';
-  args: [
-    Expression<string>,
-    Expression<boolean>
-  ];
-};
-
-export interface Ftan extends FunctionCall {
+/**
+ * Returns the trigonometric tangent of angle expressed in radians
+ */
+export interface Ftan extends FunctionCall<number> {
   type: 'numberfunction';
   name: 'tan';
   args: [
@@ -1384,16 +579,10 @@ export interface Ftan extends FunctionCall {
   ];
 };
 
-export interface Ftint extends FunctionCall {
-  type: 'stringfunction';
-  name: 'tint';
-  args: [
-    Expression<string>,
-    Expression<number>
-  ];
-};
-
-export interface FtoDegrees extends FunctionCall {
+/**
+ * Converts an angle expressed in radians into degrees
+ */
+export interface FtoDegrees extends FunctionCall<number> {
   type: 'numberfunction';
   name: 'toDegrees';
   args: [
@@ -1401,7 +590,10 @@ export interface FtoDegrees extends FunctionCall {
   ];
 };
 
-export interface FtoRadians extends FunctionCall {
+/**
+ * Converts an angle expressed in radians into degrees
+ */
+export interface FtoRadians extends FunctionCall<number> {
   type: 'numberfunction';
   name: 'toRadians';
   args: [

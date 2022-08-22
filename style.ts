@@ -35,27 +35,26 @@ export interface PropertyName extends AbstractExpression {
   name: Expression<string>;
 };
 
-type FunctionCallType = 'stringfunction' | 'numberfunction' | 'booleanfunction' | 'voidfunction';
-
 /**
  * Expression that evaluates to the result of a function
  * call on a list of argument expressions.
  */
-export interface FunctionCall extends AbstractExpression {
-  type: FunctionCallType;
-  name: GeoStylerStringFunction['name'] | GeoStylerNumberFunction['name'] | GeoStylerBooleanFunction['name'];
+export interface FunctionCall<T> extends AbstractExpression {
+  type: T extends string ? 'stringfunction' :
+    T extends number ? 'numberfunction' :
+    T extends boolean ? 'booleanfunction' :
+    'voidfunction';
+  name: T extends string ? GeoStylerStringFunction['name'] :
+    T extends number ? GeoStylerNumberFunction['name'] :
+    T extends boolean ? GeoStylerBooleanFunction['name'] :
+    unknown ;
   args: Expression<PropertyValue>[];
 };
 
 /**
  * Expressions can be a literal value, a property name or a function call.
  */
-export type Expression<T extends PropertyValue> =
-  T extends string ? PropertyName | T | GeoStylerStringFunction :
-  T extends number ? PropertyName | T | GeoStylerNumberFunction :
-  T extends boolean ? PropertyName | T | GeoStylerBooleanFunction :
-  T extends null | undefined ? null | undefined :
-  PropertyName | T;
+export type Expression<T extends PropertyValue> = T | PropertyName | FunctionCall<T> ;
 
 /**
  * The type of the Style.

@@ -2,7 +2,7 @@ module.exports = {
   extends: '@terrestris/eslint-config-typescript',
   rules: {
     camelcase: [
-      "off",
+      'off',
       {
         ignoreImports: true
       }
