@@ -168,10 +168,10 @@ export const isGrayChannel = (channels: ChannelSelection): channels is GrayChann
 };
 
 // Functions
-export const isGeoStylerNumberFunction = (got: any): got is GeoStylerBooleanFunction => {
+export const isGeoStylerNumberFunction = (got: any): got is GeoStylerNumberFunction => {
   return got.type === 'numberfunction';
 };
-export const isGeoStylerStringFunction = (got: any): got is GeoStylerBooleanFunction => {
+export const isGeoStylerStringFunction = (got: any): got is GeoStylerStringFunction => {
   return got.type === 'stringfunction';
 };
 export const isGeoStylerBooleanFunction = (got: any): got is GeoStylerBooleanFunction => {
