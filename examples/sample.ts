@@ -40,12 +40,11 @@ const sampleStyle: Style = {
       name: 'Twelve year old Peter',
       filter: ['&&',
         {
-          type: 'booleanfunction',
           name: 'strMatches',
           args: [
             {
-              type: 'property',
-              name: 'name'
+              name: 'property',
+              args: ['name']
             },
             'Peter'
           ]
