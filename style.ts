@@ -105,7 +105,7 @@ export type NegationFilter = [
   Filter
 ];
 
-export type Filter = ComparisonFilter | NegationFilter | CombinationFilter | GeoStylerBooleanFunction;
+export type Filter = ComparisonFilter | NegationFilter | CombinationFilter;
 
 /**
  * The kind of the Symbolizer

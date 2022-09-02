@@ -39,16 +39,19 @@ const sampleStyle: Style = {
     {
       name: 'Twelve year old Peter',
       filter: ['&&',
-        {
-          name: 'strMatches',
-          args: [
-            {
-              name: 'property',
-              args: ['name']
-            },
-            'Peter'
-          ]
-        },
+        ['==',
+          {
+            name: 'strMatches',
+            args: [
+              {
+                name: 'property',
+                args: ['name']
+              },
+              'Peter'
+            ]
+          },
+          true
+        ],
         ['==', 'age', 12]
       ],
       scaleDenominator: {
