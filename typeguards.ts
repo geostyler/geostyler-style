@@ -36,7 +36,8 @@ import {
   FunctionCall,
   GeoStylerBooleanFunction,
   GeoStylerNumberFunction,
-  GeoStylerStringFunction
+  GeoStylerStringFunction,
+  GeoStylerUnknownFunction
 } from './index';
 
 export const isExpression = (got: any): got is Expression<any> => {
@@ -163,11 +164,68 @@ export const isGrayChannel = (channels: ChannelSelection): channels is GrayChann
 
 // Functions
 export const isGeoStylerNumberFunction = (got: any): got is GeoStylerNumberFunction => {
-  return got.type === 'numberfunction';
+  return [
+    'abs',
+    'acos',
+    'asin',
+    'atan',
+    'atan2',
+    'ceil',
+    'cos',
+    'exp',
+    'floor',
+    'log',
+    'max',
+    'min',
+    'modulo',
+    'pi',
+    'pow',
+    'random',
+    'rint',
+    'round',
+    'sin',
+    'sqrt',
+    'strIndexOf',
+    'strLastIndexOf',
+    'strLength',
+    'tan',
+    'toDegrees',
+    'toRadians'
+  ].includes(got.name);
 };
+
 export const isGeoStylerStringFunction = (got: any): got is GeoStylerStringFunction => {
-  return got.type === 'stringfunction';
+  return [
+    'numberFormat',
+    'strAbbreviate',
+    'strCapitalize',
+    'strConcat',
+    'strDefaultIfBlank',
+    'strReplace',
+    'strStripAccents',
+    'strSubstring',
+    'strSubstringStart',
+    'strToLowerCase',
+    'strToUpperCase',
+    'strTrim'
+  ].includes(got.name);
 };
+
 export const isGeoStylerBooleanFunction = (got: any): got is GeoStylerBooleanFunction => {
-  return got.type === 'booleanfunction';
+  return [
+    'between',
+    'double2bool',
+    'in',
+    'parseBoolean',
+    'strEndsWith',
+    'strEqualsIgnoreCase',
+    'strMatches',
+    'strStartsWith'
+  ].includes(got.name);
+};
+
+export const isGeoStylerUnknownFunction = (got: any): got is GeoStylerUnknownFunction => {
+  return [
+    'property',
+  ].includes(got.name);
 };

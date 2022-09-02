@@ -4,19 +4,23 @@ const sampleExpressionStyle: Style = {
   name: 'Sample style using expressions',
   rules: [
     {
-      name: 'Very old Peter',
+      name: 'The max of Pi ',
       symbolizers: [{
         kind: 'Text',
         lineHeight: {
-          type: 'numberfunction',
-          name: 'strLength',
-          args: [
-            {
-              type: 'stringfunction',
+          name: 'max',
+          args: [{
+            name: 'strLength',
+            args: [{
               name: 'strConcat',
-              args: ['pre', 'name']
-            }
-          ]
+              args: ['pr', {
+                name: 'property',
+                args: ['Hilde']
+              }]
+            }]
+          }, {
+            name: 'pi'
+          }]
         }
       }]
     }
