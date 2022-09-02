@@ -20,41 +20,21 @@ export interface ScaleDenominator {
 }
 
 /**
- * A base interface for expressions.
- */
-export interface AbstractExpression {
-  type: string;
-};
-
-
-/**
- * Expression that evaluates to the value of the given property.
- */
-export interface PropertyName extends AbstractExpression {
-  type: 'property';
-  name: Expression<string>;
-};
-
-/**
  * Expression that evaluates to the result of a function
  * call on a list of argument expressions.
  */
-export interface FunctionCall<T> extends AbstractExpression {
-  type: T extends string ? 'stringfunction' :
-    T extends number ? 'numberfunction' :
-    T extends boolean ? 'booleanfunction' :
-    'voidfunction';
+export interface FunctionCall<T> {
   name: T extends string ? GeoStylerStringFunction['name'] :
     T extends number ? GeoStylerNumberFunction['name'] :
     T extends boolean ? GeoStylerBooleanFunction['name'] :
     unknown ;
-  args: Expression<PropertyValue>[];
+  args?: Expression<PropertyType>[];
 };
 
 /**
  * Expressions can be a literal value, a property name or a function call.
  */
-export type Expression<T extends PropertyValue> = T | PropertyName | FunctionCall<T> ;
+export type Expression<T extends PropertyType> = T | FunctionCall<T> ;
 
 /**
  * The type of the Style.
@@ -64,7 +44,7 @@ export type StyleType = 'Point' | 'Fill' | 'Line' | 'Raster';
 /**
  * A value of a property of the data.
  */
-export type PropertyValue = string | number | boolean | null;
+export type PropertyType = string | number | boolean | null;
 
 /**
  * The possible Operators used for comparison Filters.

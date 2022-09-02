@@ -26,7 +26,7 @@ import {
   NegationFilter,
   NegationOperator,
   Operator,
-  PropertyValue,
+  PropertyType,
   RasterSymbolizer,
   RGBChannel,
   Rule,
@@ -34,13 +34,13 @@ import {
   TextSymbolizer,
   Expression,
   FunctionCall,
-  PropertyName,
-  GeoStylerBooleanFunction
+  GeoStylerBooleanFunction,
+  GeoStylerNumberFunction,
+  GeoStylerStringFunction
 } from './index';
 
 export const isExpression = (got: any): got is Expression<any> => {
-  return isFunctionCall(got) ||
-  isPropertyName(got);
+  return isFunctionCall(got) || isPropertyType(got);
 };
 
 export const isFunctionCall = (got: any): got is FunctionCall<any> => {
@@ -52,14 +52,8 @@ export const isFunctionCall = (got: any): got is FunctionCall<any> => {
     got.args.every((arg: any) => isExpression(arg));
 };
 
-export const isPropertyName = (got: any): got is PropertyName => {
-  return got.type === 'property' &&
-    got.hasOwnProperty('name') &&
-    _isString(got.name);
-};
-
 // PropertyValue
-export const isPropertyValue = (got: any): got is PropertyValue => {
+export const isPropertyType = (got: any): got is PropertyType => {
   return _isString(got) || _isNumber(got) || _isBoolean(got) || got === null;
 };
 
@@ -99,7 +93,7 @@ export const isComparisonFilter = (got: any): got is ComparisonFilter => {
     got.length === expectedLength &&
     isComparisonOperator(got[0]) &&
     (isGeoStylerBooleanFunction(got[1]) || _isString(got[1])) &&
-    isPropertyValue(got[2]) &&
+    isPropertyType(got[2]) &&
     (got[0] !== '<=x<=' || _isNumber(got[3]));
 };
 export const isCombinationFilter = (got: any): got is CombinationFilter => {
