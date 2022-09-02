@@ -6,9 +6,11 @@ import {
 
 export type GeoStylerFunction = GeoStylerNumberFunction |
   GeoStylerStringFunction |
-  GeoStylerBooleanFunction;
+  GeoStylerBooleanFunction |
+  GeoStylerUnknownFunction;
 
-export type GeoStylerNumberFunction = Fabs |
+export type GeoStylerNumberFunction = GeoStylerUnknownFunction |
+Fabs |
 Facos |
 Fasin |
 Fatan |
@@ -35,8 +37,8 @@ Ftan |
 FtoDegrees |
 FtoRadians;
 
-export type GeoStylerStringFunction = FnumberFormat |
-Fproperty |
+export type GeoStylerStringFunction = GeoStylerUnknownFunction |
+FnumberFormat |
 FstrAbbreviate |
 FstrCapitalize |
 FstrConcat |
@@ -49,7 +51,8 @@ FstrToLowerCase |
 FstrToUpperCase |
 FstrTrim;
 
-export type GeoStylerBooleanFunction = Fbetween |
+export type GeoStylerBooleanFunction = GeoStylerUnknownFunction |
+Fbetween |
 Fdouble2bool |
 Fin |
 FparseBoolean |
@@ -57,6 +60,8 @@ FstrEndsWith |
 FstrEqualsIgnoreCase |
 FstrMatches |
 FstrStartsWith;
+
+export type GeoStylerUnknownFunction = Fproperty;
 
 /**
  * The absolute value of the specified number value
@@ -244,7 +249,7 @@ export interface FparseBoolean extends FunctionCall<boolean> {
 /**
  * Returns an approximation of pi, the ratio of the circumference of a circle to its diameter
  */
-export interface Fpi extends FunctionCall<number> {
+export interface Fpi extends Omit<FunctionCall<number>, 'args'> {
   name: 'pi';
 };
 
@@ -263,7 +268,7 @@ export interface Fpow extends FunctionCall<number> {
  * Returns the value of the property propertyName. Allows property names to be compute
  * or specified by Variable substitution in SLD.
  */
-export interface Fproperty extends FunctionCall<string> {
+export interface Fproperty extends FunctionCall<unknown> {
   name: 'property';
   args: [
     Expression<string>
@@ -273,7 +278,7 @@ export interface Fproperty extends FunctionCall<string> {
 /**
  * Returns a Double value with a positive sign, greater than or equal to 0.0 and less than 1.0.
  */
-export interface Frandom extends FunctionCall<number> {
+export interface Frandom extends Omit<FunctionCall<number>, 'args'> {
   name: 'random';
 };
 
