@@ -4,6 +4,10 @@ import {
   Expression
 } from './style';
 
+export type GeoStylerFunction = GeoStylerNumberFunction |
+  GeoStylerStringFunction |
+  GeoStylerBooleanFunction;
+
 export type GeoStylerNumberFunction = Fabs |
 Facos |
 Fasin |
@@ -54,13 +58,10 @@ FstrEqualsIgnoreCase |
 FstrMatches |
 FstrStartsWith;
 
-export type GeoStylerVoidFunction = unknown;
-
 /**
  * The absolute value of the specified number value
  */
 export interface Fabs extends FunctionCall<number> {
-  type: 'numberfunction';
   name: 'abs';
   args: [
     Expression<number>
@@ -71,7 +72,6 @@ export interface Fabs extends FunctionCall<number> {
  * Returns the arc cosine of an angle in radians, in the range of 0.0 through PI
  */
 export interface Facos extends FunctionCall<number> {
-  type: 'numberfunction';
   name: 'acos';
   args: [
     Expression<number>
@@ -82,7 +82,6 @@ export interface Facos extends FunctionCall<number> {
  * Returns the arc sine of an angle in radians, in the range of -PI / 2 through PI / 2
  */
 export interface Fasin extends FunctionCall<number> {
-  type: 'numberfunction';
   name: 'asin';
   args: [
     Expression<number>
@@ -93,7 +92,6 @@ export interface Fasin extends FunctionCall<number> {
  * Returns the arc tangent of an angle in radians, in the range of -PI/2 through PI/2
  */
 export interface Fatan extends FunctionCall<number> {
-  type: 'numberfunction';
   name: 'atan';
   args: [
     Expression<number>
@@ -104,7 +102,6 @@ export interface Fatan extends FunctionCall<number> {
  * Converts a rectangular coordinate (x, y) to polar (r, theta) and returns theta.
  */
 export interface Fatan2 extends FunctionCall<number> {
-  type: 'numberfunction';
   name: 'atan2';
   args: [
     Expression<number>,
@@ -116,7 +113,6 @@ export interface Fatan2 extends FunctionCall<number> {
  * Returns true if arg1 <= arg0 <= arg2
  */
 export interface Fbetween extends FunctionCall<boolean> {
-  type: 'booleanfunction';
   name: 'between';
   args: [
     Expression<string>,
@@ -130,7 +126,6 @@ export interface Fbetween extends FunctionCall<boolean> {
  * x and is equal to a mathematical integer.
  */
 export interface Fceil extends FunctionCall<number> {
-  type: 'numberfunction';
   name: 'ceil';
   args: [
     Expression<number>
@@ -141,7 +136,6 @@ export interface Fceil extends FunctionCall<number> {
  * Returns the cosine of an angle expressed in radians
  */
 export interface Fcos extends FunctionCall<number> {
-  type: 'numberfunction';
   name: 'cos';
   args: [
     Expression<number>
@@ -152,7 +146,6 @@ export interface Fcos extends FunctionCall<number> {
  * Returns true if x is zero, false otherwise
  */
 export interface Fdouble2bool extends FunctionCall<boolean> {
-  type: 'booleanfunction';
   name: 'double2bool';
   args: [
     Expression<number>
@@ -163,7 +156,6 @@ export interface Fdouble2bool extends FunctionCall<boolean> {
  * Returns Euler’s number e raised to the power of x
  */
 export interface Fexp extends FunctionCall<number> {
-  type: 'numberfunction';
   name: 'exp';
   args: [
     Expression<number>
@@ -175,7 +167,6 @@ export interface Fexp extends FunctionCall<number> {
  * equal to a mathematical integer
  */
 export interface Ffloor extends FunctionCall<number> {
-  type: 'numberfunction';
   name: 'floor';
   args: [
     Expression<number>
@@ -187,7 +178,6 @@ export interface Ffloor extends FunctionCall<number> {
  * function name matching the number of arguments specified.
  */
 export interface Fin extends FunctionCall<boolean> {
-  type: 'booleanfunction';
   name: 'in';
   args: Expression<string>[];
 };
@@ -196,7 +186,6 @@ export interface Fin extends FunctionCall<boolean> {
  * Returns the natural logarithm (base e) of x
  */
 export interface Flog extends FunctionCall<number> {
-  type: 'numberfunction';
   name: 'log';
   args: [
     Expression<number>
@@ -207,7 +196,6 @@ export interface Flog extends FunctionCall<number> {
  * Returns the maximum between argument[0], …, argument[n]
  */
 export interface Fmax extends FunctionCall<number> {
-  type: 'numberfunction';
   name: 'max';
   args: Expression<number>[];
 };
@@ -216,13 +204,11 @@ export interface Fmax extends FunctionCall<number> {
  * Returns the minimum between argument[0], …, argument[n]
  */
 export interface Fmin extends FunctionCall<number> {
-  type: 'numberfunction';
   name: 'min';
   args: Expression<number>[];
 };
 
 export interface Fmodulo extends FunctionCall<number> {
-  type: 'numberfunction';
   name: 'modulo';
   args: [
     Expression<number>,
@@ -236,7 +222,6 @@ export interface Fmodulo extends FunctionCall<number> {
  * in the Java DecimalFormat javadocs
  */
 export interface FnumberFormat extends FunctionCall<string> {
-  type: 'stringfunction';
   name: 'numberFormat';
   args: [
     Expression<string>,
@@ -250,7 +235,6 @@ export interface FnumberFormat extends FunctionCall<string> {
  * else is considered true.
  */
 export interface FparseBoolean extends FunctionCall<boolean> {
-  type: 'booleanfunction';
   name: 'parseBoolean';
   args: [
     Expression<string>
@@ -261,7 +245,6 @@ export interface FparseBoolean extends FunctionCall<boolean> {
  * Returns an approximation of pi, the ratio of the circumference of a circle to its diameter
  */
 export interface Fpi extends FunctionCall<number> {
-  type: 'numberfunction';
   name: 'pi';
 };
 
@@ -269,7 +252,6 @@ export interface Fpi extends FunctionCall<number> {
  * Returns the value of base (argument[0]) raised to the power of exponent (arguments[1])
  */
 export interface Fpow extends FunctionCall<number> {
-  type: 'numberfunction';
   name: 'pow';
   args: [
     Expression<number>,
@@ -279,10 +261,9 @@ export interface Fpow extends FunctionCall<number> {
 
 /**
  * Returns the value of the property propertyName. Allows property names to be compute
- *  or specified by Variable substitution in SLD.
+ * or specified by Variable substitution in SLD.
  */
 export interface Fproperty extends FunctionCall<string> {
-  type: 'stringfunction';
   name: 'property';
   args: [
     Expression<string>
@@ -293,7 +274,6 @@ export interface Fproperty extends FunctionCall<string> {
  * Returns a Double value with a positive sign, greater than or equal to 0.0 and less than 1.0.
  */
 export interface Frandom extends FunctionCall<number> {
-  type: 'numberfunction';
   name: 'random';
 };
 
@@ -303,7 +283,6 @@ export interface Frandom extends FunctionCall<number> {
  * integer value that is even.
  */
 export interface Frint extends FunctionCall<number> {
-  type: 'numberfunction';
   name: 'rint';
   args: [
     Expression<number>
@@ -314,7 +293,6 @@ export interface Frint extends FunctionCall<number> {
  * Returns the closest number to argument[0].
  */
 export interface Fround extends FunctionCall<number> {
-  type: 'numberfunction';
   name: 'round';
   args: [
     Expression<number>
@@ -325,7 +303,6 @@ export interface Fround extends FunctionCall<number> {
  * Returns the sine of an angle expressed in radians
  */
 export interface Fsin extends FunctionCall<number> {
-  type: 'numberfunction';
   name: 'sin';
   args: [
     Expression<number>
@@ -336,7 +313,6 @@ export interface Fsin extends FunctionCall<number> {
  * Returns the square root of argument[0]
  */
 export interface Fsqrt extends FunctionCall<number> {
-  type: 'numberfunction';
   name: 'sqrt';
   args: [
     Expression<number>
@@ -348,7 +324,6 @@ export interface Fsqrt extends FunctionCall<number> {
  * or at upper (argument[2]) if no space.Appends append (argument[3]) if string is abbreviated.
  */
 export interface FstrAbbreviate extends FunctionCall<string> {
-  type: 'stringfunction';
   name: 'strAbbreviate';
   args: [
     Expression<string>,
@@ -362,7 +337,6 @@ export interface FstrAbbreviate extends FunctionCall<string> {
  * Fully capitalizes the sentence. For example, “HoW aRe YOU?” will be turned into “How Are You?”
  */
 export interface FstrCapitalize extends FunctionCall<string> {
-  type: 'stringfunction';
   name: 'strCapitalize';
   args: [
     Expression<string>
@@ -373,7 +347,6 @@ export interface FstrCapitalize extends FunctionCall<string> {
  * Concatenates the two strings into one
  */
 export interface FstrConcat extends FunctionCall<string> {
-  type: 'stringfunction';
   name: 'strConcat';
   args: [
     Expression<string>,
@@ -385,7 +358,6 @@ export interface FstrConcat extends FunctionCall<string> {
  * Returns default (argument[1]) if str (argument[0]) is empty, blank or null
  */
 export interface FstrDefaultIfBlank extends FunctionCall<string> {
-  type: 'stringfunction';
   name: 'strDefaultIfBlank';
   args: [
     Expression<string>,
@@ -397,7 +369,6 @@ export interface FstrDefaultIfBlank extends FunctionCall<string> {
  * Returns true if string (argument[0]) ends with suffix (argument[1])
   */
 export interface FstrEndsWith extends FunctionCall<boolean> {
-  type: 'booleanfunction';
   name: 'strEndsWith';
   args: [
     Expression<string>,
@@ -409,7 +380,6 @@ export interface FstrEndsWith extends FunctionCall<boolean> {
  * Returns true if the two strings are equal ignoring case considerations
  */
 export interface FstrEqualsIgnoreCase extends FunctionCall<boolean> {
-  type: 'booleanfunction';
   name: 'strEqualsIgnoreCase';
   args: [
     Expression<string>,
@@ -422,7 +392,6 @@ export interface FstrEqualsIgnoreCase extends FunctionCall<boolean> {
  * substring (argument[1]), or -1 if not found
  */
 export interface FstrIndexOf extends FunctionCall<number> {
-  type: 'numberfunction';
   name: 'strIndexOf';
   args: [
     Expression<string>,
@@ -435,7 +404,6 @@ export interface FstrIndexOf extends FunctionCall<number> {
  * substring (arguments[1]), or -1 if not found
  */
 export interface FstrLastIndexOf extends FunctionCall<number> {
-  type: 'numberfunction';
   name: 'strLastIndexOf';
   args: [
     Expression<string>,
@@ -447,7 +415,6 @@ export interface FstrLastIndexOf extends FunctionCall<number> {
  * Returns the string length
  */
 export interface FstrLength extends FunctionCall<number>{
-  type: 'numberfunction';
   name: 'strLength';
   args: [
     Expression<string>
@@ -459,7 +426,6 @@ export interface FstrLength extends FunctionCall<number>{
  * For the full syntax of the pattern specification see the Java Pattern class javadocs
  */
 export interface FstrMatches extends FunctionCall<boolean> {
-  type: 'booleanfunction';
   name: 'strMatches';
   args: [
     Expression<string>,
@@ -474,7 +440,6 @@ export interface FstrMatches extends FunctionCall<boolean> {
  * the Java Pattern class javadocs
  */
 export interface FstrReplace extends FunctionCall<string> {
-  type: 'stringfunction';
   name: 'strReplace';
   args: [
     Expression<string>,
@@ -488,7 +453,6 @@ export interface FstrReplace extends FunctionCall<string> {
  * Returns true if string (argument[0]) starts with prefix (argument[1]).
  */
 export interface FstrStartsWith extends FunctionCall<boolean> {
-  type: 'booleanfunction';
   name: 'strStartsWith';
   args: [
     Expression<string>,
@@ -500,7 +464,6 @@ export interface FstrStartsWith extends FunctionCall<boolean> {
  * Removes diacritics (~= accents) from a string. The case will not be altered.
  */
 export interface FstrStripAccents extends FunctionCall<string> {
-  type: 'stringfunction';
   name: 'strStripAccents';
   args: [
     Expression<string>
@@ -513,7 +476,6 @@ export interface FstrStripAccents extends FunctionCall<string> {
  * (indexes are zero-based).
  */
 export interface FstrSubstring extends FunctionCall<string> {
-  type: 'stringfunction';
   name: 'strSubstring';
   args: [
     Expression<string>,
@@ -527,7 +489,6 @@ export interface FstrSubstring extends FunctionCall<string> {
  * at the specified begin (arguments[1]) and extends to the last character of the string
  */
 export interface FstrSubstringStart extends FunctionCall<string> {
-  type: 'stringfunction';
   name: 'strSubstringStart';
   args: [
     Expression<string>,
@@ -539,7 +500,6 @@ export interface FstrSubstringStart extends FunctionCall<string> {
  * Returns the lower case version of the string
  */
 export interface FstrToLowerCase extends FunctionCall<string> {
-  type: 'stringfunction';
   name: 'strToLowerCase';
   args: [
     Expression<string>
@@ -550,7 +510,6 @@ export interface FstrToLowerCase extends FunctionCall<string> {
  * Returns the upper case version of the string
  */
 export interface FstrToUpperCase extends FunctionCall<string> {
-  type: 'stringfunction';
   name: 'strToUpperCase';
   args: [
     Expression<string>
@@ -561,7 +520,6 @@ export interface FstrToUpperCase extends FunctionCall<string> {
  * Returns a copy of the string, with leading and trailing blank-space omitted
  */
 export interface FstrTrim extends FunctionCall<string> {
-  type: 'stringfunction';
   name: 'strTrim';
   args: [
     Expression<string>
@@ -572,7 +530,6 @@ export interface FstrTrim extends FunctionCall<string> {
  * Returns the trigonometric tangent of angle expressed in radians
  */
 export interface Ftan extends FunctionCall<number> {
-  type: 'numberfunction';
   name: 'tan';
   args: [
     Expression<number>
@@ -583,7 +540,6 @@ export interface Ftan extends FunctionCall<number> {
  * Converts an angle expressed in radians into degrees
  */
 export interface FtoDegrees extends FunctionCall<number> {
-  type: 'numberfunction';
   name: 'toDegrees';
   args: [
     Expression<number>
@@ -594,7 +550,6 @@ export interface FtoDegrees extends FunctionCall<number> {
  * Converts an angle expressed in radians into degrees
  */
 export interface FtoRadians extends FunctionCall<number> {
-  type: 'numberfunction';
   name: 'toRadians';
   args: [
     Expression<number>
