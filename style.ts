@@ -26,15 +26,18 @@ export interface ScaleDenominator {
 export interface FunctionCall<T> {
   name: T extends string ? GeoStylerStringFunction['name'] :
     T extends number ? GeoStylerNumberFunction['name'] :
-    T extends boolean ? GeoStylerBooleanFunction['name'] :
-    unknown ;
-  args?: Expression<PropertyType>[];
+    GeoStylerBooleanFunction['name'];
+  args: Expression<PropertyType>[];
 };
 
 /**
  * Expressions can be a literal value, a property name or a function call.
  */
-export type Expression<T extends PropertyType> = T | FunctionCall<T> ;
+export type Expression<T extends PropertyType> =
+  T extends string ? GeoStylerStringFunction | T:
+  T extends number ? GeoStylerNumberFunction | T :
+  T extends boolean ? GeoStylerBooleanFunction | T :
+  T;
 
 /**
  * The type of the Style.
