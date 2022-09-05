@@ -265,7 +265,7 @@ export interface Fpow extends FunctionCall<number> {
 };
 
 /**
- * Returns the value of the property propertyName. Allows property names to be compute
+ * Returns the value of the property argument[0]. Allows property names to be compute
  * or specified by Variable substitution in SLD.
  */
 export interface Fproperty extends FunctionCall<unknown> {
