@@ -192,7 +192,7 @@ export const isGeoStylerNumberFunction = (got: any): got is GeoStylerNumberFunct
     'tan',
     'toDegrees',
     'toRadians'
-  ].includes(got.name);
+  ].includes(got?.name);
 };
 
 export const isGeoStylerStringFunction = (got: any): got is GeoStylerStringFunction => {
@@ -209,7 +209,7 @@ export const isGeoStylerStringFunction = (got: any): got is GeoStylerStringFunct
     'strToLowerCase',
     'strToUpperCase',
     'strTrim'
-  ].includes(got.name);
+  ].includes(got?.name);
 };
 
 export const isGeoStylerBooleanFunction = (got: any): got is GeoStylerBooleanFunction => {
@@ -222,13 +222,13 @@ export const isGeoStylerBooleanFunction = (got: any): got is GeoStylerBooleanFun
     'strEqualsIgnoreCase',
     'strMatches',
     'strStartsWith'
-  ].includes(got.name);
+  ].includes(got?.name);
 };
 
 export const isGeoStylerUnknownFunction = (got: any): got is GeoStylerUnknownFunction => {
   return [
     'property',
-  ].includes(got.name);
+  ].includes(got?.name);
 };
 
 export const isGeoStylerFunction = (got: any): got is GeoStylerFunction => {
