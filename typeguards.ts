@@ -19,7 +19,6 @@ import {
   ComparisonOperator,
   FillSymbolizer,
   Filter,
-  FunctionFilter,
   GrayChannel,
   IconSymbolizer,
   LineSymbolizer,
@@ -27,31 +26,26 @@ import {
   NegationFilter,
   NegationOperator,
   Operator,
-  PropertyValue,
+  PropertyType,
   RasterSymbolizer,
   RGBChannel,
   Rule,
   ScaleDenominator,
-  StrMatchesFunctionOperator,
   TextSymbolizer,
-  CategorizeFunctionFilter,
-  CategorizeFunctionOperator,
   Expression,
   FunctionCall,
-  LiteralValue,
-  PropertyName
+  GeoStylerBooleanFunction,
+  GeoStylerNumberFunction,
+  GeoStylerStringFunction,
+  GeoStylerUnknownFunction,
+  GeoStylerFunction
 } from './index';
 
-export const isExpression = (got: any): got is Expression => {
-  return isFunctionCall(got) ||
-  isLiteralStringValue(got) ||
-  isLiteralNumberValue(got) ||
-  isLiteralBooleanValue(got) ||
-  isLiteralNullValue(got) ||
-  isPropertyName(got);
+export const isExpression = (got: any): got is Expression<any> => {
+  return isFunctionCall(got) || isPropertyType(got);
 };
 
-export const isFunctionCall = (got: any): got is FunctionCall => {
+export const isFunctionCall = (got: any): got is FunctionCall<any> => {
   return got.type === 'functioncall' &&
     got.hasOwnProperty('name') &&
     _isString(got.name) &&
@@ -60,53 +54,8 @@ export const isFunctionCall = (got: any): got is FunctionCall => {
     got.args.every((arg: any) => isExpression(arg));
 };
 
-export const isLiteralValue = (val: any): boolean => {
-  return isLiteralStringValue(val) ||
-  isLiteralNumberValue(val) ||
-  isLiteralBooleanValue(val) ||
-  isLiteralNullValue(val);
-};
-
-export const isLiteralStringValue = (got: any): got is LiteralValue<string> => {
-  return got.type === 'literal' &&
-    got.hasOwnProperty('value') &&
-    (
-      _isString(got.value)
-    );
-};
-
-export const isLiteralNumberValue = (got: any): got is LiteralValue<number> => {
-  return got.type === 'literal' &&
-    got.hasOwnProperty('value') &&
-    (
-      _isNumber(got.value)
-    );
-};
-
-export const isLiteralBooleanValue = (got: any): got is LiteralValue<boolean> => {
-  return got.type === 'literal' &&
-    got.hasOwnProperty('value') &&
-    (
-      _isBoolean(got.value)
-    );
-};
-
-export const isLiteralNullValue = (got: any): got is LiteralValue<null> => {
-  return got.type === 'literal' &&
-    got.hasOwnProperty('value') &&
-    (
-      _isNull(got.value)
-    );
-};
-
-export const isPropertyName = (got: any): got is PropertyName => {
-  return got.type === 'property' &&
-    got.hasOwnProperty('name') &&
-    _isString(got.name);
-};
-
 // PropertyValue
-export const isPropertyValue = (got: any): got is PropertyValue => {
+export const isPropertyType = (got: any): got is PropertyType => {
   return _isString(got) || _isNumber(got) || _isBoolean(got) || got === null;
 };
 
@@ -121,7 +70,6 @@ export const isScaleDenominator = (got: any): got is ScaleDenominator => {
 export const isOperator = (got: any): got is Operator => {
   return isComparisonOperator(got) ||
     isCombinationOperator(got) ||
-    isStrMatchesFunctionOperator(got) ||
     isNegationOperator(got);
 };
 export const isComparisonOperator = (got: any): got is ComparisonOperator => {
@@ -133,18 +81,12 @@ export const isCombinationOperator = (got: any): got is CombinationOperator => {
 export const isNegationOperator = (got: any): got is NegationOperator => {
   return got === '!';
 };
-export const isStrMatchesFunctionOperator = (got: any): got is StrMatchesFunctionOperator => {
-  return got === 'FN_strMatches';
-};
-export const isCategorizeFunctionOperator = (got: any): got is CategorizeFunctionOperator => {
-  return got === 'Categorize';
-};
 
 // Filters
 export const isFilter = (got: any): got is Filter => {
   return isComparisonFilter(got) ||
     isCombinationFilter(got) ||
-    isFunctionFilter(got) ||
+    isGeoStylerBooleanFunction(got) ||
     isNegationFilter(got);
 };
 export const isComparisonFilter = (got: any): got is ComparisonFilter => {
@@ -152,8 +94,8 @@ export const isComparisonFilter = (got: any): got is ComparisonFilter => {
   return Array.isArray(got) &&
     got.length === expectedLength &&
     isComparisonOperator(got[0]) &&
-    (isFunctionFilter(got[1]) || _isString(got[1])) &&
-    isPropertyValue(got[2]) &&
+    (isGeoStylerBooleanFunction(got[1]) || _isString(got[1])) &&
+    isPropertyType(got[2]) &&
     (got[0] !== '<=x<=' || _isNumber(got[3]));
 };
 export const isCombinationFilter = (got: any): got is CombinationFilter => {
@@ -167,18 +109,6 @@ export const isNegationFilter = (got: any): got is NegationFilter => {
     got.length === 2 &&
     isNegationOperator(got[0]) &&
     isFilter(got[1]);
-};
-export const isFunctionFilter = (got: any): got is FunctionFilter => {
-  return Array.isArray(got) &&
-    got.length === 3 &&
-    isStrMatchesFunctionOperator(got[0]) &&
-    _isString(got[1]) &&
-    _isRegExp(got[2]);
-};
-
-// Function filters
-export const isCategorizeFunctionFilter = (got: any): got is CategorizeFunctionFilter => {
-  return isFunctionCall(got) && isCategorizeFunctionOperator(got.name);
 };
 
 // Symbolizers
@@ -231,4 +161,79 @@ export const isRgbChannel = (channels: ChannelSelection): channels is RGBChannel
  */
 export const isGrayChannel = (channels: ChannelSelection): channels is GrayChannel => {
   return (channels as GrayChannel).grayChannel !== undefined;
+};
+
+// Functions
+export const isGeoStylerNumberFunction = (got: any): got is GeoStylerNumberFunction => {
+  return [
+    'abs',
+    'acos',
+    'asin',
+    'atan',
+    'atan2',
+    'ceil',
+    'cos',
+    'exp',
+    'floor',
+    'log',
+    'max',
+    'min',
+    'modulo',
+    'pi',
+    'pow',
+    'random',
+    'rint',
+    'round',
+    'sin',
+    'sqrt',
+    'strIndexOf',
+    'strLastIndexOf',
+    'strLength',
+    'tan',
+    'toDegrees',
+    'toRadians'
+  ].includes(got.name);
+};
+
+export const isGeoStylerStringFunction = (got: any): got is GeoStylerStringFunction => {
+  return [
+    'numberFormat',
+    'strAbbreviate',
+    'strCapitalize',
+    'strConcat',
+    'strDefaultIfBlank',
+    'strReplace',
+    'strStripAccents',
+    'strSubstring',
+    'strSubstringStart',
+    'strToLowerCase',
+    'strToUpperCase',
+    'strTrim'
+  ].includes(got.name);
+};
+
+export const isGeoStylerBooleanFunction = (got: any): got is GeoStylerBooleanFunction => {
+  return [
+    'between',
+    'double2bool',
+    'in',
+    'parseBoolean',
+    'strEndsWith',
+    'strEqualsIgnoreCase',
+    'strMatches',
+    'strStartsWith'
+  ].includes(got.name);
+};
+
+export const isGeoStylerUnknownFunction = (got: any): got is GeoStylerUnknownFunction => {
+  return [
+    'property',
+  ].includes(got.name);
+};
+
+export const isGeoStylerFunction = (got: any): got is GeoStylerFunction => {
+  return isGeoStylerBooleanFunction(got) ||
+    isGeoStylerNumberFunction(got) ||
+    isGeoStylerStringFunction(got) ||
+    isGeoStylerUnknownFunction(got);
 };

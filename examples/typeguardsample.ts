@@ -4,8 +4,7 @@ import {
   isComparisonOperator,
   isFilter,
   isNegationOperator,
-  isOperator,
-  isStrMatchesFunctionOperator
+  isOperator
 } from '../typeguards';
 
 /*
@@ -44,7 +43,4 @@ if (isCombinationOperator(combinationOperator)) {
 }
 if (isNegationOperator(negationOperator)) {
   console.log(`${negationOperator} is a NegationOperator`);
-}
-if (isStrMatchesFunctionOperator(strMatchesFunctionOperator)) {
-  console.log(`${strMatchesFunctionOperator} is a StrMatchesFunctionOperator`);
 }

@@ -1,3 +1,9 @@
+import {
+  GeoStylerBooleanFunction,
+  GeoStylerNumberFunction,
+  GeoStylerStringFunction
+} from './functions';
+
 /**
  * The ScaleDenominator defines a range of scales.
  */
@@ -6,55 +12,32 @@ export interface ScaleDenominator {
    * Minimum value of the ScaleDenominator. The value is inclusive.
    *
    */
-  min?: number;
+  min?: Expression<number>;
   /**
    * Maximum value of the ScaleDenominator. The value is exclusive.
    */
-  max?: number;
+  max?: Expression<number>;
 }
-
-/**
- * A base interface for expressions.
- */
-export interface AbstractExpression {
-  type: string;
-};
-
-/**
- * Expression that evaluates to the given value.
- */
-export interface LiteralValue<T> extends AbstractExpression {
-  type: 'literal';
-  value: T;
-};
-
-/**
- * Expression that evaluates to the value of the given property.
- */
-export interface PropertyName extends AbstractExpression {
-  type: 'property';
-  name: string;
-};
 
 /**
  * Expression that evaluates to the result of a function
  * call on a list of argument expressions.
  */
-export interface FunctionCall extends AbstractExpression {
-  type: 'functioncall';
-  name: string;
-  args: Expression[];
+export interface FunctionCall<T> {
+  name: T extends string ? GeoStylerStringFunction['name'] :
+    T extends number ? GeoStylerNumberFunction['name'] :
+    GeoStylerBooleanFunction['name'];
+  args: Expression<PropertyType>[];
 };
 
 /**
  * Expressions can be a literal value, a property name or a function call.
  */
-export type Expression = LiteralValue<string> |
-  LiteralValue<number> |
-  LiteralValue<boolean> |
-  LiteralValue<null> |
-  PropertyName |
-  FunctionCall;
+export type Expression<T extends PropertyType> =
+  T extends string ? GeoStylerStringFunction | T:
+  T extends number ? GeoStylerNumberFunction | T :
+  T extends boolean ? GeoStylerBooleanFunction | T :
+  T;
 
 /**
  * The type of the Style.
@@ -62,9 +45,9 @@ export type Expression = LiteralValue<string> |
 export type StyleType = 'Point' | 'Fill' | 'Line' | 'Raster';
 
 /**
- * A value of a property of the data.
+ * A datatype of a property of the data.
  */
-export type PropertyValue = string | number | boolean | null;
+export type PropertyType = string | number | boolean | unknown;
 
 /**
  * The possible Operators used for comparison Filters.
@@ -82,52 +65,19 @@ export type CombinationOperator = '&&' | '||';
 export type NegationOperator = '!';
 
 /**
- * The Operator used for functional Filters.
- */
-export type StrMatchesFunctionOperator = 'FN_strMatches';
-
-/**
- * The Operator used for functional Filters.
- */
-export type CategorizeFunctionOperator = 'Categorize';
-
-/**
  * All operators.
  */
-export type Operator = ComparisonOperator | CombinationOperator | NegationOperator | StrMatchesFunctionOperator;
-
-/**
- * A FunctionFilter that expects an Expression as second and
- * third argument. The function checks, if the evaluation of
- * the second argument matches the evaluation of the third one.
- * An actual parser implementation has to return a value for
- * this function expression.
- */
-export type StrMatchesFunctionFilter = [
-  StrMatchesFunctionOperator,
-  // TODO just a temporary quick fix
-  string,
-  RegExp
-];
-
-/**
- * A FunctionFilter for categorizing continuous values.
- * See https://geoserver-pdf.readthedocs.io/en/latest/filter/function_reference.html#transformation-functions
- * for a detailed description.
- */
-export interface CategorizeFunctionFilter extends FunctionCall {
-  name: CategorizeFunctionOperator;
-};
-
-/**
- * A Filter that expresses a function.
- */
-export type FunctionFilter = StrMatchesFunctionFilter;
+export type Operator = ComparisonOperator | CombinationOperator | NegationOperator;
 
 /**
  * A Filter that checks if a property is in a range of two values (inclusive).
  */
-export type RangeFilter = ['<=x<=', Expression | FunctionFilter | string, number | Expression, number | Expression];
+export type RangeFilter = [
+  '<=x<=',
+  Expression<string>,
+  Expression<number>,
+  Expression<number>
+];
 
 /**
  * A ComparisonFilter compares a value of an object (by key) with an expected
@@ -135,8 +85,8 @@ export type RangeFilter = ['<=x<=', Expression | FunctionFilter | string, number
  */
 export type ComparisonFilter = [
   ComparisonOperator,
-  Expression | string | number,
-  Expression | string | number
+  Expression<string>,
+  Expression<string | number | boolean>
 ] | RangeFilter;
 
 /**
@@ -155,7 +105,7 @@ export type NegationFilter = [
   Filter
 ];
 
-export type Filter = FunctionFilter | ComparisonFilter | NegationFilter | CombinationFilter;
+export type Filter = ComparisonFilter | NegationFilter | CombinationFilter;
 
 /**
  * The kind of the Symbolizer
@@ -173,16 +123,16 @@ export interface BaseSymbolizer {
   /**
    * A color defined as a hex-color string.
    */
-  color?: string | Expression;
+  color?: Expression<string>;
   /**
    * Determines the total opacity for the Symbolizer.
    * A value between 0 and 1. 0 is none opaque and 1 is full opaque.
    */
-  opacity?: number | Expression;
+  opacity?: Expression<number>;
   /**
    * Defines whether the Symbolizer should be visibile or not.
    */
-  visibility?: boolean | Expression;
+  visibility?: Expression<boolean>;
 }
 
 /**
@@ -193,12 +143,12 @@ export interface BasePointSymbolizer extends BaseSymbolizer {
    * This is a property relevant if using tiled datasets.
    * If true, the symbols will not cross tile edges to avoid mutual collisions.
    */
-  avoidEdges?: boolean | Expression;
+  avoidEdges?: Expression<boolean>;
   /**
    * The offset of the Symbolizer as [x, y] coordinates. Positive values indicate
    * right and down, while negative values indicate left and up.
    */
-  offset?: [number | Expression, number | Expression];
+  offset?: [Expression<number>, Expression<number>];
   /**
    * Property relevant for mapbox-styles.
    * Compare https://docs.mapbox.com/mapbox-gl-js/style-spec/#paint-symbol-icon-translate-anchor
@@ -247,7 +197,7 @@ export interface MarkSymbolizer extends BasePointSymbolizer {
    * The radius of the Symbolizer. Values describing the full size of the Symbolizer
    * have to be divided by two (pixels if radiusUnit is not defined).
    */
-  radius?: number | Expression;
+  radius?: Expression<number>;
   /**
    * Unit to use for the radius.
    */
@@ -255,25 +205,25 @@ export interface MarkSymbolizer extends BasePointSymbolizer {
   /**
    * The rotation of the Symbolizer in degrees. Value should be between 0 and 360.
    */
-  rotate?: number | Expression;
+  rotate?: Expression<number>;
   /**
    * The opacity of the fill. A value between 0 and 1.
    * 0 is none opaque and 1 is full opaque.
    */
-  fillOpacity?: number | Expression;
+  fillOpacity?: Expression<number>;
   /**
    * The color of the stroke represented as a hex-color string.
    */
-  strokeColor?: string | Expression;
+  strokeColor?: Expression<string>;
   /**
    * The opacity of the stroke. A value between 0 and 1.
    * 0 is none opaque and 1 is full opaque.
    */
-  strokeOpacity?: number | Expression;
+  strokeOpacity?: Expression<number>;
   /**
    * The width of the stroke (pixels if strokeWidthUnit is not defined).
    */
-  strokeWidth?: number | Expression;
+  strokeWidth?: Expression<number>;
   /**
    * Unit to use for the strokeWidth.
    */
@@ -282,7 +232,7 @@ export interface MarkSymbolizer extends BasePointSymbolizer {
    * Amount to blur the Symbolizer. 1 blurs the Symbolizer such that only the
    * centerpoint has full opacity. Mostly relevant for circles.
    */
-  blur?: number | Expression;
+  blur?: Expression<number>;
   /**
    * Property relevant for mapbox-styles.
    * Compare https://docs.mapbox.com/mapbox-gl-js/style-spec/#paint-circle-circle-pitch-alignment
@@ -305,7 +255,7 @@ export interface TextSymbolizer extends BasePointSymbolizer {
    * If true, the text will be visible even if it collides with other previously
    * drawn symbols.
    */
-  allowOverlap?: boolean | Expression;
+  allowOverlap?: Expression<boolean>;
   /**
    * The anchor position of the label referred to the center of the geometry.
    */
@@ -315,24 +265,24 @@ export interface TextSymbolizer extends BasePointSymbolizer {
    * from the dataset.
    * e.g.: "Name {{country_name}}"
    */
-  label?: string;
+  label?: Expression<string>;
   /**
    * An Array of fonts. Comparable to https://www.w3schools.com/cssref/pr_font_font-family.asp
    */
-  font?: string[];
+  font?: Expression<string>[];
   /**
    * The halo's fadeout distance towards the outside.
    */
-  haloBlur?: number | Expression;
+  haloBlur?: Expression<number>;
   /**
    * The color of the text's halo, which helps it stand out from backgrounds
    * represented as a hex-color string.
    */
-  haloColor?: string | Expression;
+  haloColor?: Expression<string>;
   /**
    * Distance of halo to the font outline (pixels if haloWidthUnit is not defined).
    */
-  haloWidth?: number | Expression;
+  haloWidth?: Expression<number>;
   /**
    * Unit to use for the haloWidth.
    */
@@ -344,11 +294,11 @@ export interface TextSymbolizer extends BasePointSymbolizer {
   /**
    * If true, the text will be kept upright.
    */
-  keepUpright?: boolean | Expression;
+  keepUpright?: Expression<boolean>;
   /**
    * Sets the spacing between text characters (pixels if letterSpacingUnit is not defined).
    */
-  letterSpacing?: number | Expression;
+  letterSpacing?: Expression<number>;
   /**
    * Unit to use for the letterSpacing.
    */
@@ -357,7 +307,7 @@ export interface TextSymbolizer extends BasePointSymbolizer {
    * Sets the line height (pixels if lineHeightUnit is not defined).
    * 'em' -> fontsize
    */
-  lineHeight?: number | Expression;
+  lineHeight?: Expression<number>;
   /**
    * Unit to use for the lineHeight.
    * 'em' -> fontsize
@@ -366,22 +316,22 @@ export interface TextSymbolizer extends BasePointSymbolizer {
   /**
    * Maximum angle change between adjacent characters in degrees.
    */
-  maxAngle?: number | Expression;
+  maxAngle?: Expression<number>;
   /**
    * The maximum line width for text wrapping.
    */
-  maxWidth?: number | Expression;
+  maxWidth?: Expression<number>;
   /**
    * Property relevant for mapbox-styles.
    * If true, icons will display without their corresponding text when the text
    * collides with other symbols and the icon does not.
    */
-  optional?: boolean | Expression;
+  optional?: Expression<boolean>;
   /**
    * Size of the additional area around the text bounding box used for detecting
    * symbol collisions.
    */
-  padding?: number | Expression;
+  padding?: Expression<number>;
   /**
    * Property relevant for mapbox-styles.
    * Compare https://docs.mapbox.com/mapbox-gl-js/style-spec/#layout-symbol-text-pitch-alignment
@@ -390,7 +340,7 @@ export interface TextSymbolizer extends BasePointSymbolizer {
   /**
    * The rotation of the Symbolizer in degrees. Value should be between 0 and 360.
    */
-  rotate?: number | Expression;
+  rotate?: Expression<number>;
   /**
    * Property relevant for mapbox-styles.
    * Compare https://docs.mapbox.com/mapbox-gl-js/style-spec/#layout-symbol-text-rotation-alignment
@@ -399,7 +349,7 @@ export interface TextSymbolizer extends BasePointSymbolizer {
   /**
    * The fontsize in pixels.
    */
-  size?: number | Expression;
+  size?: Expression<number>;
   /**
    * Specifies how to capitalize text, similar to the CSS text-transform property.
    */
@@ -426,7 +376,7 @@ export interface IconSymbolizer extends BasePointSymbolizer {
    * If true, the icon will be visible even if it collides with other previously
    * drawn symbols.
    */
-  allowOverlap?: boolean | Expression;
+  allowOverlap?: Expression<boolean>;
   /**
    * Part of the icon placed closest to the anchor. This may conflict with a set
    * offset.
@@ -435,16 +385,16 @@ export interface IconSymbolizer extends BasePointSymbolizer {
   /**
    * The halo's fadeout distance towards the outside.
    */
-  haloBlur?: number | Expression;
+  haloBlur?: Expression<number>;
   /**
    * The color of the icons halo, which helps it stand out from backgrounds represented
    * as a hex-color string.
    */
-  haloColor?: string | Expression;
+  haloColor?: Expression<string>;
   /**
    * Distance of halo to the font outline (pixels if haloWidthUnit is not defined).
    */
-  haloWidth?: number | Expression;
+  haloWidth?: Expression<number>;
   /**
    * Unit to use for the haloWidth.
    */
@@ -452,7 +402,7 @@ export interface IconSymbolizer extends BasePointSymbolizer {
   /**
    * A path/URL to the icon image file.
    */
-  image?: string | Expression;
+  image?: Expression<string>;
   /**
    * An optional configuration for the image format as MIME type.
    * This might be needed if the image(path) has no filending specified. e.g. http://myserver/getImage
@@ -461,17 +411,17 @@ export interface IconSymbolizer extends BasePointSymbolizer {
   /**
    * If true, the icon will be kept upright.
    */
-  keepUpright?: boolean | Expression;
+  keepUpright?: Expression<boolean>;
   /**
    * Property relevant for mapbox-styles.
    * If true, text will display without their corresponding icons when the icon
    * collides with other symbols and the text does not.
    */
-  optional?: boolean | Expression;
+  optional?: Expression<boolean>;
   /**
    * Size of the additional area around the icon used for detecting symbol collisions.
    */
-  padding?: number | Expression;
+  padding?: Expression<number>;
   /**
    * Property relevant for mapbox-styles.
    * Compare https://docs.mapbox.com/mapbox-gl-js/style-spec/#layout-symbol-icon-pitch-alignment
@@ -480,7 +430,7 @@ export interface IconSymbolizer extends BasePointSymbolizer {
   /**
    * The rotation of the Symbolizer in degrees. Value should be between 0 and 360.
    */
-  rotate?: number | Expression;
+  rotate?: Expression<number>;
   /**
    * Property relevant for mapbox-styles.
    * Compare https://docs.mapbox.com/mapbox-gl-js/style-spec/#layout-symbol-icon-rotation-alignment
@@ -489,7 +439,7 @@ export interface IconSymbolizer extends BasePointSymbolizer {
   /**
    * The Symbolizer size (pixels if sizeUnit is not defined).
    */
-  size?: number | Expression;
+  size?: Expression<number>;
   /**
    * Unit to use for the size.
    */
@@ -503,7 +453,7 @@ export interface IconSymbolizer extends BasePointSymbolizer {
    * Property relevant for mapbox-styles.
    * Compare https://docs.mapbox.com/mapbox-gl-js/style-spec/#layout-symbol-icon-text-fit-padding
    */
-  textFitPadding?: [number, number, number, number];
+  textFitPadding?: [Expression<number>, Expression<number>, Expression<number>, Expression<number>];
 }
 
 /**
@@ -514,26 +464,26 @@ export interface FillSymbolizer extends BaseSymbolizer {
   /**
    * Whether the fill should be antialiased or not .
    */
-  antialias?: boolean | Expression;
+  antialias?: Expression<boolean>;
   /**
    * The opacity of the fill. A value between 0 and 1.
    * 0 is none opaque and 1 is full opaque.
    */
-  fillOpacity?: number | Expression;
+  fillOpacity?: Expression<number>;
   /**
    * The outline color as a hex-color string. Matches the value of fill-color if
    * unspecified.
    */
-  outlineColor?: string | Expression;
+  outlineColor?: Expression<string>;
   /**
    * The opacity of the outline. A value between 0 and 1.
    * 0 is none opaque and 1 is full opaque.
    */
-  outlineOpacity?: number | Expression;
+  outlineOpacity?: Expression<number>;
   /**
    * The outline width (pixels if outlineWidthUnit is not defined).
    */
-  outlineWidth?: number | Expression;
+  outlineWidth?: Expression<number>;
   /**
    * Unit to use for the outlineWidth.
    */
@@ -544,7 +494,7 @@ export interface FillSymbolizer extends BaseSymbolizer {
    * numbers (second, fourth, etc) determine the length in pixels to blank out
    * the line. Default is an unbroken line.
    */
-  outlineDasharray?: number[];
+  outlineDasharray?: Expression<number>[];
   /**
    * Renders the fill of the polygon with a repeated pattern of PointSymbolizer.
    */
@@ -561,7 +511,7 @@ export type GraphicType = 'Mark' | 'Icon';
  */
 export interface LineSymbolizer extends BaseSymbolizer {
   kind: 'Line';
-  blur?: number | Expression;
+  blur?: Expression<number>;
   /**
    * Determines how lines are rendered at their ends. Possible values are butt
    * (sharp square edge), round (rounded edge), and square (slightly elongated
@@ -574,17 +524,17 @@ export interface LineSymbolizer extends BaseSymbolizer {
    * numbers (second, fourth, etc) determine the length in pixels to blank out
    * the line. Default is an unbroken line.
    */
-  dasharray?: number[];
+  dasharray?: Expression<number>[];
   /**
    * Number of pixels into the dasharray to offset the drawing of the dash,
    * used to shift the location of the lines and gaps in a dash.
    */
-  dashOffset?: number | Expression;
+  dashOffset?: Expression<number>;
   /**
    * Draws a line casing outside of a line's actual path. Value indicates the
    * width of the inner gap (pixels if gapWidthUnit is not defined).
    */
-  gapWidth?: number | Expression;
+  gapWidth?: Expression<number>;
   /**
    * Unit to use for the gapWidth.
    */
@@ -610,21 +560,21 @@ export interface LineSymbolizer extends BaseSymbolizer {
   /**
    * Used to automatically convert miter joins to bevel joins for sharp angles.
    */
-  miterLimit?: number | Expression;
+  miterLimit?: Expression<number>;
   /**
    * If present, it makes the renderer draw a line parallel to the original one,
    * at the given distance. When applied on lines, positive values generate a
    * parallel line on the left hand side, negative values on the right hand side.
    */
-  perpendicularOffset?: number | Expression;
+  perpendicularOffset?: Expression<number>;
   /**
    * Used to automatically convert round joins to miter joins for shallow angles.
    */
-  roundLimit?: number | Expression;
+  roundLimit?: Expression<number>;
   /**
    * Distance between two symbol anchors (pixels if spacingUnit is not defined).
    */
-  spacing?: number | Expression;
+  spacing?: Expression<number>;
   /**
    * Unit to use for the spacing.
    * 'em' -> fontsize
@@ -633,7 +583,7 @@ export interface LineSymbolizer extends BaseSymbolizer {
   /**
    * The width of the Line (pixels if widthUnit is not defined).
    */
-  width?: number | Expression;
+  width?: Expression<number>;
   /**
    * Unit to use for the width.
    */
@@ -649,10 +599,10 @@ export type PointSymbolizer = IconSymbolizer | MarkSymbolizer | TextSymbolizer;
  * A single entry for the ColorMap.
  */
 export interface ColorMapEntry {
-  color: string;
-  quantity?: number;
-  label?: string;
-  opacity?: number;
+  color: Expression<string>;
+  quantity?: Expression<number>;
+  label?: Expression<string>;
+  opacity?: Expression<number>;
 }
 
 /**
@@ -666,7 +616,7 @@ export type ColorMapType = 'ramp' | 'intervals' | 'values';
 export interface ColorMap {
   type: ColorMapType;
   colorMapEntries?: ColorMapEntry[];
-  extended?: boolean;
+  extended?: Expression<boolean>;
 }
 
 /**
@@ -674,14 +624,14 @@ export interface ColorMap {
  */
 export interface ContrastEnhancement {
   enhancementType?: 'normalize' | 'histogram';
-  gammaValue?: number;
+  gammaValue?: Expression<number>;
 }
 
 /**
  * A Channel defines the properties for a color channel.
  */
 export interface Channel {
-  sourceChannelName?: string;
+  sourceChannelName?: Expression<string>;
   contrastEnhancement?: ContrastEnhancement;
 }
 
@@ -708,18 +658,18 @@ export type ChannelSelection = RGBChannel | GrayChannel;
  */
 export interface RasterSymbolizer {
   kind: 'Raster';
-  visibility?: boolean;
-  opacity?: number;
+  visibility?: Expression<boolean>;
+  opacity?: Expression<number>;
   colorMap?: ColorMap;
   channelSelection?: ChannelSelection;
   contrastEnhancement?: ContrastEnhancement;
-  hueRotate?: number;
-  brightnessMin?: number;
-  brightnessMax?: number;
-  saturation?: number;
-  contrast?: number;
+  hueRotate?: Expression<number>;
+  brightnessMin?: Expression<number>;
+  brightnessMax?: Expression<number>;
+  saturation?: Expression<number>;
+  contrast?: Expression<number>;
   resampling?: 'linear' | 'nearest';
-  fadeDuration?: number;
+  fadeDuration?: Expression<number>;
 }
 
 /**

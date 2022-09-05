@@ -4,25 +4,22 @@ const sampleExpressionStyle: Style = {
   name: 'Sample style using expressions',
   rules: [
     {
-      name: 'Very old Peter',
+      name: 'The max of Pi ',
       symbolizers: [{
-        kind: 'Line',
-        width: {
-          type: 'functioncall',
-          name: 'peter',
+        kind: 'Text',
+        lineHeight: {
+          name: 'max',
           args: [{
-            type: 'literal',
-            value: 7
-          }, {
-            type: 'property',
-            name: 'myProp'
-          }, {
-            type: 'functioncall',
-            name: 'hans',
+            name: 'strLength',
             args: [{
-              type: 'literal',
-              value: 12
+              name: 'strConcat',
+              args: ['pr', {
+                name: 'property',
+                args: ['Hilde']
+              }]
             }]
+          }, {
+            name: 'pi'
           }]
         }
       }]
