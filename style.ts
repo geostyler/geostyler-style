@@ -1,5 +1,6 @@
 import {
   GeoStylerBooleanFunction,
+  GeoStylerFunction,
   GeoStylerNumberFunction,
   GeoStylerStringFunction
 } from './functions';
@@ -732,6 +733,9 @@ export interface UnsupportedProperties {
     RasterSymbolizer?: SupportDef | {
       [key in keyof Required<RasterSymbolizer>]?: SupportDef
     };
+  };
+  Function?: SupportDef | {
+    [key in GeoStylerFunction['name']]?: SupportDef;
   };
 }
 
