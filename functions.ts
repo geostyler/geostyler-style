@@ -120,9 +120,9 @@ export interface Fatan2 extends FunctionCall<number> {
 export interface Fbetween extends FunctionCall<boolean> {
   name: 'between';
   args: [
-    Expression<string>,
-    Expression<string>,
-    Expression<string>
+    Expression<number>,
+    Expression<number>,
+    Expression<number>
   ];
 };
 

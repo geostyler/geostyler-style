@@ -16,6 +16,13 @@ export class SampleParser implements StyleParser {
           info: 'Blur is only partially supported'
         }
       }
+    },
+    Function: {
+      acos: 'none',
+      strAbbreviate: {
+        support: 'partial',
+        info: 'Better use strSubstring instead.'
+      }
     }
   };
 

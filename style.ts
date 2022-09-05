@@ -1,5 +1,6 @@
 import {
   GeoStylerBooleanFunction,
+  GeoStylerFunction,
   GeoStylerNumberFunction,
   GeoStylerStringFunction
 } from './functions';
@@ -80,12 +81,13 @@ export type RangeFilter = [
 ];
 
 /**
- * A ComparisonFilter compares a value of an object (by key) with an expected
- * value.
+ * A ComparisonFilter compares two values.
+ * If the fist argument is a GeoStylerFunction it will be evaluated it.
+ * If it is a string it will be treated as key of an object.
  */
 export type ComparisonFilter = [
   ComparisonOperator,
-  Expression<string>,
+  Expression<string | number | boolean>,
   Expression<string | number | boolean>
 ] | RangeFilter;
 
@@ -732,6 +734,9 @@ export interface UnsupportedProperties {
     RasterSymbolizer?: SupportDef | {
       [key in keyof Required<RasterSymbolizer>]?: SupportDef
     };
+  };
+  Function?: SupportDef | {
+    [key in GeoStylerFunction['name']]?: SupportDef;
   };
 }
 
