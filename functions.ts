@@ -353,10 +353,7 @@ export interface FstrCapitalize extends FunctionCall<string> {
  */
 export interface FstrConcat extends FunctionCall<string> {
   name: 'strConcat';
-  args: [
-    Expression<string>,
-    Expression<string>
-  ];
+  args: Expression<string>[];
 };
 
 /**

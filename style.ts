@@ -45,9 +45,9 @@ export type Expression<T extends PropertyType> =
 export type StyleType = 'Point' | 'Fill' | 'Line' | 'Raster';
 
 /**
- * A value of a property of the data.
+ * A datatype of a property of the data.
  */
-export type PropertyType = string | number | boolean | null;
+export type PropertyType = string | number | boolean | unknown;
 
 /**
  * The possible Operators used for comparison Filters.
@@ -85,7 +85,7 @@ export type RangeFilter = [
  */
 export type ComparisonFilter = [
   ComparisonOperator,
-  Expression<string | number | boolean>,
+  Expression<string>,
   Expression<string | number | boolean>
 ] | RangeFilter;
 

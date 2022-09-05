@@ -37,7 +37,8 @@ import {
   GeoStylerBooleanFunction,
   GeoStylerNumberFunction,
   GeoStylerStringFunction,
-  GeoStylerUnknownFunction
+  GeoStylerUnknownFunction,
+  GeoStylerFunction
 } from './index';
 
 export const isExpression = (got: any): got is Expression<any> => {
@@ -228,4 +229,11 @@ export const isGeoStylerUnknownFunction = (got: any): got is GeoStylerUnknownFun
   return [
     'property',
   ].includes(got.name);
+};
+
+export const isGeoStylerFunction = (got: any): got is GeoStylerFunction => {
+  return isGeoStylerBooleanFunction(got) ||
+    isGeoStylerNumberFunction(got) ||
+    isGeoStylerStringFunction(got) ||
+    isGeoStylerUnknownFunction(got);
 };
