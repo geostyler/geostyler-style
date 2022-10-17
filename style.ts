@@ -35,7 +35,7 @@ export interface FunctionCall<T> {
  * Expressions can be a literal value, a property name or a function call.
  */
 export type Expression<T extends PropertyType> =
-  T extends string ? GeoStylerStringFunction | T:
+  T extends string ? GeoStylerStringFunction | T :
   T extends number ? GeoStylerNumberFunction | T :
   T extends boolean ? GeoStylerBooleanFunction | T :
   T;
@@ -87,8 +87,8 @@ export type RangeFilter = [
  */
 export type ComparisonFilter = [
   ComparisonOperator,
-  Expression<string | number | boolean>,
-  Expression<string | number | boolean>
+  Expression<string | number | boolean | null>,
+  Expression<string | number | boolean | null>
 ] | RangeFilter;
 
 /**
