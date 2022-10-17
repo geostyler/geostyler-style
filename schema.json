@@ -3003,6 +3003,7 @@
                                 },
                                 {
                                     "type": [
+                                        "null",
                                         "string",
                                         "number",
                                         "boolean"
@@ -3155,6 +3156,7 @@
                                 },
                                 {
                                     "type": [
+                                        "null",
                                         "string",
                                         "number",
                                         "boolean"
@@ -11897,6 +11899,7 @@
                                         },
                                         {
                                             "type": [
+                                                "null",
                                                 "string",
                                                 "number",
                                                 "boolean"
@@ -12049,6 +12052,7 @@
                                         },
                                         {
                                             "type": [
+                                                "null",
                                                 "string",
                                                 "number",
                                                 "boolean"
