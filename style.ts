@@ -509,6 +509,16 @@ export interface FillSymbolizer extends BaseSymbolizer {
 export type GraphicType = 'Mark' | 'Icon';
 
 /**
+ * The Types that are allowed for cap.
+ */
+export type CapType = 'butt' | 'round' | 'square';
+
+/**
+ * The Types that are allowed for join.
+ */
+export type JoinType = 'bevel' | 'round' | 'miter';
+
+/**
  * A LineSymbolizer describes the style representation of LINESTRING data.
  */
 export interface LineSymbolizer extends BaseSymbolizer {
@@ -519,7 +529,7 @@ export interface LineSymbolizer extends BaseSymbolizer {
    * (sharp square edge), round (rounded edge), and square (slightly elongated
    * square edge).
    */
-  cap?: 'butt' | 'round' | 'square';
+  cap?: CapType;
   /**
    * Encodes a dash pattern as an array of numbers. Odd-indexed numbers (first,
    * third, etc) determine the length in pixels to draw the line, and even-indexed
@@ -558,7 +568,7 @@ export interface LineSymbolizer extends BaseSymbolizer {
    * Possible values are mitre (sharp corner),  round (rounded corner), and bevel
    * diagonal corner).
    */
-  join?: 'bevel' | 'round' | 'miter';
+  join?: JoinType;
   /**
    * Used to automatically convert miter joins to bevel joins for sharp angles.
    */
