@@ -509,12 +509,12 @@ export interface FillSymbolizer extends BaseSymbolizer {
 export type GraphicType = 'Mark' | 'Icon';
 
 /**
- * The Types that are allowed for cap.
+ * The types that are allowed for cap.
  */
 export type CapType = 'butt' | 'round' | 'square';
 
 /**
- * The Types that are allowed for join.
+ * The types that are allowed for join.
  */
 export type JoinType = 'bevel' | 'round' | 'miter';
 
