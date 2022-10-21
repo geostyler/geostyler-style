@@ -399,7 +399,7 @@ export interface IconSymbolizer extends BasePointSymbolizer {
    */
   haloColor?: Expression<string>;
   /**
-   * Distance of halo to the font outline (pixels if haloWidthUnit is not defined).
+   * Distance of halo to the icons outline (pixels if haloWidthUnit is not defined).
    */
   haloWidth?: Expression<number>;
   /**
@@ -497,6 +497,14 @@ export interface FillSymbolizer extends BaseSymbolizer {
    */
   outlineWidth?: Expression<number>;
   /**
+   * The Captype for the outLine.
+   */
+  outlineCap?: CapType;
+  /**
+   * The JoinType for the outLine.
+   */
+  outlineJoin?: JoinType;
+  /**
    * Unit to use for the outlineWidth.
    */
   outlineWidthUnit?: DistanceUnit;
@@ -519,12 +527,16 @@ export interface FillSymbolizer extends BaseSymbolizer {
 export type GraphicType = 'Mark' | 'Icon';
 
 /**
- * The types that are allowed for cap.
+ * Determines how lines are rendered at their ends.
+ * Possible values are butt (sharp square edge), round (rounded edge),
+ * and square (slightly elongated square edge).
  */
 export type CapType = 'butt' | 'round' | 'square';
 
 /**
- * The types that are allowed for join.
+ * Determines how lines are rendered at intersections of line segments.
+ * Possible values are mitre (sharp corner),  round (rounded corner), and bevel
+ * diagonal corner).
  */
 export type JoinType = 'bevel' | 'round' | 'miter';
 
@@ -535,9 +547,7 @@ export interface LineSymbolizer extends BaseSymbolizer {
   kind: 'Line';
   blur?: Expression<number>;
   /**
-   * Determines how lines are rendered at their ends. Possible values are butt
-   * (sharp square edge), round (rounded edge), and square (slightly elongated
-   * square edge).
+   * The Captype for the LineSymbolizer.
    */
   cap?: CapType;
   /**
@@ -574,9 +584,7 @@ export interface LineSymbolizer extends BaseSymbolizer {
    */
   graphicFill?: PointSymbolizer;
   /**
-   * Determines how lines are rendered at intersections of line segments.
-   * Possible values are mitre (sharp corner),  round (rounded corner), and bevel
-   * diagonal corner).
+   * The JoinType for the LineSymbolizer.
    */
   join?: JoinType;
   /**
