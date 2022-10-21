@@ -290,6 +290,11 @@ export interface TextSymbolizer extends BasePointSymbolizer {
    */
   haloWidthUnit?: DistanceUnit;
   /**
+   * The opacity of the haloe. A value between 0 and 1.
+   * 0 is none opaque and 1 is full opaque.
+   */
+  haloOpacity?: Expression<number>;
+  /**
    * Text justification option to align the text.
    */
   justify?: 'left' | 'center' | 'right';
@@ -401,6 +406,11 @@ export interface IconSymbolizer extends BasePointSymbolizer {
    * Unit to use for the haloWidth.
    */
   haloWidthUnit?: DistanceUnit;
+  /**
+   * The opacity of the haloe. A value between 0 and 1.
+   * 0 is none opaque and 1 is full opaque.
+   */
+  haloOpacity?: Expression<number>;
   /**
    * A path/URL to the icon image file.
    */
