@@ -2241,6 +2241,15 @@
                     ],
                     "description": "Determines the total opacity for the Symbolizer.\nA value between 0 and 1. 0 is none opaque and 1 is full opaque."
                 },
+                "outlineCap": {
+                    "description": "The Captype for the outLine.",
+                    "enum": [
+                        "butt",
+                        "round",
+                        "square"
+                    ],
+                    "type": "string"
+                },
                 "outlineColor": {
                     "anyOf": [
                         {
@@ -2379,6 +2388,15 @@
                         ]
                     },
                     "type": "array"
+                },
+                "outlineJoin": {
+                    "description": "The JoinType for the outLine.",
+                    "enum": [
+                        "bevel",
+                        "miter",
+                        "round"
+                    ],
+                    "type": "string"
                 },
                 "outlineOpacity": {
                     "anyOf": [
@@ -7448,6 +7466,95 @@
                     ],
                     "description": "The color of the icons halo, which helps it stand out from backgrounds represented\nas a hex-color string."
                 },
+                "haloOpacity": {
+                    "anyOf": [
+                        {
+                            "$ref": "http://geostyler/geostyler-style.json#/definitions/Fproperty"
+                        },
+                        {
+                            "$ref": "http://geostyler/geostyler-style.json#/definitions/Fabs"
+                        },
+                        {
+                            "$ref": "http://geostyler/geostyler-style.json#/definitions/Facos"
+                        },
+                        {
+                            "$ref": "http://geostyler/geostyler-style.json#/definitions/Fasin"
+                        },
+                        {
+                            "$ref": "http://geostyler/geostyler-style.json#/definitions/Fatan"
+                        },
+                        {
+                            "$ref": "http://geostyler/geostyler-style.json#/definitions/Fatan2"
+                        },
+                        {
+                            "$ref": "http://geostyler/geostyler-style.json#/definitions/Fceil"
+                        },
+                        {
+                            "$ref": "http://geostyler/geostyler-style.json#/definitions/Fcos"
+                        },
+                        {
+                            "$ref": "http://geostyler/geostyler-style.json#/definitions/Fexp"
+                        },
+                        {
+                            "$ref": "http://geostyler/geostyler-style.json#/definitions/Ffloor"
+                        },
+                        {
+                            "$ref": "http://geostyler/geostyler-style.json#/definitions/Flog"
+                        },
+                        {
+                            "$ref": "http://geostyler/geostyler-style.json#/definitions/Fmax"
+                        },
+                        {
+                            "$ref": "http://geostyler/geostyler-style.json#/definitions/Fmin"
+                        },
+                        {
+                            "$ref": "http://geostyler/geostyler-style.json#/definitions/Fmodulo"
+                        },
+                        {
+                            "$ref": "http://geostyler/geostyler-style.json#/definitions/Fpi"
+                        },
+                        {
+                            "$ref": "http://geostyler/geostyler-style.json#/definitions/Fpow"
+                        },
+                        {
+                            "$ref": "http://geostyler/geostyler-style.json#/definitions/Frandom"
+                        },
+                        {
+                            "$ref": "http://geostyler/geostyler-style.json#/definitions/Frint"
+                        },
+                        {
+                            "$ref": "http://geostyler/geostyler-style.json#/definitions/Fround"
+                        },
+                        {
+                            "$ref": "http://geostyler/geostyler-style.json#/definitions/Fsin"
+                        },
+                        {
+                            "$ref": "http://geostyler/geostyler-style.json#/definitions/Fsqrt"
+                        },
+                        {
+                            "$ref": "http://geostyler/geostyler-style.json#/definitions/FstrIndexOf"
+                        },
+                        {
+                            "$ref": "http://geostyler/geostyler-style.json#/definitions/FstrLastIndexOf"
+                        },
+                        {
+                            "$ref": "http://geostyler/geostyler-style.json#/definitions/FstrLength"
+                        },
+                        {
+                            "$ref": "http://geostyler/geostyler-style.json#/definitions/Ftan"
+                        },
+                        {
+                            "$ref": "http://geostyler/geostyler-style.json#/definitions/FtoDegrees"
+                        },
+                        {
+                            "$ref": "http://geostyler/geostyler-style.json#/definitions/FtoRadians"
+                        },
+                        {
+                            "type": "number"
+                        }
+                    ],
+                    "description": "The opacity of the halo. A value between 0 and 1.\n0 means no opacity (i.e. transparent)  and 1 is fully opaque."
+                },
                 "haloWidth": {
                     "anyOf": [
                         {
@@ -7535,7 +7642,7 @@
                             "type": "number"
                         }
                     ],
-                    "description": "Distance of halo to the font outline (pixels if haloWidthUnit is not defined)."
+                    "description": "Distance of halo to the icons outline (pixels if haloWidthUnit is not defined)."
                 },
                 "haloWidthUnit": {
                     "description": "Unit to use for the haloWidth.",
@@ -8744,7 +8851,7 @@
                     "description": "Expressions can be a literal value, a property name or a function call."
                 },
                 "cap": {
-                    "description": "Determines how lines are rendered at their ends. Possible values are butt\n(sharp square edge), round (rounded edge), and square (slightly elongated\nsquare edge).",
+                    "description": "The Captype for the LineSymbolizer.",
                     "enum": [
                         "butt",
                         "round",
@@ -9111,7 +9218,7 @@
                     "description": "Renders the line with a repeated linear PointSymbolizer."
                 },
                 "join": {
-                    "description": "Determines how lines are rendered at intersections of line segments.\nPossible values are mitre (sharp corner),  round (rounded corner), and bevel\ndiagonal corner).",
+                    "description": "The JoinType for the LineSymbolizer.",
                     "enum": [
                         "bevel",
                         "miter",
@@ -12632,6 +12739,95 @@
                         }
                     ],
                     "description": "The color of the text's halo, which helps it stand out from backgrounds\nrepresented as a hex-color string."
+                },
+                "haloOpacity": {
+                    "anyOf": [
+                        {
+                            "$ref": "http://geostyler/geostyler-style.json#/definitions/Fproperty"
+                        },
+                        {
+                            "$ref": "http://geostyler/geostyler-style.json#/definitions/Fabs"
+                        },
+                        {
+                            "$ref": "http://geostyler/geostyler-style.json#/definitions/Facos"
+                        },
+                        {
+                            "$ref": "http://geostyler/geostyler-style.json#/definitions/Fasin"
+                        },
+                        {
+                            "$ref": "http://geostyler/geostyler-style.json#/definitions/Fatan"
+                        },
+                        {
+                            "$ref": "http://geostyler/geostyler-style.json#/definitions/Fatan2"
+                        },
+                        {
+                            "$ref": "http://geostyler/geostyler-style.json#/definitions/Fceil"
+                        },
+                        {
+                            "$ref": "http://geostyler/geostyler-style.json#/definitions/Fcos"
+                        },
+                        {
+                            "$ref": "http://geostyler/geostyler-style.json#/definitions/Fexp"
+                        },
+                        {
+                            "$ref": "http://geostyler/geostyler-style.json#/definitions/Ffloor"
+                        },
+                        {
+                            "$ref": "http://geostyler/geostyler-style.json#/definitions/Flog"
+                        },
+                        {
+                            "$ref": "http://geostyler/geostyler-style.json#/definitions/Fmax"
+                        },
+                        {
+                            "$ref": "http://geostyler/geostyler-style.json#/definitions/Fmin"
+                        },
+                        {
+                            "$ref": "http://geostyler/geostyler-style.json#/definitions/Fmodulo"
+                        },
+                        {
+                            "$ref": "http://geostyler/geostyler-style.json#/definitions/Fpi"
+                        },
+                        {
+                            "$ref": "http://geostyler/geostyler-style.json#/definitions/Fpow"
+                        },
+                        {
+                            "$ref": "http://geostyler/geostyler-style.json#/definitions/Frandom"
+                        },
+                        {
+                            "$ref": "http://geostyler/geostyler-style.json#/definitions/Frint"
+                        },
+                        {
+                            "$ref": "http://geostyler/geostyler-style.json#/definitions/Fround"
+                        },
+                        {
+                            "$ref": "http://geostyler/geostyler-style.json#/definitions/Fsin"
+                        },
+                        {
+                            "$ref": "http://geostyler/geostyler-style.json#/definitions/Fsqrt"
+                        },
+                        {
+                            "$ref": "http://geostyler/geostyler-style.json#/definitions/FstrIndexOf"
+                        },
+                        {
+                            "$ref": "http://geostyler/geostyler-style.json#/definitions/FstrLastIndexOf"
+                        },
+                        {
+                            "$ref": "http://geostyler/geostyler-style.json#/definitions/FstrLength"
+                        },
+                        {
+                            "$ref": "http://geostyler/geostyler-style.json#/definitions/Ftan"
+                        },
+                        {
+                            "$ref": "http://geostyler/geostyler-style.json#/definitions/FtoDegrees"
+                        },
+                        {
+                            "$ref": "http://geostyler/geostyler-style.json#/definitions/FtoRadians"
+                        },
+                        {
+                            "type": "number"
+                        }
+                    ],
+                    "description": "The opacity of the halo. A value between 0 and 1.\n0 means no opacity (i.e. transparent) and 1 is fully opaque."
                 },
                 "haloWidth": {
                     "anyOf": [
