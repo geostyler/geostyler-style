@@ -290,8 +290,8 @@ export interface TextSymbolizer extends BasePointSymbolizer {
    */
   haloWidthUnit?: DistanceUnit;
   /**
-   * The opacity of the haloe. A value between 0 and 1.
-   * 0 is none opaque and 1 is full opaque.
+   * The opacity of the halo. A value between 0 and 1.
+   * 0 means no opacity (i.e. transparent) and 1 is fully opaque.
    */
   haloOpacity?: Expression<number>;
   /**
@@ -407,8 +407,8 @@ export interface IconSymbolizer extends BasePointSymbolizer {
    */
   haloWidthUnit?: DistanceUnit;
   /**
-   * The opacity of the haloe. A value between 0 and 1.
-   * 0 is none opaque and 1 is full opaque.
+   * The opacity of the halo. A value between 0 and 1.
+   * 0 means no opacity (i.e. transparent)  and 1 is fully opaque.
    */
   haloOpacity?: Expression<number>;
   /**
