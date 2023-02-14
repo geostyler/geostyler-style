@@ -6,6 +6,11 @@ import {
 } from './functions';
 
 /**
+ * The special character to use to indicate a line break.
+ */
+export type newlineToken = '/n';
+
+/**
  * The ScaleDenominator defines a range of scales.
  */
 export interface ScaleDenominator {
