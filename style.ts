@@ -89,7 +89,7 @@ export type ComparisonFilter = [
   ComparisonOperator,
   Expression<string | number | boolean | null>,
   Expression<string | number | boolean | null>
-] | RangeFilter;
+] | RangeFilter | GeoStylerBooleanFunction;
 
 /**
  * A CombinationFilter combines N Filters with a logical OR / AND operator.
@@ -565,10 +565,12 @@ export interface LineSymbolizer extends BaseSymbolizer {
   /**
    * Draws a line casing outside of a line's actual path. Value indicates the
    * width of the inner gap (pixels if gapWidthUnit is not defined).
+   * TODO: Whats the difference to the perpendicularOffset?
    */
   gapWidth?: Expression<number>;
   /**
    * Unit to use for the gapWidth.
+   * TODO: Whats the difference to the perpendicularOffset?
    */
   gapWidthUnit?: DistanceUnit;
   /**
@@ -685,6 +687,7 @@ export type ChannelSelection = RGBChannel | GrayChannel;
 
 /**
  * A RasterSymbolizer defines the style representation of RASTER data.
+ * TODO: Add property docs
  */
 export interface RasterSymbolizer {
   kind: 'Raster';
