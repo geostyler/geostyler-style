@@ -89,18 +89,21 @@ export const isFilter = (got: any): got is Filter => {
   return isComparisonFilter(got) ||
     isCombinationFilter(got) ||
     isGeoStylerBooleanFunction(got) ||
-    isNegationFilter(got);
+    isNegationFilter(got) ||
+    isGeoStylerBooleanFunction(got) ||
+    _isBoolean(got);
 };
+
 export const isComparisonFilter = (got: any): got is ComparisonFilter => {
   const expectedLength = got && got[0] === '<=x<=' ? 4 : 3;
   return (
     Array.isArray(got) &&
     got.length === expectedLength &&
     isComparisonOperator(got[0]) &&
-    (isGeoStylerFunction(got[1]) || _isString(got[1])) &&
+    isExpression(got[1]) &&
     isExpression(got[2]) &&
     (got[0] !== '<=x<=' || _isNumber(got[3]))
-  ) || isGeoStylerBooleanFunction(got);
+  );
 };
 export const isCombinationFilter = (got: any): got is CombinationFilter => {
   return Array.isArray(got) &&

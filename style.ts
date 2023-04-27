@@ -89,7 +89,7 @@ export type ComparisonFilter = [
   ComparisonOperator,
   Expression<string | number | boolean | null>,
   Expression<string | number | boolean | null>
-] | RangeFilter | GeoStylerBooleanFunction;
+] | RangeFilter;
 
 /**
  * A CombinationFilter combines N Filters with a logical OR / AND operator.
@@ -107,7 +107,7 @@ export type NegationFilter = [
   Filter
 ];
 
-export type Filter = ComparisonFilter | NegationFilter | CombinationFilter;
+export type Filter = ComparisonFilter | NegationFilter | CombinationFilter | Expression<boolean>;
 
 /**
  * The kind of the Symbolizer
@@ -565,12 +565,10 @@ export interface LineSymbolizer extends BaseSymbolizer {
   /**
    * Draws a line casing outside of a line's actual path. Value indicates the
    * width of the inner gap (pixels if gapWidthUnit is not defined).
-   * TODO: Whats the difference to the perpendicularOffset?
    */
   gapWidth?: Expression<number>;
   /**
    * Unit to use for the gapWidth.
-   * TODO: Whats the difference to the perpendicularOffset?
    */
   gapWidthUnit?: DistanceUnit;
   /**
@@ -687,14 +685,30 @@ export type ChannelSelection = RGBChannel | GrayChannel;
 
 /**
  * A RasterSymbolizer defines the style representation of RASTER data.
- * TODO: Add property docs
  */
 export interface RasterSymbolizer {
   kind: 'Raster';
+  /**
+   * Defines whether the Symbolizer should be visibile or not.
+   */
   visibility?: Expression<boolean>;
+  /**
+   * Determines the total opacity for the Symbolizer.
+   * A value between 0 and 1. 0 is none opaque and 1 is full opaque.
+   */
   opacity?: Expression<number>;
+  /**
+   * Defines the color values for the pixels of a raster image,
+   * as either color gradients, or a mapping of specific values to fixed colors.
+   */
   colorMap?: ColorMap;
+  /**
+   * Specifies how dataset bands are mapped to image color channels.
+   */
   channelSelection?: ChannelSelection;
+  /**
+   * Can be used to adjust the relative brightness of the image data.
+   */
   contrastEnhancement?: ContrastEnhancement;
   hueRotate?: Expression<number>;
   brightnessMin?: Expression<number>;

@@ -347,7 +347,8 @@ describe('typeguards', () => {
       comparisonFilterWithFunction2,
       negationFilter1,
       negationFilter2,
-      booleanFunction
+      booleanFunction,
+      tru
     ];
     thingsToTest.forEach(thing => {
       expect(isFilter(thing)).toBe(expectedMatches.includes(thing));
@@ -357,8 +358,7 @@ describe('typeguards', () => {
     const expectedMatches: any[] = [
       comparisonFilter,
       comparisonFilterWithFunction1,
-      comparisonFilterWithFunction2,
-      booleanFunction
+      comparisonFilterWithFunction2
     ];
     thingsToTest.forEach(thing => {
       expect(isComparisonFilter(thing)).toBe(expectedMatches.includes(thing));
