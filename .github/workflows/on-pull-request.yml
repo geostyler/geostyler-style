@@ -34,5 +34,8 @@ jobs:
     - name: Lint code 💄
       run: npm run lint
 
+    - name: Test code ✅
+      run: npm run test
+
     - name: Build artifacts 🏗️
       run: npm run build
