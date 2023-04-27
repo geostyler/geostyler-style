@@ -82,7 +82,7 @@ export type RangeFilter = [
 
 /**
  * A ComparisonFilter compares two values.
- * If the fist argument is a GeoStylerFunction it will be evaluated it.
+ * If the first argument is a GeoStylerFunction it will be evaluated it.
  * If it is a string it will be treated as key of an object.
  */
 export type ComparisonFilter = [
