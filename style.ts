@@ -689,12 +689,12 @@ export type ChannelSelection = RGBChannel | GrayChannel;
 export interface RasterSymbolizer {
   kind: 'Raster';
   /**
-   * Defines whether the Symbolizer should be visibile or not.
+   * Defines whether the Symbolizer should be visible or not.
    */
   visibility?: Expression<boolean>;
   /**
    * Determines the total opacity for the Symbolizer.
-   * A value between 0 and 1. 0 is none opaque and 1 is full opaque.
+   * A value between 0 and 1. 0 is none opaque and 1 is fully opaque.
    */
   opacity?: Expression<number>;
   /**
