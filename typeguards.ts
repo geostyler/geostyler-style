@@ -10,9 +10,6 @@ import _isRegExp from 'lodash/isRegExp';
 import _isNull from 'lodash/isNull';
 
 import {
-  BasePointSymbolizer,
-  BaseSymbolizer,
-  ChannelSelection,
   CombinationFilter,
   CombinationOperator,
   ComparisonFilter,
@@ -33,18 +30,23 @@ import {
   ScaleDenominator,
   TextSymbolizer,
   Expression,
-  FunctionCall,
   GeoStylerBooleanFunction,
   GeoStylerNumberFunction,
   GeoStylerStringFunction,
   GeoStylerUnknownFunction,
-  GeoStylerFunction
+  GeoStylerFunction,
+  PointSymbolizer,
+  Symbolizer,
+  FunctionCall
 } from './index';
 
 export const isExpression = (got: any): got is Expression<any> => {
-  return isFunctionCall(got) || isPropertyType(got);
+  return isGeoStylerFunction(got) || isPropertyType(got);
 };
 
+/**
+ * @deprecated use isFunction instead
+ */
 export const isFunctionCall = (got: any): got is FunctionCall<any> => {
   return got.type === 'functioncall' &&
     got.hasOwnProperty('name') &&
@@ -61,9 +63,9 @@ export const isPropertyType = (got: any): got is PropertyType => {
 
 // ScaleDenominator
 export const isScaleDenominator = (got: any): got is ScaleDenominator => {
-  return (got?.min || got?.max) &&
-    (got.min ? isFilter(got.min) : true) &&
-    (got.max ? isFilter(got.max) : true);
+  return !!((got?.min || got?.max) &&
+    ((!!got.min) ? isGeoStylerNumberFunction(got.min) || _isNumber(got.min) : true) &&
+    ((!!got.max) ? isGeoStylerNumberFunction(got.max) || _isNumber(got.min) : true));
 };
 
 // Operators
@@ -87,16 +89,21 @@ export const isFilter = (got: any): got is Filter => {
   return isComparisonFilter(got) ||
     isCombinationFilter(got) ||
     isGeoStylerBooleanFunction(got) ||
-    isNegationFilter(got);
+    isNegationFilter(got) ||
+    isGeoStylerBooleanFunction(got) ||
+    _isBoolean(got);
 };
+
 export const isComparisonFilter = (got: any): got is ComparisonFilter => {
   const expectedLength = got && got[0] === '<=x<=' ? 4 : 3;
-  return Array.isArray(got) &&
+  return (
+    Array.isArray(got) &&
     got.length === expectedLength &&
     isComparisonOperator(got[0]) &&
-    (isGeoStylerBooleanFunction(got[1]) || _isString(got[1])) &&
-    isPropertyType(got[2]) &&
-    (got[0] !== '<=x<=' || _isNumber(got[3]));
+    isExpression(got[1]) &&
+    isExpression(got[2]) &&
+    (got[0] !== '<=x<=' || _isNumber(got[3]))
+  );
 };
 export const isCombinationFilter = (got: any): got is CombinationFilter => {
   return Array.isArray(got) &&
@@ -112,11 +119,14 @@ export const isNegationFilter = (got: any): got is NegationFilter => {
 };
 
 // Symbolizers
-export const isSymbolizer = (got: any): got is BaseSymbolizer => {
-  return ['Fill', 'Icon', 'Line', 'Text', 'Mark', 'Raster'].includes(got?.kind);
+export const isSymbolizer = (got: any): got is Symbolizer => {
+  return isPointSymbolizer(got) ||
+  isLineSymbolizer(got) ||
+  isFillSymbolizer(got) ||
+  isRasterSymbolizer(got);
 };
-export const isPointSymbolizer = (got: any): got is BasePointSymbolizer => {
-  return ['Icon', 'Text', 'Mark'].includes(got?.kind);
+export const isPointSymbolizer = (got: any): got is PointSymbolizer => {
+  return isIconSymbolizer(got) || isMarkSymbolizer(got) || isTextSymbolizer(got);
 };
 export const isIconSymbolizer = (got: any): got is IconSymbolizer => {
   return got?.kind === 'Icon';
@@ -139,28 +149,28 @@ export const isRasterSymbolizer = (got: any): got is RasterSymbolizer => {
 
 // Rule
 export const isRule = (got: any): got is Rule => {
-  return _isString(got?.name) &&
+  return !!(_isString(got?.name) &&
     (got?.filter ? isFilter(got.filter) : true) &&
     (got?.scaleDenominator ? isScaleDenominator(got.scaleDenominator) : true) &&
-    got?.symbolizers.every((arg: any) => isSymbolizer(arg));
+    got?.symbolizers?.every((arg: any) => isSymbolizer(arg)));
 };
 
 /**
  * Checks if ChannelSelection is of type RGBChannel.
  */
-export const isRgbChannel = (channels: ChannelSelection): channels is RGBChannel => {
-  return (
-    (channels as RGBChannel).redChannel !== undefined
-      || (channels as RGBChannel).greenChannel !== undefined
-      || (channels as RGBChannel).blueChannel !== undefined
+export const isRgbChannel = (got: any): got is RGBChannel => {
+  return !!(
+    got?.redChannel !== undefined
+      || got?.greenChannel !== undefined
+      || got?.blueChannel !== undefined
   );
 };
 
 /**
  * Checks if ChannelSelection is of type GrayChannel.
  */
-export const isGrayChannel = (channels: ChannelSelection): channels is GrayChannel => {
-  return (channels as GrayChannel).grayChannel !== undefined;
+export const isGrayChannel = (got: any): got is GrayChannel => {
+  return !!(got?.grayChannel !== undefined);
 };
 
 // Functions

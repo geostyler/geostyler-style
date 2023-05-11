@@ -87,7 +87,7 @@ export type RangeFilter = [
 
 /**
  * A ComparisonFilter compares two values.
- * If the fist argument is a GeoStylerFunction it will be evaluated it.
+ * If the first argument is a GeoStylerFunction it will be evaluated it.
  * If it is a string it will be treated as key of an object.
  */
 export type ComparisonFilter = [
@@ -112,7 +112,7 @@ export type NegationFilter = [
   Filter
 ];
 
-export type Filter = ComparisonFilter | NegationFilter | CombinationFilter;
+export type Filter = ComparisonFilter | NegationFilter | CombinationFilter | Expression<boolean>;
 
 /**
  * The kind of the Symbolizer
@@ -693,10 +693,27 @@ export type ChannelSelection = RGBChannel | GrayChannel;
  */
 export interface RasterSymbolizer {
   kind: 'Raster';
+  /**
+   * Defines whether the Symbolizer should be visible or not.
+   */
   visibility?: Expression<boolean>;
+  /**
+   * Determines the total opacity for the Symbolizer.
+   * A value between 0 and 1. 0 is none opaque and 1 is fully opaque.
+   */
   opacity?: Expression<number>;
+  /**
+   * Defines the color values for the pixels of a raster image,
+   * as either color gradients, or a mapping of specific values to fixed colors.
+   */
   colorMap?: ColorMap;
+  /**
+   * Specifies how dataset bands are mapped to image color channels.
+   */
   channelSelection?: ChannelSelection;
+  /**
+   * Can be used to adjust the relative brightness of the image data.
+   */
   contrastEnhancement?: ContrastEnhancement;
   hueRotate?: Expression<number>;
   brightnessMin?: Expression<number>;
