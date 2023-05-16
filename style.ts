@@ -160,7 +160,7 @@ export interface BasePointSymbolizer extends BaseSymbolizer {
    * Property relevant for mapbox-styles.
    * Compare https://docs.mapbox.com/mapbox-gl-js/style-spec/#paint-symbol-icon-translate-anchor
    */
-  offsetAnchor?: 'map' | 'viewport';
+  offsetAnchor?: Expression<'map' | 'viewport'>;
 }
 
 /**
@@ -244,12 +244,12 @@ export interface MarkSymbolizer extends BasePointSymbolizer {
    * Property relevant for mapbox-styles.
    * Compare https://docs.mapbox.com/mapbox-gl-js/style-spec/#paint-circle-circle-pitch-alignment
    */
-  pitchAlignment?: 'map' | 'viewport';
+  pitchAlignment?: Expression<'map' | 'viewport'>;
   /**
    * Property relevant for mapbox-styles.
    * Compare https://docs.mapbox.com/mapbox-gl-js/style-spec/#paint-circle-circle-pitch-scale
    */
-  pitchScale?: 'map' | 'viewport';
+  pitchScale?: Expression<'map' | 'viewport'>;
 }
 
 /**
@@ -266,7 +266,9 @@ export interface TextSymbolizer extends BasePointSymbolizer {
   /**
    * The anchor position of the label referred to the center of the geometry.
    */
-  anchor?: 'center' | 'left' | 'right' | 'top' | 'bottom' | 'top-left' | 'top-right' | 'bottom-left' | 'bottom-right';
+  anchor?: Expression<
+    'center' | 'left' | 'right' | 'top' | 'bottom' | 'top-left' | 'top-right' | 'bottom-left' | 'bottom-right'
+  >;
   /**
    * Template string where {{PROPERTYNAME}} can be used to be replaced by values
    * from the dataset.
@@ -302,7 +304,7 @@ export interface TextSymbolizer extends BasePointSymbolizer {
   /**
    * Text justification option to align the text.
    */
-  justify?: 'left' | 'center' | 'right';
+  justify?: Expression<'left' | 'center' | 'right'>;
   /**
    * If true, the text will be kept upright.
    */
@@ -348,7 +350,7 @@ export interface TextSymbolizer extends BasePointSymbolizer {
    * Property relevant for mapbox-styles.
    * Compare https://docs.mapbox.com/mapbox-gl-js/style-spec/#layout-symbol-text-pitch-alignment
    */
-  pitchAlignment?: 'map' | 'viewport' | 'auto';
+  pitchAlignment?: Expression<'map' | 'viewport' | 'auto'>;
   /**
    * The rotation of the Symbolizer in degrees. Value should be between 0 and 360.
    */
@@ -357,7 +359,7 @@ export interface TextSymbolizer extends BasePointSymbolizer {
    * Property relevant for mapbox-styles.
    * Compare https://docs.mapbox.com/mapbox-gl-js/style-spec/#layout-symbol-text-rotation-alignment
    */
-  rotationAlignment?: 'map' | 'viewport' | 'auto';
+  rotationAlignment?: Expression<'map' | 'viewport' | 'auto'>;
   /**
    * The fontsize in pixels.
    */
@@ -365,17 +367,17 @@ export interface TextSymbolizer extends BasePointSymbolizer {
   /**
    * Specifies how to capitalize text, similar to the CSS text-transform property.
    */
-  transform?: 'none' | 'uppercase' | 'lowercase';
+  transform?: Expression<'none' | 'uppercase' | 'lowercase'>;
   /**
    * Specifies whether a font should be styled with a normal, italic, or oblique
    * face from its font-family.
    */
-  fontStyle?: 'normal' | 'italic' | 'oblique';
+  fontStyle?: Expression<'normal' | 'italic' | 'oblique'>;
   /**
    * Specifies the weight (or boldness) of the font. The weights available depend
    * on the font-family you are using.
    */
-  fontWeight?: 'normal' | 'bold';
+  fontWeight?: Expression<'normal' | 'bold'>;
 }
 
 /**
@@ -393,7 +395,9 @@ export interface IconSymbolizer extends BasePointSymbolizer {
    * Part of the icon placed closest to the anchor. This may conflict with a set
    * offset.
    */
-  anchor?: 'center' | 'left' | 'right' | 'top' | 'bottom' | 'top-left' | 'top-right' | 'bottom-left' | 'bottom-right';
+  anchor?: Expression<
+    'center' | 'left' | 'right' | 'top' | 'bottom' | 'top-left' | 'top-right' | 'bottom-left' | 'bottom-right'
+  >;
   /**
    * The halo's fadeout distance towards the outside.
    */
@@ -424,7 +428,7 @@ export interface IconSymbolizer extends BasePointSymbolizer {
    * An optional configuration for the image format as MIME type.
    * This might be needed if the image(path) has no filending specified. e.g. http://myserver/getImage
    */
-  format?: `image/${'png' | 'jpg' | 'jpeg' | 'gif' | 'svg+xml'}`;
+  format?: Expression<`image/${'png' | 'jpg' | 'jpeg' | 'gif' | 'svg+xml'}`>;
   /**
    * If true, the icon will be kept upright.
    */
@@ -443,7 +447,7 @@ export interface IconSymbolizer extends BasePointSymbolizer {
    * Property relevant for mapbox-styles.
    * Compare https://docs.mapbox.com/mapbox-gl-js/style-spec/#layout-symbol-icon-pitch-alignment
    */
-  pitchAlignment?: 'map' | 'viewport' | 'auto';
+  pitchAlignment?: Expression<'map' | 'viewport' | 'auto'>;
   /**
    * The rotation of the Symbolizer in degrees. Value should be between 0 and 360.
    */
@@ -452,7 +456,7 @@ export interface IconSymbolizer extends BasePointSymbolizer {
    * Property relevant for mapbox-styles.
    * Compare https://docs.mapbox.com/mapbox-gl-js/style-spec/#layout-symbol-icon-rotation-alignment
    */
-  rotationAlignment?: 'map' | 'viewport' | 'auto';
+  rotationAlignment?: Expression<'map' | 'viewport' | 'auto'>;
   /**
    * The Symbolizer size (pixels if sizeUnit is not defined).
    */
@@ -465,7 +469,7 @@ export interface IconSymbolizer extends BasePointSymbolizer {
    * Property relevant for mapbox-styles.
    * Compare https://docs.mapbox.com/mapbox-gl-js/style-spec/#layout-symbol-icon-text-fit
    */
-  textFit?: 'none' | 'width' | 'height' | 'both';
+  textFit?: Expression<'none' | 'width' | 'height' | 'both'>;
   /**
    * Property relevant for mapbox-styles.
    * Compare https://docs.mapbox.com/mapbox-gl-js/style-spec/#layout-symbol-icon-text-fit-padding
@@ -554,7 +558,7 @@ export interface LineSymbolizer extends BaseSymbolizer {
   /**
    * The Captype for the LineSymbolizer.
    */
-  cap?: CapType;
+  cap?: Expression<CapType>;
   /**
    * Encodes a dash pattern as an array of numbers. Odd-indexed numbers (first,
    * third, etc) determine the length in pixels to draw the line, and even-indexed
@@ -591,7 +595,7 @@ export interface LineSymbolizer extends BaseSymbolizer {
   /**
    * The JoinType for the LineSymbolizer.
    */
-  join?: JoinType;
+  join?: Expression<JoinType>;
   /**
    * Used to automatically convert miter joins to bevel joins for sharp angles.
    */
@@ -649,7 +653,7 @@ export type ColorMapType = 'ramp' | 'intervals' | 'values';
  * A ColorMap defines the color values for the pixels of a raster image.
  */
 export interface ColorMap {
-  type: ColorMapType;
+  type: Expression<ColorMapType>;
   colorMapEntries?: ColorMapEntry[];
   extended?: Expression<boolean>;
 }
@@ -658,7 +662,7 @@ export interface ColorMap {
  * A ContrastEnhancement defines how the contrast of image data should be enhanced.
  */
 export interface ContrastEnhancement {
-  enhancementType?: 'normalize' | 'histogram';
+  enhancementType?: Expression<'normalize' | 'histogram'>;
   gammaValue?: Expression<number>;
 }
 
@@ -720,14 +724,14 @@ export interface RasterSymbolizer {
   brightnessMax?: Expression<number>;
   saturation?: Expression<number>;
   contrast?: Expression<number>;
-  resampling?: 'linear' | 'nearest';
+  resampling?: Expression<'linear' | 'nearest'>;
   fadeDuration?: Expression<number>;
 }
 
 /**
  * All operators.
  */
-export type Symbolizer = PointSymbolizer | LineSymbolizer | FillSymbolizer | RasterSymbolizer;
+export type Symbolizer = PointSymbolizer | LineSymbolizer | FillSymbolizer | RasterSymbolizer | TextSymbolizer;
 
 /**
  * A Rule combines a specific amount of data (defined by a Filter and a
