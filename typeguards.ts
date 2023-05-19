@@ -250,6 +250,7 @@ export const isGeoStylerBooleanFunction = (got: any): got is GeoStylerBooleanFun
 
 export const isGeoStylerUnknownFunction = (got: any): got is GeoStylerUnknownFunction => {
   return [
+    'case',
     'property',
   ].includes(got?.name);
 };

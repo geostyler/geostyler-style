@@ -75,7 +75,7 @@ FstrEqualsIgnoreCase |
 FstrMatches |
 FstrStartsWith;
 
-export type GeoStylerUnknownFunction = Fproperty;
+export type GeoStylerUnknownFunction = Fcase | Fproperty;
 
 /**
  * The absolute value of the specified number value
@@ -165,6 +165,26 @@ export interface Fbetween extends FunctionCall<boolean> {
 };
 
 /**
+ * Textual representation of a switch-case function.
+ * argument[0] - argument[args.length - 2] are objects with 'case' and
+ * 'value'. argument[args.lenght -1] will be the default value.
+ *
+ * The value of the first object where its 'case' Expression resolves to true
+ * will be used.
+ * If no 'case' expression resolves to true the default value will be returned.
+ */
+export interface Fcase extends FunctionCall<PropertyType> {
+  name: 'case';
+  args: [
+    ...{
+      case: Expression<boolean>;
+      value: Expression<PropertyType>;
+    }[],
+    Expression<PropertyType>
+  ];
+};
+
+/**
  * Returns the smallest (closest to negative infinity) number value that is greater than or equal to
  * x and is equal to a mathematical integer.
  */
@@ -210,7 +230,7 @@ export interface Fdouble2bool extends FunctionCall<boolean> {
  * Resolves to true if both arguments are equal
  */
 export interface FequalTo extends FunctionCall<boolean> {
-  name: 'equalTo ';
+  name: 'equalTo';
   args: [
     Expression<PropertyType>,
     Expression<PropertyType>
@@ -305,7 +325,7 @@ export interface Fnot extends FunctionCall<boolean> {
  * Resolves to false if both arguments are equal
  */
 export interface FnotEqualTo extends FunctionCall<boolean> {
-  name: 'notEqualTo ';
+  name: 'notEqualTo';
   args: [
     Expression<PropertyType>,
     Expression<PropertyType>
