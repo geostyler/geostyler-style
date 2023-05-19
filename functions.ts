@@ -13,17 +13,20 @@ export type GeoStylerFunction = GeoStylerNumberFunction |
 export type GeoStylerNumberFunction = GeoStylerUnknownFunction |
 Fabs |
 Facos |
+Fadd |
 Fasin |
 Fatan |
 Fatan2 |
 Fceil |
 Fcos |
+Fdiv |
 Fexp |
 Ffloor |
 Flog |
 Fmax |
 Fmin |
 Fmodulo |
+Fmul |
 Fpi |
 Fpow |
 Frandom |
@@ -34,6 +37,7 @@ Fsqrt |
 FstrIndexOf |
 FstrLastIndexOf |
 FstrLength |
+Fsub |
 Ftan |
 FtoDegrees |
 FtoRadians;
@@ -91,6 +95,14 @@ export interface Facos extends FunctionCall<number> {
   args: [
     Expression<number>
   ];
+};
+
+/**
+ * Returns the sum of the arguments
+ */
+export interface Fadd extends FunctionCall<number> {
+  name: 'add';
+  args: Expression<number>[];
 };
 
 /**
@@ -169,6 +181,17 @@ export interface Fceil extends FunctionCall<number> {
 export interface Fcos extends FunctionCall<number> {
   name: 'cos';
   args: [
+    Expression<number>
+  ];
+};
+
+/**
+ * Returns the division of argument[0] by argument[1]
+ */
+export interface Fdiv extends FunctionCall<number> {
+  name: 'div';
+  args: [
+    Expression<number>,
     Expression<number>
   ];
 };
@@ -315,12 +338,23 @@ export interface Fmin extends FunctionCall<number> {
   args: Expression<number>[];
 };
 
+/**
+ * Returns the remainder after integer division of argument[0] by argument[1]
+ */
 export interface Fmodulo extends FunctionCall<number> {
   name: 'modulo';
   args: [
     Expression<number>,
     Expression<number>
   ];
+};
+
+/**
+ * Returns the product of the arguments
+ */
+export interface Fmul extends FunctionCall<number> {
+  name: 'mul';
+  args: Expression<number>[];
 };
 
 /**
@@ -627,6 +661,17 @@ export interface FstrTrim extends FunctionCall<string> {
   name: 'strTrim';
   args: [
     Expression<string>
+  ];
+};
+
+/**
+ * Returns the result of substractiing argument[1] from argument[0]
+ */
+export interface Fsub extends FunctionCall<number> {
+  name: 'sub';
+  args: [
+    Expression<number>,
+    Expression<number>
   ];
 };
 
