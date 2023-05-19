@@ -508,11 +508,11 @@ export interface FillSymbolizer extends BaseSymbolizer {
   /**
    * The Captype for the outLine.
    */
-  outlineCap?: CapType;
+  outlineCap?: Expression<CapType>;
   /**
    * The JoinType for the outLine.
    */
-  outlineJoin?: JoinType;
+  outlineJoin?: Expression<JoinType>;
   /**
    * Unit to use for the outlineWidth.
    */
