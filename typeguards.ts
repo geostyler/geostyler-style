@@ -224,9 +224,18 @@ export const isGeoStylerStringFunction = (got: any): got is GeoStylerStringFunct
 
 export const isGeoStylerBooleanFunction = (got: any): got is GeoStylerBooleanFunction => {
   return [
+    'all',
+    'any',
     'between',
     'double2bool',
+    'equalTo',
+    'greatherThan',
+    'greaterThanOrEqualTo',
     'in',
+    'lessThan',
+    'lessThanOrEqualTo',
+    'not',
+    'notEqualTo',
     'parseBoolean',
     'strEndsWith',
     'strEqualsIgnoreCase',

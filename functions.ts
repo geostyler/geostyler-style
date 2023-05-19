@@ -1,7 +1,8 @@
 /* eslint-disable @typescript-eslint/naming-convention */
 import {
   FunctionCall,
-  Expression
+  Expression,
+  PropertyType
 } from './style';
 
 export type GeoStylerFunction = GeoStylerNumberFunction |
@@ -52,9 +53,18 @@ FstrToUpperCase |
 FstrTrim;
 
 export type GeoStylerBooleanFunction = GeoStylerUnknownFunction |
+Fall |
+Fany |
 Fbetween |
 Fdouble2bool |
+FequalTo |
+FgreaterThan |
+FgreaterThanOrEqualTo |
 Fin |
+FlessThan |
+FlessThanOrEqualTo |
+Fnot |
+FnotEqualTo |
 FparseBoolean |
 FstrEndsWith |
 FstrEqualsIgnoreCase |
@@ -81,6 +91,22 @@ export interface Facos extends FunctionCall<number> {
   args: [
     Expression<number>
   ];
+};
+
+/**
+ * Resolves to true if all passed arguments resolve to true
+ */
+export interface Fall extends FunctionCall<boolean> {
+  name: 'all';
+  args: Expression<boolean>[];
+};
+
+/**
+ * Resolves to true if any of the passed arguments resolves to true
+ */
+export interface Fany extends FunctionCall<boolean> {
+  name: 'any';
+  args: Expression<boolean>[];
 };
 
 /**
@@ -158,6 +184,17 @@ export interface Fdouble2bool extends FunctionCall<boolean> {
 };
 
 /**
+ * Resolves to true if both arguments are equal
+ */
+export interface FequalTo extends FunctionCall<boolean> {
+  name: 'equalTo ';
+  args: [
+    Expression<PropertyType>,
+    Expression<PropertyType>
+  ];
+};
+
+/**
  * Returns Euler’s number e raised to the power of x
  */
 export interface Fexp extends FunctionCall<number> {
@@ -179,12 +216,77 @@ export interface Ffloor extends FunctionCall<number> {
 };
 
 /**
+ * Resolves to true if argument[0] is greater than argument[1]
+ */
+export interface FgreaterThan extends FunctionCall<boolean> {
+  name: 'greaterThan';
+  args: [
+    Expression<number>,
+    Expression<number>
+  ];
+};
+
+/**
+ * Resolves to true if argument[0] is greater than or equal to argument[1]
+ */
+export interface FgreaterThanOrEqualTo extends FunctionCall<boolean> {
+  name: 'greaterThanOrEqualTo';
+  args: [
+    Expression<number>,
+    Expression<number>
+  ];
+};
+
+/**
  * Returns true if arguments[0] is equal to one of the arguments[1], …, arguments[n] values. Use the
  * function name matching the number of arguments specified.
  */
 export interface Fin extends FunctionCall<boolean> {
   name: 'in';
   args: Expression<string>[];
+};
+
+/**
+ * Resolves to true if argument[0] is less than argument[1]
+ */
+export interface FlessThan extends FunctionCall<boolean> {
+  name: 'lessThan';
+  args: [
+    Expression<number>,
+    Expression<number>
+  ];
+};
+
+/**
+ * Resolves to true if argument[0] is less than or equal to argument[1]
+ */
+export interface FlessThanOrEqualTo extends FunctionCall<boolean> {
+  name: 'lessThanOrEqualTo';
+  args: [
+    Expression<number>,
+    Expression<number>
+  ];
+};
+
+/**
+ * Inverts the boolean value of argument[0]
+ */
+export interface Fnot extends FunctionCall<boolean> {
+  name: 'not';
+  args: [
+    Expression<boolean>
+  ];
+};
+
+/**
+ * Resolves to false if both arguments are equal
+ */
+export interface FnotEqualTo extends FunctionCall<boolean> {
+  name: 'notEqualTo ';
+  args: [
+    Expression<PropertyType>,
+    Expression<PropertyType>
+  ];
 };
 
 /**
