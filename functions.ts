@@ -164,10 +164,15 @@ export interface Fbetween extends FunctionCall<boolean> {
   ];
 };
 
+type FCaseParameter = {
+  case: Expression<boolean>;
+  value: Expression<PropertyType>;
+};
+
 /**
  * Textual representation of a switch-case function.
  * argument[0] - argument[args.length - 2] are objects with 'case' and
- * 'value'. argument[args.lenght -1] will be the default value.
+ * 'value'. argument[args.length -1] will be the default value.
  *
  * The value of the first object where its 'case' Expression resolves to true
  * will be used.
@@ -176,10 +181,7 @@ export interface Fbetween extends FunctionCall<boolean> {
 export interface Fcase extends FunctionCall<PropertyType> {
   name: 'case';
   args: [
-    ...{
-      case: Expression<boolean>;
-      value: Expression<PropertyType>;
-    }[],
+    ...FCaseParameter[],
     Expression<PropertyType>
   ];
 };
@@ -685,7 +687,7 @@ export interface FstrTrim extends FunctionCall<string> {
 };
 
 /**
- * Returns the result of substractiing argument[1] from argument[0]
+ * Returns the result of substracting argument[1] from argument[0]
  */
 export interface Fsub extends FunctionCall<number> {
   name: 'sub';
