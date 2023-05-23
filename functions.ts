@@ -1,7 +1,8 @@
 /* eslint-disable @typescript-eslint/naming-convention */
 import {
   FunctionCall,
-  Expression
+  Expression,
+  PropertyType
 } from './style';
 
 export type GeoStylerFunction = GeoStylerNumberFunction |
@@ -12,17 +13,20 @@ export type GeoStylerFunction = GeoStylerNumberFunction |
 export type GeoStylerNumberFunction = GeoStylerUnknownFunction |
 Fabs |
 Facos |
+Fadd |
 Fasin |
 Fatan |
 Fatan2 |
 Fceil |
 Fcos |
+Fdiv |
 Fexp |
 Ffloor |
 Flog |
 Fmax |
 Fmin |
 Fmodulo |
+Fmul |
 Fpi |
 Fpow |
 Frandom |
@@ -33,6 +37,7 @@ Fsqrt |
 FstrIndexOf |
 FstrLastIndexOf |
 FstrLength |
+Fsub |
 Ftan |
 FtoDegrees |
 FtoRadians;
@@ -52,16 +57,25 @@ FstrToUpperCase |
 FstrTrim;
 
 export type GeoStylerBooleanFunction = GeoStylerUnknownFunction |
+Fall |
+Fany |
 Fbetween |
 Fdouble2bool |
+FequalTo |
+FgreaterThan |
+FgreaterThanOrEqualTo |
 Fin |
+FlessThan |
+FlessThanOrEqualTo |
+Fnot |
+FnotEqualTo |
 FparseBoolean |
 FstrEndsWith |
 FstrEqualsIgnoreCase |
 FstrMatches |
 FstrStartsWith;
 
-export type GeoStylerUnknownFunction = Fproperty;
+export type GeoStylerUnknownFunction = Fcase | Fproperty;
 
 /**
  * The absolute value of the specified number value
@@ -81,6 +95,30 @@ export interface Facos extends FunctionCall<number> {
   args: [
     Expression<number>
   ];
+};
+
+/**
+ * Returns the sum of the arguments
+ */
+export interface Fadd extends FunctionCall<number> {
+  name: 'add';
+  args: Expression<number>[];
+};
+
+/**
+ * Resolves to true if all passed arguments resolve to true
+ */
+export interface Fall extends FunctionCall<boolean> {
+  name: 'all';
+  args: Expression<boolean>[];
+};
+
+/**
+ * Resolves to true if any of the passed arguments resolves to true
+ */
+export interface Fany extends FunctionCall<boolean> {
+  name: 'any';
+  args: Expression<boolean>[];
 };
 
 /**
@@ -126,6 +164,28 @@ export interface Fbetween extends FunctionCall<boolean> {
   ];
 };
 
+type FCaseParameter = {
+  case: Expression<boolean>;
+  value: Expression<PropertyType>;
+};
+
+/**
+ * Textual representation of a switch-case function.
+ * argument[0] - argument[args.length - 2] are objects with 'case' and
+ * 'value'. argument[args.length -1] will be the default value.
+ *
+ * The value of the first object where its 'case' Expression resolves to true
+ * will be used.
+ * If no 'case' expression resolves to true the default value will be returned.
+ */
+export interface Fcase extends FunctionCall<PropertyType> {
+  name: 'case';
+  args: [
+    ...FCaseParameter[],
+    Expression<PropertyType>
+  ];
+};
+
 /**
  * Returns the smallest (closest to negative infinity) number value that is greater than or equal to
  * x and is equal to a mathematical integer.
@@ -148,12 +208,34 @@ export interface Fcos extends FunctionCall<number> {
 };
 
 /**
+ * Returns the division of argument[0] by argument[1]
+ */
+export interface Fdiv extends FunctionCall<number> {
+  name: 'div';
+  args: [
+    Expression<number>,
+    Expression<number>
+  ];
+};
+
+/**
  * Returns true if x is zero, false otherwise
  */
 export interface Fdouble2bool extends FunctionCall<boolean> {
   name: 'double2bool';
   args: [
     Expression<number>
+  ];
+};
+
+/**
+ * Resolves to true if both arguments are equal
+ */
+export interface FequalTo extends FunctionCall<boolean> {
+  name: 'equalTo';
+  args: [
+    Expression<PropertyType>,
+    Expression<PropertyType>
   ];
 };
 
@@ -179,12 +261,77 @@ export interface Ffloor extends FunctionCall<number> {
 };
 
 /**
+ * Resolves to true if argument[0] is greater than argument[1]
+ */
+export interface FgreaterThan extends FunctionCall<boolean> {
+  name: 'greaterThan';
+  args: [
+    Expression<number>,
+    Expression<number>
+  ];
+};
+
+/**
+ * Resolves to true if argument[0] is greater than or equal to argument[1]
+ */
+export interface FgreaterThanOrEqualTo extends FunctionCall<boolean> {
+  name: 'greaterThanOrEqualTo';
+  args: [
+    Expression<number>,
+    Expression<number>
+  ];
+};
+
+/**
  * Returns true if arguments[0] is equal to one of the arguments[1], …, arguments[n] values. Use the
  * function name matching the number of arguments specified.
  */
 export interface Fin extends FunctionCall<boolean> {
   name: 'in';
   args: Expression<string>[];
+};
+
+/**
+ * Resolves to true if argument[0] is less than argument[1]
+ */
+export interface FlessThan extends FunctionCall<boolean> {
+  name: 'lessThan';
+  args: [
+    Expression<number>,
+    Expression<number>
+  ];
+};
+
+/**
+ * Resolves to true if argument[0] is less than or equal to argument[1]
+ */
+export interface FlessThanOrEqualTo extends FunctionCall<boolean> {
+  name: 'lessThanOrEqualTo';
+  args: [
+    Expression<number>,
+    Expression<number>
+  ];
+};
+
+/**
+ * Inverts the boolean value of argument[0]
+ */
+export interface Fnot extends FunctionCall<boolean> {
+  name: 'not';
+  args: [
+    Expression<boolean>
+  ];
+};
+
+/**
+ * Resolves to false if both arguments are equal
+ */
+export interface FnotEqualTo extends FunctionCall<boolean> {
+  name: 'notEqualTo';
+  args: [
+    Expression<PropertyType>,
+    Expression<PropertyType>
+  ];
 };
 
 /**
@@ -213,12 +360,23 @@ export interface Fmin extends FunctionCall<number> {
   args: Expression<number>[];
 };
 
+/**
+ * Returns the remainder after integer division of argument[0] by argument[1]
+ */
 export interface Fmodulo extends FunctionCall<number> {
   name: 'modulo';
   args: [
     Expression<number>,
     Expression<number>
   ];
+};
+
+/**
+ * Returns the product of the arguments
+ */
+export interface Fmul extends FunctionCall<number> {
+  name: 'mul';
+  args: Expression<number>[];
 };
 
 /**
@@ -525,6 +683,17 @@ export interface FstrTrim extends FunctionCall<string> {
   name: 'strTrim';
   args: [
     Expression<string>
+  ];
+};
+
+/**
+ * Returns the result of substracting argument[1] from argument[0]
+ */
+export interface Fsub extends FunctionCall<number> {
+  name: 'sub';
+  args: [
+    Expression<number>,
+    Expression<number>
   ];
 };
 

@@ -178,17 +178,20 @@ export const isGeoStylerNumberFunction = (got: any): got is GeoStylerNumberFunct
   return [
     'abs',
     'acos',
+    'add',
     'asin',
     'atan',
     'atan2',
     'ceil',
     'cos',
+    'div',
     'exp',
     'floor',
     'log',
     'max',
     'min',
     'modulo',
+    'mul',
     'pi',
     'pow',
     'random',
@@ -199,6 +202,7 @@ export const isGeoStylerNumberFunction = (got: any): got is GeoStylerNumberFunct
     'strIndexOf',
     'strLastIndexOf',
     'strLength',
+    'sub',
     'tan',
     'toDegrees',
     'toRadians'
@@ -224,9 +228,18 @@ export const isGeoStylerStringFunction = (got: any): got is GeoStylerStringFunct
 
 export const isGeoStylerBooleanFunction = (got: any): got is GeoStylerBooleanFunction => {
   return [
+    'all',
+    'any',
     'between',
     'double2bool',
+    'equalTo',
+    'greatherThan',
+    'greaterThanOrEqualTo',
     'in',
+    'lessThan',
+    'lessThanOrEqualTo',
+    'not',
+    'notEqualTo',
     'parseBoolean',
     'strEndsWith',
     'strEqualsIgnoreCase',
@@ -237,6 +250,7 @@ export const isGeoStylerBooleanFunction = (got: any): got is GeoStylerBooleanFun
 
 export const isGeoStylerUnknownFunction = (got: any): got is GeoStylerUnknownFunction => {
   return [
+    'case',
     'property',
   ].includes(got?.name);
 };
