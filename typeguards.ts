@@ -175,7 +175,7 @@ export const isGrayChannel = (got: any): got is GrayChannel => {
 
 // Functions
 export const isGeoStylerNumberFunction = (got: any): got is GeoStylerNumberFunction => {
-  return [
+  const functionNames: GeoStylerNumberFunction['name'][] = [
     'abs',
     'acos',
     'add',
@@ -206,11 +206,12 @@ export const isGeoStylerNumberFunction = (got: any): got is GeoStylerNumberFunct
     'tan',
     'toDegrees',
     'toRadians'
-  ].includes(got?.name);
+  ];
+  return functionNames.includes(got?.name);
 };
 
 export const isGeoStylerStringFunction = (got: any): got is GeoStylerStringFunction => {
-  return [
+  const functionNames: GeoStylerStringFunction['name'][] = [
     'numberFormat',
     'strAbbreviate',
     'strCapitalize',
@@ -223,17 +224,18 @@ export const isGeoStylerStringFunction = (got: any): got is GeoStylerStringFunct
     'strToLowerCase',
     'strToUpperCase',
     'strTrim'
-  ].includes(got?.name);
+  ];
+  return functionNames.includes(got?.name);
 };
 
 export const isGeoStylerBooleanFunction = (got: any): got is GeoStylerBooleanFunction => {
-  return [
+  const functionNames: GeoStylerBooleanFunction['name'][] = [
     'all',
     'any',
     'between',
     'double2bool',
     'equalTo',
-    'greatherThan',
+    'greaterThan',
     'greaterThanOrEqualTo',
     'in',
     'lessThan',
@@ -245,14 +247,16 @@ export const isGeoStylerBooleanFunction = (got: any): got is GeoStylerBooleanFun
     'strEqualsIgnoreCase',
     'strMatches',
     'strStartsWith'
-  ].includes(got?.name);
+  ];
+  return functionNames.includes(got?.name);
 };
 
 export const isGeoStylerUnknownFunction = (got: any): got is GeoStylerUnknownFunction => {
-  return [
+  const functionNames: GeoStylerUnknownFunction['name'][] = [
     'case',
     'property',
-  ].includes(got?.name);
+  ];
+  return functionNames.includes(got?.name);
 };
 
 export const isGeoStylerFunction = (got: any): got is GeoStylerFunction => {
