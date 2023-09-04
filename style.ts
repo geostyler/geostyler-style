@@ -750,6 +750,9 @@ export interface Rule {
 export interface Style {
   name: string;
   rules: Rule[];
+  metadata?: {
+    [key: string]: any;
+  };
 }
 
 /**
