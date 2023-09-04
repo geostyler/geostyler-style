@@ -1,6 +1,6 @@
 {
   "name": "geostyler-style",
-  "version": "7.3.1",
+  "version": "7.4.0",
   "description": "",
   "main": "dist/index.js",
   "types": "dist/index.d.ts",
