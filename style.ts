@@ -378,6 +378,10 @@ export interface TextSymbolizer extends BasePointSymbolizer {
    * on the font-family you are using.
    */
   fontWeight?: Expression<'normal' | 'bold'>;
+  /**
+   * Specifies label placement relative to its geometry.
+   */
+  placement?: Expression<'point' | 'line' | 'line-center'>;
 }
 
 /**
