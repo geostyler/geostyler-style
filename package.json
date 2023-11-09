@@ -20,26 +20,26 @@
     "prepublishOnly": "npm run build && npm run generate-schema"
   },
   "devDependencies": {
-    "@babel/core": "^7.21.4",
+    "@babel/core": "^7.23.3",
     "@babel/plugin-proposal-object-rest-spread": "^7.20.7",
-    "@babel/preset-env": "^7.21.4",
-    "@babel/preset-typescript": "^7.21.4",
-    "@terrestris/eslint-config-typescript": "^3.0.0",
-    "@types/jest": "^29.5.1",
-    "@typescript-eslint/eslint-plugin": "^5.22.0",
-    "@typescript-eslint/eslint-plugin-tslint": "^5.22.0",
-    "@typescript-eslint/parser": "^5.22.0",
-    "babel-jest": "^29.5.0",
-    "core-js": "^3.22.8",
-    "eslint": "^8.14.0",
-    "jest": "^29.5.0",
-    "np": "^7.6.1",
-    "typedoc": "^0.23.10",
+    "@babel/preset-env": "^7.23.3",
+    "@babel/preset-typescript": "^7.23.3",
+    "@terrestris/eslint-config-typescript": "^4.0.0",
+    "@types/jest": "^29.5.8",
+    "@typescript-eslint/eslint-plugin": "^6.10.0",
+    "@typescript-eslint/eslint-plugin-tslint": "^6.10.0",
+    "@typescript-eslint/parser": "^6.10.0",
+    "babel-jest": "^29.7.0",
+    "core-js": "^3.33.2",
+    "eslint": "^8.53.0",
+    "jest": "^29.7.0",
+    "np": "^8.0.4",
+    "typedoc": "^0.25.3",
     "typescript": "^4.6.4",
-    "typescript-json-schema": "^0.54.0"
+    "typescript-json-schema": "^0.62.0"
   },
   "engines": {
-    "node": ">=14.0.0",
+    "node": ">=16.0.0",
     "npm": ">=6.0.0"
   },
   "repository": {
@@ -53,7 +53,7 @@
   },
   "homepage": "https://github.com/geostyler/geostyler-style#readme",
   "dependencies": {
-    "@types/lodash": "^4.14.168",
+    "@types/lodash": "^4.14.201",
     "lodash": "^4.17.21"
   },
   "funding": "https://opencollective.com/geostyler"
