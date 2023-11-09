@@ -508,23 +508,27 @@
             },
             "type": "object"
         },
-        "CombinationFilter": {
-            "additionalItems": {
-                "$ref": "http://geostyler/geostyler-style.json#/definitions/Filter"
-            },
-            "description": "A CombinationFilter combines N Filters with a logical OR / AND operator.",
-            "items": [
-                {
-                    "description": "The possible Operators used for combination Filters.",
-                    "enum": [
-                        "&&",
-                        "||"
-                    ],
-                    "type": "string"
-                }
+        "CombinationOperator": {
+            "description": "The possible Operators used for combination Filters.",
+            "enum": [
+                "&&",
+                "||"
             ],
-            "minItems": 1,
-            "type": "array"
+            "type": "string"
+        },
+        "ComparisonOperator": {
+            "description": "The possible Operators used for comparison Filters.",
+            "enum": [
+                "!=",
+                "*=",
+                "<",
+                "<=",
+                "<=x<=",
+                "==",
+                ">",
+                ">="
+            ],
+            "type": "string"
         },
         "ContrastEnhancement": {
             "description": "A ContrastEnhancement defines how the contrast of image data should be enhanced.",
@@ -690,6 +694,71 @@
             },
             "type": "object"
         },
+        "Expression<boolean>": {
+            "anyOf": [
+                {
+                    "$ref": "http://geostyler/geostyler-style.json#/definitions/Fcase"
+                },
+                {
+                    "$ref": "http://geostyler/geostyler-style.json#/definitions/Fproperty"
+                },
+                {
+                    "$ref": "http://geostyler/geostyler-style.json#/definitions/Fall"
+                },
+                {
+                    "$ref": "http://geostyler/geostyler-style.json#/definitions/Fany"
+                },
+                {
+                    "$ref": "http://geostyler/geostyler-style.json#/definitions/Fbetween"
+                },
+                {
+                    "$ref": "http://geostyler/geostyler-style.json#/definitions/Fdouble2bool"
+                },
+                {
+                    "$ref": "http://geostyler/geostyler-style.json#/definitions/FequalTo"
+                },
+                {
+                    "$ref": "http://geostyler/geostyler-style.json#/definitions/FgreaterThan"
+                },
+                {
+                    "$ref": "http://geostyler/geostyler-style.json#/definitions/FgreaterThanOrEqualTo"
+                },
+                {
+                    "$ref": "http://geostyler/geostyler-style.json#/definitions/Fin"
+                },
+                {
+                    "$ref": "http://geostyler/geostyler-style.json#/definitions/FlessThan"
+                },
+                {
+                    "$ref": "http://geostyler/geostyler-style.json#/definitions/FlessThanOrEqualTo"
+                },
+                {
+                    "$ref": "http://geostyler/geostyler-style.json#/definitions/Fnot"
+                },
+                {
+                    "$ref": "http://geostyler/geostyler-style.json#/definitions/FnotEqualTo"
+                },
+                {
+                    "$ref": "http://geostyler/geostyler-style.json#/definitions/FparseBoolean"
+                },
+                {
+                    "$ref": "http://geostyler/geostyler-style.json#/definitions/FstrEndsWith"
+                },
+                {
+                    "$ref": "http://geostyler/geostyler-style.json#/definitions/FstrEqualsIgnoreCase"
+                },
+                {
+                    "$ref": "http://geostyler/geostyler-style.json#/definitions/FstrMatches"
+                },
+                {
+                    "$ref": "http://geostyler/geostyler-style.json#/definitions/FstrStartsWith"
+                },
+                {
+                    "type": "boolean"
+                }
+            ],
+            "description": "Expressions can be a literal value, a property name or a function call."
+        },
         "Fabs": {
             "description": "The absolute value of the specified number value",
             "properties": {
@@ -804,9 +873,7 @@
                     "type": "array"
                 },
                 "name": {
-                    "enum": [
-                        "abs"
-                    ],
+                    "const": "abs",
                     "type": "string"
                 }
             },
@@ -926,9 +993,7 @@
                     "type": "array"
                 },
                 "name": {
-                    "enum": [
-                        "acos"
-                    ],
+                    "const": "acos",
                     "type": "string"
                 }
             },
@@ -1044,9 +1109,7 @@
                     "type": "array"
                 },
                 "name": {
-                    "enum": [
-                        "add"
-                    ],
+                    "const": "add",
                     "type": "string"
                 }
             },
@@ -1057,75 +1120,12 @@
             "properties": {
                 "args": {
                     "items": {
-                        "anyOf": [
-                            {
-                                "$ref": "http://geostyler/geostyler-style.json#/definitions/Fcase"
-                            },
-                            {
-                                "$ref": "http://geostyler/geostyler-style.json#/definitions/Fproperty"
-                            },
-                            {
-                                "$ref": "http://geostyler/geostyler-style.json#/definitions/Fall"
-                            },
-                            {
-                                "$ref": "http://geostyler/geostyler-style.json#/definitions/Fany"
-                            },
-                            {
-                                "$ref": "http://geostyler/geostyler-style.json#/definitions/Fbetween"
-                            },
-                            {
-                                "$ref": "http://geostyler/geostyler-style.json#/definitions/Fdouble2bool"
-                            },
-                            {
-                                "$ref": "http://geostyler/geostyler-style.json#/definitions/FequalTo"
-                            },
-                            {
-                                "$ref": "http://geostyler/geostyler-style.json#/definitions/FgreaterThan"
-                            },
-                            {
-                                "$ref": "http://geostyler/geostyler-style.json#/definitions/FgreaterThanOrEqualTo"
-                            },
-                            {
-                                "$ref": "http://geostyler/geostyler-style.json#/definitions/Fin"
-                            },
-                            {
-                                "$ref": "http://geostyler/geostyler-style.json#/definitions/FlessThan"
-                            },
-                            {
-                                "$ref": "http://geostyler/geostyler-style.json#/definitions/FlessThanOrEqualTo"
-                            },
-                            {
-                                "$ref": "http://geostyler/geostyler-style.json#/definitions/Fnot"
-                            },
-                            {
-                                "$ref": "http://geostyler/geostyler-style.json#/definitions/FnotEqualTo"
-                            },
-                            {
-                                "$ref": "http://geostyler/geostyler-style.json#/definitions/FparseBoolean"
-                            },
-                            {
-                                "$ref": "http://geostyler/geostyler-style.json#/definitions/FstrEndsWith"
-                            },
-                            {
-                                "$ref": "http://geostyler/geostyler-style.json#/definitions/FstrEqualsIgnoreCase"
-                            },
-                            {
-                                "$ref": "http://geostyler/geostyler-style.json#/definitions/FstrMatches"
-                            },
-                            {
-                                "$ref": "http://geostyler/geostyler-style.json#/definitions/FstrStartsWith"
-                            },
-                            {
-                                "type": "boolean"
-                            }
-                        ]
+                        "$ref": "http://geostyler/geostyler-style.json#/definitions/Expression<boolean>"
                     },
                     "type": "array"
                 },
                 "name": {
-                    "enum": [
-                        "all"
-                    ],
+                    "const": "all",
                     "type": "string"
                 }
             },
@@ -1136,75 +1136,12 @@
             "properties": {
                 "args": {
                     "items": {
-                        "anyOf": [
-                            {
-                                "$ref": "http://geostyler/geostyler-style.json#/definitions/Fcase"
-                            },
-                            {
-                                "$ref": "http://geostyler/geostyler-style.json#/definitions/Fproperty"
-                            },
-                            {
-                                "$ref": "http://geostyler/geostyler-style.json#/definitions/Fall"
-                            },
-                            {
-                                "$ref": "http://geostyler/geostyler-style.json#/definitions/Fany"
-                            },
-                            {
-                                "$ref": "http://geostyler/geostyler-style.json#/definitions/Fbetween"
-                            },
-                            {
-                                "$ref": "http://geostyler/geostyler-style.json#/definitions/Fdouble2bool"
-                            },
-                            {
-                                "$ref": "http://geostyler/geostyler-style.json#/definitions/FequalTo"
-                            },
-                            {
-                                "$ref": "http://geostyler/geostyler-style.json#/definitions/FgreaterThan"
-                            },
-                            {
-                                "$ref": "http://geostyler/geostyler-style.json#/definitions/FgreaterThanOrEqualTo"
-                            },
-                            {
-                                "$ref": "http://geostyler/geostyler-style.json#/definitions/Fin"
-                            },
-                            {
-                                "$ref": "http://geostyler/geostyler-style.json#/definitions/FlessThan"
-                            },
-                            {
-                                "$ref": "http://geostyler/geostyler-style.json#/definitions/FlessThanOrEqualTo"
-                            },
-                            {
-                                "$ref": "http://geostyler/geostyler-style.json#/definitions/Fnot"
-                            },
-                            {
-                                "$ref": "http://geostyler/geostyler-style.json#/definitions/FnotEqualTo"
-                            },
-                            {
-                                "$ref": "http://geostyler/geostyler-style.json#/definitions/FparseBoolean"
-                            },
-                            {
-                                "$ref": "http://geostyler/geostyler-style.json#/definitions/FstrEndsWith"
-                            },
-                            {
-                                "$ref": "http://geostyler/geostyler-style.json#/definitions/FstrEqualsIgnoreCase"
-                            },
-                            {
-                                "$ref": "http://geostyler/geostyler-style.json#/definitions/FstrMatches"
-                            },
-                            {
-                                "$ref": "http://geostyler/geostyler-style.json#/definitions/FstrStartsWith"
-                            },
-                            {
-                                "type": "boolean"
-                            }
-                        ]
+                        "$ref": "http://geostyler/geostyler-style.json#/definitions/Expression<boolean>"
                     },
                     "type": "array"
                 },
                 "name": {
-                    "enum": [
-                        "any"
-                    ],
+                    "const": "any",
                     "type": "string"
                 }
             },
@@ -1324,9 +1261,7 @@
                     "type": "array"
                 },
                 "name": {
-                    "enum": [
-                        "asin"
-                    ],
+                    "const": "asin",
                     "type": "string"
                 }
             },
@@ -1446,9 +1381,7 @@
                     "type": "array"
                 },
                 "name": {
-                    "enum": [
-                        "atan"
-                    ],
+                    "const": "atan",
                     "type": "string"
                 }
             },
@@ -1671,9 +1604,7 @@
                     "type": "array"
                 },
                 "name": {
-                    "enum": [
-                        "atan2"
-                    ],
+                    "const": "atan2",
                     "type": "string"
                 }
             },
@@ -1999,9 +1930,7 @@
                     "type": "array"
                 },
                 "name": {
-                    "enum": [
-                        "between"
-                    ],
+                    "const": "between",
                     "type": "string"
                 }
             },
@@ -2016,69 +1945,7 @@
                         {
                             "properties": {
                                 "case": {
-                                    "anyOf": [
-                                        {
-                                            "$ref": "http://geostyler/geostyler-style.json#/definitions/Fcase"
-                                        },
-                                        {
-                                            "$ref": "http://geostyler/geostyler-style.json#/definitions/Fproperty"
-                                        },
-                                        {
-                                            "$ref": "http://geostyler/geostyler-style.json#/definitions/Fall"
-                                        },
-                                        {
-                                            "$ref": "http://geostyler/geostyler-style.json#/definitions/Fany"
-                                        },
-                                        {
-                                            "$ref": "http://geostyler/geostyler-style.json#/definitions/Fbetween"
-                                        },
-                                        {
-                                            "$ref": "http://geostyler/geostyler-style.json#/definitions/Fdouble2bool"
-                                        },
-                                        {
-                                            "$ref": "http://geostyler/geostyler-style.json#/definitions/FequalTo"
-                                        },
-                                        {
-                                            "$ref": "http://geostyler/geostyler-style.json#/definitions/FgreaterThan"
-                                        },
-                                        {
-                                            "$ref": "http://geostyler/geostyler-style.json#/definitions/FgreaterThanOrEqualTo"
-                                        },
-                                        {
-                                            "$ref": "http://geostyler/geostyler-style.json#/definitions/Fin"
-                                        },
-                                        {
-                                            "$ref": "http://geostyler/geostyler-style.json#/definitions/FlessThan"
-                                        },
-                                        {
-                                            "$ref": "http://geostyler/geostyler-style.json#/definitions/FlessThanOrEqualTo"
-                                        },
-                                        {
-                                            "$ref": "http://geostyler/geostyler-style.json#/definitions/Fnot"
-                                        },
-                                        {
-                                            "$ref": "http://geostyler/geostyler-style.json#/definitions/FnotEqualTo"
-                                        },
-                                        {
-                                            "$ref": "http://geostyler/geostyler-style.json#/definitions/FparseBoolean"
-                                        },
-                                        {
-                                            "$ref": "http://geostyler/geostyler-style.json#/definitions/FstrEndsWith"
-                                        },
-                                        {
-                                            "$ref": "http://geostyler/geostyler-style.json#/definitions/FstrEqualsIgnoreCase"
-                                        },
-                                        {
-                                            "$ref": "http://geostyler/geostyler-style.json#/definitions/FstrMatches"
-                                        },
-                                        {
-                                            "$ref": "http://geostyler/geostyler-style.json#/definitions/FstrStartsWith"
-                                        },
-                                        {
-                                            "type": "boolean"
-                                        }
-                                    ],
-                                    "description": "Expressions can be a literal value, a property name or a function call."
+                                    "$ref": "http://geostyler/geostyler-style.json#/definitions/Expression<boolean>"
                                 },
                                 "value": {
                                     "description": "Expressions can be a literal value, a property name or a function call."
@@ -2091,9 +1958,7 @@
                     "type": "array"
                 },
                 "name": {
-                    "enum": [
-                        "case"
-                    ],
+                    "const": "case",
                     "type": "string"
                 }
             },
@@ -2213,9 +2078,7 @@
                     "type": "array"
                 },
                 "name": {
-                    "enum": [
-                        "ceil"
-                    ],
+                    "const": "ceil",
                     "type": "string"
                 }
             },
@@ -2335,9 +2198,7 @@
                     "type": "array"
                 },
                 "name": {
-                    "enum": [
-                        "cos"
-                    ],
+                    "const": "cos",
                     "type": "string"
                 }
             },
@@ -2560,9 +2421,7 @@
                     "type": "array"
                 },
                 "name": {
-                    "enum": [
-                        "div"
-                    ],
+                    "const": "div",
                     "type": "string"
                 }
             },
@@ -2682,9 +2541,7 @@
                     "type": "array"
                 },
                 "name": {
-                    "enum": [
-                        "double2bool"
-                    ],
+                    "const": "double2bool",
                     "type": "string"
                 }
             },
@@ -2703,9 +2560,7 @@
                     "type": "array"
                 },
                 "name": {
-                    "enum": [
-                        "equalTo"
-                    ],
+                    "const": "equalTo",
                     "type": "string"
                 }
             },
@@ -2825,9 +2680,7 @@
                     "type": "array"
                 },
                 "name": {
-                    "enum": [
-                        "exp"
-                    ],
+                    "const": "exp",
                     "type": "string"
                 }
             },
@@ -2947,9 +2800,7 @@
                     "type": "array"
                 },
                 "name": {
-                    "enum": [
-                        "floor"
-                    ],
+                    "const": "floor",
                     "type": "string"
                 }
             },
@@ -3172,9 +3023,7 @@
                     "type": "array"
                 },
                 "name": {
-                    "enum": [
-                        "greaterThan"
-                    ],
+                    "const": "greaterThan",
                     "type": "string"
                 }
             },
@@ -3397,9 +3246,7 @@
                     "type": "array"
                 },
                 "name": {
-                    "enum": [
-                        "greaterThanOrEqualTo"
-                    ],
+                    "const": "greaterThanOrEqualTo",
                     "type": "string"
                 }
             },
@@ -3642,10 +3489,8 @@
                     "description": "Renders the fill of the polygon with a repeated pattern of PointSymbolizer."
                 },
                 "kind": {
+                    "const": "Fill",
                     "description": "Describes the type of the kind of the Symbolizer.",
-                    "enum": [
-                        "Fill"
-                    ],
                     "type": "string"
                 },
                 "opacity": {
@@ -4366,9 +4211,7 @@
                     "description": "A Filter that checks if a property is in a range of two values (inclusive).",
                     "items": [
                         {
-                            "enum": [
-                                "<=x<="
-                            ],
+                            "const": "<=x<=",
                             "type": "string"
                         },
                         {
@@ -4634,18 +4477,7 @@
                 {
                     "items": [
                         {
-                            "description": "The possible Operators used for comparison Filters.",
-                            "enum": [
-                                "!=",
-                                "*=",
-                                "<",
-                                "<=",
-                                "<=x<=",
-                                "==",
-                                ">",
-                                ">="
-                            ],
-                            "type": "string"
+                            "$ref": "http://geostyler/geostyler-style.json#/definitions/ComparisonOperator"
                         },
                         {
                             "anyOf": [
@@ -5043,24 +4875,20 @@
                     "type": "array"
                 },
                 {
-                    "$ref": "http://geostyler/geostyler-style.json#/definitions/CombinationFilter",
-                    "description": "A CombinationFilter combines N Filters with a logical OR / AND operator."
+                    "$ref": "http://geostyler/geostyler-style.json#/definitions/NegationFilter",
+                    "description": "A NegationFilter negates a given Filter."
                 },
                 {
-                    "description": "A NegationFilter negates a given Filter.",
+                    "additionalItems": {
+                        "$ref": "http://geostyler/geostyler-style.json#/definitions/Filter"
+                    },
+                    "description": "A CombinationFilter combines N Filters with a logical OR / AND operator.",
                     "items": [
                         {
-                            "enum": [
-                                "!"
-                            ],
-                            "type": "string"
-                        },
-                        {
-                            "$ref": "http://geostyler/geostyler-style.json#/definitions/Filter"
+                            "$ref": "http://geostyler/geostyler-style.json#/definitions/CombinationOperator"
                         }
                     ],
-                    "maxItems": 2,
-                    "minItems": 2,
+                    "minItems": 1,
                     "type": "array"
                 },
                 {
@@ -5124,9 +4952,7 @@
                     "type": "array"
                 },
                 "name": {
-                    "enum": [
-                        "in"
-                    ],
+                    "const": "in",
                     "type": "string"
                 }
             },
@@ -5349,9 +5175,7 @@
                     "type": "array"
                 },
                 "name": {
-                    "enum": [
-                        "lessThan"
-                    ],
+                    "const": "lessThan",
                     "type": "string"
                 }
             },
@@ -5574,9 +5398,7 @@
                     "type": "array"
                 },
                 "name": {
-                    "enum": [
-                        "lessThanOrEqualTo"
-                    ],
+                    "const": "lessThanOrEqualTo",
                     "type": "string"
                 }
             },
@@ -5696,9 +5518,7 @@
                     "type": "array"
                 },
                 "name": {
-                    "enum": [
-                        "log"
-                    ],
+                    "const": "log",
                     "type": "string"
                 }
             },
@@ -5814,9 +5634,7 @@
                     "type": "array"
                 },
                 "name": {
-                    "enum": [
-                        "max"
-                    ],
+                    "const": "max",
                     "type": "string"
                 }
             },
@@ -5932,9 +5750,7 @@
                     "type": "array"
                 },
                 "name": {
-                    "enum": [
-                        "min"
-                    ],
+                    "const": "min",
                     "type": "string"
                 }
             },
@@ -6157,9 +5973,7 @@
                     "type": "array"
                 },
                 "name": {
-                    "enum": [
-                        "modulo"
-                    ],
+                    "const": "modulo",
                     "type": "string"
                 }
             },
@@ -6275,9 +6089,7 @@
                     "type": "array"
                 },
                 "name": {
-                    "enum": [
-                        "mul"
-                    ],
+                    "const": "mul",
                     "type": "string"
                 }
             },
@@ -6289,68 +6101,7 @@
                 "args": {
                     "items": [
                         {
-                            "anyOf": [
-                                {
-                                    "$ref": "http://geostyler/geostyler-style.json#/definitions/Fcase"
-                                },
-                                {
-                                    "$ref": "http://geostyler/geostyler-style.json#/definitions/Fproperty"
-                                },
-                                {
-                                    "$ref": "http://geostyler/geostyler-style.json#/definitions/Fall"
-                                },
-                                {
-                                    "$ref": "http://geostyler/geostyler-style.json#/definitions/Fany"
-                                },
-                                {
-                                    "$ref": "http://geostyler/geostyler-style.json#/definitions/Fbetween"
-                                },
-                                {
-                                    "$ref": "http://geostyler/geostyler-style.json#/definitions/Fdouble2bool"
-                                },
-                                {
-                                    "$ref": "http://geostyler/geostyler-style.json#/definitions/FequalTo"
-                                },
-                                {
-                                    "$ref": "http://geostyler/geostyler-style.json#/definitions/FgreaterThan"
-                                },
-                                {
-                                    "$ref": "http://geostyler/geostyler-style.json#/definitions/FgreaterThanOrEqualTo"
-                                },
-                                {
-                                    "$ref": "http://geostyler/geostyler-style.json#/definitions/Fin"
-                                },
-                                {
-                                    "$ref": "http://geostyler/geostyler-style.json#/definitions/FlessThan"
-                                },
-                                {
-                                    "$ref": "http://geostyler/geostyler-style.json#/definitions/FlessThanOrEqualTo"
-                                },
-                                {
-                                    "$ref": "http://geostyler/geostyler-style.json#/definitions/Fnot"
-                                },
-                                {
-                                    "$ref": "http://geostyler/geostyler-style.json#/definitions/FnotEqualTo"
-                                },
-                                {
-                                    "$ref": "http://geostyler/geostyler-style.json#/definitions/FparseBoolean"
-                                },
-                                {
-                                    "$ref": "http://geostyler/geostyler-style.json#/definitions/FstrEndsWith"
-                                },
-                                {
-                                    "$ref": "http://geostyler/geostyler-style.json#/definitions/FstrEqualsIgnoreCase"
-                                },
-                                {
-                                    "$ref": "http://geostyler/geostyler-style.json#/definitions/FstrMatches"
-                                },
-                                {
-                                    "$ref": "http://geostyler/geostyler-style.json#/definitions/FstrStartsWith"
-                                },
-                                {
-                                    "type": "boolean"
-                                }
-                            ]
+                            "$ref": "http://geostyler/geostyler-style.json#/definitions/Expression<boolean>"
                         }
                     ],
                     "maxItems": 1,
@@ -6358,9 +6109,7 @@
                     "type": "array"
                 },
                 "name": {
-                    "enum": [
-                        "not"
-                    ],
+                    "const": "not",
                     "type": "string"
                 }
             },
@@ -6379,9 +6128,7 @@
                     "type": "array"
                 },
                 "name": {
-                    "enum": [
-                        "notEqualTo"
-                    ],
+                    "const": "notEqualTo",
                     "type": "string"
                 }
             },
@@ -6599,9 +6346,7 @@
                     "type": "array"
                 },
                 "name": {
-                    "enum": [
-                        "numberFormat"
-                    ],
+                    "const": "numberFormat",
                     "type": "string"
                 }
             },
@@ -6667,9 +6412,7 @@
                     "type": "array"
                 },
                 "name": {
-                    "enum": [
-                        "parseBoolean"
-                    ],
+                    "const": "parseBoolean",
                     "type": "string"
                 }
             },
@@ -6679,9 +6422,7 @@
             "description": "Returns an approximation of pi, the ratio of the circumference of a circle to its diameter",
             "properties": {
                 "name": {
-                    "enum": [
-                        "pi"
-                    ],
+                    "const": "pi",
                     "type": "string"
                 }
             },
@@ -6904,9 +6645,7 @@
                     "type": "array"
                 },
                 "name": {
-                    "enum": [
-                        "pow"
-                    ],
+                    "const": "pow",
                     "type": "string"
                 }
             },
@@ -6972,9 +6711,7 @@
                     "type": "array"
                 },
                 "name": {
-                    "enum": [
-                        "property"
-                    ],
+                    "const": "property",
                     "type": "string"
                 }
             },
@@ -6984,9 +6721,7 @@
             "description": "Returns a Double value with a positive sign, greater than or equal to 0.0 and less than 1.0.",
             "properties": {
                 "name": {
-                    "enum": [
-                        "random"
-                    ],
+                    "const": "random",
                     "type": "string"
                 }
             },
@@ -7106,9 +6841,7 @@
                     "type": "array"
                 },
                 "name": {
-                    "enum": [
-                        "rint"
-                    ],
+                    "const": "rint",
                     "type": "string"
                 }
             },
@@ -7228,9 +6961,7 @@
                     "type": "array"
                 },
                 "name": {
-                    "enum": [
-                        "round"
-                    ],
+                    "const": "round",
                     "type": "string"
                 }
             },
@@ -7350,9 +7081,7 @@
                     "type": "array"
                 },
                 "name": {
-                    "enum": [
-                        "sin"
-                    ],
+                    "const": "sin",
                     "type": "string"
                 }
             },
@@ -7472,9 +7201,7 @@
                     "type": "array"
                 },
                 "name": {
-                    "enum": [
-                        "sqrt"
-                    ],
+                    "const": "sqrt",
                     "type": "string"
                 }
             },
@@ -7795,9 +7522,7 @@
                     "type": "array"
                 },
                 "name": {
-                    "enum": [
-                        "strAbbreviate"
-                    ],
+                    "const": "strAbbreviate",
                     "type": "string"
                 }
             },
@@ -7863,9 +7588,7 @@
                     "type": "array"
                 },
                 "name": {
-                    "enum": [
-                        "strCapitalize"
-                    ],
+                    "const": "strCapitalize",
                     "type": "string"
                 }
             },
@@ -7927,9 +7650,7 @@
                     "type": "array"
                 },
                 "name": {
-                    "enum": [
-                        "strConcat"
-                    ],
+                    "const": "strConcat",
                     "type": "string"
                 }
             },
@@ -8044,9 +7765,7 @@
                     "type": "array"
                 },
                 "name": {
-                    "enum": [
-                        "strDefaultIfBlank"
-                    ],
+                    "const": "strDefaultIfBlank",
                     "type": "string"
                 }
             },
@@ -8161,9 +7880,7 @@
                     "type": "array"
                 },
                 "name": {
-                    "enum": [
-                        "strEndsWith"
-                    ],
+                    "const": "strEndsWith",
                     "type": "string"
                 }
             },
@@ -8278,9 +7995,7 @@
                     "type": "array"
                 },
                 "name": {
-                    "enum": [
-                        "strEqualsIgnoreCase"
-                    ],
+                    "const": "strEqualsIgnoreCase",
                     "type": "string"
                 }
             },
@@ -8395,9 +8110,7 @@
                     "type": "array"
                 },
                 "name": {
-                    "enum": [
-                        "strIndexOf"
-                    ],
+                    "const": "strIndexOf",
                     "type": "string"
                 }
             },
@@ -8512,9 +8225,7 @@
                     "type": "array"
                 },
                 "name": {
-                    "enum": [
-                        "strLastIndexOf"
-                    ],
+                    "const": "strLastIndexOf",
                     "type": "string"
                 }
             },
@@ -8580,9 +8291,7 @@
                     "type": "array"
                 },
                 "name": {
-                    "enum": [
-                        "strLength"
-                    ],
+                    "const": "strLength",
                     "type": "string"
                 }
             },
@@ -8697,9 +8406,7 @@
                     "type": "array"
                 },
                 "name": {
-                    "enum": [
-                        "strMatches"
-                    ],
+                    "const": "strMatches",
                     "type": "string"
                 }
             },
@@ -8858,68 +8565,7 @@
                             ]
                         },
                         {
-                            "anyOf": [
-                                {
-                                    "$ref": "http://geostyler/geostyler-style.json#/definitions/Fcase"
-                                },
-                                {
-                                    "$ref": "http://geostyler/geostyler-style.json#/definitions/Fproperty"
-                                },
-                                {
-                                    "$ref": "http://geostyler/geostyler-style.json#/definitions/Fall"
-                                },
-                                {
-                                    "$ref": "http://geostyler/geostyler-style.json#/definitions/Fany"
-                                },
-                                {
-                                    "$ref": "http://geostyler/geostyler-style.json#/definitions/Fbetween"
-                                },
-                                {
-                                    "$ref": "http://geostyler/geostyler-style.json#/definitions/Fdouble2bool"
-                                },
-                                {
-                                    "$ref": "http://geostyler/geostyler-style.json#/definitions/FequalTo"
-                                },
-                                {
-                                    "$ref": "http://geostyler/geostyler-style.json#/definitions/FgreaterThan"
-                                },
-                                {
-                                    "$ref": "http://geostyler/geostyler-style.json#/definitions/FgreaterThanOrEqualTo"
-                                },
-                                {
-                                    "$ref": "http://geostyler/geostyler-style.json#/definitions/Fin"
-                                },
-                                {
-                                    "$ref": "http://geostyler/geostyler-style.json#/definitions/FlessThan"
-                                },
-                                {
-                                    "$ref": "http://geostyler/geostyler-style.json#/definitions/FlessThanOrEqualTo"
-                                },
-                                {
-                                    "$ref": "http://geostyler/geostyler-style.json#/definitions/Fnot"
-                                },
-                                {
-                                    "$ref": "http://geostyler/geostyler-style.json#/definitions/FnotEqualTo"
-                                },
-                                {
-                                    "$ref": "http://geostyler/geostyler-style.json#/definitions/FparseBoolean"
-                                },
-                                {
-                                    "$ref": "http://geostyler/geostyler-style.json#/definitions/FstrEndsWith"
-                                },
-                                {
-                                    "$ref": "http://geostyler/geostyler-style.json#/definitions/FstrEqualsIgnoreCase"
-                                },
-                                {
-                                    "$ref": "http://geostyler/geostyler-style.json#/definitions/FstrMatches"
-                                },
-                                {
-                                    "$ref": "http://geostyler/geostyler-style.json#/definitions/FstrStartsWith"
-                                },
-                                {
-                                    "type": "boolean"
-                                }
-                            ]
+                            "$ref": "http://geostyler/geostyler-style.json#/definitions/Expression<boolean>"
                         }
                     ],
                     "maxItems": 4,
@@ -8927,9 +8573,7 @@
                     "type": "array"
                 },
                 "name": {
-                    "enum": [
-                        "strReplace"
-                    ],
+                    "const": "strReplace",
                     "type": "string"
                 }
             },
@@ -9044,9 +8688,7 @@
                     "type": "array"
                 },
                 "name": {
-                    "enum": [
-                        "strStartsWith"
-                    ],
+                    "const": "strStartsWith",
                     "type": "string"
                 }
             },
@@ -9112,9 +8754,7 @@
                     "type": "array"
                 },
                 "name": {
-                    "enum": [
-                        "strStripAccents"
-                    ],
+                    "const": "strStripAccents",
                     "type": "string"
                 }
             },
@@ -9386,9 +9026,7 @@
                     "type": "array"
                 },
                 "name": {
-                    "enum": [
-                        "strSubstring"
-                    ],
+                    "const": "strSubstring",
                     "type": "string"
                 }
             },
@@ -9557,9 +9195,7 @@
                     "type": "array"
                 },
                 "name": {
-                    "enum": [
-                        "strSubstringStart"
-                    ],
+                    "const": "strSubstringStart",
                     "type": "string"
                 }
             },
@@ -9625,9 +9261,7 @@
                     "type": "array"
                 },
                 "name": {
-                    "enum": [
-                        "strToLowerCase"
-                    ],
+                    "const": "strToLowerCase",
                     "type": "string"
                 }
             },
@@ -9693,9 +9327,7 @@
                     "type": "array"
                 },
                 "name": {
-                    "enum": [
-                        "strToUpperCase"
-                    ],
+                    "const": "strToUpperCase",
                     "type": "string"
                 }
             },
@@ -9761,9 +9393,7 @@
                     "type": "array"
                 },
                 "name": {
-                    "enum": [
-                        "strTrim"
-                    ],
+                    "const": "strTrim",
                     "type": "string"
                 }
             },
@@ -9986,9 +9616,7 @@
                     "type": "array"
                 },
                 "name": {
-                    "enum": [
-                        "sub"
-                    ],
+                    "const": "sub",
                     "type": "string"
                 }
             },
@@ -10108,9 +9736,7 @@
                     "type": "array"
                 },
                 "name": {
-                    "enum": [
-                        "tan"
-                    ],
+                    "const": "tan",
                     "type": "string"
                 }
             },
@@ -10230,9 +9856,7 @@
                     "type": "array"
                 },
                 "name": {
-                    "enum": [
-                        "toDegrees"
-                    ],
+                    "const": "toDegrees",
                     "type": "string"
                 }
             },
@@ -10352,9 +9976,7 @@
                     "type": "array"
                 },
                 "name": {
-                    "enum": [
-                        "toRadians"
-                    ],
+                    "const": "toRadians",
                     "type": "string"
                 }
             },
@@ -11156,10 +10778,8 @@
                     "description": "If true, the icon will be kept upright."
                 },
                 "kind": {
+                    "const": "Icon",
                     "description": "Describes the type of the kind of the Symbolizer.",
-                    "enum": [
-                        "Icon"
-                    ],
                     "type": "string"
                 },
                 "offset": {
@@ -13197,10 +12817,8 @@
                     "description": "The JoinType for the LineSymbolizer."
                 },
                 "kind": {
+                    "const": "Line",
                     "description": "Describes the type of the kind of the Symbolizer.",
-                    "enum": [
-                        "Line"
-                    ],
                     "type": "string"
                 },
                 "miterLimit": {
@@ -14239,10 +13857,8 @@
                     "description": "The opacity of the fill. A value between 0 and 1.\n0 is none opaque and 1 is full opaque."
                 },
                 "kind": {
+                    "const": "Mark",
                     "description": "Describes the type of the kind of the Symbolizer.",
-                    "enum": [
-                        "Mark"
-                    ],
                     "type": "string"
                 },
                 "offset": {
@@ -15273,34 +14889,7 @@
                     "description": "Defines whether the Symbolizer should be visibile or not."
                 },
                 "wellKnownName": {
-                    "anyOf": [
-                        {
-                            "items": {
-                                "type": "string"
-                            },
-                            "type": "array"
-                        },
-                        {
-                            "enum": [
-                                "circle",
-                                "cross",
-                                "shape://backslash",
-                                "shape://carrow",
-                                "shape://dot",
-                                "shape://horline",
-                                "shape://oarrow",
-                                "shape://plus",
-                                "shape://slash",
-                                "shape://times",
-                                "shape://vertline",
-                                "square",
-                                "star",
-                                "triangle",
-                                "x"
-                            ],
-                            "type": "string"
-                        }
-                    ],
+                    "$ref": "http://geostyler/geostyler-style.json#/definitions/WellKnownName",
                     "description": "The WellKnownName of the MarkSymbolizer."
                 }
             },
@@ -15310,9 +14899,7 @@
             "description": "A NegationFilter negates a given Filter.",
             "items": [
                 {
-                    "enum": [
-                        "!"
-                    ],
+                    "const": "!",
                     "type": "string"
                 },
                 {
@@ -15881,9 +15468,7 @@
                     "description": "Expressions can be a literal value, a property name or a function call."
                 },
                 "kind": {
-                    "enum": [
-                        "Raster"
-                    ],
+                    "const": "Raster",
                     "type": "string"
                 },
                 "opacity": {
@@ -16282,9 +15867,7 @@
                             "description": "A Filter that checks if a property is in a range of two values (inclusive).",
                             "items": [
                                 {
-                                    "enum": [
-                                        "<=x<="
-                                    ],
+                                    "const": "<=x<=",
                                     "type": "string"
                                 },
                                 {
@@ -16550,18 +16133,7 @@
                         {
                             "items": [
                                 {
-                                    "description": "The possible Operators used for comparison Filters.",
-                                    "enum": [
-                                        "!=",
-                                        "*=",
-                                        "<",
-                                        "<=",
-                                        "<=x<=",
-                                        "==",
-                                        ">",
-                                        ">="
-                                    ],
-                                    "type": "string"
+                                    "$ref": "http://geostyler/geostyler-style.json#/definitions/ComparisonOperator"
                                 },
                                 {
                                     "anyOf": [
@@ -16959,12 +16531,21 @@
                             "type": "array"
                         },
                         {
-                            "$ref": "http://geostyler/geostyler-style.json#/definitions/CombinationFilter",
-                            "description": "A CombinationFilter combines N Filters with a logical OR / AND operator."
-                        },
-                        {
                             "$ref": "http://geostyler/geostyler-style.json#/definitions/NegationFilter",
                             "description": "A NegationFilter negates a given Filter."
+                        },
+                        {
+                            "additionalItems": {
+                                "$ref": "http://geostyler/geostyler-style.json#/definitions/Filter"
+                            },
+                            "description": "A CombinationFilter combines N Filters with a logical OR / AND operator.",
+                            "items": [
+                                {
+                                    "$ref": "http://geostyler/geostyler-style.json#/definitions/CombinationOperator"
+                                }
+                            ],
+                            "minItems": 1,
+                            "type": "array"
                         },
                         {
                             "type": "boolean"
@@ -16980,27 +16561,7 @@
                 },
                 "symbolizers": {
                     "items": {
-                        "anyOf": [
-                            {
-                                "$ref": "http://geostyler/geostyler-style.json#/definitions/MarkSymbolizer"
-                            },
-                            {
-                                "$ref": "http://geostyler/geostyler-style.json#/definitions/TextSymbolizer"
-                            },
-                            {
-                                "$ref": "http://geostyler/geostyler-style.json#/definitions/IconSymbolizer"
-                            },
-                            {
-                                "$ref": "http://geostyler/geostyler-style.json#/definitions/FillSymbolizer"
-                            },
-                            {
-                                "$ref": "http://geostyler/geostyler-style.json#/definitions/LineSymbolizer"
-                            },
-                            {
-                                "$ref": "http://geostyler/geostyler-style.json#/definitions/RasterSymbolizer"
-                            }
-                        ],
-                        "description": "All operators."
+                        "$ref": "http://geostyler/geostyler-style.json#/definitions/Symbolizer"
                     },
                     "type": "array"
                 }
@@ -17220,6 +16781,29 @@
                 }
             },
             "type": "object"
+        },
+        "Symbolizer": {
+            "anyOf": [
+                {
+                    "$ref": "http://geostyler/geostyler-style.json#/definitions/MarkSymbolizer"
+                },
+                {
+                    "$ref": "http://geostyler/geostyler-style.json#/definitions/TextSymbolizer"
+                },
+                {
+                    "$ref": "http://geostyler/geostyler-style.json#/definitions/IconSymbolizer"
+                },
+                {
+                    "$ref": "http://geostyler/geostyler-style.json#/definitions/FillSymbolizer"
+                },
+                {
+                    "$ref": "http://geostyler/geostyler-style.json#/definitions/LineSymbolizer"
+                },
+                {
+                    "$ref": "http://geostyler/geostyler-style.json#/definitions/RasterSymbolizer"
+                }
+            ],
+            "description": "All operators."
         },
         "TextSymbolizer": {
             "description": "The TextSymbolizer describes the style representation of point data, if styled\nwith a text.",
@@ -18118,10 +17702,8 @@
                     "description": "If true, the text will be kept upright."
                 },
                 "kind": {
+                    "const": "Text",
                     "description": "Describes the type of the kind of the Symbolizer.",
-                    "enum": [
-                        "Text"
-                    ],
                     "type": "string"
                 },
                 "label": {
@@ -19644,6 +19226,35 @@
                 }
             },
             "type": "object"
+        },
+        "WellKnownName": {
+            "anyOf": [
+                {
+                    "pattern": "^ttf://.*#0x.*$",
+                    "type": "string"
+                },
+                {
+                    "enum": [
+                        "circle",
+                        "cross",
+                        "shape://backslash",
+                        "shape://carrow",
+                        "shape://dot",
+                        "shape://horline",
+                        "shape://oarrow",
+                        "shape://plus",
+                        "shape://slash",
+                        "shape://times",
+                        "shape://vertline",
+                        "square",
+                        "star",
+                        "triangle",
+                        "x"
+                    ],
+                    "type": "string"
+                }
+            ],
+            "description": "Supported WellKnownNames\nNote that due to TypeScript limitations any string will be valid for this type; this will not change\nuntil regexp or equivalent is supported, see:\nhttps://github.com/microsoft/TypeScript/issues/6579"
         }
     },
     "description": "The Style is the main interface and the root for all other interfaces.",
