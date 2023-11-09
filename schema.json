@@ -19204,6 +19204,61 @@
                     ],
                     "description": "Property relevant for mapbox-styles.\nCompare https://docs.mapbox.com/mapbox-gl-js/style-spec/#layout-symbol-text-pitch-alignment"
                 },
+                "placement": {
+                    "anyOf": [
+                        {
+                            "$ref": "http://geostyler/geostyler-style.json#/definitions/Fcase"
+                        },
+                        {
+                            "$ref": "http://geostyler/geostyler-style.json#/definitions/Fproperty"
+                        },
+                        {
+                            "$ref": "http://geostyler/geostyler-style.json#/definitions/FnumberFormat"
+                        },
+                        {
+                            "$ref": "http://geostyler/geostyler-style.json#/definitions/FstrAbbreviate"
+                        },
+                        {
+                            "$ref": "http://geostyler/geostyler-style.json#/definitions/FstrCapitalize"
+                        },
+                        {
+                            "$ref": "http://geostyler/geostyler-style.json#/definitions/FstrConcat"
+                        },
+                        {
+                            "$ref": "http://geostyler/geostyler-style.json#/definitions/FstrDefaultIfBlank"
+                        },
+                        {
+                            "$ref": "http://geostyler/geostyler-style.json#/definitions/FstrReplace"
+                        },
+                        {
+                            "$ref": "http://geostyler/geostyler-style.json#/definitions/FstrStripAccents"
+                        },
+                        {
+                            "$ref": "http://geostyler/geostyler-style.json#/definitions/FstrSubstring"
+                        },
+                        {
+                            "$ref": "http://geostyler/geostyler-style.json#/definitions/FstrSubstringStart"
+                        },
+                        {
+                            "$ref": "http://geostyler/geostyler-style.json#/definitions/FstrToLowerCase"
+                        },
+                        {
+                            "$ref": "http://geostyler/geostyler-style.json#/definitions/FstrToUpperCase"
+                        },
+                        {
+                            "$ref": "http://geostyler/geostyler-style.json#/definitions/FstrTrim"
+                        },
+                        {
+                            "enum": [
+                                "line",
+                                "line-center",
+                                "point"
+                            ],
+                            "type": "string"
+                        }
+                    ],
+                    "description": "Specifies label placement relative to its geometry."
+                },
                 "rotate": {
                     "anyOf": [
                         {
@@ -19593,6 +19648,10 @@
     },
     "description": "The Style is the main interface and the root for all other interfaces.",
     "properties": {
+        "metadata": {
+            "additionalProperties": {},
+            "type": "object"
+        },
         "name": {
             "type": "string"
         },
