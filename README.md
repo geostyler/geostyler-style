@@ -1,8 +1,5 @@
 # geostyler-style
 
-[![Greenkeeper badge](https://badges.greenkeeper.io/geostyler/geostyler-style.svg)](https://greenkeeper.io/)
-[![Build Status](https://travis-ci.com/geostyler/geostyler-style.svg?branch=master)](https://travis-ci.com/geostyler/geostyler-style)
-
 TypeScript Declaration File for the the [GeoStyler](https://github.com/geostyler/geostyler) Style.
 
 ### Documentation
