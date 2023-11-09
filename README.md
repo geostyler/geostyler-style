@@ -1,5 +1,9 @@
 # geostyler-style
 
+[![Lint & Docs (main)](https://github.com/geostyler/geostyler-style/actions/workflows/on-push-master.yml/badge.svg)](https://github.com/geostyler/geostyler-style/actions/workflows/on-push-master.yml)
+[![Create & publish versioned documentation](https://github.com/geostyler/geostyler-style/actions/workflows/on-publish.yml/badge.svg)](https://github.com/geostyler/geostyler-style/actions/workflows/on-publish.yml)
+[![License](https://img.shields.io/github/license/geostyler/geostyler-style)](https://github.com/geostyler/geostyler-style/blob/master/LICENSE)
+
 TypeScript Declaration File for the the [GeoStyler](https://github.com/geostyler/geostyler) Style.
 
 ### Documentation
