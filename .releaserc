@@ -1,5 +1,5 @@
 {
-  "branches": ["main"],
+  "branches": ["master"],
   "plugins": [
     [
       "@semantic-release/commit-analyzer",
@@ -12,7 +12,7 @@
       {
         "preset": "conventionalcommits",
         "presetConfig": {
-          "header": "Changelog of GeoStyler"
+          "header": "Changelog of GeoStyler Style"
         }
       }
     ],
