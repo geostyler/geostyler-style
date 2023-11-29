@@ -389,17 +389,13 @@ export type Sprite = {
    */
   source: Expression<string>;
   /**
-   * The starting position of the sprite to cut out. Origing [0, 0] is top left.
+   * The starting position of the sprite to cut out. Origing [0, 0] is top left in pixels.
    */
   position: [Expression<number>, Expression<number>];
   /**
-   * The width of the sprite.
+   * The size of the sprite [width, height] in pixels.
    */
-  width: Expression<number>;
-  /**
-   * The height of the sprite.
-   */
-  height: Expression<number>;
+  size: [Expression<number>, Expression<number>];
 };
 
 /**
