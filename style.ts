@@ -385,6 +385,24 @@ export interface TextSymbolizer extends BasePointSymbolizer {
 }
 
 /**
+ * Configuration for a sprite image.
+ */
+export type Sprite = {
+  /**
+   * A path/URL to the sprite image file.
+   */
+  source: Expression<string>;
+  /**
+   * The starting position of the sprite to cut out. Origing [0, 0] is top left in pixels.
+   */
+  position: [Expression<number>, Expression<number>];
+  /**
+   * The size of the sprite [width, height] in pixels.
+   */
+  size: [Expression<number>, Expression<number>];
+};
+
+/**
  * An IconSymbolizer describes the style representation of POINT data if styled
  * with a specific icon.
  */
@@ -425,9 +443,9 @@ export interface IconSymbolizer extends BasePointSymbolizer {
    */
   haloOpacity?: Expression<number>;
   /**
-   * A path/URL to the icon image file.
+   * A path/URL to the icon image file or a {@link Sprite} configuration.
    */
-  image?: Expression<string>;
+  image?: Expression<string> | Sprite;
   /**
    * An optional configuration for the image format as MIME type.
    * This might be needed if the image(path) has no filending specified. e.g. http://myserver/getImage
