@@ -21,6 +21,7 @@ import {
   RasterSymbolizer,
   Rule,
   ScaleDenominator,
+  Sprite,
   TextSymbolizer
 } from '../style';
 import {
@@ -47,6 +48,7 @@ import {
   isRgbChannel,
   isRule,
   isScaleDenominator,
+  isSprite,
   isSymbolizer,
   isTextSymbolizer
 } from '../typeguards';
@@ -240,6 +242,18 @@ const unknownFunction: GeoStylerUnknownFunction = {
   args: ['city']
 };
 
+const spriteImage: Sprite = {
+  source: 'http://peter.de/sprite',
+  position: [{
+    name: 'property',
+    args: ['width'],
+  }, {
+    name: 'property',
+    args: ['height'],
+  }],
+  size: [48, 48]
+};
+
 const peter = 'peter';
 const twelve = 12;
 const tru = true;
@@ -275,7 +289,8 @@ const thingsToTest = [
   numberFunction2,
   stringFunction,
   booleanFunction,
-  unknownFunction
+  unknownFunction,
+  spriteImage
 ];
 
 describe('typeguards', () => {
@@ -514,6 +529,15 @@ describe('typeguards', () => {
     ];
     thingsToTest.forEach(thing => {
       expect(isGeoStylerFunction(thing)).toBe(expectedMatches.includes(thing));
+    });
+  });
+
+  it('isSprite', () => {
+    const expectedMatches: any[] = [
+      spriteImage
+    ];
+    thingsToTest.forEach(thing => {
+      expect(isSprite(thing)).toBe(expectedMatches.includes(thing));
     });
   });
 
