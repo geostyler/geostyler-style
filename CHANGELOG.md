@@ -1,3 +1,10 @@
+## [8.1.0](https://github.com/geostyler/geostyler-style/compare/v8.0.0...v8.1.0) (2023-12-01)
+
+
+### Features
+
+* adds isSprite typeguard ([2684c38](https://github.com/geostyler/geostyler-style/commit/2684c3836dd90658de79dbd5d552142321bad389))
+
 ## [8.0.0](https://github.com/geostyler/geostyler-style/compare/v7.5.0...v8.0.0) (2023-11-30)
 
 
