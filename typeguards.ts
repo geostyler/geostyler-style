@@ -37,7 +37,8 @@ import {
   GeoStylerFunction,
   PointSymbolizer,
   Symbolizer,
-  FunctionCall
+  FunctionCall,
+  Sprite
 } from './index';
 
 export const isExpression = (got: any): got is Expression<any> => {
@@ -264,4 +265,10 @@ export const isGeoStylerFunction = (got: any): got is GeoStylerFunction => {
     isGeoStylerNumberFunction(got) ||
     isGeoStylerStringFunction(got) ||
     isGeoStylerUnknownFunction(got);
+};
+
+export const isSprite = (got: any): got is Sprite => {
+  return typeof got?.source === 'string' || isGeoStylerFunction(got?.source) &&
+    Array.isArray(got.position) &&
+    Array.isArray(got.size);
 };
