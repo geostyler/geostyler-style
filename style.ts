@@ -5,6 +5,12 @@ import {
   GeoStylerStringFunction
 } from './functions';
 
+export interface LikeAttributes {
+  wildCard: string;
+  singleChar: string;
+  escape: string;
+}
+
 /**
  * The special character to use to indicate a line break.
  */
@@ -31,8 +37,8 @@ export interface ScaleDenominator {
  */
 export interface FunctionCall<T> {
   name: T extends string ? GeoStylerStringFunction['name'] :
-    T extends number ? GeoStylerNumberFunction['name'] :
-    GeoStylerBooleanFunction['name'];
+  T extends number ? GeoStylerNumberFunction['name'] :
+  GeoStylerBooleanFunction['name'];
   args: Expression<PropertyType>[];
 };
 
@@ -86,6 +92,16 @@ export type RangeFilter = [
 ];
 
 /**
+ * A Filter that checks if a property is in a range of two values (inclusive).
+ */
+export type LikeFilter = [
+  '*=',
+  Expression<string>,
+  Expression<string>,
+  Expression<LikeAttributes>
+];
+
+/**
  * A ComparisonFilter compares two values.
  * If the first argument is a GeoStylerFunction it will be evaluated it.
  * If it is a string it will be treated as key of an object.
@@ -94,7 +110,7 @@ export type ComparisonFilter = [
   ComparisonOperator,
   Expression<string | number | boolean | null>,
   Expression<string | number | boolean | null>
-] | RangeFilter;
+] | RangeFilter | LikeFilter;
 
 /**
  * A CombinationFilter combines N Filters with a logical OR / AND operator.
@@ -177,10 +193,10 @@ export type FontSpec = `ttf://${string}#0x${string}`;
  *
  */
 export type WellKnownName = 'circle' | 'square' | 'triangle' | 'star' | 'cross' | 'x'
-| 'shape://vertline' | 'shape://horline' | 'shape://slash'
-| 'shape://backslash' | 'shape://dot' | 'shape://plus'
-| 'shape://times' | 'shape://oarrow' | 'shape://carrow'
-| FontSpec;
+  | 'shape://vertline' | 'shape://horline' | 'shape://slash'
+  | 'shape://backslash' | 'shape://dot' | 'shape://plus'
+  | 'shape://times' | 'shape://oarrow' | 'shape://carrow'
+  | FontSpec;
 
 /**
  * Unit that defines how to handle the corresponding symbolizer property.

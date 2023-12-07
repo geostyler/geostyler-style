@@ -1,4 +1,4 @@
-import { Style } from '../index';
+import { LikeAttributes, Style } from '../index';
 
 const pointSimplePoint: Style = {
   name: 'Simple Point Filter',
@@ -9,6 +9,7 @@ const pointSimplePoint: Style = {
       ['==', 'TEST', null],
       ['*=', 'TEST2', '*York*'],
       ['*=', 'TEST1', '*New*'],
+      ['*=', 'TEST1', '%New%', { wildCard: '%', singleChar: '_', escape: '\\' } as LikeAttributes],
       ['!', ['>', 'POPULATION', '100000']],
       ['||',
         ['==', 'TEST2', '1'],
