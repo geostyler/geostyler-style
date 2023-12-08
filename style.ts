@@ -92,7 +92,7 @@ export type RangeFilter = [
 ];
 
 /**
- * A Filter that checks if a property is in a range of two values (inclusive).
+ * A Filter with like attributes.
  */
 export type LikeFilter = [
   '*=',
