@@ -39,14 +39,14 @@ jobs:
         echo "VERSION=$(node -pe "require('./package.json').version")" >> $GITHUB_ENV
 
     - name: Deploy (to docs/v${{ env.VERSION }}) 🚀
-      uses: JamesIves/github-pages-deploy-action@v4.4.3
+      uses: JamesIves/github-pages-deploy-action@v4.6.1
       with:
         branch: gh-pages
         folder: docs
         target-folder: docs/v${{ env.VERSION }}
 
     - name: Deploy (to docs/latest) 🚀
-      uses: JamesIves/github-pages-deploy-action@v4.4.3
+      uses: JamesIves/github-pages-deploy-action@v4.6.1
       with:
         branch: gh-pages
         folder: docs
