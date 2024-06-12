@@ -38,7 +38,7 @@
     "semantic-release": "^24.0.0",
     "typedoc": "^0.25.13",
     "typescript": "^5.4.5",
-    "typescript-json-schema": "^0.63.0"
+    "typescript-json-schema": "^0.64.0"
   },
   "engines": {
     "node": ">=16.0.0",
