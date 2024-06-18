@@ -10,6 +10,9 @@ export type GeoStylerFunction = GeoStylerNumberFunction |
   GeoStylerBooleanFunction |
   GeoStylerUnknownFunction;
 
+/**
+ * An expression of a function that returns a number.
+ */
 export type GeoStylerNumberFunction = GeoStylerUnknownFunction |
 Fabs |
 Facos |
@@ -40,8 +43,12 @@ FstrLength |
 Fsub |
 Ftan |
 FtoDegrees |
+FtoNumber |
 FtoRadians;
 
+/**
+ * An expression of a function that returns a string.
+ */
 export type GeoStylerStringFunction = GeoStylerUnknownFunction |
 FnumberFormat |
 FstrAbbreviate |
@@ -54,8 +61,12 @@ FstrSubstring |
 FstrSubstringStart |
 FstrToLowerCase |
 FstrToUpperCase |
-FstrTrim;
+FstrTrim |
+FtoString;
 
+/**
+ * An expression of a function that returns a boolean.
+ */
 export type GeoStylerBooleanFunction = GeoStylerUnknownFunction |
 Fall |
 Fany |
@@ -73,9 +84,10 @@ FparseBoolean |
 FstrEndsWith |
 FstrEqualsIgnoreCase |
 FstrMatches |
-FstrStartsWith;
+FstrStartsWith |
+FtoBoolean;
 
-export type GeoStylerUnknownFunction = Fcase | Fproperty;
+export type GeoStylerUnknownFunction = Fcase | Fstep | Fproperty;
 
 /**
  * The absolute value of the specified number value
@@ -482,9 +494,30 @@ export interface Fsqrt extends FunctionCall<number> {
   ];
 };
 
+type FStepParameter = {
+  boundary: Expression<number>;
+  value: Expression<PropertyType>;
+};
+
+/**
+ * Returns an unknown value depending on the passed in value of argument[0]. In
+ * most cases this will be an {@link Fproperty}.
+ * The argument[1] is the initial value.
+ * All following arguments are an array of length 2 where the first element is
+ * a numeric value and the second element is the value to return if the value is
+ * larger than that boundry.
+ */
+export interface Fstep extends FunctionCall<unknown> {
+  name: 'step';
+  args: [
+    Expression<number>, Expression<PropertyType>,
+    ...FStepParameter[]
+  ];
+};
+
 /**
  * Abbreviates the sentence (argument[0]) at first space beyond lower (argument[1])
- * or at upper (argument[2]) if no space.Appends append (argument[3]) if string is abbreviated.
+ * or at upper (argument[2]) if no space. Appends append (argument[3]) if string is abbreviated.
  */
 export interface FstrAbbreviate extends FunctionCall<string> {
   name: 'strAbbreviate';
@@ -708,6 +741,17 @@ export interface Ftan extends FunctionCall<number> {
 };
 
 /**
+ * Converts an unknown value to boolean
+ */
+export interface FtoBoolean extends FunctionCall<boolean> {
+  name: 'toBoolean';
+  args: [
+    Expression<unknown>
+  ];
+};
+
+
+/**
  * Converts an angle expressed in radians into degrees
  */
 export interface FtoDegrees extends FunctionCall<number> {
@@ -718,11 +762,31 @@ export interface FtoDegrees extends FunctionCall<number> {
 };
 
 /**
+ * Converts an unknown value into a number
+ */
+export interface FtoNumber extends FunctionCall<number> {
+  name: 'toNumber';
+  args: [
+    Expression<unknown>
+  ];
+};
+
+/**
  * Converts an angle expressed in radians into degrees
  */
 export interface FtoRadians extends FunctionCall<number> {
   name: 'toRadians';
   args: [
     Expression<number>
+  ];
+};
+
+/**
+ * Converts an unknown value into a string
+ */
+export interface FtoString extends FunctionCall<string> {
+  name: 'strToString';
+  args: [
+    Expression<unknown>
   ];
 };

@@ -1,4 +1,4 @@
-import { Style } from '../index';
+import { Fstep, Style } from '../index';
 
 const sampleStyle: Style = {
   name: 'Sample Point Style',
@@ -89,7 +89,27 @@ const sampleStyle: Style = {
       }, {
         kind: 'Mark',
         wellKnownName: 'ttf://Webdings#0x68',
-        radius: 12,
+        radius: {
+          name: 'step',
+          args: [
+            {
+              name: 'property',
+              args: ['population']
+            }, 5,
+            {
+              boundary: 1000,
+              value: 10
+            },
+            {
+              boundary: 10000,
+              value: 15
+            },
+            {
+              boundary: 100000,
+              value: 20
+            }
+          ]
+        },
         color: '#8a000e',
         strokeOpacity: 0.7,
         strokeColor: '#ffffff'
