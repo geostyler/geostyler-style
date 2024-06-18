@@ -176,7 +176,7 @@ export interface Fbetween extends FunctionCall<boolean> {
   ];
 };
 
-type FCaseParameter = {
+export type FCaseParameter = {
   case: Expression<boolean>;
   value: Expression<PropertyType>;
 };
@@ -494,7 +494,7 @@ export interface Fsqrt extends FunctionCall<number> {
   ];
 };
 
-type FStepParameter = {
+export type FStepParameter = {
   boundary: Expression<number>;
   value: Expression<PropertyType>;
 };
