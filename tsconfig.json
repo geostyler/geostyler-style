@@ -1,12 +1,12 @@
 {
   "compilerOptions": {
     "baseUrl": ".",
-    "module": "commonjs",
+    "module": "ES2022",
     "declaration": true,
     "esModuleInterop": true,
     "outDir": "dist",
-    "target": "es5",
-    "lib": ["es6", "dom"],
+    "target": "ES2022",
+    "lib": ["ES2022", "es6", "dom"],
     "sourceMap": true,
     "inlineSources": true,
     "allowJs": false,

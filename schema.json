@@ -508,27 +508,23 @@
             },
             "type": "object"
         },
-        "CombinationOperator": {
-            "description": "The possible Operators used for combination Filters.",
-            "enum": [
-                "&&",
-                "||"
+        "CombinationFilter": {
+            "additionalItems": {
+                "$ref": "http://geostyler/geostyler-style.json#/definitions/Filter"
+            },
+            "description": "A CombinationFilter combines N Filters with a logical OR / AND operator.",
+            "items": [
+                {
+                    "description": "The possible Operators used for combination Filters.",
+                    "enum": [
+                        "&&",
+                        "||"
+                    ],
+                    "type": "string"
+                }
             ],
-            "type": "string"
-        },
-        "ComparisonOperator": {
-            "description": "The possible Operators used for comparison Filters.",
-            "enum": [
-                "!=",
-                "*=",
-                "<",
-                "<=",
-                "<=x<=",
-                "==",
-                ">",
-                ">="
-            ],
-            "type": "string"
+            "minItems": 1,
+            "type": "array"
         },
         "ContrastEnhancement": {
             "description": "A ContrastEnhancement defines how the contrast of image data should be enhanced.",
@@ -694,71 +690,6 @@
             },
             "type": "object"
         },
-        "Expression<boolean>": {
-            "anyOf": [
-                {
-                    "$ref": "http://geostyler/geostyler-style.json#/definitions/Fcase"
-                },
-                {
-                    "$ref": "http://geostyler/geostyler-style.json#/definitions/Fproperty"
-                },
-                {
-                    "$ref": "http://geostyler/geostyler-style.json#/definitions/Fall"
-                },
-                {
-                    "$ref": "http://geostyler/geostyler-style.json#/definitions/Fany"
-                },
-                {
-                    "$ref": "http://geostyler/geostyler-style.json#/definitions/Fbetween"
-                },
-                {
-                    "$ref": "http://geostyler/geostyler-style.json#/definitions/Fdouble2bool"
-                },
-                {
-                    "$ref": "http://geostyler/geostyler-style.json#/definitions/FequalTo"
-                },
-                {
-                    "$ref": "http://geostyler/geostyler-style.json#/definitions/FgreaterThan"
-                },
-                {
-                    "$ref": "http://geostyler/geostyler-style.json#/definitions/FgreaterThanOrEqualTo"
-                },
-                {
-                    "$ref": "http://geostyler/geostyler-style.json#/definitions/Fin"
-                },
-                {
-                    "$ref": "http://geostyler/geostyler-style.json#/definitions/FlessThan"
-                },
-                {
-                    "$ref": "http://geostyler/geostyler-style.json#/definitions/FlessThanOrEqualTo"
-                },
-                {
-                    "$ref": "http://geostyler/geostyler-style.json#/definitions/Fnot"
-                },
-                {
-                    "$ref": "http://geostyler/geostyler-style.json#/definitions/FnotEqualTo"
-                },
-                {
-                    "$ref": "http://geostyler/geostyler-style.json#/definitions/FparseBoolean"
-                },
-                {
-                    "$ref": "http://geostyler/geostyler-style.json#/definitions/FstrEndsWith"
-                },
-                {
-                    "$ref": "http://geostyler/geostyler-style.json#/definitions/FstrEqualsIgnoreCase"
-                },
-                {
-                    "$ref": "http://geostyler/geostyler-style.json#/definitions/FstrMatches"
-                },
-                {
-                    "$ref": "http://geostyler/geostyler-style.json#/definitions/FstrStartsWith"
-                },
-                {
-                    "type": "boolean"
-                }
-            ],
-            "description": "Expressions can be a literal value, a property name or a function call."
-        },
         "Fabs": {
             "description": "The absolute value of the specified number value",
             "properties": {
@@ -873,7 +804,9 @@
                     "type": "array"
                 },
                 "name": {
-                    "const": "abs",
+                    "enum": [
+                        "abs"
+                    ],
                     "type": "string"
                 }
             },
@@ -993,7 +926,9 @@
                     "type": "array"
                 },
                 "name": {
-                    "const": "acos",
+                    "enum": [
+                        "acos"
+                    ],
                     "type": "string"
                 }
             },
@@ -1109,7 +1044,9 @@
                     "type": "array"
                 },
                 "name": {
-                    "const": "add",
+                    "enum": [
+                        "add"
+                    ],
                     "type": "string"
                 }
             },
@@ -1120,12 +1057,75 @@
             "properties": {
                 "args": {
                     "items": {
-                        "$ref": "http://geostyler/geostyler-style.json#/definitions/Expression<boolean>"
+                        "anyOf": [
+                            {
+                                "$ref": "http://geostyler/geostyler-style.json#/definitions/Fcase"
+                            },
+                            {
+                                "$ref": "http://geostyler/geostyler-style.json#/definitions/Fproperty"
+                            },
+                            {
+                                "$ref": "http://geostyler/geostyler-style.json#/definitions/Fall"
+                            },
+                            {
+                                "$ref": "http://geostyler/geostyler-style.json#/definitions/Fany"
+                            },
+                            {
+                                "$ref": "http://geostyler/geostyler-style.json#/definitions/Fbetween"
+                            },
+                            {
+                                "$ref": "http://geostyler/geostyler-style.json#/definitions/Fdouble2bool"
+                            },
+                            {
+                                "$ref": "http://geostyler/geostyler-style.json#/definitions/FequalTo"
+                            },
+                            {
+                                "$ref": "http://geostyler/geostyler-style.json#/definitions/FgreaterThan"
+                            },
+                            {
+                                "$ref": "http://geostyler/geostyler-style.json#/definitions/FgreaterThanOrEqualTo"
+                            },
+                            {
+                                "$ref": "http://geostyler/geostyler-style.json#/definitions/Fin"
+                            },
+                            {
+                                "$ref": "http://geostyler/geostyler-style.json#/definitions/FlessThan"
+                            },
+                            {
+                                "$ref": "http://geostyler/geostyler-style.json#/definitions/FlessThanOrEqualTo"
+                            },
+                            {
+                                "$ref": "http://geostyler/geostyler-style.json#/definitions/Fnot"
+                            },
+                            {
+                                "$ref": "http://geostyler/geostyler-style.json#/definitions/FnotEqualTo"
+                            },
+                            {
+                                "$ref": "http://geostyler/geostyler-style.json#/definitions/FparseBoolean"
+                            },
+                            {
+                                "$ref": "http://geostyler/geostyler-style.json#/definitions/FstrEndsWith"
+                            },
+                            {
+                                "$ref": "http://geostyler/geostyler-style.json#/definitions/FstrEqualsIgnoreCase"
+                            },
+                            {
+                                "$ref": "http://geostyler/geostyler-style.json#/definitions/FstrMatches"
+                            },
+                            {
+                                "$ref": "http://geostyler/geostyler-style.json#/definitions/FstrStartsWith"
+                            },
+                            {
+                                "type": "boolean"
+                            }
+                        ]
                     },
                     "type": "array"
                 },
                 "name": {
-                    "const": "all",
+                    "enum": [
+                        "all"
+                    ],
                     "type": "string"
                 }
             },
@@ -1136,12 +1136,75 @@
             "properties": {
                 "args": {
                     "items": {
-                        "$ref": "http://geostyler/geostyler-style.json#/definitions/Expression<boolean>"
+                        "anyOf": [
+                            {
+                                "$ref": "http://geostyler/geostyler-style.json#/definitions/Fcase"
+                            },
+                            {
+                                "$ref": "http://geostyler/geostyler-style.json#/definitions/Fproperty"
+                            },
+                            {
+                                "$ref": "http://geostyler/geostyler-style.json#/definitions/Fall"
+                            },
+                            {
+                                "$ref": "http://geostyler/geostyler-style.json#/definitions/Fany"
+                            },
+                            {
+                                "$ref": "http://geostyler/geostyler-style.json#/definitions/Fbetween"
+                            },
+                            {
+                                "$ref": "http://geostyler/geostyler-style.json#/definitions/Fdouble2bool"
+                            },
+                            {
+                                "$ref": "http://geostyler/geostyler-style.json#/definitions/FequalTo"
+                            },
+                            {
+                                "$ref": "http://geostyler/geostyler-style.json#/definitions/FgreaterThan"
+                            },
+                            {
+                                "$ref": "http://geostyler/geostyler-style.json#/definitions/FgreaterThanOrEqualTo"
+                            },
+                            {
+                                "$ref": "http://geostyler/geostyler-style.json#/definitions/Fin"
+                            },
+                            {
+                                "$ref": "http://geostyler/geostyler-style.json#/definitions/FlessThan"
+                            },
+                            {
+                                "$ref": "http://geostyler/geostyler-style.json#/definitions/FlessThanOrEqualTo"
+                            },
+                            {
+                                "$ref": "http://geostyler/geostyler-style.json#/definitions/Fnot"
+                            },
+                            {
+                                "$ref": "http://geostyler/geostyler-style.json#/definitions/FnotEqualTo"
+                            },
+                            {
+                                "$ref": "http://geostyler/geostyler-style.json#/definitions/FparseBoolean"
+                            },
+                            {
+                                "$ref": "http://geostyler/geostyler-style.json#/definitions/FstrEndsWith"
+                            },
+                            {
+                                "$ref": "http://geostyler/geostyler-style.json#/definitions/FstrEqualsIgnoreCase"
+                            },
+                            {
+                                "$ref": "http://geostyler/geostyler-style.json#/definitions/FstrMatches"
+                            },
+                            {
+                                "$ref": "http://geostyler/geostyler-style.json#/definitions/FstrStartsWith"
+                            },
+                            {
+                                "type": "boolean"
+                            }
+                        ]
                     },
                     "type": "array"
                 },
                 "name": {
-                    "const": "any",
+                    "enum": [
+                        "any"
+                    ],
                     "type": "string"
                 }
             },
@@ -1261,7 +1324,9 @@
                     "type": "array"
                 },
                 "name": {
-                    "const": "asin",
+                    "enum": [
+                        "asin"
+                    ],
                     "type": "string"
                 }
             },
@@ -1381,7 +1446,9 @@
                     "type": "array"
                 },
                 "name": {
-                    "const": "atan",
+                    "enum": [
+                        "atan"
+                    ],
                     "type": "string"
                 }
             },
@@ -1604,7 +1671,9 @@
                     "type": "array"
                 },
                 "name": {
-                    "const": "atan2",
+                    "enum": [
+                        "atan2"
+                    ],
                     "type": "string"
                 }
             },
@@ -1930,7 +1999,9 @@
                     "type": "array"
                 },
                 "name": {
-                    "const": "between",
+                    "enum": [
+                        "between"
+                    ],
                     "type": "string"
                 }
             },
@@ -1945,7 +2016,69 @@
                         {
                             "properties": {
                                 "case": {
-                                    "$ref": "http://geostyler/geostyler-style.json#/definitions/Expression<boolean>"
+                                    "anyOf": [
+                                        {
+                                            "$ref": "http://geostyler/geostyler-style.json#/definitions/Fcase"
+                                        },
+                                        {
+                                            "$ref": "http://geostyler/geostyler-style.json#/definitions/Fproperty"
+                                        },
+                                        {
+                                            "$ref": "http://geostyler/geostyler-style.json#/definitions/Fall"
+                                        },
+                                        {
+                                            "$ref": "http://geostyler/geostyler-style.json#/definitions/Fany"
+                                        },
+                                        {
+                                            "$ref": "http://geostyler/geostyler-style.json#/definitions/Fbetween"
+                                        },
+                                        {
+                                            "$ref": "http://geostyler/geostyler-style.json#/definitions/Fdouble2bool"
+                                        },
+                                        {
+                                            "$ref": "http://geostyler/geostyler-style.json#/definitions/FequalTo"
+                                        },
+                                        {
+                                            "$ref": "http://geostyler/geostyler-style.json#/definitions/FgreaterThan"
+                                        },
+                                        {
+                                            "$ref": "http://geostyler/geostyler-style.json#/definitions/FgreaterThanOrEqualTo"
+                                        },
+                                        {
+                                            "$ref": "http://geostyler/geostyler-style.json#/definitions/Fin"
+                                        },
+                                        {
+                                            "$ref": "http://geostyler/geostyler-style.json#/definitions/FlessThan"
+                                        },
+                                        {
+                                            "$ref": "http://geostyler/geostyler-style.json#/definitions/FlessThanOrEqualTo"
+                                        },
+                                        {
+                                            "$ref": "http://geostyler/geostyler-style.json#/definitions/Fnot"
+                                        },
+                                        {
+                                            "$ref": "http://geostyler/geostyler-style.json#/definitions/FnotEqualTo"
+                                        },
+                                        {
+                                            "$ref": "http://geostyler/geostyler-style.json#/definitions/FparseBoolean"
+                                        },
+                                        {
+                                            "$ref": "http://geostyler/geostyler-style.json#/definitions/FstrEndsWith"
+                                        },
+                                        {
+                                            "$ref": "http://geostyler/geostyler-style.json#/definitions/FstrEqualsIgnoreCase"
+                                        },
+                                        {
+                                            "$ref": "http://geostyler/geostyler-style.json#/definitions/FstrMatches"
+                                        },
+                                        {
+                                            "$ref": "http://geostyler/geostyler-style.json#/definitions/FstrStartsWith"
+                                        },
+                                        {
+                                            "type": "boolean"
+                                        }
+                                    ],
+                                    "description": "Expressions can be a literal value, a property name or a function call."
                                 },
                                 "value": {
                                     "description": "Expressions can be a literal value, a property name or a function call."
@@ -1958,7 +2091,9 @@
                     "type": "array"
                 },
                 "name": {
-                    "const": "case",
+                    "enum": [
+                        "case"
+                    ],
                     "type": "string"
                 }
             },
@@ -2078,7 +2213,9 @@
                     "type": "array"
                 },
                 "name": {
-                    "const": "ceil",
+                    "enum": [
+                        "ceil"
+                    ],
                     "type": "string"
                 }
             },
@@ -2198,7 +2335,9 @@
                     "type": "array"
                 },
                 "name": {
-                    "const": "cos",
+                    "enum": [
+                        "cos"
+                    ],
                     "type": "string"
                 }
             },
@@ -2421,7 +2560,9 @@
                     "type": "array"
                 },
                 "name": {
-                    "const": "div",
+                    "enum": [
+                        "div"
+                    ],
                     "type": "string"
                 }
             },
@@ -2541,7 +2682,9 @@
                     "type": "array"
                 },
                 "name": {
-                    "const": "double2bool",
+                    "enum": [
+                        "double2bool"
+                    ],
                     "type": "string"
                 }
             },
@@ -2560,7 +2703,9 @@
                     "type": "array"
                 },
                 "name": {
-                    "const": "equalTo",
+                    "enum": [
+                        "equalTo"
+                    ],
                     "type": "string"
                 }
             },
@@ -2680,7 +2825,9 @@
                     "type": "array"
                 },
                 "name": {
-                    "const": "exp",
+                    "enum": [
+                        "exp"
+                    ],
                     "type": "string"
                 }
             },
@@ -2800,7 +2947,9 @@
                     "type": "array"
                 },
                 "name": {
-                    "const": "floor",
+                    "enum": [
+                        "floor"
+                    ],
                     "type": "string"
                 }
             },
@@ -3023,7 +3172,9 @@
                     "type": "array"
                 },
                 "name": {
-                    "const": "greaterThan",
+                    "enum": [
+                        "greaterThan"
+                    ],
                     "type": "string"
                 }
             },
@@ -3246,7 +3397,9 @@
                     "type": "array"
                 },
                 "name": {
-                    "const": "greaterThanOrEqualTo",
+                    "enum": [
+                        "greaterThanOrEqualTo"
+                    ],
                     "type": "string"
                 }
             },
@@ -3489,8 +3642,10 @@
                     "description": "Renders the fill of the polygon with a repeated pattern of PointSymbolizer."
                 },
                 "kind": {
-                    "const": "Fill",
                     "description": "Describes the type of the kind of the Symbolizer.",
+                    "enum": [
+                        "Fill"
+                    ],
                     "type": "string"
                 },
                 "opacity": {
@@ -4211,7 +4366,9 @@
                     "description": "A Filter that checks if a property is in a range of two values (inclusive).",
                     "items": [
                         {
-                            "const": "<=x<=",
+                            "enum": [
+                                "<=x<="
+                            ],
                             "type": "string"
                         },
                         {
@@ -4477,7 +4634,18 @@
                 {
                     "items": [
                         {
-                            "$ref": "http://geostyler/geostyler-style.json#/definitions/ComparisonOperator"
+                            "description": "The possible Operators used for comparison Filters.",
+                            "enum": [
+                                "!=",
+                                "*=",
+                                "<",
+                                "<=",
+                                "<=x<=",
+                                "==",
+                                ">",
+                                ">="
+                            ],
+                            "type": "string"
                         },
                         {
                             "anyOf": [
@@ -4875,20 +5043,24 @@
                     "type": "array"
                 },
                 {
-                    "$ref": "http://geostyler/geostyler-style.json#/definitions/NegationFilter",
-                    "description": "A NegationFilter negates a given Filter."
+                    "$ref": "http://geostyler/geostyler-style.json#/definitions/CombinationFilter",
+                    "description": "A CombinationFilter combines N Filters with a logical OR / AND operator."
                 },
                 {
-                    "additionalItems": {
-                        "$ref": "http://geostyler/geostyler-style.json#/definitions/Filter"
-                    },
-                    "description": "A CombinationFilter combines N Filters with a logical OR / AND operator.",
+                    "description": "A NegationFilter negates a given Filter.",
                     "items": [
                         {
-                            "$ref": "http://geostyler/geostyler-style.json#/definitions/CombinationOperator"
+                            "enum": [
+                                "!"
+                            ],
+                            "type": "string"
+                        },
+                        {
+                            "$ref": "http://geostyler/geostyler-style.json#/definitions/Filter"
                         }
                     ],
-                    "minItems": 1,
+                    "maxItems": 2,
+                    "minItems": 2,
                     "type": "array"
                 },
                 {
@@ -4952,7 +5124,9 @@
                     "type": "array"
                 },
                 "name": {
-                    "const": "in",
+                    "enum": [
+                        "in"
+                    ],
                     "type": "string"
                 }
             },
@@ -5175,7 +5349,9 @@
                     "type": "array"
                 },
                 "name": {
-                    "const": "lessThan",
+                    "enum": [
+                        "lessThan"
+                    ],
                     "type": "string"
                 }
             },
@@ -5398,7 +5574,9 @@
                     "type": "array"
                 },
                 "name": {
-                    "const": "lessThanOrEqualTo",
+                    "enum": [
+                        "lessThanOrEqualTo"
+                    ],
                     "type": "string"
                 }
             },
@@ -5518,7 +5696,9 @@
                     "type": "array"
                 },
                 "name": {
-                    "const": "log",
+                    "enum": [
+                        "log"
+                    ],
                     "type": "string"
                 }
             },
@@ -5634,7 +5814,9 @@
                     "type": "array"
                 },
                 "name": {
-                    "const": "max",
+                    "enum": [
+                        "max"
+                    ],
                     "type": "string"
                 }
             },
@@ -5750,7 +5932,9 @@
                     "type": "array"
                 },
                 "name": {
-                    "const": "min",
+                    "enum": [
+                        "min"
+                    ],
                     "type": "string"
                 }
             },
@@ -5973,7 +6157,9 @@
                     "type": "array"
                 },
                 "name": {
-                    "const": "modulo",
+                    "enum": [
+                        "modulo"
+                    ],
                     "type": "string"
                 }
             },
@@ -6089,7 +6275,9 @@
                     "type": "array"
                 },
                 "name": {
-                    "const": "mul",
+                    "enum": [
+                        "mul"
+                    ],
                     "type": "string"
                 }
             },
@@ -6101,7 +6289,68 @@
                 "args": {
                     "items": [
                         {
-                            "$ref": "http://geostyler/geostyler-style.json#/definitions/Expression<boolean>"
+                            "anyOf": [
+                                {
+                                    "$ref": "http://geostyler/geostyler-style.json#/definitions/Fcase"
+                                },
+                                {
+                                    "$ref": "http://geostyler/geostyler-style.json#/definitions/Fproperty"
+                                },
+                                {
+                                    "$ref": "http://geostyler/geostyler-style.json#/definitions/Fall"
+                                },
+                                {
+                                    "$ref": "http://geostyler/geostyler-style.json#/definitions/Fany"
+                                },
+                                {
+                                    "$ref": "http://geostyler/geostyler-style.json#/definitions/Fbetween"
+                                },
+                                {
+                                    "$ref": "http://geostyler/geostyler-style.json#/definitions/Fdouble2bool"
+                                },
+                                {
+                                    "$ref": "http://geostyler/geostyler-style.json#/definitions/FequalTo"
+                                },
+                                {
+                                    "$ref": "http://geostyler/geostyler-style.json#/definitions/FgreaterThan"
+                                },
+                                {
+                                    "$ref": "http://geostyler/geostyler-style.json#/definitions/FgreaterThanOrEqualTo"
+                                },
+                                {
+                                    "$ref": "http://geostyler/geostyler-style.json#/definitions/Fin"
+                                },
+                                {
+                                    "$ref": "http://geostyler/geostyler-style.json#/definitions/FlessThan"
+                                },
+                                {
+                                    "$ref": "http://geostyler/geostyler-style.json#/definitions/FlessThanOrEqualTo"
+                                },
+                                {
+                                    "$ref": "http://geostyler/geostyler-style.json#/definitions/Fnot"
+                                },
+                                {
+                                    "$ref": "http://geostyler/geostyler-style.json#/definitions/FnotEqualTo"
+                                },
+                                {
+                                    "$ref": "http://geostyler/geostyler-style.json#/definitions/FparseBoolean"
+                                },
+                                {
+                                    "$ref": "http://geostyler/geostyler-style.json#/definitions/FstrEndsWith"
+                                },
+                                {
+                                    "$ref": "http://geostyler/geostyler-style.json#/definitions/FstrEqualsIgnoreCase"
+                                },
+                                {
+                                    "$ref": "http://geostyler/geostyler-style.json#/definitions/FstrMatches"
+                                },
+                                {
+                                    "$ref": "http://geostyler/geostyler-style.json#/definitions/FstrStartsWith"
+                                },
+                                {
+                                    "type": "boolean"
+                                }
+                            ]
                         }
                     ],
                     "maxItems": 1,
@@ -6109,7 +6358,9 @@
                     "type": "array"
                 },
                 "name": {
-                    "const": "not",
+                    "enum": [
+                        "not"
+                    ],
                     "type": "string"
                 }
             },
@@ -6128,7 +6379,9 @@
                     "type": "array"
                 },
                 "name": {
-                    "const": "notEqualTo",
+                    "enum": [
+                        "notEqualTo"
+                    ],
                     "type": "string"
                 }
             },
@@ -6346,7 +6599,9 @@
                     "type": "array"
                 },
                 "name": {
-                    "const": "numberFormat",
+                    "enum": [
+                        "numberFormat"
+                    ],
                     "type": "string"
                 }
             },
@@ -6412,7 +6667,9 @@
                     "type": "array"
                 },
                 "name": {
-                    "const": "parseBoolean",
+                    "enum": [
+                        "parseBoolean"
+                    ],
                     "type": "string"
                 }
             },
@@ -6422,7 +6679,9 @@
             "description": "Returns an approximation of pi, the ratio of the circumference of a circle to its diameter",
             "properties": {
                 "name": {
-                    "const": "pi",
+                    "enum": [
+                        "pi"
+                    ],
                     "type": "string"
                 }
             },
@@ -6645,7 +6904,9 @@
                     "type": "array"
                 },
                 "name": {
-                    "const": "pow",
+                    "enum": [
+                        "pow"
+                    ],
                     "type": "string"
                 }
             },
@@ -6711,7 +6972,9 @@
                     "type": "array"
                 },
                 "name": {
-                    "const": "property",
+                    "enum": [
+                        "property"
+                    ],
                     "type": "string"
                 }
             },
@@ -6721,7 +6984,9 @@
             "description": "Returns a Double value with a positive sign, greater than or equal to 0.0 and less than 1.0.",
             "properties": {
                 "name": {
-                    "const": "random",
+                    "enum": [
+                        "random"
+                    ],
                     "type": "string"
                 }
             },
@@ -6841,7 +7106,9 @@
                     "type": "array"
                 },
                 "name": {
-                    "const": "rint",
+                    "enum": [
+                        "rint"
+                    ],
                     "type": "string"
                 }
             },
@@ -6961,7 +7228,9 @@
                     "type": "array"
                 },
                 "name": {
-                    "const": "round",
+                    "enum": [
+                        "round"
+                    ],
                     "type": "string"
                 }
             },
@@ -7081,7 +7350,9 @@
                     "type": "array"
                 },
                 "name": {
-                    "const": "sin",
+                    "enum": [
+                        "sin"
+                    ],
                     "type": "string"
                 }
             },
@@ -7201,7 +7472,9 @@
                     "type": "array"
                 },
                 "name": {
-                    "const": "sqrt",
+                    "enum": [
+                        "sqrt"
+                    ],
                     "type": "string"
                 }
             },
@@ -7522,7 +7795,9 @@
                     "type": "array"
                 },
                 "name": {
-                    "const": "strAbbreviate",
+                    "enum": [
+                        "strAbbreviate"
+                    ],
                     "type": "string"
                 }
             },
@@ -7588,7 +7863,9 @@
                     "type": "array"
                 },
                 "name": {
-                    "const": "strCapitalize",
+                    "enum": [
+                        "strCapitalize"
+                    ],
                     "type": "string"
                 }
             },
@@ -7650,7 +7927,9 @@
                     "type": "array"
                 },
                 "name": {
-                    "const": "strConcat",
+                    "enum": [
+                        "strConcat"
+                    ],
                     "type": "string"
                 }
             },
@@ -7765,7 +8044,9 @@
                     "type": "array"
                 },
                 "name": {
-                    "const": "strDefaultIfBlank",
+                    "enum": [
+                        "strDefaultIfBlank"
+                    ],
                     "type": "string"
                 }
             },
@@ -7880,7 +8161,9 @@
                     "type": "array"
                 },
                 "name": {
-                    "const": "strEndsWith",
+                    "enum": [
+                        "strEndsWith"
+                    ],
                     "type": "string"
                 }
             },
@@ -7995,7 +8278,9 @@
                     "type": "array"
                 },
                 "name": {
-                    "const": "strEqualsIgnoreCase",
+                    "enum": [
+                        "strEqualsIgnoreCase"
+                    ],
                     "type": "string"
                 }
             },
@@ -8110,7 +8395,9 @@
                     "type": "array"
                 },
                 "name": {
-                    "const": "strIndexOf",
+                    "enum": [
+                        "strIndexOf"
+                    ],
                     "type": "string"
                 }
             },
@@ -8225,7 +8512,9 @@
                     "type": "array"
                 },
                 "name": {
-                    "const": "strLastIndexOf",
+                    "enum": [
+                        "strLastIndexOf"
+                    ],
                     "type": "string"
                 }
             },
@@ -8291,7 +8580,9 @@
                     "type": "array"
                 },
                 "name": {
-                    "const": "strLength",
+                    "enum": [
+                        "strLength"
+                    ],
                     "type": "string"
                 }
             },
@@ -8406,7 +8697,9 @@
                     "type": "array"
                 },
                 "name": {
-                    "const": "strMatches",
+                    "enum": [
+                        "strMatches"
+                    ],
                     "type": "string"
                 }
             },
@@ -8565,7 +8858,68 @@
                             ]
                         },
                         {
-                            "$ref": "http://geostyler/geostyler-style.json#/definitions/Expression<boolean>"
+                            "anyOf": [
+                                {
+                                    "$ref": "http://geostyler/geostyler-style.json#/definitions/Fcase"
+                                },
+                                {
+                                    "$ref": "http://geostyler/geostyler-style.json#/definitions/Fproperty"
+                                },
+                                {
+                                    "$ref": "http://geostyler/geostyler-style.json#/definitions/Fall"
+                                },
+                                {
+                                    "$ref": "http://geostyler/geostyler-style.json#/definitions/Fany"
+                                },
+                                {
+                                    "$ref": "http://geostyler/geostyler-style.json#/definitions/Fbetween"
+                                },
+                                {
+                                    "$ref": "http://geostyler/geostyler-style.json#/definitions/Fdouble2bool"
+                                },
+                                {
+                                    "$ref": "http://geostyler/geostyler-style.json#/definitions/FequalTo"
+                                },
+                                {
+                                    "$ref": "http://geostyler/geostyler-style.json#/definitions/FgreaterThan"
+                                },
+                                {
+                                    "$ref": "http://geostyler/geostyler-style.json#/definitions/FgreaterThanOrEqualTo"
+                                },
+                                {
+                                    "$ref": "http://geostyler/geostyler-style.json#/definitions/Fin"
+                                },
+                                {
+                                    "$ref": "http://geostyler/geostyler-style.json#/definitions/FlessThan"
+                                },
+                                {
+                                    "$ref": "http://geostyler/geostyler-style.json#/definitions/FlessThanOrEqualTo"
+                                },
+                                {
+                                    "$ref": "http://geostyler/geostyler-style.json#/definitions/Fnot"
+                                },
+                                {
+                                    "$ref": "http://geostyler/geostyler-style.json#/definitions/FnotEqualTo"
+                                },
+                                {
+                                    "$ref": "http://geostyler/geostyler-style.json#/definitions/FparseBoolean"
+                                },
+                                {
+                                    "$ref": "http://geostyler/geostyler-style.json#/definitions/FstrEndsWith"
+                                },
+                                {
+                                    "$ref": "http://geostyler/geostyler-style.json#/definitions/FstrEqualsIgnoreCase"
+                                },
+                                {
+                                    "$ref": "http://geostyler/geostyler-style.json#/definitions/FstrMatches"
+                                },
+                                {
+                                    "$ref": "http://geostyler/geostyler-style.json#/definitions/FstrStartsWith"
+                                },
+                                {
+                                    "type": "boolean"
+                                }
+                            ]
                         }
                     ],
                     "maxItems": 4,
@@ -8573,7 +8927,9 @@
                     "type": "array"
                 },
                 "name": {
-                    "const": "strReplace",
+                    "enum": [
+                        "strReplace"
+                    ],
                     "type": "string"
                 }
             },
@@ -8688,7 +9044,9 @@
                     "type": "array"
                 },
                 "name": {
-                    "const": "strStartsWith",
+                    "enum": [
+                        "strStartsWith"
+                    ],
                     "type": "string"
                 }
             },
@@ -8754,7 +9112,9 @@
                     "type": "array"
                 },
                 "name": {
-                    "const": "strStripAccents",
+                    "enum": [
+                        "strStripAccents"
+                    ],
                     "type": "string"
                 }
             },
@@ -9026,7 +9386,9 @@
                     "type": "array"
                 },
                 "name": {
-                    "const": "strSubstring",
+                    "enum": [
+                        "strSubstring"
+                    ],
                     "type": "string"
                 }
             },
@@ -9195,7 +9557,9 @@
                     "type": "array"
                 },
                 "name": {
-                    "const": "strSubstringStart",
+                    "enum": [
+                        "strSubstringStart"
+                    ],
                     "type": "string"
                 }
             },
@@ -9261,7 +9625,9 @@
                     "type": "array"
                 },
                 "name": {
-                    "const": "strToLowerCase",
+                    "enum": [
+                        "strToLowerCase"
+                    ],
                     "type": "string"
                 }
             },
@@ -9327,7 +9693,9 @@
                     "type": "array"
                 },
                 "name": {
-                    "const": "strToUpperCase",
+                    "enum": [
+                        "strToUpperCase"
+                    ],
                     "type": "string"
                 }
             },
@@ -9393,7 +9761,9 @@
                     "type": "array"
                 },
                 "name": {
-                    "const": "strTrim",
+                    "enum": [
+                        "strTrim"
+                    ],
                     "type": "string"
                 }
             },
@@ -9616,7 +9986,9 @@
                     "type": "array"
                 },
                 "name": {
-                    "const": "sub",
+                    "enum": [
+                        "sub"
+                    ],
                     "type": "string"
                 }
             },
@@ -9736,7 +10108,9 @@
                     "type": "array"
                 },
                 "name": {
-                    "const": "tan",
+                    "enum": [
+                        "tan"
+                    ],
                     "type": "string"
                 }
             },
@@ -9856,7 +10230,9 @@
                     "type": "array"
                 },
                 "name": {
-                    "const": "toDegrees",
+                    "enum": [
+                        "toDegrees"
+                    ],
                     "type": "string"
                 }
             },
@@ -9976,7 +10352,9 @@
                     "type": "array"
                 },
                 "name": {
-                    "const": "toRadians",
+                    "enum": [
+                        "toRadians"
+                    ],
                     "type": "string"
                 }
             },
@@ -10707,10 +11085,494 @@
                             "$ref": "http://geostyler/geostyler-style.json#/definitions/FstrTrim"
                         },
                         {
+                            "description": "Configuration for a sprite image.",
+                            "properties": {
+                                "position": {
+                                    "description": "The starting position of the sprite to cut out. Origing [0, 0] is top left in pixels.",
+                                    "items": [
+                                        {
+                                            "anyOf": [
+                                                {
+                                                    "$ref": "http://geostyler/geostyler-style.json#/definitions/Fcase"
+                                                },
+                                                {
+                                                    "$ref": "http://geostyler/geostyler-style.json#/definitions/Fproperty"
+                                                },
+                                                {
+                                                    "$ref": "http://geostyler/geostyler-style.json#/definitions/Fabs"
+                                                },
+                                                {
+                                                    "$ref": "http://geostyler/geostyler-style.json#/definitions/Facos"
+                                                },
+                                                {
+                                                    "$ref": "http://geostyler/geostyler-style.json#/definitions/Fadd"
+                                                },
+                                                {
+                                                    "$ref": "http://geostyler/geostyler-style.json#/definitions/Fasin"
+                                                },
+                                                {
+                                                    "$ref": "http://geostyler/geostyler-style.json#/definitions/Fatan"
+                                                },
+                                                {
+                                                    "$ref": "http://geostyler/geostyler-style.json#/definitions/Fatan2"
+                                                },
+                                                {
+                                                    "$ref": "http://geostyler/geostyler-style.json#/definitions/Fceil"
+                                                },
+                                                {
+                                                    "$ref": "http://geostyler/geostyler-style.json#/definitions/Fcos"
+                                                },
+                                                {
+                                                    "$ref": "http://geostyler/geostyler-style.json#/definitions/Fdiv"
+                                                },
+                                                {
+                                                    "$ref": "http://geostyler/geostyler-style.json#/definitions/Fexp"
+                                                },
+                                                {
+                                                    "$ref": "http://geostyler/geostyler-style.json#/definitions/Ffloor"
+                                                },
+                                                {
+                                                    "$ref": "http://geostyler/geostyler-style.json#/definitions/Flog"
+                                                },
+                                                {
+                                                    "$ref": "http://geostyler/geostyler-style.json#/definitions/Fmax"
+                                                },
+                                                {
+                                                    "$ref": "http://geostyler/geostyler-style.json#/definitions/Fmin"
+                                                },
+                                                {
+                                                    "$ref": "http://geostyler/geostyler-style.json#/definitions/Fmodulo"
+                                                },
+                                                {
+                                                    "$ref": "http://geostyler/geostyler-style.json#/definitions/Fmul"
+                                                },
+                                                {
+                                                    "$ref": "http://geostyler/geostyler-style.json#/definitions/Fpi"
+                                                },
+                                                {
+                                                    "$ref": "http://geostyler/geostyler-style.json#/definitions/Fpow"
+                                                },
+                                                {
+                                                    "$ref": "http://geostyler/geostyler-style.json#/definitions/Frandom"
+                                                },
+                                                {
+                                                    "$ref": "http://geostyler/geostyler-style.json#/definitions/Frint"
+                                                },
+                                                {
+                                                    "$ref": "http://geostyler/geostyler-style.json#/definitions/Fround"
+                                                },
+                                                {
+                                                    "$ref": "http://geostyler/geostyler-style.json#/definitions/Fsin"
+                                                },
+                                                {
+                                                    "$ref": "http://geostyler/geostyler-style.json#/definitions/Fsqrt"
+                                                },
+                                                {
+                                                    "$ref": "http://geostyler/geostyler-style.json#/definitions/FstrIndexOf"
+                                                },
+                                                {
+                                                    "$ref": "http://geostyler/geostyler-style.json#/definitions/FstrLastIndexOf"
+                                                },
+                                                {
+                                                    "$ref": "http://geostyler/geostyler-style.json#/definitions/FstrLength"
+                                                },
+                                                {
+                                                    "$ref": "http://geostyler/geostyler-style.json#/definitions/Fsub"
+                                                },
+                                                {
+                                                    "$ref": "http://geostyler/geostyler-style.json#/definitions/Ftan"
+                                                },
+                                                {
+                                                    "$ref": "http://geostyler/geostyler-style.json#/definitions/FtoDegrees"
+                                                },
+                                                {
+                                                    "$ref": "http://geostyler/geostyler-style.json#/definitions/FtoRadians"
+                                                },
+                                                {
+                                                    "type": "number"
+                                                }
+                                            ]
+                                        },
+                                        {
+                                            "anyOf": [
+                                                {
+                                                    "$ref": "http://geostyler/geostyler-style.json#/definitions/Fcase"
+                                                },
+                                                {
+                                                    "$ref": "http://geostyler/geostyler-style.json#/definitions/Fproperty"
+                                                },
+                                                {
+                                                    "$ref": "http://geostyler/geostyler-style.json#/definitions/Fabs"
+                                                },
+                                                {
+                                                    "$ref": "http://geostyler/geostyler-style.json#/definitions/Facos"
+                                                },
+                                                {
+                                                    "$ref": "http://geostyler/geostyler-style.json#/definitions/Fadd"
+                                                },
+                                                {
+                                                    "$ref": "http://geostyler/geostyler-style.json#/definitions/Fasin"
+                                                },
+                                                {
+                                                    "$ref": "http://geostyler/geostyler-style.json#/definitions/Fatan"
+                                                },
+                                                {
+                                                    "$ref": "http://geostyler/geostyler-style.json#/definitions/Fatan2"
+                                                },
+                                                {
+                                                    "$ref": "http://geostyler/geostyler-style.json#/definitions/Fceil"
+                                                },
+                                                {
+                                                    "$ref": "http://geostyler/geostyler-style.json#/definitions/Fcos"
+                                                },
+                                                {
+                                                    "$ref": "http://geostyler/geostyler-style.json#/definitions/Fdiv"
+                                                },
+                                                {
+                                                    "$ref": "http://geostyler/geostyler-style.json#/definitions/Fexp"
+                                                },
+                                                {
+                                                    "$ref": "http://geostyler/geostyler-style.json#/definitions/Ffloor"
+                                                },
+                                                {
+                                                    "$ref": "http://geostyler/geostyler-style.json#/definitions/Flog"
+                                                },
+                                                {
+                                                    "$ref": "http://geostyler/geostyler-style.json#/definitions/Fmax"
+                                                },
+                                                {
+                                                    "$ref": "http://geostyler/geostyler-style.json#/definitions/Fmin"
+                                                },
+                                                {
+                                                    "$ref": "http://geostyler/geostyler-style.json#/definitions/Fmodulo"
+                                                },
+                                                {
+                                                    "$ref": "http://geostyler/geostyler-style.json#/definitions/Fmul"
+                                                },
+                                                {
+                                                    "$ref": "http://geostyler/geostyler-style.json#/definitions/Fpi"
+                                                },
+                                                {
+                                                    "$ref": "http://geostyler/geostyler-style.json#/definitions/Fpow"
+                                                },
+                                                {
+                                                    "$ref": "http://geostyler/geostyler-style.json#/definitions/Frandom"
+                                                },
+                                                {
+                                                    "$ref": "http://geostyler/geostyler-style.json#/definitions/Frint"
+                                                },
+                                                {
+                                                    "$ref": "http://geostyler/geostyler-style.json#/definitions/Fround"
+                                                },
+                                                {
+                                                    "$ref": "http://geostyler/geostyler-style.json#/definitions/Fsin"
+                                                },
+                                                {
+                                                    "$ref": "http://geostyler/geostyler-style.json#/definitions/Fsqrt"
+                                                },
+                                                {
+                                                    "$ref": "http://geostyler/geostyler-style.json#/definitions/FstrIndexOf"
+                                                },
+                                                {
+                                                    "$ref": "http://geostyler/geostyler-style.json#/definitions/FstrLastIndexOf"
+                                                },
+                                                {
+                                                    "$ref": "http://geostyler/geostyler-style.json#/definitions/FstrLength"
+                                                },
+                                                {
+                                                    "$ref": "http://geostyler/geostyler-style.json#/definitions/Fsub"
+                                                },
+                                                {
+                                                    "$ref": "http://geostyler/geostyler-style.json#/definitions/Ftan"
+                                                },
+                                                {
+                                                    "$ref": "http://geostyler/geostyler-style.json#/definitions/FtoDegrees"
+                                                },
+                                                {
+                                                    "$ref": "http://geostyler/geostyler-style.json#/definitions/FtoRadians"
+                                                },
+                                                {
+                                                    "type": "number"
+                                                }
+                                            ]
+                                        }
+                                    ],
+                                    "maxItems": 2,
+                                    "minItems": 2,
+                                    "type": "array"
+                                },
+                                "size": {
+                                    "description": "The size of the sprite [width, height] in pixels.",
+                                    "items": [
+                                        {
+                                            "anyOf": [
+                                                {
+                                                    "$ref": "http://geostyler/geostyler-style.json#/definitions/Fcase"
+                                                },
+                                                {
+                                                    "$ref": "http://geostyler/geostyler-style.json#/definitions/Fproperty"
+                                                },
+                                                {
+                                                    "$ref": "http://geostyler/geostyler-style.json#/definitions/Fabs"
+                                                },
+                                                {
+                                                    "$ref": "http://geostyler/geostyler-style.json#/definitions/Facos"
+                                                },
+                                                {
+                                                    "$ref": "http://geostyler/geostyler-style.json#/definitions/Fadd"
+                                                },
+                                                {
+                                                    "$ref": "http://geostyler/geostyler-style.json#/definitions/Fasin"
+                                                },
+                                                {
+                                                    "$ref": "http://geostyler/geostyler-style.json#/definitions/Fatan"
+                                                },
+                                                {
+                                                    "$ref": "http://geostyler/geostyler-style.json#/definitions/Fatan2"
+                                                },
+                                                {
+                                                    "$ref": "http://geostyler/geostyler-style.json#/definitions/Fceil"
+                                                },
+                                                {
+                                                    "$ref": "http://geostyler/geostyler-style.json#/definitions/Fcos"
+                                                },
+                                                {
+                                                    "$ref": "http://geostyler/geostyler-style.json#/definitions/Fdiv"
+                                                },
+                                                {
+                                                    "$ref": "http://geostyler/geostyler-style.json#/definitions/Fexp"
+                                                },
+                                                {
+                                                    "$ref": "http://geostyler/geostyler-style.json#/definitions/Ffloor"
+                                                },
+                                                {
+                                                    "$ref": "http://geostyler/geostyler-style.json#/definitions/Flog"
+                                                },
+                                                {
+                                                    "$ref": "http://geostyler/geostyler-style.json#/definitions/Fmax"
+                                                },
+                                                {
+                                                    "$ref": "http://geostyler/geostyler-style.json#/definitions/Fmin"
+                                                },
+                                                {
+                                                    "$ref": "http://geostyler/geostyler-style.json#/definitions/Fmodulo"
+                                                },
+                                                {
+                                                    "$ref": "http://geostyler/geostyler-style.json#/definitions/Fmul"
+                                                },
+                                                {
+                                                    "$ref": "http://geostyler/geostyler-style.json#/definitions/Fpi"
+                                                },
+                                                {
+                                                    "$ref": "http://geostyler/geostyler-style.json#/definitions/Fpow"
+                                                },
+                                                {
+                                                    "$ref": "http://geostyler/geostyler-style.json#/definitions/Frandom"
+                                                },
+                                                {
+                                                    "$ref": "http://geostyler/geostyler-style.json#/definitions/Frint"
+                                                },
+                                                {
+                                                    "$ref": "http://geostyler/geostyler-style.json#/definitions/Fround"
+                                                },
+                                                {
+                                                    "$ref": "http://geostyler/geostyler-style.json#/definitions/Fsin"
+                                                },
+                                                {
+                                                    "$ref": "http://geostyler/geostyler-style.json#/definitions/Fsqrt"
+                                                },
+                                                {
+                                                    "$ref": "http://geostyler/geostyler-style.json#/definitions/FstrIndexOf"
+                                                },
+                                                {
+                                                    "$ref": "http://geostyler/geostyler-style.json#/definitions/FstrLastIndexOf"
+                                                },
+                                                {
+                                                    "$ref": "http://geostyler/geostyler-style.json#/definitions/FstrLength"
+                                                },
+                                                {
+                                                    "$ref": "http://geostyler/geostyler-style.json#/definitions/Fsub"
+                                                },
+                                                {
+                                                    "$ref": "http://geostyler/geostyler-style.json#/definitions/Ftan"
+                                                },
+                                                {
+                                                    "$ref": "http://geostyler/geostyler-style.json#/definitions/FtoDegrees"
+                                                },
+                                                {
+                                                    "$ref": "http://geostyler/geostyler-style.json#/definitions/FtoRadians"
+                                                },
+                                                {
+                                                    "type": "number"
+                                                }
+                                            ]
+                                        },
+                                        {
+                                            "anyOf": [
+                                                {
+                                                    "$ref": "http://geostyler/geostyler-style.json#/definitions/Fcase"
+                                                },
+                                                {
+                                                    "$ref": "http://geostyler/geostyler-style.json#/definitions/Fproperty"
+                                                },
+                                                {
+                                                    "$ref": "http://geostyler/geostyler-style.json#/definitions/Fabs"
+                                                },
+                                                {
+                                                    "$ref": "http://geostyler/geostyler-style.json#/definitions/Facos"
+                                                },
+                                                {
+                                                    "$ref": "http://geostyler/geostyler-style.json#/definitions/Fadd"
+                                                },
+                                                {
+                                                    "$ref": "http://geostyler/geostyler-style.json#/definitions/Fasin"
+                                                },
+                                                {
+                                                    "$ref": "http://geostyler/geostyler-style.json#/definitions/Fatan"
+                                                },
+                                                {
+                                                    "$ref": "http://geostyler/geostyler-style.json#/definitions/Fatan2"
+                                                },
+                                                {
+                                                    "$ref": "http://geostyler/geostyler-style.json#/definitions/Fceil"
+                                                },
+                                                {
+                                                    "$ref": "http://geostyler/geostyler-style.json#/definitions/Fcos"
+                                                },
+                                                {
+                                                    "$ref": "http://geostyler/geostyler-style.json#/definitions/Fdiv"
+                                                },
+                                                {
+                                                    "$ref": "http://geostyler/geostyler-style.json#/definitions/Fexp"
+                                                },
+                                                {
+                                                    "$ref": "http://geostyler/geostyler-style.json#/definitions/Ffloor"
+                                                },
+                                                {
+                                                    "$ref": "http://geostyler/geostyler-style.json#/definitions/Flog"
+                                                },
+                                                {
+                                                    "$ref": "http://geostyler/geostyler-style.json#/definitions/Fmax"
+                                                },
+                                                {
+                                                    "$ref": "http://geostyler/geostyler-style.json#/definitions/Fmin"
+                                                },
+                                                {
+                                                    "$ref": "http://geostyler/geostyler-style.json#/definitions/Fmodulo"
+                                                },
+                                                {
+                                                    "$ref": "http://geostyler/geostyler-style.json#/definitions/Fmul"
+                                                },
+                                                {
+                                                    "$ref": "http://geostyler/geostyler-style.json#/definitions/Fpi"
+                                                },
+                                                {
+                                                    "$ref": "http://geostyler/geostyler-style.json#/definitions/Fpow"
+                                                },
+                                                {
+                                                    "$ref": "http://geostyler/geostyler-style.json#/definitions/Frandom"
+                                                },
+                                                {
+                                                    "$ref": "http://geostyler/geostyler-style.json#/definitions/Frint"
+                                                },
+                                                {
+                                                    "$ref": "http://geostyler/geostyler-style.json#/definitions/Fround"
+                                                },
+                                                {
+                                                    "$ref": "http://geostyler/geostyler-style.json#/definitions/Fsin"
+                                                },
+                                                {
+                                                    "$ref": "http://geostyler/geostyler-style.json#/definitions/Fsqrt"
+                                                },
+                                                {
+                                                    "$ref": "http://geostyler/geostyler-style.json#/definitions/FstrIndexOf"
+                                                },
+                                                {
+                                                    "$ref": "http://geostyler/geostyler-style.json#/definitions/FstrLastIndexOf"
+                                                },
+                                                {
+                                                    "$ref": "http://geostyler/geostyler-style.json#/definitions/FstrLength"
+                                                },
+                                                {
+                                                    "$ref": "http://geostyler/geostyler-style.json#/definitions/Fsub"
+                                                },
+                                                {
+                                                    "$ref": "http://geostyler/geostyler-style.json#/definitions/Ftan"
+                                                },
+                                                {
+                                                    "$ref": "http://geostyler/geostyler-style.json#/definitions/FtoDegrees"
+                                                },
+                                                {
+                                                    "$ref": "http://geostyler/geostyler-style.json#/definitions/FtoRadians"
+                                                },
+                                                {
+                                                    "type": "number"
+                                                }
+                                            ]
+                                        }
+                                    ],
+                                    "maxItems": 2,
+                                    "minItems": 2,
+                                    "type": "array"
+                                },
+                                "source": {
+                                    "anyOf": [
+                                        {
+                                            "$ref": "http://geostyler/geostyler-style.json#/definitions/Fcase"
+                                        },
+                                        {
+                                            "$ref": "http://geostyler/geostyler-style.json#/definitions/Fproperty"
+                                        },
+                                        {
+                                            "$ref": "http://geostyler/geostyler-style.json#/definitions/FnumberFormat"
+                                        },
+                                        {
+                                            "$ref": "http://geostyler/geostyler-style.json#/definitions/FstrAbbreviate"
+                                        },
+                                        {
+                                            "$ref": "http://geostyler/geostyler-style.json#/definitions/FstrCapitalize"
+                                        },
+                                        {
+                                            "$ref": "http://geostyler/geostyler-style.json#/definitions/FstrConcat"
+                                        },
+                                        {
+                                            "$ref": "http://geostyler/geostyler-style.json#/definitions/FstrDefaultIfBlank"
+                                        },
+                                        {
+                                            "$ref": "http://geostyler/geostyler-style.json#/definitions/FstrReplace"
+                                        },
+                                        {
+                                            "$ref": "http://geostyler/geostyler-style.json#/definitions/FstrStripAccents"
+                                        },
+                                        {
+                                            "$ref": "http://geostyler/geostyler-style.json#/definitions/FstrSubstring"
+                                        },
+                                        {
+                                            "$ref": "http://geostyler/geostyler-style.json#/definitions/FstrSubstringStart"
+                                        },
+                                        {
+                                            "$ref": "http://geostyler/geostyler-style.json#/definitions/FstrToLowerCase"
+                                        },
+                                        {
+                                            "$ref": "http://geostyler/geostyler-style.json#/definitions/FstrToUpperCase"
+                                        },
+                                        {
+                                            "$ref": "http://geostyler/geostyler-style.json#/definitions/FstrTrim"
+                                        },
+                                        {
+                                            "type": "string"
+                                        }
+                                    ],
+                                    "description": "A path/URL to the sprite image file."
+                                }
+                            },
+                            "type": "object"
+                        },
+                        {
                             "type": "string"
                         }
                     ],
-                    "description": "A path/URL to the icon image file."
+                    "description": "A path/URL to the icon image file or a {@link Sprite} configuration."
                 },
                 "keepUpright": {
                     "anyOf": [
@@ -10778,8 +11640,10 @@
                     "description": "If true, the icon will be kept upright."
                 },
                 "kind": {
-                    "const": "Icon",
                     "description": "Describes the type of the kind of the Symbolizer.",
+                    "enum": [
+                        "Icon"
+                    ],
                     "type": "string"
                 },
                 "offset": {
@@ -12817,8 +13681,10 @@
                     "description": "The JoinType for the LineSymbolizer."
                 },
                 "kind": {
-                    "const": "Line",
                     "description": "Describes the type of the kind of the Symbolizer.",
+                    "enum": [
+                        "Line"
+                    ],
                     "type": "string"
                 },
                 "miterLimit": {
@@ -13857,8 +14723,10 @@
                     "description": "The opacity of the fill. A value between 0 and 1.\n0 is none opaque and 1 is full opaque."
                 },
                 "kind": {
-                    "const": "Mark",
                     "description": "Describes the type of the kind of the Symbolizer.",
+                    "enum": [
+                        "Mark"
+                    ],
                     "type": "string"
                 },
                 "offset": {
@@ -14889,7 +15757,34 @@
                     "description": "Defines whether the Symbolizer should be visibile or not."
                 },
                 "wellKnownName": {
-                    "$ref": "http://geostyler/geostyler-style.json#/definitions/WellKnownName",
+                    "anyOf": [
+                        {
+                            "items": {
+                                "type": "string"
+                            },
+                            "type": "array"
+                        },
+                        {
+                            "enum": [
+                                "circle",
+                                "cross",
+                                "shape://backslash",
+                                "shape://carrow",
+                                "shape://dot",
+                                "shape://horline",
+                                "shape://oarrow",
+                                "shape://plus",
+                                "shape://slash",
+                                "shape://times",
+                                "shape://vertline",
+                                "square",
+                                "star",
+                                "triangle",
+                                "x"
+                            ],
+                            "type": "string"
+                        }
+                    ],
                     "description": "The WellKnownName of the MarkSymbolizer."
                 }
             },
@@ -14899,7 +15794,9 @@
             "description": "A NegationFilter negates a given Filter.",
             "items": [
                 {
-                    "const": "!",
+                    "enum": [
+                        "!"
+                    ],
                     "type": "string"
                 },
                 {
@@ -15468,7 +16365,9 @@
                     "description": "Expressions can be a literal value, a property name or a function call."
                 },
                 "kind": {
-                    "const": "Raster",
+                    "enum": [
+                        "Raster"
+                    ],
                     "type": "string"
                 },
                 "opacity": {
@@ -15867,7 +16766,9 @@
                             "description": "A Filter that checks if a property is in a range of two values (inclusive).",
                             "items": [
                                 {
-                                    "const": "<=x<=",
+                                    "enum": [
+                                        "<=x<="
+                                    ],
                                     "type": "string"
                                 },
                                 {
@@ -16133,7 +17034,18 @@
                         {
                             "items": [
                                 {
-                                    "$ref": "http://geostyler/geostyler-style.json#/definitions/ComparisonOperator"
+                                    "description": "The possible Operators used for comparison Filters.",
+                                    "enum": [
+                                        "!=",
+                                        "*=",
+                                        "<",
+                                        "<=",
+                                        "<=x<=",
+                                        "==",
+                                        ">",
+                                        ">="
+                                    ],
+                                    "type": "string"
                                 },
                                 {
                                     "anyOf": [
@@ -16531,21 +17443,12 @@
                             "type": "array"
                         },
                         {
-                            "$ref": "http://geostyler/geostyler-style.json#/definitions/NegationFilter",
-                            "description": "A NegationFilter negates a given Filter."
+                            "$ref": "http://geostyler/geostyler-style.json#/definitions/CombinationFilter",
+                            "description": "A CombinationFilter combines N Filters with a logical OR / AND operator."
                         },
                         {
-                            "additionalItems": {
-                                "$ref": "http://geostyler/geostyler-style.json#/definitions/Filter"
-                            },
-                            "description": "A CombinationFilter combines N Filters with a logical OR / AND operator.",
-                            "items": [
-                                {
-                                    "$ref": "http://geostyler/geostyler-style.json#/definitions/CombinationOperator"
-                                }
-                            ],
-                            "minItems": 1,
-                            "type": "array"
+                            "$ref": "http://geostyler/geostyler-style.json#/definitions/NegationFilter",
+                            "description": "A NegationFilter negates a given Filter."
                         },
                         {
                             "type": "boolean"
@@ -16561,7 +17464,27 @@
                 },
                 "symbolizers": {
                     "items": {
-                        "$ref": "http://geostyler/geostyler-style.json#/definitions/Symbolizer"
+                        "anyOf": [
+                            {
+                                "$ref": "http://geostyler/geostyler-style.json#/definitions/MarkSymbolizer"
+                            },
+                            {
+                                "$ref": "http://geostyler/geostyler-style.json#/definitions/TextSymbolizer"
+                            },
+                            {
+                                "$ref": "http://geostyler/geostyler-style.json#/definitions/IconSymbolizer"
+                            },
+                            {
+                                "$ref": "http://geostyler/geostyler-style.json#/definitions/FillSymbolizer"
+                            },
+                            {
+                                "$ref": "http://geostyler/geostyler-style.json#/definitions/LineSymbolizer"
+                            },
+                            {
+                                "$ref": "http://geostyler/geostyler-style.json#/definitions/RasterSymbolizer"
+                            }
+                        ],
+                        "description": "All operators."
                     },
                     "type": "array"
                 }
@@ -16781,29 +17704,6 @@
                 }
             },
             "type": "object"
-        },
-        "Symbolizer": {
-            "anyOf": [
-                {
-                    "$ref": "http://geostyler/geostyler-style.json#/definitions/MarkSymbolizer"
-                },
-                {
-                    "$ref": "http://geostyler/geostyler-style.json#/definitions/TextSymbolizer"
-                },
-                {
-                    "$ref": "http://geostyler/geostyler-style.json#/definitions/IconSymbolizer"
-                },
-                {
-                    "$ref": "http://geostyler/geostyler-style.json#/definitions/FillSymbolizer"
-                },
-                {
-                    "$ref": "http://geostyler/geostyler-style.json#/definitions/LineSymbolizer"
-                },
-                {
-                    "$ref": "http://geostyler/geostyler-style.json#/definitions/RasterSymbolizer"
-                }
-            ],
-            "description": "All operators."
         },
         "TextSymbolizer": {
             "description": "The TextSymbolizer describes the style representation of point data, if styled\nwith a text.",
@@ -17702,8 +18602,10 @@
                     "description": "If true, the text will be kept upright."
                 },
                 "kind": {
-                    "const": "Text",
                     "description": "Describes the type of the kind of the Symbolizer.",
+                    "enum": [
+                        "Text"
+                    ],
                     "type": "string"
                 },
                 "label": {
@@ -19226,35 +20128,6 @@
                 }
             },
             "type": "object"
-        },
-        "WellKnownName": {
-            "anyOf": [
-                {
-                    "pattern": "^ttf://.*#0x.*$",
-                    "type": "string"
-                },
-                {
-                    "enum": [
-                        "circle",
-                        "cross",
-                        "shape://backslash",
-                        "shape://carrow",
-                        "shape://dot",
-                        "shape://horline",
-                        "shape://oarrow",
-                        "shape://plus",
-                        "shape://slash",
-                        "shape://times",
-                        "shape://vertline",
-                        "square",
-                        "star",
-                        "triangle",
-                        "x"
-                    ],
-                    "type": "string"
-                }
-            ],
-            "description": "Supported WellKnownNames\nNote that due to TypeScript limitations any string will be valid for this type; this will not change\nuntil regexp or equivalent is supported, see:\nhttps://github.com/microsoft/TypeScript/issues/6579"
         }
     },
     "description": "The Style is the main interface and the root for all other interfaces.",
