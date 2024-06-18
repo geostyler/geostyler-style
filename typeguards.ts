@@ -3,11 +3,26 @@
  * https://basarat.gitbook.io/typescript/type-system/typeguard#user-defined-type-guards
  */
 
-import _isString from 'lodash/isString';
-import _isNumber from 'lodash/isNumber';
-import _isBoolean from 'lodash/isBoolean';
-import _isRegExp from 'lodash/isRegExp';
-import _isNull from 'lodash/isNull';
+function isString(str: any){
+  if (str != null && typeof str.valueOf() === 'string') {
+    return true;
+  }
+  return false;
+};
+
+function isNumber(num: any){
+  if (num != null && typeof num.valueOf() === 'number') {
+    return true;
+  }
+  return false;
+}
+
+function isBoolean(bool: any){
+  if (bool != null && typeof bool.valueOf() === 'boolean') {
+    return true;
+  }
+  return false;
+};
 
 import {
   CombinationFilter,
@@ -51,7 +66,7 @@ export const isExpression = (got: any): got is Expression<any> => {
 export const isFunctionCall = (got: any): got is FunctionCall<any> => {
   return got.type === 'functioncall' &&
     got.hasOwnProperty('name') &&
-    _isString(got.name) &&
+    isString(got.name) &&
     got.hasOwnProperty('args') &&
     Array.isArray(got.args) &&
     got.args.every((arg: any) => isExpression(arg));
@@ -59,14 +74,14 @@ export const isFunctionCall = (got: any): got is FunctionCall<any> => {
 
 // PropertyValue
 export const isPropertyType = (got: any): got is PropertyType => {
-  return _isString(got) || _isNumber(got) || _isBoolean(got) || got === null;
+  return isString(got) || isNumber(got) || isBoolean(got) || got === null;
 };
 
 // ScaleDenominator
 export const isScaleDenominator = (got: any): got is ScaleDenominator => {
   return !!((got?.min || got?.max) &&
-    ((!!got.min) ? isGeoStylerNumberFunction(got.min) || _isNumber(got.min) : true) &&
-    ((!!got.max) ? isGeoStylerNumberFunction(got.max) || _isNumber(got.min) : true));
+    ((!!got.min) ? isGeoStylerNumberFunction(got.min) || isNumber(got.min) : true) &&
+    ((!!got.max) ? isGeoStylerNumberFunction(got.max) || isNumber(got.min) : true));
 };
 
 // Operators
@@ -92,7 +107,7 @@ export const isFilter = (got: any): got is Filter => {
     isGeoStylerBooleanFunction(got) ||
     isNegationFilter(got) ||
     isGeoStylerBooleanFunction(got) ||
-    _isBoolean(got);
+    isBoolean(got);
 };
 
 export const isComparisonFilter = (got: any): got is ComparisonFilter => {
@@ -103,7 +118,7 @@ export const isComparisonFilter = (got: any): got is ComparisonFilter => {
     isComparisonOperator(got[0]) &&
     isExpression(got[1]) &&
     isExpression(got[2]) &&
-    (got[0] !== '<=x<=' || _isNumber(got[3]))
+    (got[0] !== '<=x<=' || isNumber(got[3]))
   );
 };
 export const isCombinationFilter = (got: any): got is CombinationFilter => {
@@ -136,7 +151,7 @@ export const isTextSymbolizer = (got: any): got is TextSymbolizer => {
   return got?.kind === 'Text';
 };
 export const isMarkSymbolizer = (got: any): got is MarkSymbolizer => {
-  return got?.kind === 'Mark' && _isString(got?.wellKnownName);
+  return got?.kind === 'Mark' && isString(got?.wellKnownName);
 };
 export const isLineSymbolizer = (got: any): got is LineSymbolizer => {
   return got?.kind === 'Line';
@@ -150,7 +165,7 @@ export const isRasterSymbolizer = (got: any): got is RasterSymbolizer => {
 
 // Rule
 export const isRule = (got: any): got is Rule => {
-  return !!(_isString(got?.name) &&
+  return !!(isString(got?.name) &&
     (got?.filter ? isFilter(got.filter) : true) &&
     (got?.scaleDenominator ? isScaleDenominator(got.scaleDenominator) : true) &&
     got?.symbolizers?.every((arg: any) => isSymbolizer(arg)));
