@@ -61,9 +61,5 @@
     "url": "https://github.com/geostyler/geostyler/issues"
   },
   "homepage": "https://github.com/geostyler/geostyler-style#readme",
-  "dependencies": {
-    "@types/lodash": "^4.17.4",
-    "lodash": "^4.17.21"
-  },
   "funding": "https://opencollective.com/geostyler"
 }
