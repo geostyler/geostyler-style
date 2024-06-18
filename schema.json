@@ -2057,22 +2057,22 @@
             "type": "object"
         },
         "Fcase": {
-            "description": "Textual representation of a switch-case function.\nargument[0] - argument[args.length - 2] are objects with 'case' and\n'value'. argument[args.length -1] will be the default value.\n\nThe value of the first object where its 'case' Expression resolves to true\nwill be used.\nIf no 'case' expression resolves to true the default value will be returned.",
+            "description": "Textual representation of a switch-case function.\nargument[0] is the default value.\nargument[1] - argument[args.length] are objects with 'case' and 'value'.\n\nThe value of the first object where its 'case' Expression resolves to true\nwill be used.\nIf no 'case' expression resolves to true the default value will be returned.",
             "properties": {
                 "args": {
-                    "additionalItems": {},
-                    "items": [
-                        {
-                            "properties": {
-                                "case": {
-                                    "$ref": "http://geostyler/geostyler-style.json#/definitions/Expression<boolean>"
-                                },
-                                "value": {
-                                    "description": "Expressions can be a literal value, a property name or a function call."
-                                }
+                    "additionalItems": {
+                        "properties": {
+                            "case": {
+                                "$ref": "http://geostyler/geostyler-style.json#/definitions/Expression<boolean>"
                             },
-                            "type": "object"
-                        }
+                            "value": {
+                                "description": "Expressions can be a literal value, a property name or a function call."
+                            }
+                        },
+                        "type": "object"
+                    },
+                    "items": [
+                        {}
                     ],
                     "minItems": 1,
                     "type": "array"

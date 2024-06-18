@@ -183,8 +183,8 @@ export type FCaseParameter = {
 
 /**
  * Textual representation of a switch-case function.
- * argument[0] - argument[args.length - 2] are objects with 'case' and
- * 'value'. argument[args.length -1] will be the default value.
+ * argument[0] is the default value.
+ * argument[1] - argument[args.length] are objects with 'case' and 'value'.
  *
  * The value of the first object where its 'case' Expression resolves to true
  * will be used.
@@ -193,8 +193,8 @@ export type FCaseParameter = {
 export interface Fcase extends FunctionCall<PropertyType> {
   name: 'case';
   args: [
-    ...FCaseParameter[],
-    Expression<PropertyType>
+    Expression<PropertyType>,
+    ...FCaseParameter[]
   ];
 };
 
