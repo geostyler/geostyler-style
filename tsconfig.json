@@ -1,26 +1,27 @@
 {
   "compilerOptions": {
+    "allowJs": false,
     "baseUrl": ".",
-    "module": "ES2022",
     "declaration": true,
     "esModuleInterop": true,
-    "outDir": "dist",
-    "target": "ES2022",
-    "lib": ["ES2022", "es6", "dom"],
-    "sourceMap": true,
-    "inlineSources": true,
-    "allowJs": false,
-    "moduleResolution": "node",
-    "rootDir": ".",
     "forceConsistentCasingInFileNames": true,
+    "inlineSources": true,
+    "lib": ["ES2022", "es6", "dom"],
+    "module": "Preserve",
+    "moduleResolution": "Bundler",
+    "noImplicitAny": true,
     "noImplicitReturns": true,
     "noImplicitThis": true,
-    "noImplicitAny": true,
+    "noUnusedLocals": true,
+    "outDir": "dist",
+    "rootDir": ".",
+    "sourceMap": true,
     "strictNullChecks": true,
-    "noUnusedLocals": true
+    "target": "ES2022",
   },
   "files": [
     "./typeguards.ts",
-    "./index.ts"
+    "./index.ts",
+    "./functions.ts"
   ]
 }
