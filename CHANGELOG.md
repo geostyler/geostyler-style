@@ -1,3 +1,10 @@
+## [9.0.0-next.4](https://github.com/geostyler/geostyler-style/compare/v9.0.0-next.3...v9.0.0-next.4) (2024-06-19)
+
+
+### Bug Fixes
+
+* switch to node 20 ([dd9979f](https://github.com/geostyler/geostyler-style/commit/dd9979f32960c146520f8a380caaa99bc2d4416e))
+
 ## [9.0.0-next.3](https://github.com/geostyler/geostyler-style/compare/v9.0.0-next.2...v9.0.0-next.3) (2024-06-19)
 
 
