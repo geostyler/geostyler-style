@@ -1,3 +1,10 @@
+## [9.0.0-next.2](https://github.com/geostyler/geostyler-style/compare/v9.0.0-next.1...v9.0.0-next.2) (2024-06-19)
+
+
+### Bug Fixes
+
+* fix tsconfig ([37973c5](https://github.com/geostyler/geostyler-style/commit/37973c56bdedcade31e213ef3a33345a2a3ce27c))
+
 ## [9.0.0-next.1](https://github.com/geostyler/geostyler-style/compare/v8.1.0...v9.0.0-next.1) (2024-06-18)
 
 
