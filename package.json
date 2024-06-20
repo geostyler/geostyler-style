@@ -4,13 +4,6 @@
   "description": "",
   "main": "dist/index.js",
   "types": "dist/index.d.ts",
-  "type": "module",
-  "exports": {
-    ".": {
-      "types": "./dist/index.d.ts",
-      "import": "./dist/index.js"
-    }
-  },
   "files": [
     "dist/*",
     "examples/**",
@@ -18,7 +11,7 @@
     "README.md"
   ],
   "scripts": {
-    "lint": "eslint -c .eslintrc.cjs --ext .ts . && tsc --noEmit",
+    "lint": "eslint -c .eslintrc.js --ext .ts . && tsc --noEmit",
     "build": "tsc",
     "test": "jest",
     "generate-schema": "typescript-json-schema tsconfig.json Style --id http://geostyler/geostyler-style.json > schema.json",
