@@ -1,3 +1,10 @@
+## [9.0.0-next.5](https://github.com/geostyler/geostyler-style/compare/v9.0.0-next.4...v9.0.0-next.5) (2024-06-20)
+
+
+### Bug Fixes
+
+* use single entry point ([8a918ce](https://github.com/geostyler/geostyler-style/commit/8a918ce2a59c00d2206e5b818568f402ace13a57))
+
 ## [9.0.0-next.4](https://github.com/geostyler/geostyler-style/compare/v9.0.0-next.3...v9.0.0-next.4) (2024-06-19)
 
 
