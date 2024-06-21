@@ -25,6 +25,7 @@ Fcos |
 Fdiv |
 Fexp |
 Ffloor |
+Finterpolate |
 Flog |
 Fmax |
 Fmin |
@@ -84,8 +85,7 @@ FparseBoolean |
 FstrEndsWith |
 FstrEqualsIgnoreCase |
 FstrMatches |
-FstrStartsWith |
-FtoBoolean;
+FstrStartsWith;
 
 export type GeoStylerUnknownFunction = Fcase | Fstep | Fproperty;
 
@@ -741,17 +741,6 @@ export interface Ftan extends FunctionCall<number> {
 };
 
 /**
- * Converts an unknown value to boolean
- */
-export interface FtoBoolean extends FunctionCall<boolean> {
-  name: 'toBoolean';
-  args: [
-    Expression<unknown>
-  ];
-};
-
-
-/**
  * Converts an angle expressed in radians into degrees
  */
 export interface FtoDegrees extends FunctionCall<number> {
@@ -788,5 +777,36 @@ export interface FtoString extends FunctionCall<string> {
   name: 'strToString';
   args: [
     Expression<unknown>
+  ];
+};
+
+export type FInterpolateTypeLinear = {
+  name: 'linear';
+};
+
+export type FInterpolateType = FInterpolateTypeLinear;
+
+export type FInterpolateParameter = {
+  stop: Expression<number>;
+  value: Expression<PropertyType>;
+};
+
+/**
+ * Textual representation of a interpolate function.
+ * argument[0] is the interpolation type.
+ * argument[1] is the input value.
+ * argument[2] - argument[args.length] are objects with 'stop' and 'value'.
+ *
+ * Will produce continuous results by interpolating between pairs
+ * of FInterpolateParamters.
+ */
+export interface Finterpolate extends FunctionCall<number> {
+  name: 'interpolate';
+  args: [
+    FInterpolateType,
+    Expression<number>,
+    FInterpolateParameter,
+    FInterpolateParameter,
+    ...FInterpolateParameter[]
   ];
 };

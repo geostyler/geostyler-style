@@ -203,6 +203,7 @@ export const isGeoStylerNumberFunction = (got: any): got is GeoStylerNumberFunct
     'div',
     'exp',
     'floor',
+    'interpolate',
     'log',
     'max',
     'min',
@@ -221,6 +222,7 @@ export const isGeoStylerNumberFunction = (got: any): got is GeoStylerNumberFunct
     'sub',
     'tan',
     'toDegrees',
+    'toNumber',
     'toRadians'
   ];
   return functionNames.includes(got?.name);
@@ -238,6 +240,7 @@ export const isGeoStylerStringFunction = (got: any): got is GeoStylerStringFunct
     'strSubstring',
     'strSubstringStart',
     'strToLowerCase',
+    'strToString',
     'strToUpperCase',
     'strTrim'
   ];
@@ -271,6 +274,7 @@ export const isGeoStylerUnknownFunction = (got: any): got is GeoStylerUnknownFun
   const functionNames: GeoStylerUnknownFunction['name'][] = [
     'case',
     'property',
+    'step'
   ];
   return functionNames.includes(got?.name);
 };
