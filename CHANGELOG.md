@@ -1,3 +1,29 @@
+## [9.0.0](https://github.com/geostyler/geostyler-style/compare/v8.1.0...v9.0.0) (2024-06-25)
+
+
+### ⚠ BREAKING CHANGES
+
+* order of arguments of the FCase function has been change
+
+### Features
+
+* add interpolate function ([ac4a927](https://github.com/geostyler/geostyler-style/commit/ac4a9270b70a2d388a3954f2e7d6e6c94ea120eb))
+* add new functions ([b15e97f](https://github.com/geostyler/geostyler-style/commit/b15e97f91210f989725b92ed7b0d8bf3bed51ea3))
+* export case and step params ([ea7cbaf](https://github.com/geostyler/geostyler-style/commit/ea7cbaf42dbc91495d0fa4b8fa7ca8f11d60dcae))
+* prepare pre releases ([3290ff1](https://github.com/geostyler/geostyler-style/commit/3290ff124d5e5d3d69345ee4aca83d3d66fd45e2))
+
+
+### Bug Fixes
+
+* **deps:** update dependency @types/lodash to v4.17.5 ([d32fec9](https://github.com/geostyler/geostyler-style/commit/d32fec9d3b396349f501a19660fe1bbdb9b5a515))
+* fix semantic release plugin ([944a92f](https://github.com/geostyler/geostyler-style/commit/944a92faa85cdafd384ed732aafef3df870969a0))
+* fix tsconfig ([a49482e](https://github.com/geostyler/geostyler-style/commit/a49482ea49842f039ce3bbd189e894090e14a106))
+* switch to node 20 ([89c4f64](https://github.com/geostyler/geostyler-style/commit/89c4f64661976200cc38aa85462fed5e5025e495))
+* update FCase arguments ([2d51319](https://github.com/geostyler/geostyler-style/commit/2d513191a62b58a841c695c3ba0e3fd0426d9dcb))
+* update repo schema ([0b4c5c1](https://github.com/geostyler/geostyler-style/commit/0b4c5c144dc72c0591327478152a1a92c1e23a29))
+* use proper node version ([8b72f62](https://github.com/geostyler/geostyler-style/commit/8b72f62fb9597faa4ade9242afbb8a1075822d6f))
+* use single entry point ([12d2d3b](https://github.com/geostyler/geostyler-style/commit/12d2d3b9b1ebd3d683306b932b29339bb8bc9049))
+
 ## [9.0.0-next.5](https://github.com/geostyler/geostyler-style/compare/v9.0.0-next.4...v9.0.0-next.5) (2024-06-20)
 
 
