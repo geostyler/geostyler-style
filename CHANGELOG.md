@@ -1,3 +1,10 @@
+## [9.0.1](https://github.com/geostyler/geostyler-style/compare/v9.0.0...v9.0.1) (2024-06-25)
+
+
+### Bug Fixes
+
+* fix elintrc name ([07af12e](https://github.com/geostyler/geostyler-style/commit/07af12e65b7840820c440442abad989e813a5431))
+
 ## [9.0.0](https://github.com/geostyler/geostyler-style/compare/v8.1.0...v9.0.0) (2024-06-25)
 
 
