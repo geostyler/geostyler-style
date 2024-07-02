@@ -4,10 +4,6 @@
 [![Create & publish versioned documentation](https://github.com/geostyler/geostyler-style/actions/workflows/on-publish.yml/badge.svg)](https://github.com/geostyler/geostyler-style/actions/workflows/on-publish.yml)
 [![License](https://img.shields.io/github/license/geostyler/geostyler-style)](https://github.com/geostyler/geostyler-style/blob/master/LICENSE)
 
-## :rocket: GeoStyler Code Sprint 2024
-
-We are happy to announce the third GeoStyler Code Sprint from **17.-21.06.2024** in Paris. Be part of it! More infos on https://geostyler.org/.
-
 TypeScript Declaration File for the [GeoStyler](https://github.com/geostyler/geostyler) Style.
 
 ### Documentation
