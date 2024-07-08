@@ -300,7 +300,7 @@ export interface FgreaterThanOrEqualTo extends FunctionCall<boolean> {
  */
 export interface Fin extends FunctionCall<boolean> {
   name: 'in';
-  args: Expression<string>[];
+  args: Expression<string | number>[];
 };
 
 /**
