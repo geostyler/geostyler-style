@@ -63,9 +63,9 @@ jobs:
     - name: Generate documentation 🏗️
       run: npm run generate-docs
 
-    - name: Deploy (to docs/master) 🚀
+    - name: Deploy (to docs/main) 🚀
       uses: JamesIves/github-pages-deploy-action@v4.6.1
       with:
         branch: gh-pages
         folder: docs
-        target-folder: docs/master
+        target-folder: docs/main

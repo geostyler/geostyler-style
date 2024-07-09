@@ -1,14 +1,14 @@
 # geostyler-style
 
-[![Lint & Docs (main)](https://github.com/geostyler/geostyler-style/actions/workflows/on-push-master.yml/badge.svg)](https://github.com/geostyler/geostyler-style/actions/workflows/on-push-master.yml)
+[![Lint & Docs (main)](https://github.com/geostyler/geostyler-style/actions/workflows/on-push-main.yml/badge.svg)](https://github.com/geostyler/geostyler-style/actions/workflows/on-push-main.yml)
 [![Create & publish versioned documentation](https://github.com/geostyler/geostyler-style/actions/workflows/on-publish.yml/badge.svg)](https://github.com/geostyler/geostyler-style/actions/workflows/on-publish.yml)
-[![License](https://img.shields.io/github/license/geostyler/geostyler-style)](https://github.com/geostyler/geostyler-style/blob/master/LICENSE)
+[![License](https://img.shields.io/github/license/geostyler/geostyler-style)](https://github.com/geostyler/geostyler-style/blob/main/LICENSE)
 
 TypeScript Declaration File for the [GeoStyler](https://github.com/geostyler/geostyler) Style.
 
 ### Documentation
 
-https://geostyler.github.io/geostyler-style/docs/master/
+https://geostyler.github.io/geostyler-style/docs/main/
 
 ### Why another style format?
 
@@ -35,4 +35,3 @@ Maintenance and further development of this code can be funded through the
 [GeoStyler Open Collective](https://opencollective.com/geostyler). All contributions and
 expenses can transparently be reviewed by anyone; you see what we use the donated money for.
 Thank you for any financial support you give the GeoStyler project 💞
-
