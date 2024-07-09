@@ -1,3 +1,10 @@
+## [9.1.0](https://github.com/geostyler/geostyler-style/compare/v9.0.1...v9.1.0) (2024-07-09)
+
+
+### Features
+
+* allow numbers in the in function ([2907811](https://github.com/geostyler/geostyler-style/commit/2907811f4d0c3efe61650d816406c6b7a57bbe9a))
+
 ## [9.0.1](https://github.com/geostyler/geostyler-style/compare/v9.0.0...v9.0.1) (2024-06-25)
 
 
