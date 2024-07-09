@@ -3,7 +3,7 @@ name: Lint and generate-docs for geostyler-style
 on:
   push:
     branches:
-      - master
+      - main
 
 jobs:
   lint:
