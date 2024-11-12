@@ -550,6 +550,10 @@ export interface FillSymbolizer extends BaseSymbolizer {
    * Renders the fill of the polygon with a repeated pattern of PointSymbolizer.
    */
   graphicFill?: PointSymbolizer;
+  /**
+   * Size of the additional area around the repeated graphic fill symbolizer.
+   */
+  graphicFillPadding?: [Expression<number>, Expression<number>, Expression<number>, Expression<number>];
 }
 
 /**
@@ -614,6 +618,10 @@ export interface LineSymbolizer extends BaseSymbolizer {
    * Renders the pixels of the line with a repeated pattern.
    */
   graphicFill?: PointSymbolizer;
+  /**
+   * Size of the additional area around the repeated graphic fill symbolizer.
+   */
+  graphicFillPadding?: [Expression<number>, Expression<number>];
   /**
    * The JoinType for the LineSymbolizer.
    */
