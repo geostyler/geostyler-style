@@ -1,3 +1,10 @@
+## [9.2.0](https://github.com/geostyler/geostyler-style/compare/v9.1.0...v9.2.0) (2024-11-26)
+
+
+### Features
+
+* add graphicfillpadding on fill symbolizer ([711b71b](https://github.com/geostyler/geostyler-style/commit/711b71ba31e822bf8e72b733d2aad1fcef3f7d95))
+
 ## [9.1.0](https://github.com/geostyler/geostyler-style/compare/v9.0.1...v9.1.0) (2024-07-09)
 
 
