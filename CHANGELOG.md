@@ -1,3 +1,14 @@
+## [10.0.0](https://github.com/geostyler/geostyler-style/compare/v9.2.0...v10.0.0) (2025-02-05)
+
+
+### ⚠ BREAKING CHANGES
+
+* Due to the added WellKnownNames, typechecks for distinct values of WellKnownNames need to be adjusted to also distinguish the newly added WellKnownNames.
+
+### Features
+
+* add WellKnownNames to support extra styles from QGIS ([#652](https://github.com/geostyler/geostyler-style/issues/652)) ([1e9e90b](https://github.com/geostyler/geostyler-style/commit/1e9e90be9fd11b710772cd5a77334fb887df4fee))
+
 ## [9.2.0](https://github.com/geostyler/geostyler-style/compare/v9.1.0...v9.2.0) (2024-11-26)
 
 
