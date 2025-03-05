@@ -21352,6 +21352,7 @@
                         "arrow",
                         "arrowhead",
                         "asterisk_fill",
+                        "backslash",
                         "circle",
                         "cross",
                         "cross2",
@@ -21379,6 +21380,7 @@
                         "rounded_square",
                         "semi_circle",
                         "shield",
+                        "slash",
                         "square",
                         "square_with_corners",
                         "star",
@@ -21396,7 +21398,14 @@
                         "shape://plus",
                         "shape://slash",
                         "shape://times",
-                        "shape://vertline"
+                        "shape://vertline",
+                        "brush://dense1",
+                        "brush://dense2",
+                        "brush://dense3",
+                        "brush://dense4",
+                        "brush://dense5",
+                        "brush://dense6",
+                        "brush://dense7"
                     ],
                     "type": "string"
                 }
