@@ -176,16 +176,17 @@ export type FontSpec = `ttf://${string}#0x${string}`;
  * https://github.com/microsoft/TypeScript/issues/6579
  *
  */
-export type WellKnownName = 'arrow' | 'arrowhead' | 'asterisk_fill' | 'circle' | 'cross' | 'cross2'
+export type WellKnownName = 'arrow' | 'arrowhead' | 'asterisk_fill' | 'backslash' | 'circle' | 'cross' | 'cross2'
 | 'cross_fill' | 'decagon' | 'diagonal_half_square' | 'diamond' | 'equilateral_triangle'
 | 'filled_arrowhead' | 'half_arc' | 'half_square' | 'heart' | 'hexagon' | 'horline' | 'left_half_triangle'
 | 'line' | 'octagon' | 'parallelogram_left' | 'parallelogram_right' | 'pentagon' | 'quarter_arc'
 | 'quarter_circle' | 'quarter_square' | 'right_half_triangle' | 'rounded_square' | 'semi_circle'
-| 'shield' | 'square' | 'square_with_corners' | 'star' | 'star_diamond' | 'third_arc' | 'third_circle'
+| 'shield' | 'slash'| 'square' | 'square_with_corners' | 'star' | 'star_diamond' | 'third_arc' | 'third_circle'
 | 'trapezoid' | 'triangle' | 'x'
-| 'shape://vertline' | 'shape://horline' | 'shape://slash'
-| 'shape://backslash' | 'shape://dot' | 'shape://plus'
+| 'shape://vertline' | 'shape://horline' | 'shape://slash' | 'shape://backslash' | 'shape://dot' | 'shape://plus'
 | 'shape://times' | 'shape://oarrow' | 'shape://carrow'
+| 'brush://dense1' | 'brush://dense2' | 'brush://dense3' | 'brush://dense4' | 'brush://dense5' | 'brush://dense6'
+| 'brush://dense7'
 | FontSpec;
 
 /**
