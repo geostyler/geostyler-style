@@ -81,7 +81,7 @@ export const isPropertyType = (got: any): got is PropertyType => {
 export const isScaleDenominator = (got: any): got is ScaleDenominator => {
   return !!((got?.min || got?.max) &&
     ((!!got.min) ? isGeoStylerNumberFunction(got.min) || isNumber(got.min) : true) &&
-    ((!!got.max) ? isGeoStylerNumberFunction(got.max) || isNumber(got.min) : true));
+    ((!!got.max) ? isGeoStylerNumberFunction(got.max) || isNumber(got.max) : true));
 };
 
 // Operators
