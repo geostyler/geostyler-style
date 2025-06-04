@@ -242,6 +242,14 @@ export interface MarkSymbolizer extends BasePointSymbolizer {
    */
   strokeWidthUnit?: DistanceUnit;
   /**
+  * Encodes a dash pattern as an array of numbers. Odd-indexed numbers (first,
+  * third, etc) determine the length in pixels to draw the line, and even-indexed
+  * numbers (second, fourth, etc) determine the length in pixels to blank out
+  * the line. 
+  * If the array is empty, no dash pattern will be applied.
+  */
+  strokeDasharray?: Expression<number>[];
+  /**
    * Amount to blur the Symbolizer. 1 blurs the Symbolizer such that only the
    * centerpoint has full opacity. Mostly relevant for circles.
    */
