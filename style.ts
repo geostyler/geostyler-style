@@ -248,7 +248,7 @@ export interface MarkSymbolizer extends BasePointSymbolizer {
   * the line. 
   * If the array is empty, no dash pattern will be applied.
   */
-  dasharray?: Expression<number>[];
+  strokeDasharray?: Expression<number>[];
   /**
    * Amount to blur the Symbolizer. 1 blurs the Symbolizer such that only the
    * centerpoint has full opacity. Mostly relevant for circles.
