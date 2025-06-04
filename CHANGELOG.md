@@ -1,3 +1,17 @@
+## [10.1.0](https://github.com/geostyler/geostyler-style/compare/v10.0.0...v10.1.0) (2025-06-04)
+
+
+### Features
+
+* **550:** add dasharry ([9755576](https://github.com/geostyler/geostyler-style/commit/9755576dc45150f493454f91430c071d7f2131de))
+* **550:** add schema ([67f04f1](https://github.com/geostyler/geostyler-style/commit/67f04f15edc4b4832c21e1e83ae2e704527d5bab))
+* **550:** rename property ([ce48b83](https://github.com/geostyler/geostyler-style/commit/ce48b83513391fa1573340ab52df259fa0f2b2a9))
+
+
+### Bug Fixes
+
+* correct typeguard for scale denominators ([#654](https://github.com/geostyler/geostyler-style/issues/654)) ([e90e1f3](https://github.com/geostyler/geostyler-style/commit/e90e1f373993075b771d3779b63e75c4a5367acf))
+
 ## [10.0.0](https://github.com/geostyler/geostyler-style/compare/v9.2.0...v10.0.0) (2025-02-05)
 
 
