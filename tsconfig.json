@@ -22,6 +22,7 @@
   "files": [
     "./typeguards.ts",
     "./index.ts",
-    "./functions.ts"
+    "./functions.ts",
+    "./style.ts"
   ]
 }
