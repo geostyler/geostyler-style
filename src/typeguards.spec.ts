@@ -3,7 +3,7 @@ import {
   GeoStylerNumberFunction,
   GeoStylerStringFunction,
   GeoStylerUnknownFunction
-} from '../functions';
+} from './functions';
 import {
   CombinationFilter,
   CombinationOperator,
@@ -23,7 +23,7 @@ import {
   ScaleDenominator,
   Sprite,
   TextSymbolizer
-} from '../style';
+} from './style';
 import {
   isCombinationFilter,
   isCombinationOperator,
@@ -51,8 +51,7 @@ import {
   isSprite,
   isSymbolizer,
   isTextSymbolizer
-} from '../typeguards';
-
+} from './typeguards';
 
 const scaleDenominator1: ScaleDenominator = {
   min: 100,

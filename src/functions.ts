@@ -175,10 +175,10 @@ export interface Fbetween extends FunctionCall<boolean> {
   ];
 };
 
-export type FCaseParameter = {
+export interface FCaseParameter {
   case: Expression<boolean>;
   value: Expression<PropertyType>;
-};
+}
 
 /**
  * Textual representation of a switch-case function.
@@ -493,10 +493,10 @@ export interface Fsqrt extends FunctionCall<number> {
   ];
 };
 
-export type FStepParameter = {
+export interface FStepParameter {
   boundary: Expression<number>;
   value: Expression<PropertyType>;
-};
+}
 
 /**
  * Returns an unknown value depending on the passed in value of argument[0]. In
@@ -779,16 +779,16 @@ export interface FtoString extends FunctionCall<string> {
   ];
 };
 
-export type FInterpolateTypeLinear = {
+export interface FInterpolateTypeLinear {
   name: 'linear';
-};
+}
 
 export type FInterpolateType = FInterpolateTypeLinear;
 
-export type FInterpolateParameter = {
+export interface FInterpolateParameter {
   stop: Expression<number>;
   value: Expression<PropertyType>;
-};
+}
 
 /**
  * Textual representation of a interpolate function.

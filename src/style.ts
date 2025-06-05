@@ -401,7 +401,7 @@ export interface TextSymbolizer extends BasePointSymbolizer {
 /**
  * Configuration for a sprite image.
  */
-export type Sprite = {
+export interface Sprite {
   /**
    * A path/URL to the sprite image file.
    */
@@ -414,7 +414,7 @@ export type Sprite = {
    * The size of the sprite [width, height] in pixels.
    */
   size: [Expression<number>, Expression<number>];
-};
+}
 
 /**
  * An IconSymbolizer describes the style representation of POINT data if styled
@@ -794,9 +794,7 @@ export interface Rule {
 export interface Style {
   name: string;
   rules: Rule[];
-  metadata?: {
-    [key: string]: any;
-  };
+  metadata?: Record<string, any>;
 }
 
 /**
@@ -836,9 +834,7 @@ export interface UnsupportedProperties {
       [key in keyof Required<RasterSymbolizer>]?: SupportDef
     };
   };
-  Function?: SupportDef | {
-    [key in GeoStylerFunction['name']]?: SupportDef;
-  };
+  Function?: SupportDef | Partial<Record<GeoStylerFunction['name'], SupportDef>>;
 }
 
 /**
@@ -850,10 +846,10 @@ export type SupportLevel = 'partial' | 'none';
  * Detailed information about the support of a functionality.
  * Can contain an info text.
  */
-export type SupportInfo = {
+export interface SupportInfo {
   support: SupportLevel;
   info?: string;
-};
+}
 
 /**
  * Defines in which way a functionality is supported.
@@ -863,7 +859,7 @@ export type SupportDef = SupportInfo | SupportLevel;
 /**
  * The Result of the readStyle function of a StyleParser.
  */
-export type ReadStyleResult = {
+export interface ReadStyleResult {
   /**
    * A list of warnings occured while reading the stlye.
    */
@@ -880,12 +876,12 @@ export type ReadStyleResult = {
    * A list of errors occured while reading the style.
    */
   errors?: Error[];
-};
+}
 
 /**
  * The Result of the writeStyle function of a StyleParser.
  */
-export type WriteStyleResult<T = any> = {
+export interface WriteStyleResult<T = any> {
   /**
    * A list of warnings occured while writing the style.
    */
@@ -902,7 +898,7 @@ export type WriteStyleResult<T = any> = {
    * A list of errors occured while writing the style.
    */
   errors?: Error[];
-};
+}
 
 /**
  * Interface, which has to be implemented by all GeoStyler style parser classes.
