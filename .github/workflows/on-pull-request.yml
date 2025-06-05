@@ -24,7 +24,7 @@ jobs:
       run: bun run lint
 
     - name: Check code 🔍
-      run: bun run chek
+      run: bun run check
 
     - name: Test code ✅
       run: bun test
