@@ -65,9 +65,9 @@ export const isExpression = (got: any): got is Expression<any> => {
  */
 export const isFunctionCall = (got: any): got is FunctionCall<any> => {
   return got.type === 'functioncall' &&
-    got.hasOwnProperty('name') &&
+    Object.prototype.hasOwnProperty.call(got, 'name') &&
     isString(got.name) &&
-    got.hasOwnProperty('args') &&
+    Object.prototype.hasOwnProperty.call(got, 'args') &&
     Array.isArray(got.args) &&
     got.args.every((arg: any) => isExpression(arg));
 };
@@ -80,8 +80,8 @@ export const isPropertyType = (got: any): got is PropertyType => {
 // ScaleDenominator
 export const isScaleDenominator = (got: any): got is ScaleDenominator => {
   return !!((got?.min || got?.max) &&
-    ((!!got.min) ? isGeoStylerNumberFunction(got.min) || isNumber(got.min) : true) &&
-    ((!!got.max) ? isGeoStylerNumberFunction(got.max) || isNumber(got.max) : true));
+    ((got.min) ? isGeoStylerNumberFunction(got.min) || isNumber(got.min) : true) &&
+    ((got.max) ? isGeoStylerNumberFunction(got.max) || isNumber(got.max) : true));
 };
 
 // Operators
