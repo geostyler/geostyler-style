@@ -25,6 +25,7 @@
     "@semantic-release/changelog": "^6.0.3",
     "@semantic-release/git": "^10.0.1",
     "@vitest/coverage-istanbul": "^3.2.1",
+    "ajv": "^8.17.1",
     "conventional-changelog-conventionalcommits": "^9.0.0",
     "eslint": "^9.28.0",
     "semantic-release": "^24.2.5",
