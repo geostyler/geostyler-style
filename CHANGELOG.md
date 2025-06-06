@@ -1,3 +1,13 @@
+## [10.2.0](https://github.com/geostyler/geostyler-style/compare/v10.1.0...v10.2.0) (2025-06-06)
+
+### Features
+
+* update dependencies and switch to bun ([9dd347d](https://github.com/geostyler/geostyler-style/commit/9dd347d98464ddc61fa21190bad877d3ce8edd5c))
+
+### Bug Fixes
+
+* **build:** use vite for build ([dfc3800](https://github.com/geostyler/geostyler-style/commit/dfc3800a922c440990a4b1d8a4c0124645af2e16))
+
 ## [10.1.0](https://github.com/geostyler/geostyler-style/compare/v10.0.0...v10.1.0) (2025-06-04)
 
 
