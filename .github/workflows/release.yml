@@ -14,19 +14,17 @@ jobs:
       - name: Checkout sources 🔰
         uses: actions/checkout@v4
 
-      - name: Setup Node.js 20 👷🏻
-        uses: actions/setup-node@v4
-        with:
-          node-version: 20
+      - name: Set up bun
+        uses: oven-sh/setup-bun@v2
 
       - name: Install dependencies ⏬
-        run: npm ci
+        run: bun install
 
       - name: Build artifacts 🏗️
-        run: npm run build
+        run: bun run build
 
       - name: Release 🚀
-        uses: cycjimmy/semantic-release-action@v4.1.0
+        uses: cycjimmy/semantic-release-action@v4.2.0
         id: semantic
         env:
           GITHUB_TOKEN: ${{ secrets.GH_RELEASE_TOKEN }}

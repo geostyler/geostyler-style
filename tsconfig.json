@@ -7,8 +7,8 @@
     "forceConsistentCasingInFileNames": true,
     "inlineSources": true,
     "lib": ["ES2022", "es6", "dom"],
-    "module": "Preserve",
-    "moduleResolution": "Bundler",
+    "module": "ESNext",
+    "moduleResolution": "bundler",
     "noImplicitAny": true,
     "noImplicitReturns": true,
     "noImplicitThis": true,
@@ -19,9 +19,10 @@
     "strictNullChecks": true,
     "target": "ES2022"
   },
-  "files": [
-    "./typeguards.ts",
-    "./index.ts",
-    "./functions.ts"
-  ]
+  "include": [
+    "./src"
+  ],
+  "exclude": [
+    "**/*.spec.ts"
+  ],
 }

@@ -14,39 +14,28 @@ jobs:
       with:
         persist-credentials: false
 
-    - name: Use Node.js 20.x
-      uses: actions/setup-node@v4
-      with:
-        node-version: 20.x
-
-    - name: Cache Node.js modules 💾
-      uses: actions/cache@v4
-      with:
-        path: ~/.npm
-        key: ${{ runner.OS }}-node-${{ hashFiles('**/package-lock.json') }}
-        restore-keys: |
-          ${{ runner.OS }}-node-
-          ${{ runner.OS }}-
+    - name: Set up bun
+      uses: oven-sh/setup-bun@v2
 
     - name: Install dependencies ⏬
-      run: npm install
+      run: bun install
 
     - name: Generate documentation 🏗️
-      run: npm run generate-docs
+      run: bun run generate-docs
 
     - name: Get geostyler version
       run: |
         echo "VERSION=$(node -pe "require('./package.json').version")" >> $GITHUB_ENV
 
     - name: Deploy (to docs/v${{ env.VERSION }}) 🚀
-      uses: JamesIves/github-pages-deploy-action@v4.6.1
+      uses: JamesIves/github-pages-deploy-action@v4.7.3
       with:
         branch: gh-pages
         folder: docs
         target-folder: docs/v${{ env.VERSION }}
 
     - name: Deploy (to docs/latest) 🚀
-      uses: JamesIves/github-pages-deploy-action@v4.6.1
+      uses: JamesIves/github-pages-deploy-action@v4.7.3
       with:
         branch: gh-pages
         folder: docs

@@ -13,28 +13,20 @@ jobs:
     - name: Checkout sources
       uses: actions/checkout@v4
 
-    - name: Use Node.js 20.x
-      uses: actions/setup-node@v4
-      with:
-        node-version: 20.x
-
-    - name: Cache Node.js modules 💾
-      uses: actions/cache@v4
-      with:
-        path: ~/.npm
-        key: ${{ runner.OS }}-node-${{ hashFiles('**/package-lock.json') }}
-        restore-keys: |
-          ${{ runner.OS }}-node-
-          ${{ runner.OS }}-
+    - name: Set up bun
+      uses: oven-sh/setup-bun@v2
 
     - name: Install dependencies ⏬
-      run: npm install
+      run: bun install
 
     - name: Lint code 💄
-      run: npm run lint
+      run: bun run lint
+
+    - name: Check code 🔍
+      run: bun run check
 
     - name: Test code ✅
-      run: npm run test
+      run: bun test
 
   build_docs:
     runs-on: ubuntu-latest
@@ -43,28 +35,17 @@ jobs:
     - name: Checkout sources
       uses: actions/checkout@v4
 
-    - name: Use Node.js 20.x
-      uses: actions/setup-node@v4
-      with:
-        node-version: 20.x
-
-    - name: Cache Node.js modules 💾
-      uses: actions/cache@v4
-      with:
-        path: ~/.npm
-        key: ${{ runner.OS }}-node-${{ hashFiles('**/package-lock.json') }}
-        restore-keys: |
-          ${{ runner.OS }}-node-
-          ${{ runner.OS }}-
+    - name: Set up bun
+      uses: oven-sh/setup-bun@v2
 
     - name: Install dependencies ⏬
-      run: npm install
+      run: bun install
 
     - name: Generate documentation 🏗️
-      run: npm run generate-docs
+      run: bun run generate-docs
 
     - name: Deploy (to docs/main) 🚀
-      uses: JamesIves/github-pages-deploy-action@v4.6.1
+      uses: JamesIves/github-pages-deploy-action@v4.7.3
       with:
         branch: gh-pages
         folder: docs
