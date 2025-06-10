@@ -1,3 +1,9 @@
+## [10.3.0](https://github.com/geostyler/geostyler-style/compare/v10.2.0...v10.3.0) (2025-06-10)
+
+### Features
+
+* add more wellknownnames ([abe45ce](https://github.com/geostyler/geostyler-style/commit/abe45cecafc9b4336a26f23494f1a301f8569763))
+
 ## [10.2.0](https://github.com/geostyler/geostyler-style/compare/v10.1.0...v10.2.0) (2025-06-06)
 
 ### Features
