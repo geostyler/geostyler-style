@@ -397,6 +397,12 @@ export interface TextSymbolizer extends BasePointSymbolizer {
    * Specifies label placement relative to its geometry.
    */
   placement?: Expression<'point' | 'line' | 'line-center'>;
+  /**
+   * If placement is 'line', it makes the renderer offset the text parallel to the line,
+   * at the given distance. Positive values generate an offset
+   * parallel to the line on the left hand side, negative values on the right hand side.
+   */
+  perpendicularOffset?: Expression<number>;
 }
 
 /**
