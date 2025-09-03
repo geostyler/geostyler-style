@@ -1,3 +1,9 @@
+## [10.4.0](https://github.com/geostyler/geostyler-style/compare/v10.3.0...v10.4.0) (2025-09-03)
+
+### Features
+
+* **#681:** add perpendicularOffset ([c8630df](https://github.com/geostyler/geostyler-style/commit/c8630df32f7d2cd72ae3afdd75d31523af412548)), closes [#681](https://github.com/geostyler/geostyler-style/issues/681)
+
 ## [10.3.0](https://github.com/geostyler/geostyler-style/compare/v10.2.0...v10.3.0) (2025-06-10)
 
 ### Features
