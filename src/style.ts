@@ -376,9 +376,13 @@ export interface TextSymbolizer extends BasePointSymbolizer {
    */
   rotationAlignment?: Expression<'map' | 'viewport' | 'auto'>;
   /**
-   * The fontsize in pixels.
+   * The fontsize (pixels if sizeUnit is not defined).
    */
   size?: Expression<number>;
+  /**
+   * Unit to use for the size. If missing, pixels are assumed.
+   */
+  sizeUnit?: DistanceUnit;
   /**
    * Specifies how to capitalize text, similar to the CSS text-transform property.
    */
