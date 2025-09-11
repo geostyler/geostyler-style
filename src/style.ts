@@ -267,6 +267,9 @@ export interface MarkSymbolizer extends BasePointSymbolizer {
   pitchScale?: Expression<'map' | 'viewport'>;
 }
 
+export type AnchorType = 'center' | 'left' | 'right' | 'top' | 'bottom' | 'top-left' |
+'top-right' | 'bottom-left' | 'bottom-right';
+
 /**
  * The TextSymbolizer describes the style representation of point data, if styled
  * with a text.
@@ -281,9 +284,7 @@ export interface TextSymbolizer extends BasePointSymbolizer {
   /**
    * The anchor position of the label referred to the center of the geometry.
    */
-  anchor?: Expression<
-    'center' | 'left' | 'right' | 'top' | 'bottom' | 'top-left' | 'top-right' | 'bottom-left' | 'bottom-right'
-  >;
+  anchor?: Expression<AnchorType>;
   /**
    * Template string where {{PROPERTYNAME}} can be used to be replaced by values
    * from the dataset.
@@ -442,9 +443,7 @@ export interface IconSymbolizer extends BasePointSymbolizer {
    * Part of the icon placed closest to the anchor. This may conflict with a set
    * offset.
    */
-  anchor?: Expression<
-    'center' | 'left' | 'right' | 'top' | 'bottom' | 'top-left' | 'top-right' | 'bottom-left' | 'bottom-right'
-  >;
+  anchor?: Expression<AnchorType>;
   /**
    * The halo's fadeout distance towards the outside.
    */
