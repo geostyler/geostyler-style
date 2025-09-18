@@ -1,3 +1,10 @@
+## [10.5.0](https://github.com/geostyler/geostyler-style/compare/v10.4.0...v10.5.0) (2025-09-18)
+
+### Features
+
+* add sizeUnit-property to TextSymbolizer ([#683](https://github.com/geostyler/geostyler-style/issues/683)) ([adad4a4](https://github.com/geostyler/geostyler-style/commit/adad4a4686717db7e28f1b07429f76af86f802d4))
+* introduce type AnchorType for anchor-properties ([#686](https://github.com/geostyler/geostyler-style/issues/686)) ([116c2ae](https://github.com/geostyler/geostyler-style/commit/116c2aed015d88ceda487d23e9faa231bd66b2a6))
+
 ## [10.4.0](https://github.com/geostyler/geostyler-style/compare/v10.3.0...v10.4.0) (2025-09-03)
 
 ### Features
