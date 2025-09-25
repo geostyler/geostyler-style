@@ -24,7 +24,7 @@ jobs:
         run: bun run build
 
       - name: Release 🚀
-        uses: cycjimmy/semantic-release-action@v4.2.0
+        uses: cycjimmy/semantic-release-action@v4.2.2
         id: semantic
         env:
           GITHUB_TOKEN: ${{ secrets.GH_RELEASE_TOKEN }}
