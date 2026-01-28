@@ -8,24 +8,30 @@ on:
 
 jobs:
   release:
+    permissions:
+      contents: write
+      issues: write
+      pull-requests: write
+      id-token: write
     name: Release
     runs-on: ubuntu-latest
     steps:
       - name: Checkout sources 🔰
         uses: actions/checkout@v6
 
-      - name: Set up bun
-        uses: oven-sh/setup-bun@v2
+      - name: Set up node
+        uses: actions/setup-node@v6
+        with:
+          node-version: '24'
 
       - name: Install dependencies ⏬
-        run: bun install
+        run: npm ci
 
       - name: Build artifacts 🏗️
-        run: bun run build
+        run: npm run build
 
-      - name: Release 🚀
-        uses: cycjimmy/semantic-release-action@v6.0.0
-        id: semantic
+      - id: semantic-release-step
+        name: Release with Semantic Release
         env:
-          GITHUB_TOKEN: ${{ secrets.GH_RELEASE_TOKEN }}
-          NPM_TOKEN: ${{ secrets.NPM_TOKEN }}
+          GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
+        run: npx semantic-release
