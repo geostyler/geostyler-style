@@ -408,6 +408,11 @@ export interface TextSymbolizer extends BasePointSymbolizer {
    * parallel to the line on the left hand side, negative values on the right hand side.
    */
   perpendicularOffset?: Expression<number>;
+  /**
+   * Repeat the label with the given distance between repeats in pixels.
+   * Should only be used for 'line' placement.
+   */
+  repeat?: number;
 }
 
 /**
