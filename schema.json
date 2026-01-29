@@ -980,7 +980,7 @@
         "FCaseParameter": {
             "properties": {
                 "case": {
-                    "$ref": "http://geostyler/geostyler-style.json#/definitions/Expression<boolean>"
+                    "$ref": "http://geostyler/geostyler-style.json#/definitions/Expression%3Cboolean%3E"
                 },
                 "value": {
                     "description": "Expressions can be a literal value, a property name or a function call."
@@ -1627,7 +1627,7 @@
             "properties": {
                 "args": {
                     "items": {
-                        "$ref": "http://geostyler/geostyler-style.json#/definitions/Expression<boolean>"
+                        "$ref": "http://geostyler/geostyler-style.json#/definitions/Expression%3Cboolean%3E"
                     },
                     "type": "array"
                 },
@@ -1643,7 +1643,7 @@
             "properties": {
                 "args": {
                     "items": {
-                        "$ref": "http://geostyler/geostyler-style.json#/definitions/Expression<boolean>"
+                        "$ref": "http://geostyler/geostyler-style.json#/definitions/Expression%3Cboolean%3E"
                     },
                     "type": "array"
                 },
@@ -6144,7 +6144,7 @@
             "properties": {
                 "args": {
                     "items": {
-                        "$ref": "http://geostyler/geostyler-style.json#/definitions/Expression<string|number>"
+                        "$ref": "http://geostyler/geostyler-style.json#/definitions/Expression%3Cstring%7Cnumber%3E"
                     },
                     "type": "array"
                 },
@@ -7528,7 +7528,7 @@
                 "args": {
                     "items": [
                         {
-                            "$ref": "http://geostyler/geostyler-style.json#/definitions/Expression<boolean>"
+                            "$ref": "http://geostyler/geostyler-style.json#/definitions/Expression%3Cboolean%3E"
                         }
                     ],
                     "maxItems": 1,
@@ -10349,7 +10349,7 @@
                             ]
                         },
                         {
-                            "$ref": "http://geostyler/geostyler-style.json#/definitions/Expression<boolean>"
+                            "$ref": "http://geostyler/geostyler-style.json#/definitions/Expression%3Cboolean%3E"
                         }
                     ],
                     "maxItems": 4,
@@ -22506,6 +22506,10 @@
                     ],
                     "description": "Specifies label placement relative to its geometry."
                 },
+                "repeat": {
+                    "description": "Repeat the label with the given distance between repeats in pixels.\nShould only be used for 'line' placement.",
+                    "type": "number"
+                },
                 "rotate": {
                     "anyOf": [
                         {
@@ -22791,7 +22795,15 @@
                             "type": "number"
                         }
                     ],
-                    "description": "The fontsize in pixels."
+                    "description": "The fontsize (pixels if sizeUnit is not defined)."
+                },
+                "sizeUnit": {
+                    "description": "Unit to use for the size. If missing, pixels are assumed.",
+                    "enum": [
+                        "m",
+                        "px"
+                    ],
+                    "type": "string"
                 },
                 "transform": {
                     "anyOf": [
@@ -23000,7 +23012,7 @@
     "description": "The Style is the main interface and the root for all other interfaces.",
     "properties": {
         "metadata": {
-            "$ref": "http://geostyler/geostyler-style.json#/definitions/Record<string,any>"
+            "$ref": "http://geostyler/geostyler-style.json#/definitions/Record%3Cstring%2Cany%3E"
         },
         "name": {
             "type": "string"
