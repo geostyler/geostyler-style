@@ -1,3 +1,34 @@
+## [11.0.0](https://github.com/geostyler/geostyler-style/compare/v10.5.0...v11.0.0) (2026-01-29)
+
+### ⚠ BREAKING CHANGES
+
+* Changed structure of package. Version 10.2.0 includes
+an overlooked breaking change that changes the structure of the
+published package. Now, the original structure was recreated again. If
+you used any version prior 10.2.0, you do not have to change anything.
+If you used versions 10.2.0, 10.3.0, 10.4.0, or 10.5.0 you might have to
+readjust your imports, e.g. instead of importing via
+```
+import { isFilter } from 'geostyler-style/dist/src/typeguards'
+```
+you now can import via
+```
+import { isFilter } from 'geostyler-style/dist/typeguards'
+```
+again. Imports such as
+```
+import { isFilter } from 'geostyler-style'
+```
+were working throughout all mentioned versions and do not require any change.
+
+### Features
+
+* add repeat to TextSymbolizer ([#703](https://github.com/geostyler/geostyler-style/issues/703)) ([8c15a5f](https://github.com/geostyler/geostyler-style/commit/8c15a5f1015422c920e6227a715f21086ff5f332))
+
+### Bug Fixes
+
+* reconstruct package structure ([#705](https://github.com/geostyler/geostyler-style/issues/705)) ([82893ba](https://github.com/geostyler/geostyler-style/commit/82893ba3fb317136a2742b742d3b92efa4deab64))
+
 ## [10.5.0](https://github.com/geostyler/geostyler-style/compare/v10.4.0...v10.5.0) (2025-09-18)
 
 ### Features
