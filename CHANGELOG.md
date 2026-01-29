@@ -1,3 +1,9 @@
+## [11.0.1](https://github.com/geostyler/geostyler-style/compare/v11.0.0...v11.0.1) (2026-01-29)
+
+### Bug Fixes
+
+* enable expressions for Textsymbolizer repeat ([#707](https://github.com/geostyler/geostyler-style/issues/707)) ([e087c24](https://github.com/geostyler/geostyler-style/commit/e087c24d94e1a7273b4f312424a0e1f75c8c4922))
+
 ## [11.0.0](https://github.com/geostyler/geostyler-style/compare/v10.5.0...v11.0.0) (2026-01-29)
 
 ### ⚠ BREAKING CHANGES
