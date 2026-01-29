@@ -412,7 +412,7 @@ export interface TextSymbolizer extends BasePointSymbolizer {
    * Repeat the label with the given distance between repeats in pixels.
    * Should only be used for 'line' placement.
    */
-  repeat?: number;
+  repeat?: Expression<number>;
 }
 
 /**
