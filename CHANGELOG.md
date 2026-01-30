@@ -1,3 +1,9 @@
+## [11.0.2](https://github.com/geostyler/geostyler-style/compare/v11.0.1...v11.0.2) (2026-01-30)
+
+### Bug Fixes
+
+* create dedicated expressionless union types ([#708](https://github.com/geostyler/geostyler-style/issues/708)) ([14a105f](https://github.com/geostyler/geostyler-style/commit/14a105f6ed8c44d35bcbe02b7395df798b458df8))
+
 ## [11.0.1](https://github.com/geostyler/geostyler-style/compare/v11.0.0...v11.0.1) (2026-01-29)
 
 ### Bug Fixes
