@@ -1,6 +1,6 @@
 import {
   GeoStylerBooleanFunction,
-  GeoStylerFunction,
+  GeoStylerFunction, GeoStylerGeometryFunction,
   GeoStylerNumberFunction,
   GeoStylerStringFunction
 } from './functions';
@@ -43,6 +43,7 @@ export type Expression<T extends PropertyType> =
   T extends string ? GeoStylerStringFunction | T :
   T extends number ? GeoStylerNumberFunction | T :
   T extends boolean ? GeoStylerBooleanFunction | T :
+  T extends Geometry ? GeoStylerGeometryFunction | T :
   T;
 
 /**
@@ -51,9 +52,14 @@ export type Expression<T extends PropertyType> =
 export type StyleType = 'Point' | 'Fill' | 'Line' | 'Raster';
 
 /**
+ * A representation of geometry.
+ */
+export type Geometry = unknown;
+
+/**
  * A datatype of a property of the data.
  */
-export type PropertyType = string | number | boolean | unknown;
+export type PropertyType = string | number | boolean | Geometry | unknown;
 
 /**
  * The possible Operators used for comparison Filters.
@@ -137,9 +143,13 @@ export interface BaseSymbolizer {
    */
   opacity?: Expression<number>;
   /**
-   * Defines whether the Symbolizer should be visibile or not.
+   * Defines whether the Symbolizer should be visible or not.
    */
   visibility?: Expression<boolean>;
+  /**
+   * Defines which geometry to take or how to apply the geometry to this symbolizer.
+   */
+  geometry?: Expression<Geometry|string>;
 }
 
 /**
