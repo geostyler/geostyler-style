@@ -882,6 +882,19 @@ export interface Rule {
   filter?: Filter;
   scaleDenominator?: ScaleDenominator;
   symbolizers: Symbolizer[];
+  /**
+   * If true, the rule will be applied as an else-rule, meaning that it will be
+   * applied to all features that do not match any previous rules of the same rule set.
+   * If an else-rule has a provided scaleDenominator, it will only be applied
+   * to features that do not match any previous rules of the same rule set and are
+   * in the scale range defined by the scaleDenominator.
+   * If an else-rule has no scaleDenominator, it will be applied to all features
+   * that do not match any previous rules of the same rule set, regardless of the scale.
+   * If an else-rule has its own filter specified, it will only be applied to
+   * features that do not match any previous rules of the same rule set and match the
+   * filter itself.
+   */
+  elseRule?: boolean;
 }
 
 /**
