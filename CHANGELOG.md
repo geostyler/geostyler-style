@@ -1,3 +1,15 @@
+## [12.0.0](https://github.com/geostyler/geostyler-style/compare/v11.1.0...v12.0.0) (2026-04-23)
+
+### ⚠ BREAKING CHANGES
+
+* The Expression type is extended to support "geometry"
+as type parameter. The GeoStylerUnknownFunction is extended to support
+Fcustom functions.
+
+### Features
+
+* add geometry to base symbolizer ([#733](https://github.com/geostyler/geostyler-style/issues/733)) ([4e8f886](https://github.com/geostyler/geostyler-style/commit/4e8f886f996d98fcf2baf634b42eb13c46833621))
+
 ## [11.1.0](https://github.com/geostyler/geostyler-style/compare/v11.0.2...v11.1.0) (2026-04-20)
 
 ### Features
