@@ -274,7 +274,8 @@ export const isGeoStylerUnknownFunction = (got: any): got is GeoStylerUnknownFun
   const functionNames: GeoStylerUnknownFunction['name'][] = [
     'case',
     'property',
-    'step'
+    'step',
+    'custom'
   ];
   return functionNames.includes(got?.name);
 };

@@ -241,6 +241,12 @@ const unknownFunction: GeoStylerUnknownFunction = {
   args: ['city']
 };
 
+const customFunction: GeoStylerUnknownFunction = {
+  name: 'custom',
+  fnName: 'endAngle',
+  args: ['geom']
+};
+
 const spriteImage: Sprite = {
   source: 'http://peter.de/sprite',
   position: [{
@@ -289,6 +295,7 @@ const thingsToTest = [
   stringFunction,
   booleanFunction,
   unknownFunction,
+  customFunction,
   spriteImage
 ];
 
@@ -511,7 +518,8 @@ describe('typeguards', () => {
   });
   it('isGeoStylerUnknownFunction', () => {
     const expectedMatches: any[] = [
-      unknownFunction
+      unknownFunction,
+      customFunction,
     ];
     thingsToTest.forEach(thing => {
       expect(isGeoStylerUnknownFunction(thing)).toBe(expectedMatches.includes(thing));
@@ -524,6 +532,7 @@ describe('typeguards', () => {
       stringFunction,
       booleanFunction,
       unknownFunction,
+      customFunction,
       functionAsFilter
     ];
     thingsToTest.forEach(thing => {

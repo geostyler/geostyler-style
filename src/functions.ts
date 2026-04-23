@@ -7,7 +7,8 @@ import {
 export type GeoStylerFunction = GeoStylerNumberFunction |
   GeoStylerStringFunction |
   GeoStylerBooleanFunction |
-  GeoStylerUnknownFunction;
+  GeoStylerUnknownFunction |
+  GeoStylerGeometryFunction;
 
 /**
  * An expression of a function that returns a number.
@@ -86,7 +87,15 @@ FstrEqualsIgnoreCase |
 FstrMatches |
 FstrStartsWith;
 
-export type GeoStylerUnknownFunction = Fcase | Fstep | Fproperty;
+/**
+ * An expression of a function that returns a geometry.
+ */
+export type GeoStylerGeometryFunction = GeoStylerUnknownFunction;
+
+/**
+ * An expression of a function that returns an unknown type.
+ */
+export type GeoStylerUnknownFunction = Fcase | Fstep | Fproperty | Fcustom;
 
 /**
  * The absolute value of the specified number value
@@ -431,6 +440,17 @@ export interface Fpow extends FunctionCall<number> {
     Expression<number>,
     Expression<number>
   ];
+};
+
+/**
+ * Returns a function with free text as a name, the behavior is left to the implementation.
+ * "fnName" is the name of the custom function to call.
+ * We strongly recommend using a more specific function if one is available.
+ */
+export interface Fcustom extends FunctionCall<unknown> {
+  name: 'custom';
+  fnName: string,
+  args: Expression<string>[];
 };
 
 /**
