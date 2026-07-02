@@ -26,7 +26,7 @@ export default defineConfig({
       formats: ['es'],
     },
     sourcemap: true,
-    rollupOptions: {
+    rolldownOptions: {
       output: {
         preserveModules: true,
         preserveModulesRoot: 'src',
