@@ -21,6 +21,9 @@
                             "$ref": "http://geostyler/geostyler-style.json#/definitions/Fproperty"
                         },
                         {
+                            "$ref": "http://geostyler/geostyler-style.json#/definitions/Fcustom"
+                        },
+                        {
                             "$ref": "http://geostyler/geostyler-style.json#/definitions/FnumberFormat"
                         },
                         {
@@ -87,6 +90,9 @@
                         },
                         {
                             "$ref": "http://geostyler/geostyler-style.json#/definitions/Fproperty"
+                        },
+                        {
+                            "$ref": "http://geostyler/geostyler-style.json#/definitions/Fcustom"
                         },
                         {
                             "$ref": "http://geostyler/geostyler-style.json#/definitions/Fall"
@@ -157,6 +163,9 @@
                             "$ref": "http://geostyler/geostyler-style.json#/definitions/Fproperty"
                         },
                         {
+                            "$ref": "http://geostyler/geostyler-style.json#/definitions/Fcustom"
+                        },
+                        {
                             "$ref": "http://geostyler/geostyler-style.json#/definitions/FnumberFormat"
                         },
                         {
@@ -224,6 +233,9 @@
                             "$ref": "http://geostyler/geostyler-style.json#/definitions/Fproperty"
                         },
                         {
+                            "$ref": "http://geostyler/geostyler-style.json#/definitions/Fcustom"
+                        },
+                        {
                             "$ref": "http://geostyler/geostyler-style.json#/definitions/FnumberFormat"
                         },
                         {
@@ -280,6 +292,9 @@
                             "$ref": "http://geostyler/geostyler-style.json#/definitions/Fproperty"
                         },
                         {
+                            "$ref": "http://geostyler/geostyler-style.json#/definitions/Fcustom"
+                        },
+                        {
                             "$ref": "http://geostyler/geostyler-style.json#/definitions/FnumberFormat"
                         },
                         {
@@ -334,6 +349,9 @@
                         },
                         {
                             "$ref": "http://geostyler/geostyler-style.json#/definitions/Fproperty"
+                        },
+                        {
+                            "$ref": "http://geostyler/geostyler-style.json#/definitions/Fcustom"
                         },
                         {
                             "$ref": "http://geostyler/geostyler-style.json#/definitions/Fabs"
@@ -447,6 +465,9 @@
                         },
                         {
                             "$ref": "http://geostyler/geostyler-style.json#/definitions/Fproperty"
+                        },
+                        {
+                            "$ref": "http://geostyler/geostyler-style.json#/definitions/Fcustom"
                         },
                         {
                             "$ref": "http://geostyler/geostyler-style.json#/definitions/Fabs"
@@ -590,6 +611,9 @@
                             "$ref": "http://geostyler/geostyler-style.json#/definitions/Fproperty"
                         },
                         {
+                            "$ref": "http://geostyler/geostyler-style.json#/definitions/Fcustom"
+                        },
+                        {
                             "$ref": "http://geostyler/geostyler-style.json#/definitions/FnumberFormat"
                         },
                         {
@@ -648,6 +672,9 @@
                         },
                         {
                             "$ref": "http://geostyler/geostyler-style.json#/definitions/Fproperty"
+                        },
+                        {
+                            "$ref": "http://geostyler/geostyler-style.json#/definitions/Fcustom"
                         },
                         {
                             "$ref": "http://geostyler/geostyler-style.json#/definitions/Fabs"
@@ -766,6 +793,9 @@
                     "$ref": "http://geostyler/geostyler-style.json#/definitions/Fproperty"
                 },
                 {
+                    "$ref": "http://geostyler/geostyler-style.json#/definitions/Fcustom"
+                },
+                {
                     "$ref": "http://geostyler/geostyler-style.json#/definitions/Fall"
                 },
                 {
@@ -832,6 +862,9 @@
                 },
                 {
                     "$ref": "http://geostyler/geostyler-style.json#/definitions/Fproperty"
+                },
+                {
+                    "$ref": "http://geostyler/geostyler-style.json#/definitions/Fcustom"
                 },
                 {
                     "$ref": "http://geostyler/geostyler-style.json#/definitions/Fabs"
@@ -1002,6 +1035,9 @@
                             "$ref": "http://geostyler/geostyler-style.json#/definitions/Fproperty"
                         },
                         {
+                            "$ref": "http://geostyler/geostyler-style.json#/definitions/Fcustom"
+                        },
+                        {
                             "$ref": "http://geostyler/geostyler-style.json#/definitions/Fabs"
                         },
                         {
@@ -1132,6 +1168,9 @@
                             "$ref": "http://geostyler/geostyler-style.json#/definitions/Fproperty"
                         },
                         {
+                            "$ref": "http://geostyler/geostyler-style.json#/definitions/Fcustom"
+                        },
+                        {
                             "$ref": "http://geostyler/geostyler-style.json#/definitions/Fabs"
                         },
                         {
@@ -1254,6 +1293,9 @@
                                 },
                                 {
                                     "$ref": "http://geostyler/geostyler-style.json#/definitions/Fproperty"
+                                },
+                                {
+                                    "$ref": "http://geostyler/geostyler-style.json#/definitions/Fcustom"
                                 },
                                 {
                                     "$ref": "http://geostyler/geostyler-style.json#/definitions/Fabs"
@@ -1385,6 +1427,9 @@
                                     "$ref": "http://geostyler/geostyler-style.json#/definitions/Fproperty"
                                 },
                                 {
+                                    "$ref": "http://geostyler/geostyler-style.json#/definitions/Fcustom"
+                                },
+                                {
                                     "$ref": "http://geostyler/geostyler-style.json#/definitions/Fabs"
                                 },
                                 {
@@ -1511,6 +1556,9 @@
                             },
                             {
                                 "$ref": "http://geostyler/geostyler-style.json#/definitions/Fproperty"
+                            },
+                            {
+                                "$ref": "http://geostyler/geostyler-style.json#/definitions/Fcustom"
                             },
                             {
                                 "$ref": "http://geostyler/geostyler-style.json#/definitions/Fabs"
@@ -1671,6 +1719,9 @@
                                     "$ref": "http://geostyler/geostyler-style.json#/definitions/Fproperty"
                                 },
                                 {
+                                    "$ref": "http://geostyler/geostyler-style.json#/definitions/Fcustom"
+                                },
+                                {
                                     "$ref": "http://geostyler/geostyler-style.json#/definitions/Fabs"
                                 },
                                 {
@@ -1798,6 +1849,9 @@
                                 },
                                 {
                                     "$ref": "http://geostyler/geostyler-style.json#/definitions/Fproperty"
+                                },
+                                {
+                                    "$ref": "http://geostyler/geostyler-style.json#/definitions/Fcustom"
                                 },
                                 {
                                     "$ref": "http://geostyler/geostyler-style.json#/definitions/Fabs"
@@ -1929,6 +1983,9 @@
                                     "$ref": "http://geostyler/geostyler-style.json#/definitions/Fproperty"
                                 },
                                 {
+                                    "$ref": "http://geostyler/geostyler-style.json#/definitions/Fcustom"
+                                },
+                                {
                                     "$ref": "http://geostyler/geostyler-style.json#/definitions/Fabs"
                                 },
                                 {
@@ -2039,6 +2096,9 @@
                                 },
                                 {
                                     "$ref": "http://geostyler/geostyler-style.json#/definitions/Fproperty"
+                                },
+                                {
+                                    "$ref": "http://geostyler/geostyler-style.json#/definitions/Fcustom"
                                 },
                                 {
                                     "$ref": "http://geostyler/geostyler-style.json#/definitions/Fabs"
@@ -2170,116 +2230,7 @@
                                     "$ref": "http://geostyler/geostyler-style.json#/definitions/Fproperty"
                                 },
                                 {
-                                    "$ref": "http://geostyler/geostyler-style.json#/definitions/Fabs"
-                                },
-                                {
-                                    "$ref": "http://geostyler/geostyler-style.json#/definitions/Facos"
-                                },
-                                {
-                                    "$ref": "http://geostyler/geostyler-style.json#/definitions/Fadd"
-                                },
-                                {
-                                    "$ref": "http://geostyler/geostyler-style.json#/definitions/Fasin"
-                                },
-                                {
-                                    "$ref": "http://geostyler/geostyler-style.json#/definitions/Fatan"
-                                },
-                                {
-                                    "$ref": "http://geostyler/geostyler-style.json#/definitions/Fatan2"
-                                },
-                                {
-                                    "$ref": "http://geostyler/geostyler-style.json#/definitions/Fceil"
-                                },
-                                {
-                                    "$ref": "http://geostyler/geostyler-style.json#/definitions/Fcos"
-                                },
-                                {
-                                    "$ref": "http://geostyler/geostyler-style.json#/definitions/Fdiv"
-                                },
-                                {
-                                    "$ref": "http://geostyler/geostyler-style.json#/definitions/Fexp"
-                                },
-                                {
-                                    "$ref": "http://geostyler/geostyler-style.json#/definitions/Ffloor"
-                                },
-                                {
-                                    "$ref": "http://geostyler/geostyler-style.json#/definitions/Finterpolate"
-                                },
-                                {
-                                    "$ref": "http://geostyler/geostyler-style.json#/definitions/Flog"
-                                },
-                                {
-                                    "$ref": "http://geostyler/geostyler-style.json#/definitions/Fmax"
-                                },
-                                {
-                                    "$ref": "http://geostyler/geostyler-style.json#/definitions/Fmin"
-                                },
-                                {
-                                    "$ref": "http://geostyler/geostyler-style.json#/definitions/Fmodulo"
-                                },
-                                {
-                                    "$ref": "http://geostyler/geostyler-style.json#/definitions/Fmul"
-                                },
-                                {
-                                    "$ref": "http://geostyler/geostyler-style.json#/definitions/Fpi"
-                                },
-                                {
-                                    "$ref": "http://geostyler/geostyler-style.json#/definitions/Fpow"
-                                },
-                                {
-                                    "$ref": "http://geostyler/geostyler-style.json#/definitions/Frandom"
-                                },
-                                {
-                                    "$ref": "http://geostyler/geostyler-style.json#/definitions/Frint"
-                                },
-                                {
-                                    "$ref": "http://geostyler/geostyler-style.json#/definitions/Fround"
-                                },
-                                {
-                                    "$ref": "http://geostyler/geostyler-style.json#/definitions/Fsin"
-                                },
-                                {
-                                    "$ref": "http://geostyler/geostyler-style.json#/definitions/Fsqrt"
-                                },
-                                {
-                                    "$ref": "http://geostyler/geostyler-style.json#/definitions/FstrIndexOf"
-                                },
-                                {
-                                    "$ref": "http://geostyler/geostyler-style.json#/definitions/FstrLastIndexOf"
-                                },
-                                {
-                                    "$ref": "http://geostyler/geostyler-style.json#/definitions/FstrLength"
-                                },
-                                {
-                                    "$ref": "http://geostyler/geostyler-style.json#/definitions/Fsub"
-                                },
-                                {
-                                    "$ref": "http://geostyler/geostyler-style.json#/definitions/Ftan"
-                                },
-                                {
-                                    "$ref": "http://geostyler/geostyler-style.json#/definitions/FtoDegrees"
-                                },
-                                {
-                                    "$ref": "http://geostyler/geostyler-style.json#/definitions/FtoNumber"
-                                },
-                                {
-                                    "$ref": "http://geostyler/geostyler-style.json#/definitions/FtoRadians"
-                                },
-                                {
-                                    "type": "number"
-                                }
-                            ]
-                        },
-                        {
-                            "anyOf": [
-                                {
-                                    "$ref": "http://geostyler/geostyler-style.json#/definitions/Fcase"
-                                },
-                                {
-                                    "$ref": "http://geostyler/geostyler-style.json#/definitions/Fstep"
-                                },
-                                {
-                                    "$ref": "http://geostyler/geostyler-style.json#/definitions/Fproperty"
+                                    "$ref": "http://geostyler/geostyler-style.json#/definitions/Fcustom"
                                 },
                                 {
                                     "$ref": "http://geostyler/geostyler-style.json#/definitions/Fabs"
@@ -2392,6 +2343,124 @@
                                 },
                                 {
                                     "$ref": "http://geostyler/geostyler-style.json#/definitions/Fproperty"
+                                },
+                                {
+                                    "$ref": "http://geostyler/geostyler-style.json#/definitions/Fcustom"
+                                },
+                                {
+                                    "$ref": "http://geostyler/geostyler-style.json#/definitions/Fabs"
+                                },
+                                {
+                                    "$ref": "http://geostyler/geostyler-style.json#/definitions/Facos"
+                                },
+                                {
+                                    "$ref": "http://geostyler/geostyler-style.json#/definitions/Fadd"
+                                },
+                                {
+                                    "$ref": "http://geostyler/geostyler-style.json#/definitions/Fasin"
+                                },
+                                {
+                                    "$ref": "http://geostyler/geostyler-style.json#/definitions/Fatan"
+                                },
+                                {
+                                    "$ref": "http://geostyler/geostyler-style.json#/definitions/Fatan2"
+                                },
+                                {
+                                    "$ref": "http://geostyler/geostyler-style.json#/definitions/Fceil"
+                                },
+                                {
+                                    "$ref": "http://geostyler/geostyler-style.json#/definitions/Fcos"
+                                },
+                                {
+                                    "$ref": "http://geostyler/geostyler-style.json#/definitions/Fdiv"
+                                },
+                                {
+                                    "$ref": "http://geostyler/geostyler-style.json#/definitions/Fexp"
+                                },
+                                {
+                                    "$ref": "http://geostyler/geostyler-style.json#/definitions/Ffloor"
+                                },
+                                {
+                                    "$ref": "http://geostyler/geostyler-style.json#/definitions/Finterpolate"
+                                },
+                                {
+                                    "$ref": "http://geostyler/geostyler-style.json#/definitions/Flog"
+                                },
+                                {
+                                    "$ref": "http://geostyler/geostyler-style.json#/definitions/Fmax"
+                                },
+                                {
+                                    "$ref": "http://geostyler/geostyler-style.json#/definitions/Fmin"
+                                },
+                                {
+                                    "$ref": "http://geostyler/geostyler-style.json#/definitions/Fmodulo"
+                                },
+                                {
+                                    "$ref": "http://geostyler/geostyler-style.json#/definitions/Fmul"
+                                },
+                                {
+                                    "$ref": "http://geostyler/geostyler-style.json#/definitions/Fpi"
+                                },
+                                {
+                                    "$ref": "http://geostyler/geostyler-style.json#/definitions/Fpow"
+                                },
+                                {
+                                    "$ref": "http://geostyler/geostyler-style.json#/definitions/Frandom"
+                                },
+                                {
+                                    "$ref": "http://geostyler/geostyler-style.json#/definitions/Frint"
+                                },
+                                {
+                                    "$ref": "http://geostyler/geostyler-style.json#/definitions/Fround"
+                                },
+                                {
+                                    "$ref": "http://geostyler/geostyler-style.json#/definitions/Fsin"
+                                },
+                                {
+                                    "$ref": "http://geostyler/geostyler-style.json#/definitions/Fsqrt"
+                                },
+                                {
+                                    "$ref": "http://geostyler/geostyler-style.json#/definitions/FstrIndexOf"
+                                },
+                                {
+                                    "$ref": "http://geostyler/geostyler-style.json#/definitions/FstrLastIndexOf"
+                                },
+                                {
+                                    "$ref": "http://geostyler/geostyler-style.json#/definitions/FstrLength"
+                                },
+                                {
+                                    "$ref": "http://geostyler/geostyler-style.json#/definitions/Fsub"
+                                },
+                                {
+                                    "$ref": "http://geostyler/geostyler-style.json#/definitions/Ftan"
+                                },
+                                {
+                                    "$ref": "http://geostyler/geostyler-style.json#/definitions/FtoDegrees"
+                                },
+                                {
+                                    "$ref": "http://geostyler/geostyler-style.json#/definitions/FtoNumber"
+                                },
+                                {
+                                    "$ref": "http://geostyler/geostyler-style.json#/definitions/FtoRadians"
+                                },
+                                {
+                                    "type": "number"
+                                }
+                            ]
+                        },
+                        {
+                            "anyOf": [
+                                {
+                                    "$ref": "http://geostyler/geostyler-style.json#/definitions/Fcase"
+                                },
+                                {
+                                    "$ref": "http://geostyler/geostyler-style.json#/definitions/Fstep"
+                                },
+                                {
+                                    "$ref": "http://geostyler/geostyler-style.json#/definitions/Fproperty"
+                                },
+                                {
+                                    "$ref": "http://geostyler/geostyler-style.json#/definitions/Fcustom"
                                 },
                                 {
                                     "$ref": "http://geostyler/geostyler-style.json#/definitions/Fabs"
@@ -2543,6 +2612,9 @@
                                     "$ref": "http://geostyler/geostyler-style.json#/definitions/Fproperty"
                                 },
                                 {
+                                    "$ref": "http://geostyler/geostyler-style.json#/definitions/Fcustom"
+                                },
+                                {
                                     "$ref": "http://geostyler/geostyler-style.json#/definitions/Fabs"
                                 },
                                 {
@@ -2672,6 +2744,9 @@
                                     "$ref": "http://geostyler/geostyler-style.json#/definitions/Fproperty"
                                 },
                                 {
+                                    "$ref": "http://geostyler/geostyler-style.json#/definitions/Fcustom"
+                                },
+                                {
                                     "$ref": "http://geostyler/geostyler-style.json#/definitions/Fabs"
                                 },
                                 {
@@ -2784,6 +2859,80 @@
             },
             "type": "object"
         },
+        "Fcustom": {
+            "description": "Returns a function with free text as a name, the behavior is left to the implementation.\n\"fnName\" is the name of the custom function to call.\nWe strongly recommend using a more specific function if one is available.",
+            "properties": {
+                "args": {
+                    "items": {
+                        "anyOf": [
+                            {
+                                "$ref": "http://geostyler/geostyler-style.json#/definitions/Fcase"
+                            },
+                            {
+                                "$ref": "http://geostyler/geostyler-style.json#/definitions/Fstep"
+                            },
+                            {
+                                "$ref": "http://geostyler/geostyler-style.json#/definitions/Fproperty"
+                            },
+                            {
+                                "$ref": "http://geostyler/geostyler-style.json#/definitions/Fcustom"
+                            },
+                            {
+                                "$ref": "http://geostyler/geostyler-style.json#/definitions/FnumberFormat"
+                            },
+                            {
+                                "$ref": "http://geostyler/geostyler-style.json#/definitions/FstrAbbreviate"
+                            },
+                            {
+                                "$ref": "http://geostyler/geostyler-style.json#/definitions/FstrCapitalize"
+                            },
+                            {
+                                "$ref": "http://geostyler/geostyler-style.json#/definitions/FstrConcat"
+                            },
+                            {
+                                "$ref": "http://geostyler/geostyler-style.json#/definitions/FstrDefaultIfBlank"
+                            },
+                            {
+                                "$ref": "http://geostyler/geostyler-style.json#/definitions/FstrReplace"
+                            },
+                            {
+                                "$ref": "http://geostyler/geostyler-style.json#/definitions/FstrStripAccents"
+                            },
+                            {
+                                "$ref": "http://geostyler/geostyler-style.json#/definitions/FstrSubstring"
+                            },
+                            {
+                                "$ref": "http://geostyler/geostyler-style.json#/definitions/FstrSubstringStart"
+                            },
+                            {
+                                "$ref": "http://geostyler/geostyler-style.json#/definitions/FstrToLowerCase"
+                            },
+                            {
+                                "$ref": "http://geostyler/geostyler-style.json#/definitions/FstrToUpperCase"
+                            },
+                            {
+                                "$ref": "http://geostyler/geostyler-style.json#/definitions/FstrTrim"
+                            },
+                            {
+                                "$ref": "http://geostyler/geostyler-style.json#/definitions/FtoString"
+                            },
+                            {
+                                "type": "string"
+                            }
+                        ]
+                    },
+                    "type": "array"
+                },
+                "fnName": {
+                    "type": "string"
+                },
+                "name": {
+                    "const": "custom",
+                    "type": "string"
+                }
+            },
+            "type": "object"
+        },
         "Fdiv": {
             "description": "Returns the division of argument[0] by argument[1]",
             "properties": {
@@ -2799,6 +2948,9 @@
                                 },
                                 {
                                     "$ref": "http://geostyler/geostyler-style.json#/definitions/Fproperty"
+                                },
+                                {
+                                    "$ref": "http://geostyler/geostyler-style.json#/definitions/Fcustom"
                                 },
                                 {
                                     "$ref": "http://geostyler/geostyler-style.json#/definitions/Fabs"
@@ -2911,6 +3063,9 @@
                                 },
                                 {
                                     "$ref": "http://geostyler/geostyler-style.json#/definitions/Fproperty"
+                                },
+                                {
+                                    "$ref": "http://geostyler/geostyler-style.json#/definitions/Fcustom"
                                 },
                                 {
                                     "$ref": "http://geostyler/geostyler-style.json#/definitions/Fabs"
@@ -3040,6 +3195,9 @@
                                 },
                                 {
                                     "$ref": "http://geostyler/geostyler-style.json#/definitions/Fproperty"
+                                },
+                                {
+                                    "$ref": "http://geostyler/geostyler-style.json#/definitions/Fcustom"
                                 },
                                 {
                                     "$ref": "http://geostyler/geostyler-style.json#/definitions/Fabs"
@@ -3190,6 +3348,9 @@
                                     "$ref": "http://geostyler/geostyler-style.json#/definitions/Fproperty"
                                 },
                                 {
+                                    "$ref": "http://geostyler/geostyler-style.json#/definitions/Fcustom"
+                                },
+                                {
                                     "$ref": "http://geostyler/geostyler-style.json#/definitions/Fabs"
                                 },
                                 {
@@ -3317,6 +3478,9 @@
                                 },
                                 {
                                     "$ref": "http://geostyler/geostyler-style.json#/definitions/Fproperty"
+                                },
+                                {
+                                    "$ref": "http://geostyler/geostyler-style.json#/definitions/Fcustom"
                                 },
                                 {
                                     "$ref": "http://geostyler/geostyler-style.json#/definitions/Fabs"
@@ -3448,6 +3612,9 @@
                                     "$ref": "http://geostyler/geostyler-style.json#/definitions/Fproperty"
                                 },
                                 {
+                                    "$ref": "http://geostyler/geostyler-style.json#/definitions/Fcustom"
+                                },
+                                {
                                     "$ref": "http://geostyler/geostyler-style.json#/definitions/Fabs"
                                 },
                                 {
@@ -3558,6 +3725,9 @@
                                 },
                                 {
                                     "$ref": "http://geostyler/geostyler-style.json#/definitions/Fproperty"
+                                },
+                                {
+                                    "$ref": "http://geostyler/geostyler-style.json#/definitions/Fcustom"
                                 },
                                 {
                                     "$ref": "http://geostyler/geostyler-style.json#/definitions/Fabs"
@@ -3689,6 +3859,9 @@
                                     "$ref": "http://geostyler/geostyler-style.json#/definitions/Fproperty"
                                 },
                                 {
+                                    "$ref": "http://geostyler/geostyler-style.json#/definitions/Fcustom"
+                                },
+                                {
                                     "$ref": "http://geostyler/geostyler-style.json#/definitions/Fabs"
                                 },
                                 {
@@ -3799,6 +3972,9 @@
                                 },
                                 {
                                     "$ref": "http://geostyler/geostyler-style.json#/definitions/Fproperty"
+                                },
+                                {
+                                    "$ref": "http://geostyler/geostyler-style.json#/definitions/Fcustom"
                                 },
                                 {
                                     "$ref": "http://geostyler/geostyler-style.json#/definitions/Fabs"
@@ -3928,6 +4104,9 @@
                             "$ref": "http://geostyler/geostyler-style.json#/definitions/Fproperty"
                         },
                         {
+                            "$ref": "http://geostyler/geostyler-style.json#/definitions/Fcustom"
+                        },
+                        {
                             "$ref": "http://geostyler/geostyler-style.json#/definitions/Fall"
                         },
                         {
@@ -3996,6 +4175,9 @@
                             "$ref": "http://geostyler/geostyler-style.json#/definitions/Fproperty"
                         },
                         {
+                            "$ref": "http://geostyler/geostyler-style.json#/definitions/Fcustom"
+                        },
+                        {
                             "$ref": "http://geostyler/geostyler-style.json#/definitions/FnumberFormat"
                         },
                         {
@@ -4050,6 +4232,9 @@
                         },
                         {
                             "$ref": "http://geostyler/geostyler-style.json#/definitions/Fproperty"
+                        },
+                        {
+                            "$ref": "http://geostyler/geostyler-style.json#/definitions/Fcustom"
                         },
                         {
                             "$ref": "http://geostyler/geostyler-style.json#/definitions/Fabs"
@@ -4153,6 +4338,9 @@
                     ],
                     "description": "The opacity of the fill. A value between 0 and 1.\n0 is none opaque and 1 is full opaque."
                 },
+                "geometry": {
+                    "description": "Defines which geometry to take or how to apply the geometry to this symbolizer."
+                },
                 "graphicFill": {
                     "anyOf": [
                         {
@@ -4182,116 +4370,7 @@
                                     "$ref": "http://geostyler/geostyler-style.json#/definitions/Fproperty"
                                 },
                                 {
-                                    "$ref": "http://geostyler/geostyler-style.json#/definitions/Fabs"
-                                },
-                                {
-                                    "$ref": "http://geostyler/geostyler-style.json#/definitions/Facos"
-                                },
-                                {
-                                    "$ref": "http://geostyler/geostyler-style.json#/definitions/Fadd"
-                                },
-                                {
-                                    "$ref": "http://geostyler/geostyler-style.json#/definitions/Fasin"
-                                },
-                                {
-                                    "$ref": "http://geostyler/geostyler-style.json#/definitions/Fatan"
-                                },
-                                {
-                                    "$ref": "http://geostyler/geostyler-style.json#/definitions/Fatan2"
-                                },
-                                {
-                                    "$ref": "http://geostyler/geostyler-style.json#/definitions/Fceil"
-                                },
-                                {
-                                    "$ref": "http://geostyler/geostyler-style.json#/definitions/Fcos"
-                                },
-                                {
-                                    "$ref": "http://geostyler/geostyler-style.json#/definitions/Fdiv"
-                                },
-                                {
-                                    "$ref": "http://geostyler/geostyler-style.json#/definitions/Fexp"
-                                },
-                                {
-                                    "$ref": "http://geostyler/geostyler-style.json#/definitions/Ffloor"
-                                },
-                                {
-                                    "$ref": "http://geostyler/geostyler-style.json#/definitions/Finterpolate"
-                                },
-                                {
-                                    "$ref": "http://geostyler/geostyler-style.json#/definitions/Flog"
-                                },
-                                {
-                                    "$ref": "http://geostyler/geostyler-style.json#/definitions/Fmax"
-                                },
-                                {
-                                    "$ref": "http://geostyler/geostyler-style.json#/definitions/Fmin"
-                                },
-                                {
-                                    "$ref": "http://geostyler/geostyler-style.json#/definitions/Fmodulo"
-                                },
-                                {
-                                    "$ref": "http://geostyler/geostyler-style.json#/definitions/Fmul"
-                                },
-                                {
-                                    "$ref": "http://geostyler/geostyler-style.json#/definitions/Fpi"
-                                },
-                                {
-                                    "$ref": "http://geostyler/geostyler-style.json#/definitions/Fpow"
-                                },
-                                {
-                                    "$ref": "http://geostyler/geostyler-style.json#/definitions/Frandom"
-                                },
-                                {
-                                    "$ref": "http://geostyler/geostyler-style.json#/definitions/Frint"
-                                },
-                                {
-                                    "$ref": "http://geostyler/geostyler-style.json#/definitions/Fround"
-                                },
-                                {
-                                    "$ref": "http://geostyler/geostyler-style.json#/definitions/Fsin"
-                                },
-                                {
-                                    "$ref": "http://geostyler/geostyler-style.json#/definitions/Fsqrt"
-                                },
-                                {
-                                    "$ref": "http://geostyler/geostyler-style.json#/definitions/FstrIndexOf"
-                                },
-                                {
-                                    "$ref": "http://geostyler/geostyler-style.json#/definitions/FstrLastIndexOf"
-                                },
-                                {
-                                    "$ref": "http://geostyler/geostyler-style.json#/definitions/FstrLength"
-                                },
-                                {
-                                    "$ref": "http://geostyler/geostyler-style.json#/definitions/Fsub"
-                                },
-                                {
-                                    "$ref": "http://geostyler/geostyler-style.json#/definitions/Ftan"
-                                },
-                                {
-                                    "$ref": "http://geostyler/geostyler-style.json#/definitions/FtoDegrees"
-                                },
-                                {
-                                    "$ref": "http://geostyler/geostyler-style.json#/definitions/FtoNumber"
-                                },
-                                {
-                                    "$ref": "http://geostyler/geostyler-style.json#/definitions/FtoRadians"
-                                },
-                                {
-                                    "type": "number"
-                                }
-                            ]
-                        },
-                        {
-                            "anyOf": [
-                                {
-                                    "$ref": "http://geostyler/geostyler-style.json#/definitions/Fcase"
-                                },
-                                {
-                                    "$ref": "http://geostyler/geostyler-style.json#/definitions/Fstep"
-                                },
-                                {
-                                    "$ref": "http://geostyler/geostyler-style.json#/definitions/Fproperty"
+                                    "$ref": "http://geostyler/geostyler-style.json#/definitions/Fcustom"
                                 },
                                 {
                                     "$ref": "http://geostyler/geostyler-style.json#/definitions/Fabs"
@@ -4406,6 +4485,9 @@
                                     "$ref": "http://geostyler/geostyler-style.json#/definitions/Fproperty"
                                 },
                                 {
+                                    "$ref": "http://geostyler/geostyler-style.json#/definitions/Fcustom"
+                                },
+                                {
                                     "$ref": "http://geostyler/geostyler-style.json#/definitions/Fabs"
                                 },
                                 {
@@ -4516,6 +4598,124 @@
                                 },
                                 {
                                     "$ref": "http://geostyler/geostyler-style.json#/definitions/Fproperty"
+                                },
+                                {
+                                    "$ref": "http://geostyler/geostyler-style.json#/definitions/Fcustom"
+                                },
+                                {
+                                    "$ref": "http://geostyler/geostyler-style.json#/definitions/Fabs"
+                                },
+                                {
+                                    "$ref": "http://geostyler/geostyler-style.json#/definitions/Facos"
+                                },
+                                {
+                                    "$ref": "http://geostyler/geostyler-style.json#/definitions/Fadd"
+                                },
+                                {
+                                    "$ref": "http://geostyler/geostyler-style.json#/definitions/Fasin"
+                                },
+                                {
+                                    "$ref": "http://geostyler/geostyler-style.json#/definitions/Fatan"
+                                },
+                                {
+                                    "$ref": "http://geostyler/geostyler-style.json#/definitions/Fatan2"
+                                },
+                                {
+                                    "$ref": "http://geostyler/geostyler-style.json#/definitions/Fceil"
+                                },
+                                {
+                                    "$ref": "http://geostyler/geostyler-style.json#/definitions/Fcos"
+                                },
+                                {
+                                    "$ref": "http://geostyler/geostyler-style.json#/definitions/Fdiv"
+                                },
+                                {
+                                    "$ref": "http://geostyler/geostyler-style.json#/definitions/Fexp"
+                                },
+                                {
+                                    "$ref": "http://geostyler/geostyler-style.json#/definitions/Ffloor"
+                                },
+                                {
+                                    "$ref": "http://geostyler/geostyler-style.json#/definitions/Finterpolate"
+                                },
+                                {
+                                    "$ref": "http://geostyler/geostyler-style.json#/definitions/Flog"
+                                },
+                                {
+                                    "$ref": "http://geostyler/geostyler-style.json#/definitions/Fmax"
+                                },
+                                {
+                                    "$ref": "http://geostyler/geostyler-style.json#/definitions/Fmin"
+                                },
+                                {
+                                    "$ref": "http://geostyler/geostyler-style.json#/definitions/Fmodulo"
+                                },
+                                {
+                                    "$ref": "http://geostyler/geostyler-style.json#/definitions/Fmul"
+                                },
+                                {
+                                    "$ref": "http://geostyler/geostyler-style.json#/definitions/Fpi"
+                                },
+                                {
+                                    "$ref": "http://geostyler/geostyler-style.json#/definitions/Fpow"
+                                },
+                                {
+                                    "$ref": "http://geostyler/geostyler-style.json#/definitions/Frandom"
+                                },
+                                {
+                                    "$ref": "http://geostyler/geostyler-style.json#/definitions/Frint"
+                                },
+                                {
+                                    "$ref": "http://geostyler/geostyler-style.json#/definitions/Fround"
+                                },
+                                {
+                                    "$ref": "http://geostyler/geostyler-style.json#/definitions/Fsin"
+                                },
+                                {
+                                    "$ref": "http://geostyler/geostyler-style.json#/definitions/Fsqrt"
+                                },
+                                {
+                                    "$ref": "http://geostyler/geostyler-style.json#/definitions/FstrIndexOf"
+                                },
+                                {
+                                    "$ref": "http://geostyler/geostyler-style.json#/definitions/FstrLastIndexOf"
+                                },
+                                {
+                                    "$ref": "http://geostyler/geostyler-style.json#/definitions/FstrLength"
+                                },
+                                {
+                                    "$ref": "http://geostyler/geostyler-style.json#/definitions/Fsub"
+                                },
+                                {
+                                    "$ref": "http://geostyler/geostyler-style.json#/definitions/Ftan"
+                                },
+                                {
+                                    "$ref": "http://geostyler/geostyler-style.json#/definitions/FtoDegrees"
+                                },
+                                {
+                                    "$ref": "http://geostyler/geostyler-style.json#/definitions/FtoNumber"
+                                },
+                                {
+                                    "$ref": "http://geostyler/geostyler-style.json#/definitions/FtoRadians"
+                                },
+                                {
+                                    "type": "number"
+                                }
+                            ]
+                        },
+                        {
+                            "anyOf": [
+                                {
+                                    "$ref": "http://geostyler/geostyler-style.json#/definitions/Fcase"
+                                },
+                                {
+                                    "$ref": "http://geostyler/geostyler-style.json#/definitions/Fstep"
+                                },
+                                {
+                                    "$ref": "http://geostyler/geostyler-style.json#/definitions/Fproperty"
+                                },
+                                {
+                                    "$ref": "http://geostyler/geostyler-style.json#/definitions/Fcustom"
                                 },
                                 {
                                     "$ref": "http://geostyler/geostyler-style.json#/definitions/Fabs"
@@ -4640,6 +4840,9 @@
                             "$ref": "http://geostyler/geostyler-style.json#/definitions/Fproperty"
                         },
                         {
+                            "$ref": "http://geostyler/geostyler-style.json#/definitions/Fcustom"
+                        },
+                        {
                             "$ref": "http://geostyler/geostyler-style.json#/definitions/Fabs"
                         },
                         {
@@ -4753,6 +4956,9 @@
                             "$ref": "http://geostyler/geostyler-style.json#/definitions/Fproperty"
                         },
                         {
+                            "$ref": "http://geostyler/geostyler-style.json#/definitions/Fcustom"
+                        },
+                        {
                             "$ref": "http://geostyler/geostyler-style.json#/definitions/FnumberFormat"
                         },
                         {
@@ -4814,6 +5020,9 @@
                             "$ref": "http://geostyler/geostyler-style.json#/definitions/Fproperty"
                         },
                         {
+                            "$ref": "http://geostyler/geostyler-style.json#/definitions/Fcustom"
+                        },
+                        {
                             "$ref": "http://geostyler/geostyler-style.json#/definitions/FnumberFormat"
                         },
                         {
@@ -4870,6 +5079,9 @@
                             },
                             {
                                 "$ref": "http://geostyler/geostyler-style.json#/definitions/Fproperty"
+                            },
+                            {
+                                "$ref": "http://geostyler/geostyler-style.json#/definitions/Fcustom"
                             },
                             {
                                 "$ref": "http://geostyler/geostyler-style.json#/definitions/Fabs"
@@ -4986,6 +5198,9 @@
                             "$ref": "http://geostyler/geostyler-style.json#/definitions/Fproperty"
                         },
                         {
+                            "$ref": "http://geostyler/geostyler-style.json#/definitions/Fcustom"
+                        },
+                        {
                             "$ref": "http://geostyler/geostyler-style.json#/definitions/FnumberFormat"
                         },
                         {
@@ -5045,6 +5260,9 @@
                         },
                         {
                             "$ref": "http://geostyler/geostyler-style.json#/definitions/Fproperty"
+                        },
+                        {
+                            "$ref": "http://geostyler/geostyler-style.json#/definitions/Fcustom"
                         },
                         {
                             "$ref": "http://geostyler/geostyler-style.json#/definitions/Fabs"
@@ -5158,6 +5376,9 @@
                         },
                         {
                             "$ref": "http://geostyler/geostyler-style.json#/definitions/Fproperty"
+                        },
+                        {
+                            "$ref": "http://geostyler/geostyler-style.json#/definitions/Fcustom"
                         },
                         {
                             "$ref": "http://geostyler/geostyler-style.json#/definitions/Fabs"
@@ -5281,6 +5502,9 @@
                             "$ref": "http://geostyler/geostyler-style.json#/definitions/Fproperty"
                         },
                         {
+                            "$ref": "http://geostyler/geostyler-style.json#/definitions/Fcustom"
+                        },
+                        {
                             "$ref": "http://geostyler/geostyler-style.json#/definitions/Fall"
                         },
                         {
@@ -5335,7 +5559,7 @@
                             "type": "boolean"
                         }
                     ],
-                    "description": "Defines whether the Symbolizer should be visibile or not."
+                    "description": "Defines whether the Symbolizer should be visible or not."
                 }
             },
             "type": "object"
@@ -5350,6 +5574,9 @@
                 },
                 {
                     "$ref": "http://geostyler/geostyler-style.json#/definitions/Fproperty"
+                },
+                {
+                    "$ref": "http://geostyler/geostyler-style.json#/definitions/Fcustom"
                 },
                 {
                     "$ref": "http://geostyler/geostyler-style.json#/definitions/Fall"
@@ -5421,6 +5648,9 @@
                                     "$ref": "http://geostyler/geostyler-style.json#/definitions/Fproperty"
                                 },
                                 {
+                                    "$ref": "http://geostyler/geostyler-style.json#/definitions/Fcustom"
+                                },
+                                {
                                     "$ref": "http://geostyler/geostyler-style.json#/definitions/FnumberFormat"
                                 },
                                 {
@@ -5474,6 +5704,9 @@
                                 },
                                 {
                                     "$ref": "http://geostyler/geostyler-style.json#/definitions/Fproperty"
+                                },
+                                {
+                                    "$ref": "http://geostyler/geostyler-style.json#/definitions/Fcustom"
                                 },
                                 {
                                     "$ref": "http://geostyler/geostyler-style.json#/definitions/Fabs"
@@ -5586,6 +5819,9 @@
                                 },
                                 {
                                     "$ref": "http://geostyler/geostyler-style.json#/definitions/Fproperty"
+                                },
+                                {
+                                    "$ref": "http://geostyler/geostyler-style.json#/definitions/Fcustom"
                                 },
                                 {
                                     "$ref": "http://geostyler/geostyler-style.json#/definitions/Fabs"
@@ -5708,6 +5944,9 @@
                                 },
                                 {
                                     "$ref": "http://geostyler/geostyler-style.json#/definitions/Fproperty"
+                                },
+                                {
+                                    "$ref": "http://geostyler/geostyler-style.json#/definitions/Fcustom"
                                 },
                                 {
                                     "$ref": "http://geostyler/geostyler-style.json#/definitions/Fabs"
@@ -5915,6 +6154,9 @@
                                 },
                                 {
                                     "$ref": "http://geostyler/geostyler-style.json#/definitions/Fproperty"
+                                },
+                                {
+                                    "$ref": "http://geostyler/geostyler-style.json#/definitions/Fcustom"
                                 },
                                 {
                                     "$ref": "http://geostyler/geostyler-style.json#/definitions/Fabs"
@@ -6178,6 +6420,9 @@
                                     "$ref": "http://geostyler/geostyler-style.json#/definitions/Fproperty"
                                 },
                                 {
+                                    "$ref": "http://geostyler/geostyler-style.json#/definitions/Fcustom"
+                                },
+                                {
                                     "$ref": "http://geostyler/geostyler-style.json#/definitions/Fabs"
                                 },
                                 {
@@ -6312,6 +6557,9 @@
                                     "$ref": "http://geostyler/geostyler-style.json#/definitions/Fproperty"
                                 },
                                 {
+                                    "$ref": "http://geostyler/geostyler-style.json#/definitions/Fcustom"
+                                },
+                                {
                                     "$ref": "http://geostyler/geostyler-style.json#/definitions/Fabs"
                                 },
                                 {
@@ -6422,6 +6670,9 @@
                                 },
                                 {
                                     "$ref": "http://geostyler/geostyler-style.json#/definitions/Fproperty"
+                                },
+                                {
+                                    "$ref": "http://geostyler/geostyler-style.json#/definitions/Fcustom"
                                 },
                                 {
                                     "$ref": "http://geostyler/geostyler-style.json#/definitions/Fabs"
@@ -6553,6 +6804,9 @@
                                     "$ref": "http://geostyler/geostyler-style.json#/definitions/Fproperty"
                                 },
                                 {
+                                    "$ref": "http://geostyler/geostyler-style.json#/definitions/Fcustom"
+                                },
+                                {
                                     "$ref": "http://geostyler/geostyler-style.json#/definitions/Fabs"
                                 },
                                 {
@@ -6663,6 +6917,9 @@
                                 },
                                 {
                                     "$ref": "http://geostyler/geostyler-style.json#/definitions/Fproperty"
+                                },
+                                {
+                                    "$ref": "http://geostyler/geostyler-style.json#/definitions/Fcustom"
                                 },
                                 {
                                     "$ref": "http://geostyler/geostyler-style.json#/definitions/Fabs"
@@ -6794,6 +7051,9 @@
                                     "$ref": "http://geostyler/geostyler-style.json#/definitions/Fproperty"
                                 },
                                 {
+                                    "$ref": "http://geostyler/geostyler-style.json#/definitions/Fcustom"
+                                },
+                                {
                                     "$ref": "http://geostyler/geostyler-style.json#/definitions/Fabs"
                                 },
                                 {
@@ -6922,6 +7182,9 @@
                                 "$ref": "http://geostyler/geostyler-style.json#/definitions/Fproperty"
                             },
                             {
+                                "$ref": "http://geostyler/geostyler-style.json#/definitions/Fcustom"
+                            },
+                            {
                                 "$ref": "http://geostyler/geostyler-style.json#/definitions/Fabs"
                             },
                             {
@@ -7045,6 +7308,9 @@
                             },
                             {
                                 "$ref": "http://geostyler/geostyler-style.json#/definitions/Fproperty"
+                            },
+                            {
+                                "$ref": "http://geostyler/geostyler-style.json#/definitions/Fcustom"
                             },
                             {
                                 "$ref": "http://geostyler/geostyler-style.json#/definitions/Fabs"
@@ -7173,6 +7439,9 @@
                                     "$ref": "http://geostyler/geostyler-style.json#/definitions/Fproperty"
                                 },
                                 {
+                                    "$ref": "http://geostyler/geostyler-style.json#/definitions/Fcustom"
+                                },
+                                {
                                     "$ref": "http://geostyler/geostyler-style.json#/definitions/Fabs"
                                 },
                                 {
@@ -7283,6 +7552,9 @@
                                 },
                                 {
                                     "$ref": "http://geostyler/geostyler-style.json#/definitions/Fproperty"
+                                },
+                                {
+                                    "$ref": "http://geostyler/geostyler-style.json#/definitions/Fcustom"
                                 },
                                 {
                                     "$ref": "http://geostyler/geostyler-style.json#/definitions/Fabs"
@@ -7411,6 +7683,9 @@
                             },
                             {
                                 "$ref": "http://geostyler/geostyler-style.json#/definitions/Fproperty"
+                            },
+                            {
+                                "$ref": "http://geostyler/geostyler-style.json#/definitions/Fcustom"
                             },
                             {
                                 "$ref": "http://geostyler/geostyler-style.json#/definitions/Fabs"
@@ -7578,6 +7853,9 @@
                                     "$ref": "http://geostyler/geostyler-style.json#/definitions/Fproperty"
                                 },
                                 {
+                                    "$ref": "http://geostyler/geostyler-style.json#/definitions/Fcustom"
+                                },
+                                {
                                     "$ref": "http://geostyler/geostyler-style.json#/definitions/FnumberFormat"
                                 },
                                 {
@@ -7631,6 +7909,9 @@
                                 },
                                 {
                                     "$ref": "http://geostyler/geostyler-style.json#/definitions/Fproperty"
+                                },
+                                {
+                                    "$ref": "http://geostyler/geostyler-style.json#/definitions/Fcustom"
                                 },
                                 {
                                     "$ref": "http://geostyler/geostyler-style.json#/definitions/Fabs"
@@ -7745,6 +8026,9 @@
                                     "$ref": "http://geostyler/geostyler-style.json#/definitions/Fproperty"
                                 },
                                 {
+                                    "$ref": "http://geostyler/geostyler-style.json#/definitions/Fcustom"
+                                },
+                                {
                                     "$ref": "http://geostyler/geostyler-style.json#/definitions/FnumberFormat"
                                 },
                                 {
@@ -7815,6 +8099,9 @@
                                 },
                                 {
                                     "$ref": "http://geostyler/geostyler-style.json#/definitions/Fproperty"
+                                },
+                                {
+                                    "$ref": "http://geostyler/geostyler-style.json#/definitions/Fcustom"
                                 },
                                 {
                                     "$ref": "http://geostyler/geostyler-style.json#/definitions/FnumberFormat"
@@ -7899,6 +8186,9 @@
                                     "$ref": "http://geostyler/geostyler-style.json#/definitions/Fproperty"
                                 },
                                 {
+                                    "$ref": "http://geostyler/geostyler-style.json#/definitions/Fcustom"
+                                },
+                                {
                                     "$ref": "http://geostyler/geostyler-style.json#/definitions/Fabs"
                                 },
                                 {
@@ -8009,6 +8299,9 @@
                                 },
                                 {
                                     "$ref": "http://geostyler/geostyler-style.json#/definitions/Fproperty"
+                                },
+                                {
+                                    "$ref": "http://geostyler/geostyler-style.json#/definitions/Fcustom"
                                 },
                                 {
                                     "$ref": "http://geostyler/geostyler-style.json#/definitions/Fabs"
@@ -8140,6 +8433,9 @@
                                     "$ref": "http://geostyler/geostyler-style.json#/definitions/Fproperty"
                                 },
                                 {
+                                    "$ref": "http://geostyler/geostyler-style.json#/definitions/Fcustom"
+                                },
+                                {
                                     "$ref": "http://geostyler/geostyler-style.json#/definitions/FnumberFormat"
                                 },
                                 {
@@ -8220,6 +8516,9 @@
                                 },
                                 {
                                     "$ref": "http://geostyler/geostyler-style.json#/definitions/Fproperty"
+                                },
+                                {
+                                    "$ref": "http://geostyler/geostyler-style.json#/definitions/Fcustom"
                                 },
                                 {
                                     "$ref": "http://geostyler/geostyler-style.json#/definitions/Fabs"
@@ -8351,6 +8650,9 @@
                                     "$ref": "http://geostyler/geostyler-style.json#/definitions/Fproperty"
                                 },
                                 {
+                                    "$ref": "http://geostyler/geostyler-style.json#/definitions/Fcustom"
+                                },
+                                {
                                     "$ref": "http://geostyler/geostyler-style.json#/definitions/Fabs"
                                 },
                                 {
@@ -8480,6 +8782,9 @@
                                     "$ref": "http://geostyler/geostyler-style.json#/definitions/Fproperty"
                                 },
                                 {
+                                    "$ref": "http://geostyler/geostyler-style.json#/definitions/Fcustom"
+                                },
+                                {
                                     "$ref": "http://geostyler/geostyler-style.json#/definitions/Fabs"
                                 },
                                 {
@@ -8607,6 +8912,9 @@
                                 },
                                 {
                                     "$ref": "http://geostyler/geostyler-style.json#/definitions/Fproperty"
+                                },
+                                {
+                                    "$ref": "http://geostyler/geostyler-style.json#/definitions/Fcustom"
                                 },
                                 {
                                     "$ref": "http://geostyler/geostyler-style.json#/definitions/Fabs"
@@ -8741,6 +9049,9 @@
                                     "$ref": "http://geostyler/geostyler-style.json#/definitions/Fproperty"
                                 },
                                 {
+                                    "$ref": "http://geostyler/geostyler-style.json#/definitions/Fcustom"
+                                },
+                                {
                                     "$ref": "http://geostyler/geostyler-style.json#/definitions/Fabs"
                                 },
                                 {
@@ -8870,6 +9181,9 @@
                                     "$ref": "http://geostyler/geostyler-style.json#/definitions/Fproperty"
                                 },
                                 {
+                                    "$ref": "http://geostyler/geostyler-style.json#/definitions/Fcustom"
+                                },
+                                {
                                     "$ref": "http://geostyler/geostyler-style.json#/definitions/FnumberFormat"
                                 },
                                 {
@@ -8925,116 +9239,7 @@
                                     "$ref": "http://geostyler/geostyler-style.json#/definitions/Fproperty"
                                 },
                                 {
-                                    "$ref": "http://geostyler/geostyler-style.json#/definitions/Fabs"
-                                },
-                                {
-                                    "$ref": "http://geostyler/geostyler-style.json#/definitions/Facos"
-                                },
-                                {
-                                    "$ref": "http://geostyler/geostyler-style.json#/definitions/Fadd"
-                                },
-                                {
-                                    "$ref": "http://geostyler/geostyler-style.json#/definitions/Fasin"
-                                },
-                                {
-                                    "$ref": "http://geostyler/geostyler-style.json#/definitions/Fatan"
-                                },
-                                {
-                                    "$ref": "http://geostyler/geostyler-style.json#/definitions/Fatan2"
-                                },
-                                {
-                                    "$ref": "http://geostyler/geostyler-style.json#/definitions/Fceil"
-                                },
-                                {
-                                    "$ref": "http://geostyler/geostyler-style.json#/definitions/Fcos"
-                                },
-                                {
-                                    "$ref": "http://geostyler/geostyler-style.json#/definitions/Fdiv"
-                                },
-                                {
-                                    "$ref": "http://geostyler/geostyler-style.json#/definitions/Fexp"
-                                },
-                                {
-                                    "$ref": "http://geostyler/geostyler-style.json#/definitions/Ffloor"
-                                },
-                                {
-                                    "$ref": "http://geostyler/geostyler-style.json#/definitions/Finterpolate"
-                                },
-                                {
-                                    "$ref": "http://geostyler/geostyler-style.json#/definitions/Flog"
-                                },
-                                {
-                                    "$ref": "http://geostyler/geostyler-style.json#/definitions/Fmax"
-                                },
-                                {
-                                    "$ref": "http://geostyler/geostyler-style.json#/definitions/Fmin"
-                                },
-                                {
-                                    "$ref": "http://geostyler/geostyler-style.json#/definitions/Fmodulo"
-                                },
-                                {
-                                    "$ref": "http://geostyler/geostyler-style.json#/definitions/Fmul"
-                                },
-                                {
-                                    "$ref": "http://geostyler/geostyler-style.json#/definitions/Fpi"
-                                },
-                                {
-                                    "$ref": "http://geostyler/geostyler-style.json#/definitions/Fpow"
-                                },
-                                {
-                                    "$ref": "http://geostyler/geostyler-style.json#/definitions/Frandom"
-                                },
-                                {
-                                    "$ref": "http://geostyler/geostyler-style.json#/definitions/Frint"
-                                },
-                                {
-                                    "$ref": "http://geostyler/geostyler-style.json#/definitions/Fround"
-                                },
-                                {
-                                    "$ref": "http://geostyler/geostyler-style.json#/definitions/Fsin"
-                                },
-                                {
-                                    "$ref": "http://geostyler/geostyler-style.json#/definitions/Fsqrt"
-                                },
-                                {
-                                    "$ref": "http://geostyler/geostyler-style.json#/definitions/FstrIndexOf"
-                                },
-                                {
-                                    "$ref": "http://geostyler/geostyler-style.json#/definitions/FstrLastIndexOf"
-                                },
-                                {
-                                    "$ref": "http://geostyler/geostyler-style.json#/definitions/FstrLength"
-                                },
-                                {
-                                    "$ref": "http://geostyler/geostyler-style.json#/definitions/Fsub"
-                                },
-                                {
-                                    "$ref": "http://geostyler/geostyler-style.json#/definitions/Ftan"
-                                },
-                                {
-                                    "$ref": "http://geostyler/geostyler-style.json#/definitions/FtoDegrees"
-                                },
-                                {
-                                    "$ref": "http://geostyler/geostyler-style.json#/definitions/FtoNumber"
-                                },
-                                {
-                                    "$ref": "http://geostyler/geostyler-style.json#/definitions/FtoRadians"
-                                },
-                                {
-                                    "type": "number"
-                                }
-                            ]
-                        },
-                        {
-                            "anyOf": [
-                                {
-                                    "$ref": "http://geostyler/geostyler-style.json#/definitions/Fcase"
-                                },
-                                {
-                                    "$ref": "http://geostyler/geostyler-style.json#/definitions/Fstep"
-                                },
-                                {
-                                    "$ref": "http://geostyler/geostyler-style.json#/definitions/Fproperty"
+                                    "$ref": "http://geostyler/geostyler-style.json#/definitions/Fcustom"
                                 },
                                 {
                                     "$ref": "http://geostyler/geostyler-style.json#/definitions/Fabs"
@@ -9147,6 +9352,124 @@
                                 },
                                 {
                                     "$ref": "http://geostyler/geostyler-style.json#/definitions/Fproperty"
+                                },
+                                {
+                                    "$ref": "http://geostyler/geostyler-style.json#/definitions/Fcustom"
+                                },
+                                {
+                                    "$ref": "http://geostyler/geostyler-style.json#/definitions/Fabs"
+                                },
+                                {
+                                    "$ref": "http://geostyler/geostyler-style.json#/definitions/Facos"
+                                },
+                                {
+                                    "$ref": "http://geostyler/geostyler-style.json#/definitions/Fadd"
+                                },
+                                {
+                                    "$ref": "http://geostyler/geostyler-style.json#/definitions/Fasin"
+                                },
+                                {
+                                    "$ref": "http://geostyler/geostyler-style.json#/definitions/Fatan"
+                                },
+                                {
+                                    "$ref": "http://geostyler/geostyler-style.json#/definitions/Fatan2"
+                                },
+                                {
+                                    "$ref": "http://geostyler/geostyler-style.json#/definitions/Fceil"
+                                },
+                                {
+                                    "$ref": "http://geostyler/geostyler-style.json#/definitions/Fcos"
+                                },
+                                {
+                                    "$ref": "http://geostyler/geostyler-style.json#/definitions/Fdiv"
+                                },
+                                {
+                                    "$ref": "http://geostyler/geostyler-style.json#/definitions/Fexp"
+                                },
+                                {
+                                    "$ref": "http://geostyler/geostyler-style.json#/definitions/Ffloor"
+                                },
+                                {
+                                    "$ref": "http://geostyler/geostyler-style.json#/definitions/Finterpolate"
+                                },
+                                {
+                                    "$ref": "http://geostyler/geostyler-style.json#/definitions/Flog"
+                                },
+                                {
+                                    "$ref": "http://geostyler/geostyler-style.json#/definitions/Fmax"
+                                },
+                                {
+                                    "$ref": "http://geostyler/geostyler-style.json#/definitions/Fmin"
+                                },
+                                {
+                                    "$ref": "http://geostyler/geostyler-style.json#/definitions/Fmodulo"
+                                },
+                                {
+                                    "$ref": "http://geostyler/geostyler-style.json#/definitions/Fmul"
+                                },
+                                {
+                                    "$ref": "http://geostyler/geostyler-style.json#/definitions/Fpi"
+                                },
+                                {
+                                    "$ref": "http://geostyler/geostyler-style.json#/definitions/Fpow"
+                                },
+                                {
+                                    "$ref": "http://geostyler/geostyler-style.json#/definitions/Frandom"
+                                },
+                                {
+                                    "$ref": "http://geostyler/geostyler-style.json#/definitions/Frint"
+                                },
+                                {
+                                    "$ref": "http://geostyler/geostyler-style.json#/definitions/Fround"
+                                },
+                                {
+                                    "$ref": "http://geostyler/geostyler-style.json#/definitions/Fsin"
+                                },
+                                {
+                                    "$ref": "http://geostyler/geostyler-style.json#/definitions/Fsqrt"
+                                },
+                                {
+                                    "$ref": "http://geostyler/geostyler-style.json#/definitions/FstrIndexOf"
+                                },
+                                {
+                                    "$ref": "http://geostyler/geostyler-style.json#/definitions/FstrLastIndexOf"
+                                },
+                                {
+                                    "$ref": "http://geostyler/geostyler-style.json#/definitions/FstrLength"
+                                },
+                                {
+                                    "$ref": "http://geostyler/geostyler-style.json#/definitions/Fsub"
+                                },
+                                {
+                                    "$ref": "http://geostyler/geostyler-style.json#/definitions/Ftan"
+                                },
+                                {
+                                    "$ref": "http://geostyler/geostyler-style.json#/definitions/FtoDegrees"
+                                },
+                                {
+                                    "$ref": "http://geostyler/geostyler-style.json#/definitions/FtoNumber"
+                                },
+                                {
+                                    "$ref": "http://geostyler/geostyler-style.json#/definitions/FtoRadians"
+                                },
+                                {
+                                    "type": "number"
+                                }
+                            ]
+                        },
+                        {
+                            "anyOf": [
+                                {
+                                    "$ref": "http://geostyler/geostyler-style.json#/definitions/Fcase"
+                                },
+                                {
+                                    "$ref": "http://geostyler/geostyler-style.json#/definitions/Fstep"
+                                },
+                                {
+                                    "$ref": "http://geostyler/geostyler-style.json#/definitions/Fproperty"
+                                },
+                                {
+                                    "$ref": "http://geostyler/geostyler-style.json#/definitions/Fcustom"
                                 },
                                 {
                                     "$ref": "http://geostyler/geostyler-style.json#/definitions/FnumberFormat"
@@ -9221,6 +9544,9 @@
                                     "$ref": "http://geostyler/geostyler-style.json#/definitions/Fproperty"
                                 },
                                 {
+                                    "$ref": "http://geostyler/geostyler-style.json#/definitions/Fcustom"
+                                },
+                                {
                                     "$ref": "http://geostyler/geostyler-style.json#/definitions/FnumberFormat"
                                 },
                                 {
@@ -9292,6 +9618,9 @@
                                 "$ref": "http://geostyler/geostyler-style.json#/definitions/Fproperty"
                             },
                             {
+                                "$ref": "http://geostyler/geostyler-style.json#/definitions/Fcustom"
+                            },
+                            {
                                 "$ref": "http://geostyler/geostyler-style.json#/definitions/FnumberFormat"
                             },
                             {
@@ -9361,6 +9690,9 @@
                                     "$ref": "http://geostyler/geostyler-style.json#/definitions/Fproperty"
                                 },
                                 {
+                                    "$ref": "http://geostyler/geostyler-style.json#/definitions/Fcustom"
+                                },
+                                {
                                     "$ref": "http://geostyler/geostyler-style.json#/definitions/FnumberFormat"
                                 },
                                 {
@@ -9414,6 +9746,9 @@
                                 },
                                 {
                                     "$ref": "http://geostyler/geostyler-style.json#/definitions/Fproperty"
+                                },
+                                {
+                                    "$ref": "http://geostyler/geostyler-style.json#/definitions/Fcustom"
                                 },
                                 {
                                     "$ref": "http://geostyler/geostyler-style.json#/definitions/FnumberFormat"
@@ -9488,6 +9823,9 @@
                                     "$ref": "http://geostyler/geostyler-style.json#/definitions/Fproperty"
                                 },
                                 {
+                                    "$ref": "http://geostyler/geostyler-style.json#/definitions/Fcustom"
+                                },
+                                {
                                     "$ref": "http://geostyler/geostyler-style.json#/definitions/FnumberFormat"
                                 },
                                 {
@@ -9541,6 +9879,9 @@
                                 },
                                 {
                                     "$ref": "http://geostyler/geostyler-style.json#/definitions/Fproperty"
+                                },
+                                {
+                                    "$ref": "http://geostyler/geostyler-style.json#/definitions/Fcustom"
                                 },
                                 {
                                     "$ref": "http://geostyler/geostyler-style.json#/definitions/FnumberFormat"
@@ -9615,6 +9956,9 @@
                                     "$ref": "http://geostyler/geostyler-style.json#/definitions/Fproperty"
                                 },
                                 {
+                                    "$ref": "http://geostyler/geostyler-style.json#/definitions/Fcustom"
+                                },
+                                {
                                     "$ref": "http://geostyler/geostyler-style.json#/definitions/FnumberFormat"
                                 },
                                 {
@@ -9668,6 +10012,9 @@
                                 },
                                 {
                                     "$ref": "http://geostyler/geostyler-style.json#/definitions/Fproperty"
+                                },
+                                {
+                                    "$ref": "http://geostyler/geostyler-style.json#/definitions/Fcustom"
                                 },
                                 {
                                     "$ref": "http://geostyler/geostyler-style.json#/definitions/FnumberFormat"
@@ -9742,6 +10089,9 @@
                                     "$ref": "http://geostyler/geostyler-style.json#/definitions/Fproperty"
                                 },
                                 {
+                                    "$ref": "http://geostyler/geostyler-style.json#/definitions/Fcustom"
+                                },
+                                {
                                     "$ref": "http://geostyler/geostyler-style.json#/definitions/FnumberFormat"
                                 },
                                 {
@@ -9795,6 +10145,9 @@
                                 },
                                 {
                                     "$ref": "http://geostyler/geostyler-style.json#/definitions/Fproperty"
+                                },
+                                {
+                                    "$ref": "http://geostyler/geostyler-style.json#/definitions/Fcustom"
                                 },
                                 {
                                     "$ref": "http://geostyler/geostyler-style.json#/definitions/FnumberFormat"
@@ -9869,6 +10222,9 @@
                                     "$ref": "http://geostyler/geostyler-style.json#/definitions/Fproperty"
                                 },
                                 {
+                                    "$ref": "http://geostyler/geostyler-style.json#/definitions/Fcustom"
+                                },
+                                {
                                     "$ref": "http://geostyler/geostyler-style.json#/definitions/FnumberFormat"
                                 },
                                 {
@@ -9922,6 +10278,9 @@
                                 },
                                 {
                                     "$ref": "http://geostyler/geostyler-style.json#/definitions/Fproperty"
+                                },
+                                {
+                                    "$ref": "http://geostyler/geostyler-style.json#/definitions/Fcustom"
                                 },
                                 {
                                     "$ref": "http://geostyler/geostyler-style.json#/definitions/FnumberFormat"
@@ -9996,6 +10355,9 @@
                                     "$ref": "http://geostyler/geostyler-style.json#/definitions/Fproperty"
                                 },
                                 {
+                                    "$ref": "http://geostyler/geostyler-style.json#/definitions/Fcustom"
+                                },
+                                {
                                     "$ref": "http://geostyler/geostyler-style.json#/definitions/FnumberFormat"
                                 },
                                 {
@@ -10068,6 +10430,9 @@
                                     "$ref": "http://geostyler/geostyler-style.json#/definitions/Fproperty"
                                 },
                                 {
+                                    "$ref": "http://geostyler/geostyler-style.json#/definitions/Fcustom"
+                                },
+                                {
                                     "$ref": "http://geostyler/geostyler-style.json#/definitions/FnumberFormat"
                                 },
                                 {
@@ -10121,6 +10486,9 @@
                                 },
                                 {
                                     "$ref": "http://geostyler/geostyler-style.json#/definitions/Fproperty"
+                                },
+                                {
+                                    "$ref": "http://geostyler/geostyler-style.json#/definitions/Fcustom"
                                 },
                                 {
                                     "$ref": "http://geostyler/geostyler-style.json#/definitions/FnumberFormat"
@@ -10195,59 +10563,7 @@
                                     "$ref": "http://geostyler/geostyler-style.json#/definitions/Fproperty"
                                 },
                                 {
-                                    "$ref": "http://geostyler/geostyler-style.json#/definitions/FnumberFormat"
-                                },
-                                {
-                                    "$ref": "http://geostyler/geostyler-style.json#/definitions/FstrAbbreviate"
-                                },
-                                {
-                                    "$ref": "http://geostyler/geostyler-style.json#/definitions/FstrCapitalize"
-                                },
-                                {
-                                    "$ref": "http://geostyler/geostyler-style.json#/definitions/FstrConcat"
-                                },
-                                {
-                                    "$ref": "http://geostyler/geostyler-style.json#/definitions/FstrDefaultIfBlank"
-                                },
-                                {
-                                    "$ref": "http://geostyler/geostyler-style.json#/definitions/FstrReplace"
-                                },
-                                {
-                                    "$ref": "http://geostyler/geostyler-style.json#/definitions/FstrStripAccents"
-                                },
-                                {
-                                    "$ref": "http://geostyler/geostyler-style.json#/definitions/FstrSubstring"
-                                },
-                                {
-                                    "$ref": "http://geostyler/geostyler-style.json#/definitions/FstrSubstringStart"
-                                },
-                                {
-                                    "$ref": "http://geostyler/geostyler-style.json#/definitions/FstrToLowerCase"
-                                },
-                                {
-                                    "$ref": "http://geostyler/geostyler-style.json#/definitions/FstrToUpperCase"
-                                },
-                                {
-                                    "$ref": "http://geostyler/geostyler-style.json#/definitions/FstrTrim"
-                                },
-                                {
-                                    "$ref": "http://geostyler/geostyler-style.json#/definitions/FtoString"
-                                },
-                                {
-                                    "type": "string"
-                                }
-                            ]
-                        },
-                        {
-                            "anyOf": [
-                                {
-                                    "$ref": "http://geostyler/geostyler-style.json#/definitions/Fcase"
-                                },
-                                {
-                                    "$ref": "http://geostyler/geostyler-style.json#/definitions/Fstep"
-                                },
-                                {
-                                    "$ref": "http://geostyler/geostyler-style.json#/definitions/Fproperty"
+                                    "$ref": "http://geostyler/geostyler-style.json#/definitions/Fcustom"
                                 },
                                 {
                                     "$ref": "http://geostyler/geostyler-style.json#/definitions/FnumberFormat"
@@ -10303,6 +10619,67 @@
                                 },
                                 {
                                     "$ref": "http://geostyler/geostyler-style.json#/definitions/Fproperty"
+                                },
+                                {
+                                    "$ref": "http://geostyler/geostyler-style.json#/definitions/Fcustom"
+                                },
+                                {
+                                    "$ref": "http://geostyler/geostyler-style.json#/definitions/FnumberFormat"
+                                },
+                                {
+                                    "$ref": "http://geostyler/geostyler-style.json#/definitions/FstrAbbreviate"
+                                },
+                                {
+                                    "$ref": "http://geostyler/geostyler-style.json#/definitions/FstrCapitalize"
+                                },
+                                {
+                                    "$ref": "http://geostyler/geostyler-style.json#/definitions/FstrConcat"
+                                },
+                                {
+                                    "$ref": "http://geostyler/geostyler-style.json#/definitions/FstrDefaultIfBlank"
+                                },
+                                {
+                                    "$ref": "http://geostyler/geostyler-style.json#/definitions/FstrReplace"
+                                },
+                                {
+                                    "$ref": "http://geostyler/geostyler-style.json#/definitions/FstrStripAccents"
+                                },
+                                {
+                                    "$ref": "http://geostyler/geostyler-style.json#/definitions/FstrSubstring"
+                                },
+                                {
+                                    "$ref": "http://geostyler/geostyler-style.json#/definitions/FstrSubstringStart"
+                                },
+                                {
+                                    "$ref": "http://geostyler/geostyler-style.json#/definitions/FstrToLowerCase"
+                                },
+                                {
+                                    "$ref": "http://geostyler/geostyler-style.json#/definitions/FstrToUpperCase"
+                                },
+                                {
+                                    "$ref": "http://geostyler/geostyler-style.json#/definitions/FstrTrim"
+                                },
+                                {
+                                    "$ref": "http://geostyler/geostyler-style.json#/definitions/FtoString"
+                                },
+                                {
+                                    "type": "string"
+                                }
+                            ]
+                        },
+                        {
+                            "anyOf": [
+                                {
+                                    "$ref": "http://geostyler/geostyler-style.json#/definitions/Fcase"
+                                },
+                                {
+                                    "$ref": "http://geostyler/geostyler-style.json#/definitions/Fstep"
+                                },
+                                {
+                                    "$ref": "http://geostyler/geostyler-style.json#/definitions/Fproperty"
+                                },
+                                {
+                                    "$ref": "http://geostyler/geostyler-style.json#/definitions/Fcustom"
                                 },
                                 {
                                     "$ref": "http://geostyler/geostyler-style.json#/definitions/FnumberFormat"
@@ -10380,6 +10757,9 @@
                                     "$ref": "http://geostyler/geostyler-style.json#/definitions/Fproperty"
                                 },
                                 {
+                                    "$ref": "http://geostyler/geostyler-style.json#/definitions/Fcustom"
+                                },
+                                {
                                     "$ref": "http://geostyler/geostyler-style.json#/definitions/FnumberFormat"
                                 },
                                 {
@@ -10433,6 +10813,9 @@
                                 },
                                 {
                                     "$ref": "http://geostyler/geostyler-style.json#/definitions/Fproperty"
+                                },
+                                {
+                                    "$ref": "http://geostyler/geostyler-style.json#/definitions/Fcustom"
                                 },
                                 {
                                     "$ref": "http://geostyler/geostyler-style.json#/definitions/FnumberFormat"
@@ -10507,6 +10890,9 @@
                                     "$ref": "http://geostyler/geostyler-style.json#/definitions/Fproperty"
                                 },
                                 {
+                                    "$ref": "http://geostyler/geostyler-style.json#/definitions/Fcustom"
+                                },
+                                {
                                     "$ref": "http://geostyler/geostyler-style.json#/definitions/FnumberFormat"
                                 },
                                 {
@@ -10579,6 +10965,9 @@
                                     "$ref": "http://geostyler/geostyler-style.json#/definitions/Fproperty"
                                 },
                                 {
+                                    "$ref": "http://geostyler/geostyler-style.json#/definitions/Fcustom"
+                                },
+                                {
                                     "$ref": "http://geostyler/geostyler-style.json#/definitions/FnumberFormat"
                                 },
                                 {
@@ -10632,6 +11021,9 @@
                                 },
                                 {
                                     "$ref": "http://geostyler/geostyler-style.json#/definitions/Fproperty"
+                                },
+                                {
+                                    "$ref": "http://geostyler/geostyler-style.json#/definitions/Fcustom"
                                 },
                                 {
                                     "$ref": "http://geostyler/geostyler-style.json#/definitions/Fabs"
@@ -10744,6 +11136,9 @@
                                 },
                                 {
                                     "$ref": "http://geostyler/geostyler-style.json#/definitions/Fproperty"
+                                },
+                                {
+                                    "$ref": "http://geostyler/geostyler-style.json#/definitions/Fcustom"
                                 },
                                 {
                                     "$ref": "http://geostyler/geostyler-style.json#/definitions/Fabs"
@@ -10875,6 +11270,9 @@
                                     "$ref": "http://geostyler/geostyler-style.json#/definitions/Fproperty"
                                 },
                                 {
+                                    "$ref": "http://geostyler/geostyler-style.json#/definitions/Fcustom"
+                                },
+                                {
                                     "$ref": "http://geostyler/geostyler-style.json#/definitions/FnumberFormat"
                                 },
                                 {
@@ -10928,6 +11326,9 @@
                                 },
                                 {
                                     "$ref": "http://geostyler/geostyler-style.json#/definitions/Fproperty"
+                                },
+                                {
+                                    "$ref": "http://geostyler/geostyler-style.json#/definitions/Fcustom"
                                 },
                                 {
                                     "$ref": "http://geostyler/geostyler-style.json#/definitions/Fabs"
@@ -11059,6 +11460,9 @@
                                     "$ref": "http://geostyler/geostyler-style.json#/definitions/Fproperty"
                                 },
                                 {
+                                    "$ref": "http://geostyler/geostyler-style.json#/definitions/Fcustom"
+                                },
+                                {
                                     "$ref": "http://geostyler/geostyler-style.json#/definitions/FnumberFormat"
                                 },
                                 {
@@ -11129,6 +11533,9 @@
                                 },
                                 {
                                     "$ref": "http://geostyler/geostyler-style.json#/definitions/Fproperty"
+                                },
+                                {
+                                    "$ref": "http://geostyler/geostyler-style.json#/definitions/Fcustom"
                                 },
                                 {
                                     "$ref": "http://geostyler/geostyler-style.json#/definitions/FnumberFormat"
@@ -11203,6 +11610,9 @@
                                     "$ref": "http://geostyler/geostyler-style.json#/definitions/Fproperty"
                                 },
                                 {
+                                    "$ref": "http://geostyler/geostyler-style.json#/definitions/Fcustom"
+                                },
+                                {
                                     "$ref": "http://geostyler/geostyler-style.json#/definitions/FnumberFormat"
                                 },
                                 {
@@ -11273,6 +11683,9 @@
                                 },
                                 {
                                     "$ref": "http://geostyler/geostyler-style.json#/definitions/Fproperty"
+                                },
+                                {
+                                    "$ref": "http://geostyler/geostyler-style.json#/definitions/Fcustom"
                                 },
                                 {
                                     "$ref": "http://geostyler/geostyler-style.json#/definitions/Fabs"
@@ -11385,6 +11798,9 @@
                                 },
                                 {
                                     "$ref": "http://geostyler/geostyler-style.json#/definitions/Fproperty"
+                                },
+                                {
+                                    "$ref": "http://geostyler/geostyler-style.json#/definitions/Fcustom"
                                 },
                                 {
                                     "$ref": "http://geostyler/geostyler-style.json#/definitions/Fabs"
@@ -11516,6 +11932,9 @@
                                     "$ref": "http://geostyler/geostyler-style.json#/definitions/Fproperty"
                                 },
                                 {
+                                    "$ref": "http://geostyler/geostyler-style.json#/definitions/Fcustom"
+                                },
+                                {
                                     "$ref": "http://geostyler/geostyler-style.json#/definitions/Fabs"
                                 },
                                 {
@@ -11643,6 +12062,9 @@
                                 },
                                 {
                                     "$ref": "http://geostyler/geostyler-style.json#/definitions/Fproperty"
+                                },
+                                {
+                                    "$ref": "http://geostyler/geostyler-style.json#/definitions/Fcustom"
                                 },
                                 {
                                     "$ref": "http://geostyler/geostyler-style.json#/definitions/Fabs"
@@ -11790,6 +12212,9 @@
                                 },
                                 {
                                     "$ref": "http://geostyler/geostyler-style.json#/definitions/Fproperty"
+                                },
+                                {
+                                    "$ref": "http://geostyler/geostyler-style.json#/definitions/Fcustom"
                                 },
                                 {
                                     "$ref": "http://geostyler/geostyler-style.json#/definitions/Fabs"
@@ -11946,6 +12371,9 @@
                             "$ref": "http://geostyler/geostyler-style.json#/definitions/Fproperty"
                         },
                         {
+                            "$ref": "http://geostyler/geostyler-style.json#/definitions/Fcustom"
+                        },
+                        {
                             "$ref": "http://geostyler/geostyler-style.json#/definitions/Fall"
                         },
                         {
@@ -12014,6 +12442,9 @@
                             "$ref": "http://geostyler/geostyler-style.json#/definitions/Fproperty"
                         },
                         {
+                            "$ref": "http://geostyler/geostyler-style.json#/definitions/Fcustom"
+                        },
+                        {
                             "$ref": "http://geostyler/geostyler-style.json#/definitions/FnumberFormat"
                         },
                         {
@@ -12079,6 +12510,9 @@
                         },
                         {
                             "$ref": "http://geostyler/geostyler-style.json#/definitions/Fproperty"
+                        },
+                        {
+                            "$ref": "http://geostyler/geostyler-style.json#/definitions/Fcustom"
                         },
                         {
                             "$ref": "http://geostyler/geostyler-style.json#/definitions/Fall"
@@ -12149,6 +12583,9 @@
                             "$ref": "http://geostyler/geostyler-style.json#/definitions/Fproperty"
                         },
                         {
+                            "$ref": "http://geostyler/geostyler-style.json#/definitions/Fcustom"
+                        },
+                        {
                             "$ref": "http://geostyler/geostyler-style.json#/definitions/FnumberFormat"
                         },
                         {
@@ -12205,6 +12642,9 @@
                             "$ref": "http://geostyler/geostyler-style.json#/definitions/Fproperty"
                         },
                         {
+                            "$ref": "http://geostyler/geostyler-style.json#/definitions/Fcustom"
+                        },
+                        {
                             "$ref": "http://geostyler/geostyler-style.json#/definitions/FnumberFormat"
                         },
                         {
@@ -12256,6 +12696,9 @@
                     ],
                     "description": "An optional configuration for the image format as MIME type.\nThis might be needed if the image(path) has no filending specified. e.g. http://myserver/getImage"
                 },
+                "geometry": {
+                    "description": "Defines which geometry to take or how to apply the geometry to this symbolizer."
+                },
                 "haloBlur": {
                     "anyOf": [
                         {
@@ -12266,6 +12709,9 @@
                         },
                         {
                             "$ref": "http://geostyler/geostyler-style.json#/definitions/Fproperty"
+                        },
+                        {
+                            "$ref": "http://geostyler/geostyler-style.json#/definitions/Fcustom"
                         },
                         {
                             "$ref": "http://geostyler/geostyler-style.json#/definitions/Fabs"
@@ -12381,6 +12827,9 @@
                             "$ref": "http://geostyler/geostyler-style.json#/definitions/Fproperty"
                         },
                         {
+                            "$ref": "http://geostyler/geostyler-style.json#/definitions/Fcustom"
+                        },
+                        {
                             "$ref": "http://geostyler/geostyler-style.json#/definitions/FnumberFormat"
                         },
                         {
@@ -12435,6 +12884,9 @@
                         },
                         {
                             "$ref": "http://geostyler/geostyler-style.json#/definitions/Fproperty"
+                        },
+                        {
+                            "$ref": "http://geostyler/geostyler-style.json#/definitions/Fcustom"
                         },
                         {
                             "$ref": "http://geostyler/geostyler-style.json#/definitions/Fabs"
@@ -12548,6 +13000,9 @@
                         },
                         {
                             "$ref": "http://geostyler/geostyler-style.json#/definitions/Fproperty"
+                        },
+                        {
+                            "$ref": "http://geostyler/geostyler-style.json#/definitions/Fcustom"
                         },
                         {
                             "$ref": "http://geostyler/geostyler-style.json#/definitions/Fabs"
@@ -12671,6 +13126,9 @@
                             "$ref": "http://geostyler/geostyler-style.json#/definitions/Fproperty"
                         },
                         {
+                            "$ref": "http://geostyler/geostyler-style.json#/definitions/Fcustom"
+                        },
+                        {
                             "$ref": "http://geostyler/geostyler-style.json#/definitions/FnumberFormat"
                         },
                         {
@@ -12728,6 +13186,9 @@
                         },
                         {
                             "$ref": "http://geostyler/geostyler-style.json#/definitions/Fproperty"
+                        },
+                        {
+                            "$ref": "http://geostyler/geostyler-style.json#/definitions/Fcustom"
                         },
                         {
                             "$ref": "http://geostyler/geostyler-style.json#/definitions/Fall"
@@ -12804,6 +13265,9 @@
                                 },
                                 {
                                     "$ref": "http://geostyler/geostyler-style.json#/definitions/Fproperty"
+                                },
+                                {
+                                    "$ref": "http://geostyler/geostyler-style.json#/definitions/Fcustom"
                                 },
                                 {
                                     "$ref": "http://geostyler/geostyler-style.json#/definitions/Fabs"
@@ -12916,6 +13380,9 @@
                                 },
                                 {
                                     "$ref": "http://geostyler/geostyler-style.json#/definitions/Fproperty"
+                                },
+                                {
+                                    "$ref": "http://geostyler/geostyler-style.json#/definitions/Fcustom"
                                 },
                                 {
                                     "$ref": "http://geostyler/geostyler-style.json#/definitions/Fabs"
@@ -13035,6 +13502,9 @@
                             "$ref": "http://geostyler/geostyler-style.json#/definitions/Fproperty"
                         },
                         {
+                            "$ref": "http://geostyler/geostyler-style.json#/definitions/Fcustom"
+                        },
+                        {
                             "$ref": "http://geostyler/geostyler-style.json#/definitions/FnumberFormat"
                         },
                         {
@@ -13093,6 +13563,9 @@
                         },
                         {
                             "$ref": "http://geostyler/geostyler-style.json#/definitions/Fproperty"
+                        },
+                        {
+                            "$ref": "http://geostyler/geostyler-style.json#/definitions/Fcustom"
                         },
                         {
                             "$ref": "http://geostyler/geostyler-style.json#/definitions/Fabs"
@@ -13208,6 +13681,9 @@
                             "$ref": "http://geostyler/geostyler-style.json#/definitions/Fproperty"
                         },
                         {
+                            "$ref": "http://geostyler/geostyler-style.json#/definitions/Fcustom"
+                        },
+                        {
                             "$ref": "http://geostyler/geostyler-style.json#/definitions/Fall"
                         },
                         {
@@ -13274,6 +13750,9 @@
                         },
                         {
                             "$ref": "http://geostyler/geostyler-style.json#/definitions/Fproperty"
+                        },
+                        {
+                            "$ref": "http://geostyler/geostyler-style.json#/definitions/Fcustom"
                         },
                         {
                             "$ref": "http://geostyler/geostyler-style.json#/definitions/Fabs"
@@ -13389,6 +13868,9 @@
                             "$ref": "http://geostyler/geostyler-style.json#/definitions/Fproperty"
                         },
                         {
+                            "$ref": "http://geostyler/geostyler-style.json#/definitions/Fcustom"
+                        },
+                        {
                             "$ref": "http://geostyler/geostyler-style.json#/definitions/FnumberFormat"
                         },
                         {
@@ -13448,6 +13930,9 @@
                         },
                         {
                             "$ref": "http://geostyler/geostyler-style.json#/definitions/Fproperty"
+                        },
+                        {
+                            "$ref": "http://geostyler/geostyler-style.json#/definitions/Fcustom"
                         },
                         {
                             "$ref": "http://geostyler/geostyler-style.json#/definitions/Fabs"
@@ -13563,6 +14048,9 @@
                             "$ref": "http://geostyler/geostyler-style.json#/definitions/Fproperty"
                         },
                         {
+                            "$ref": "http://geostyler/geostyler-style.json#/definitions/Fcustom"
+                        },
+                        {
                             "$ref": "http://geostyler/geostyler-style.json#/definitions/FnumberFormat"
                         },
                         {
@@ -13622,6 +14110,9 @@
                         },
                         {
                             "$ref": "http://geostyler/geostyler-style.json#/definitions/Fproperty"
+                        },
+                        {
+                            "$ref": "http://geostyler/geostyler-style.json#/definitions/Fcustom"
                         },
                         {
                             "$ref": "http://geostyler/geostyler-style.json#/definitions/Fabs"
@@ -13745,6 +14236,9 @@
                             "$ref": "http://geostyler/geostyler-style.json#/definitions/Fproperty"
                         },
                         {
+                            "$ref": "http://geostyler/geostyler-style.json#/definitions/Fcustom"
+                        },
+                        {
                             "$ref": "http://geostyler/geostyler-style.json#/definitions/FnumberFormat"
                         },
                         {
@@ -13810,116 +14304,7 @@
                                     "$ref": "http://geostyler/geostyler-style.json#/definitions/Fproperty"
                                 },
                                 {
-                                    "$ref": "http://geostyler/geostyler-style.json#/definitions/Fabs"
-                                },
-                                {
-                                    "$ref": "http://geostyler/geostyler-style.json#/definitions/Facos"
-                                },
-                                {
-                                    "$ref": "http://geostyler/geostyler-style.json#/definitions/Fadd"
-                                },
-                                {
-                                    "$ref": "http://geostyler/geostyler-style.json#/definitions/Fasin"
-                                },
-                                {
-                                    "$ref": "http://geostyler/geostyler-style.json#/definitions/Fatan"
-                                },
-                                {
-                                    "$ref": "http://geostyler/geostyler-style.json#/definitions/Fatan2"
-                                },
-                                {
-                                    "$ref": "http://geostyler/geostyler-style.json#/definitions/Fceil"
-                                },
-                                {
-                                    "$ref": "http://geostyler/geostyler-style.json#/definitions/Fcos"
-                                },
-                                {
-                                    "$ref": "http://geostyler/geostyler-style.json#/definitions/Fdiv"
-                                },
-                                {
-                                    "$ref": "http://geostyler/geostyler-style.json#/definitions/Fexp"
-                                },
-                                {
-                                    "$ref": "http://geostyler/geostyler-style.json#/definitions/Ffloor"
-                                },
-                                {
-                                    "$ref": "http://geostyler/geostyler-style.json#/definitions/Finterpolate"
-                                },
-                                {
-                                    "$ref": "http://geostyler/geostyler-style.json#/definitions/Flog"
-                                },
-                                {
-                                    "$ref": "http://geostyler/geostyler-style.json#/definitions/Fmax"
-                                },
-                                {
-                                    "$ref": "http://geostyler/geostyler-style.json#/definitions/Fmin"
-                                },
-                                {
-                                    "$ref": "http://geostyler/geostyler-style.json#/definitions/Fmodulo"
-                                },
-                                {
-                                    "$ref": "http://geostyler/geostyler-style.json#/definitions/Fmul"
-                                },
-                                {
-                                    "$ref": "http://geostyler/geostyler-style.json#/definitions/Fpi"
-                                },
-                                {
-                                    "$ref": "http://geostyler/geostyler-style.json#/definitions/Fpow"
-                                },
-                                {
-                                    "$ref": "http://geostyler/geostyler-style.json#/definitions/Frandom"
-                                },
-                                {
-                                    "$ref": "http://geostyler/geostyler-style.json#/definitions/Frint"
-                                },
-                                {
-                                    "$ref": "http://geostyler/geostyler-style.json#/definitions/Fround"
-                                },
-                                {
-                                    "$ref": "http://geostyler/geostyler-style.json#/definitions/Fsin"
-                                },
-                                {
-                                    "$ref": "http://geostyler/geostyler-style.json#/definitions/Fsqrt"
-                                },
-                                {
-                                    "$ref": "http://geostyler/geostyler-style.json#/definitions/FstrIndexOf"
-                                },
-                                {
-                                    "$ref": "http://geostyler/geostyler-style.json#/definitions/FstrLastIndexOf"
-                                },
-                                {
-                                    "$ref": "http://geostyler/geostyler-style.json#/definitions/FstrLength"
-                                },
-                                {
-                                    "$ref": "http://geostyler/geostyler-style.json#/definitions/Fsub"
-                                },
-                                {
-                                    "$ref": "http://geostyler/geostyler-style.json#/definitions/Ftan"
-                                },
-                                {
-                                    "$ref": "http://geostyler/geostyler-style.json#/definitions/FtoDegrees"
-                                },
-                                {
-                                    "$ref": "http://geostyler/geostyler-style.json#/definitions/FtoNumber"
-                                },
-                                {
-                                    "$ref": "http://geostyler/geostyler-style.json#/definitions/FtoRadians"
-                                },
-                                {
-                                    "type": "number"
-                                }
-                            ]
-                        },
-                        {
-                            "anyOf": [
-                                {
-                                    "$ref": "http://geostyler/geostyler-style.json#/definitions/Fcase"
-                                },
-                                {
-                                    "$ref": "http://geostyler/geostyler-style.json#/definitions/Fstep"
-                                },
-                                {
-                                    "$ref": "http://geostyler/geostyler-style.json#/definitions/Fproperty"
+                                    "$ref": "http://geostyler/geostyler-style.json#/definitions/Fcustom"
                                 },
                                 {
                                     "$ref": "http://geostyler/geostyler-style.json#/definitions/Fabs"
@@ -14034,6 +14419,9 @@
                                     "$ref": "http://geostyler/geostyler-style.json#/definitions/Fproperty"
                                 },
                                 {
+                                    "$ref": "http://geostyler/geostyler-style.json#/definitions/Fcustom"
+                                },
+                                {
                                     "$ref": "http://geostyler/geostyler-style.json#/definitions/Fabs"
                                 },
                                 {
@@ -14144,6 +14532,124 @@
                                 },
                                 {
                                     "$ref": "http://geostyler/geostyler-style.json#/definitions/Fproperty"
+                                },
+                                {
+                                    "$ref": "http://geostyler/geostyler-style.json#/definitions/Fcustom"
+                                },
+                                {
+                                    "$ref": "http://geostyler/geostyler-style.json#/definitions/Fabs"
+                                },
+                                {
+                                    "$ref": "http://geostyler/geostyler-style.json#/definitions/Facos"
+                                },
+                                {
+                                    "$ref": "http://geostyler/geostyler-style.json#/definitions/Fadd"
+                                },
+                                {
+                                    "$ref": "http://geostyler/geostyler-style.json#/definitions/Fasin"
+                                },
+                                {
+                                    "$ref": "http://geostyler/geostyler-style.json#/definitions/Fatan"
+                                },
+                                {
+                                    "$ref": "http://geostyler/geostyler-style.json#/definitions/Fatan2"
+                                },
+                                {
+                                    "$ref": "http://geostyler/geostyler-style.json#/definitions/Fceil"
+                                },
+                                {
+                                    "$ref": "http://geostyler/geostyler-style.json#/definitions/Fcos"
+                                },
+                                {
+                                    "$ref": "http://geostyler/geostyler-style.json#/definitions/Fdiv"
+                                },
+                                {
+                                    "$ref": "http://geostyler/geostyler-style.json#/definitions/Fexp"
+                                },
+                                {
+                                    "$ref": "http://geostyler/geostyler-style.json#/definitions/Ffloor"
+                                },
+                                {
+                                    "$ref": "http://geostyler/geostyler-style.json#/definitions/Finterpolate"
+                                },
+                                {
+                                    "$ref": "http://geostyler/geostyler-style.json#/definitions/Flog"
+                                },
+                                {
+                                    "$ref": "http://geostyler/geostyler-style.json#/definitions/Fmax"
+                                },
+                                {
+                                    "$ref": "http://geostyler/geostyler-style.json#/definitions/Fmin"
+                                },
+                                {
+                                    "$ref": "http://geostyler/geostyler-style.json#/definitions/Fmodulo"
+                                },
+                                {
+                                    "$ref": "http://geostyler/geostyler-style.json#/definitions/Fmul"
+                                },
+                                {
+                                    "$ref": "http://geostyler/geostyler-style.json#/definitions/Fpi"
+                                },
+                                {
+                                    "$ref": "http://geostyler/geostyler-style.json#/definitions/Fpow"
+                                },
+                                {
+                                    "$ref": "http://geostyler/geostyler-style.json#/definitions/Frandom"
+                                },
+                                {
+                                    "$ref": "http://geostyler/geostyler-style.json#/definitions/Frint"
+                                },
+                                {
+                                    "$ref": "http://geostyler/geostyler-style.json#/definitions/Fround"
+                                },
+                                {
+                                    "$ref": "http://geostyler/geostyler-style.json#/definitions/Fsin"
+                                },
+                                {
+                                    "$ref": "http://geostyler/geostyler-style.json#/definitions/Fsqrt"
+                                },
+                                {
+                                    "$ref": "http://geostyler/geostyler-style.json#/definitions/FstrIndexOf"
+                                },
+                                {
+                                    "$ref": "http://geostyler/geostyler-style.json#/definitions/FstrLastIndexOf"
+                                },
+                                {
+                                    "$ref": "http://geostyler/geostyler-style.json#/definitions/FstrLength"
+                                },
+                                {
+                                    "$ref": "http://geostyler/geostyler-style.json#/definitions/Fsub"
+                                },
+                                {
+                                    "$ref": "http://geostyler/geostyler-style.json#/definitions/Ftan"
+                                },
+                                {
+                                    "$ref": "http://geostyler/geostyler-style.json#/definitions/FtoDegrees"
+                                },
+                                {
+                                    "$ref": "http://geostyler/geostyler-style.json#/definitions/FtoNumber"
+                                },
+                                {
+                                    "$ref": "http://geostyler/geostyler-style.json#/definitions/FtoRadians"
+                                },
+                                {
+                                    "type": "number"
+                                }
+                            ]
+                        },
+                        {
+                            "anyOf": [
+                                {
+                                    "$ref": "http://geostyler/geostyler-style.json#/definitions/Fcase"
+                                },
+                                {
+                                    "$ref": "http://geostyler/geostyler-style.json#/definitions/Fstep"
+                                },
+                                {
+                                    "$ref": "http://geostyler/geostyler-style.json#/definitions/Fproperty"
+                                },
+                                {
+                                    "$ref": "http://geostyler/geostyler-style.json#/definitions/Fcustom"
                                 },
                                 {
                                     "$ref": "http://geostyler/geostyler-style.json#/definitions/Fabs"
@@ -14263,6 +14769,9 @@
                             "$ref": "http://geostyler/geostyler-style.json#/definitions/Fproperty"
                         },
                         {
+                            "$ref": "http://geostyler/geostyler-style.json#/definitions/Fcustom"
+                        },
+                        {
                             "$ref": "http://geostyler/geostyler-style.json#/definitions/Fall"
                         },
                         {
@@ -14317,7 +14826,7 @@
                             "type": "boolean"
                         }
                     ],
-                    "description": "Defines whether the Symbolizer should be visibile or not."
+                    "description": "Defines whether the Symbolizer should be visible or not."
                 }
             },
             "type": "object"
@@ -14335,6 +14844,9 @@
                         },
                         {
                             "$ref": "http://geostyler/geostyler-style.json#/definitions/Fproperty"
+                        },
+                        {
+                            "$ref": "http://geostyler/geostyler-style.json#/definitions/Fcustom"
                         },
                         {
                             "$ref": "http://geostyler/geostyler-style.json#/definitions/Fabs"
@@ -14450,6 +14962,9 @@
                             "$ref": "http://geostyler/geostyler-style.json#/definitions/Fproperty"
                         },
                         {
+                            "$ref": "http://geostyler/geostyler-style.json#/definitions/Fcustom"
+                        },
+                        {
                             "$ref": "http://geostyler/geostyler-style.json#/definitions/FnumberFormat"
                         },
                         {
@@ -14511,6 +15026,9 @@
                             "$ref": "http://geostyler/geostyler-style.json#/definitions/Fproperty"
                         },
                         {
+                            "$ref": "http://geostyler/geostyler-style.json#/definitions/Fcustom"
+                        },
+                        {
                             "$ref": "http://geostyler/geostyler-style.json#/definitions/FnumberFormat"
                         },
                         {
@@ -14565,6 +15083,9 @@
                         },
                         {
                             "$ref": "http://geostyler/geostyler-style.json#/definitions/Fproperty"
+                        },
+                        {
+                            "$ref": "http://geostyler/geostyler-style.json#/definitions/Fcustom"
                         },
                         {
                             "$ref": "http://geostyler/geostyler-style.json#/definitions/Fabs"
@@ -14682,6 +15203,9 @@
                                 "$ref": "http://geostyler/geostyler-style.json#/definitions/Fproperty"
                             },
                             {
+                                "$ref": "http://geostyler/geostyler-style.json#/definitions/Fcustom"
+                            },
+                            {
                                 "$ref": "http://geostyler/geostyler-style.json#/definitions/Fabs"
                             },
                             {
@@ -14796,6 +15320,9 @@
                             "$ref": "http://geostyler/geostyler-style.json#/definitions/Fproperty"
                         },
                         {
+                            "$ref": "http://geostyler/geostyler-style.json#/definitions/Fcustom"
+                        },
+                        {
                             "$ref": "http://geostyler/geostyler-style.json#/definitions/Fabs"
                         },
                         {
@@ -14905,6 +15432,9 @@
                     ],
                     "type": "string"
                 },
+                "geometry": {
+                    "description": "Defines which geometry to take or how to apply the geometry to this symbolizer."
+                },
                 "gradient": {
                     "description": "Defines a gradient with which to color a line feature.",
                     "items": {},
@@ -14937,6 +15467,9 @@
                                 },
                                 {
                                     "$ref": "http://geostyler/geostyler-style.json#/definitions/Fproperty"
+                                },
+                                {
+                                    "$ref": "http://geostyler/geostyler-style.json#/definitions/Fcustom"
                                 },
                                 {
                                     "$ref": "http://geostyler/geostyler-style.json#/definitions/Fabs"
@@ -15049,6 +15582,9 @@
                                 },
                                 {
                                     "$ref": "http://geostyler/geostyler-style.json#/definitions/Fproperty"
+                                },
+                                {
+                                    "$ref": "http://geostyler/geostyler-style.json#/definitions/Fcustom"
                                 },
                                 {
                                     "$ref": "http://geostyler/geostyler-style.json#/definitions/Fabs"
@@ -15182,6 +15718,9 @@
                             "$ref": "http://geostyler/geostyler-style.json#/definitions/Fproperty"
                         },
                         {
+                            "$ref": "http://geostyler/geostyler-style.json#/definitions/Fcustom"
+                        },
+                        {
                             "$ref": "http://geostyler/geostyler-style.json#/definitions/FnumberFormat"
                         },
                         {
@@ -15246,6 +15785,9 @@
                         },
                         {
                             "$ref": "http://geostyler/geostyler-style.json#/definitions/Fproperty"
+                        },
+                        {
+                            "$ref": "http://geostyler/geostyler-style.json#/definitions/Fcustom"
                         },
                         {
                             "$ref": "http://geostyler/geostyler-style.json#/definitions/Fabs"
@@ -15361,6 +15903,9 @@
                             "$ref": "http://geostyler/geostyler-style.json#/definitions/Fproperty"
                         },
                         {
+                            "$ref": "http://geostyler/geostyler-style.json#/definitions/Fcustom"
+                        },
+                        {
                             "$ref": "http://geostyler/geostyler-style.json#/definitions/Fabs"
                         },
                         {
@@ -15472,6 +16017,9 @@
                         },
                         {
                             "$ref": "http://geostyler/geostyler-style.json#/definitions/Fproperty"
+                        },
+                        {
+                            "$ref": "http://geostyler/geostyler-style.json#/definitions/Fcustom"
                         },
                         {
                             "$ref": "http://geostyler/geostyler-style.json#/definitions/Fabs"
@@ -15587,6 +16135,9 @@
                             "$ref": "http://geostyler/geostyler-style.json#/definitions/Fproperty"
                         },
                         {
+                            "$ref": "http://geostyler/geostyler-style.json#/definitions/Fcustom"
+                        },
+                        {
                             "$ref": "http://geostyler/geostyler-style.json#/definitions/Fabs"
                         },
                         {
@@ -15698,6 +16249,9 @@
                         },
                         {
                             "$ref": "http://geostyler/geostyler-style.json#/definitions/Fproperty"
+                        },
+                        {
+                            "$ref": "http://geostyler/geostyler-style.json#/definitions/Fcustom"
                         },
                         {
                             "$ref": "http://geostyler/geostyler-style.json#/definitions/Fabs"
@@ -15822,6 +16376,9 @@
                             "$ref": "http://geostyler/geostyler-style.json#/definitions/Fproperty"
                         },
                         {
+                            "$ref": "http://geostyler/geostyler-style.json#/definitions/Fcustom"
+                        },
+                        {
                             "$ref": "http://geostyler/geostyler-style.json#/definitions/Fall"
                         },
                         {
@@ -15876,7 +16433,7 @@
                             "type": "boolean"
                         }
                     ],
-                    "description": "Defines whether the Symbolizer should be visibile or not."
+                    "description": "Defines whether the Symbolizer should be visible or not."
                 },
                 "width": {
                     "anyOf": [
@@ -15888,6 +16445,9 @@
                         },
                         {
                             "$ref": "http://geostyler/geostyler-style.json#/definitions/Fproperty"
+                        },
+                        {
+                            "$ref": "http://geostyler/geostyler-style.json#/definitions/Fcustom"
                         },
                         {
                             "$ref": "http://geostyler/geostyler-style.json#/definitions/Fabs"
@@ -16017,6 +16577,9 @@
                             "$ref": "http://geostyler/geostyler-style.json#/definitions/Fproperty"
                         },
                         {
+                            "$ref": "http://geostyler/geostyler-style.json#/definitions/Fcustom"
+                        },
+                        {
                             "$ref": "http://geostyler/geostyler-style.json#/definitions/Fall"
                         },
                         {
@@ -16083,6 +16646,9 @@
                         },
                         {
                             "$ref": "http://geostyler/geostyler-style.json#/definitions/Fproperty"
+                        },
+                        {
+                            "$ref": "http://geostyler/geostyler-style.json#/definitions/Fcustom"
                         },
                         {
                             "$ref": "http://geostyler/geostyler-style.json#/definitions/Fabs"
@@ -16198,6 +16764,9 @@
                             "$ref": "http://geostyler/geostyler-style.json#/definitions/Fproperty"
                         },
                         {
+                            "$ref": "http://geostyler/geostyler-style.json#/definitions/Fcustom"
+                        },
+                        {
                             "$ref": "http://geostyler/geostyler-style.json#/definitions/FnumberFormat"
                         },
                         {
@@ -16252,6 +16821,9 @@
                         },
                         {
                             "$ref": "http://geostyler/geostyler-style.json#/definitions/Fproperty"
+                        },
+                        {
+                            "$ref": "http://geostyler/geostyler-style.json#/definitions/Fcustom"
                         },
                         {
                             "$ref": "http://geostyler/geostyler-style.json#/definitions/Fabs"
@@ -16355,6 +16927,9 @@
                     ],
                     "description": "The opacity of the fill. A value between 0 and 1.\n0 is none opaque and 1 is full opaque."
                 },
+                "geometry": {
+                    "description": "Defines which geometry to take or how to apply the geometry to this symbolizer."
+                },
                 "kind": {
                     "const": "Mark",
                     "description": "Describes the type of the kind of the Symbolizer.",
@@ -16373,6 +16948,9 @@
                                 },
                                 {
                                     "$ref": "http://geostyler/geostyler-style.json#/definitions/Fproperty"
+                                },
+                                {
+                                    "$ref": "http://geostyler/geostyler-style.json#/definitions/Fcustom"
                                 },
                                 {
                                     "$ref": "http://geostyler/geostyler-style.json#/definitions/Fabs"
@@ -16485,6 +17063,9 @@
                                 },
                                 {
                                     "$ref": "http://geostyler/geostyler-style.json#/definitions/Fproperty"
+                                },
+                                {
+                                    "$ref": "http://geostyler/geostyler-style.json#/definitions/Fcustom"
                                 },
                                 {
                                     "$ref": "http://geostyler/geostyler-style.json#/definitions/Fabs"
@@ -16604,6 +17185,9 @@
                             "$ref": "http://geostyler/geostyler-style.json#/definitions/Fproperty"
                         },
                         {
+                            "$ref": "http://geostyler/geostyler-style.json#/definitions/Fcustom"
+                        },
+                        {
                             "$ref": "http://geostyler/geostyler-style.json#/definitions/FnumberFormat"
                         },
                         {
@@ -16662,6 +17246,9 @@
                         },
                         {
                             "$ref": "http://geostyler/geostyler-style.json#/definitions/Fproperty"
+                        },
+                        {
+                            "$ref": "http://geostyler/geostyler-style.json#/definitions/Fcustom"
                         },
                         {
                             "$ref": "http://geostyler/geostyler-style.json#/definitions/Fabs"
@@ -16777,6 +17364,9 @@
                             "$ref": "http://geostyler/geostyler-style.json#/definitions/Fproperty"
                         },
                         {
+                            "$ref": "http://geostyler/geostyler-style.json#/definitions/Fcustom"
+                        },
+                        {
                             "$ref": "http://geostyler/geostyler-style.json#/definitions/FnumberFormat"
                         },
                         {
@@ -16837,6 +17427,9 @@
                             "$ref": "http://geostyler/geostyler-style.json#/definitions/Fproperty"
                         },
                         {
+                            "$ref": "http://geostyler/geostyler-style.json#/definitions/Fcustom"
+                        },
+                        {
                             "$ref": "http://geostyler/geostyler-style.json#/definitions/FnumberFormat"
                         },
                         {
@@ -16895,6 +17488,9 @@
                         },
                         {
                             "$ref": "http://geostyler/geostyler-style.json#/definitions/Fproperty"
+                        },
+                        {
+                            "$ref": "http://geostyler/geostyler-style.json#/definitions/Fcustom"
                         },
                         {
                             "$ref": "http://geostyler/geostyler-style.json#/definitions/Fabs"
@@ -17018,6 +17614,9 @@
                             "$ref": "http://geostyler/geostyler-style.json#/definitions/Fproperty"
                         },
                         {
+                            "$ref": "http://geostyler/geostyler-style.json#/definitions/Fcustom"
+                        },
+                        {
                             "$ref": "http://geostyler/geostyler-style.json#/definitions/Fabs"
                         },
                         {
@@ -17131,6 +17730,9 @@
                             "$ref": "http://geostyler/geostyler-style.json#/definitions/Fproperty"
                         },
                         {
+                            "$ref": "http://geostyler/geostyler-style.json#/definitions/Fcustom"
+                        },
+                        {
                             "$ref": "http://geostyler/geostyler-style.json#/definitions/FnumberFormat"
                         },
                         {
@@ -17187,6 +17789,9 @@
                             },
                             {
                                 "$ref": "http://geostyler/geostyler-style.json#/definitions/Fproperty"
+                            },
+                            {
+                                "$ref": "http://geostyler/geostyler-style.json#/definitions/Fcustom"
                             },
                             {
                                 "$ref": "http://geostyler/geostyler-style.json#/definitions/Fabs"
@@ -17303,6 +17908,9 @@
                             "$ref": "http://geostyler/geostyler-style.json#/definitions/Fproperty"
                         },
                         {
+                            "$ref": "http://geostyler/geostyler-style.json#/definitions/Fcustom"
+                        },
+                        {
                             "$ref": "http://geostyler/geostyler-style.json#/definitions/Fabs"
                         },
                         {
@@ -17414,6 +18022,9 @@
                         },
                         {
                             "$ref": "http://geostyler/geostyler-style.json#/definitions/Fproperty"
+                        },
+                        {
+                            "$ref": "http://geostyler/geostyler-style.json#/definitions/Fcustom"
                         },
                         {
                             "$ref": "http://geostyler/geostyler-style.json#/definitions/Fabs"
@@ -17537,6 +18148,9 @@
                             "$ref": "http://geostyler/geostyler-style.json#/definitions/Fproperty"
                         },
                         {
+                            "$ref": "http://geostyler/geostyler-style.json#/definitions/Fcustom"
+                        },
+                        {
                             "$ref": "http://geostyler/geostyler-style.json#/definitions/Fall"
                         },
                         {
@@ -17591,7 +18205,7 @@
                             "type": "boolean"
                         }
                     ],
-                    "description": "Defines whether the Symbolizer should be visibile or not."
+                    "description": "Defines whether the Symbolizer should be visible or not."
                 },
                 "wellKnownName": {
                     "$ref": "http://geostyler/geostyler-style.json#/definitions/WellKnownName",
@@ -17643,6 +18257,9 @@
                         },
                         {
                             "$ref": "http://geostyler/geostyler-style.json#/definitions/Fproperty"
+                        },
+                        {
+                            "$ref": "http://geostyler/geostyler-style.json#/definitions/Fcustom"
                         },
                         {
                             "$ref": "http://geostyler/geostyler-style.json#/definitions/Fabs"
@@ -17756,6 +18373,9 @@
                         },
                         {
                             "$ref": "http://geostyler/geostyler-style.json#/definitions/Fproperty"
+                        },
+                        {
+                            "$ref": "http://geostyler/geostyler-style.json#/definitions/Fcustom"
                         },
                         {
                             "$ref": "http://geostyler/geostyler-style.json#/definitions/Fabs"
@@ -17886,6 +18506,9 @@
                             "$ref": "http://geostyler/geostyler-style.json#/definitions/Fproperty"
                         },
                         {
+                            "$ref": "http://geostyler/geostyler-style.json#/definitions/Fcustom"
+                        },
+                        {
                             "$ref": "http://geostyler/geostyler-style.json#/definitions/Fabs"
                         },
                         {
@@ -18003,6 +18626,9 @@
                             "$ref": "http://geostyler/geostyler-style.json#/definitions/Fproperty"
                         },
                         {
+                            "$ref": "http://geostyler/geostyler-style.json#/definitions/Fcustom"
+                        },
+                        {
                             "$ref": "http://geostyler/geostyler-style.json#/definitions/Fabs"
                         },
                         {
@@ -18114,6 +18740,9 @@
                         },
                         {
                             "$ref": "http://geostyler/geostyler-style.json#/definitions/Fproperty"
+                        },
+                        {
+                            "$ref": "http://geostyler/geostyler-style.json#/definitions/Fcustom"
                         },
                         {
                             "$ref": "http://geostyler/geostyler-style.json#/definitions/Fabs"
@@ -18233,6 +18862,9 @@
                             "$ref": "http://geostyler/geostyler-style.json#/definitions/Fproperty"
                         },
                         {
+                            "$ref": "http://geostyler/geostyler-style.json#/definitions/Fcustom"
+                        },
+                        {
                             "$ref": "http://geostyler/geostyler-style.json#/definitions/Fabs"
                         },
                         {
@@ -18346,6 +18978,9 @@
                             "$ref": "http://geostyler/geostyler-style.json#/definitions/Fproperty"
                         },
                         {
+                            "$ref": "http://geostyler/geostyler-style.json#/definitions/Fcustom"
+                        },
+                        {
                             "$ref": "http://geostyler/geostyler-style.json#/definitions/FnumberFormat"
                         },
                         {
@@ -18404,6 +19039,9 @@
                         },
                         {
                             "$ref": "http://geostyler/geostyler-style.json#/definitions/Fproperty"
+                        },
+                        {
+                            "$ref": "http://geostyler/geostyler-style.json#/definitions/Fcustom"
                         },
                         {
                             "$ref": "http://geostyler/geostyler-style.json#/definitions/Fabs"
@@ -18519,6 +19157,9 @@
                             "$ref": "http://geostyler/geostyler-style.json#/definitions/Fproperty"
                         },
                         {
+                            "$ref": "http://geostyler/geostyler-style.json#/definitions/Fcustom"
+                        },
+                        {
                             "$ref": "http://geostyler/geostyler-style.json#/definitions/Fall"
                         },
                         {
@@ -18584,6 +19225,10 @@
         "Rule": {
             "description": "A Rule combines a specific amount of data (defined by a Filter and a\nScaleDenominator) and an associated Symbolizer.",
             "properties": {
+                "elseRule": {
+                    "description": "If true, the rule will be applied as an else-rule, meaning that it will be\napplied to all features that do not match any previous rules of the same rule set.\nIf an else-rule has a provided scaleDenominator, it will only be applied\nto features that do not match any previous rules of the same rule set and are\nin the scale range defined by the scaleDenominator.\nIf an else-rule has no scaleDenominator, it will be applied to all features\nthat do not match any previous rules of the same rule set, regardless of the scale.\nIf an else-rule has its own filter specified, it will only be applied to\nfeatures that do not match any previous rules of the same rule set and match the\nfilter itself.",
+                    "type": "boolean"
+                },
                 "filter": {
                     "anyOf": [
                         {
@@ -18594,6 +19239,9 @@
                         },
                         {
                             "$ref": "http://geostyler/geostyler-style.json#/definitions/Fproperty"
+                        },
+                        {
+                            "$ref": "http://geostyler/geostyler-style.json#/definitions/Fcustom"
                         },
                         {
                             "$ref": "http://geostyler/geostyler-style.json#/definitions/Fall"
@@ -18665,6 +19313,9 @@
                                             "$ref": "http://geostyler/geostyler-style.json#/definitions/Fproperty"
                                         },
                                         {
+                                            "$ref": "http://geostyler/geostyler-style.json#/definitions/Fcustom"
+                                        },
+                                        {
                                             "$ref": "http://geostyler/geostyler-style.json#/definitions/FnumberFormat"
                                         },
                                         {
@@ -18718,6 +19369,9 @@
                                         },
                                         {
                                             "$ref": "http://geostyler/geostyler-style.json#/definitions/Fproperty"
+                                        },
+                                        {
+                                            "$ref": "http://geostyler/geostyler-style.json#/definitions/Fcustom"
                                         },
                                         {
                                             "$ref": "http://geostyler/geostyler-style.json#/definitions/Fabs"
@@ -18830,6 +19484,9 @@
                                         },
                                         {
                                             "$ref": "http://geostyler/geostyler-style.json#/definitions/Fproperty"
+                                        },
+                                        {
+                                            "$ref": "http://geostyler/geostyler-style.json#/definitions/Fcustom"
                                         },
                                         {
                                             "$ref": "http://geostyler/geostyler-style.json#/definitions/Fabs"
@@ -18952,6 +19609,9 @@
                                         },
                                         {
                                             "$ref": "http://geostyler/geostyler-style.json#/definitions/Fproperty"
+                                        },
+                                        {
+                                            "$ref": "http://geostyler/geostyler-style.json#/definitions/Fcustom"
                                         },
                                         {
                                             "$ref": "http://geostyler/geostyler-style.json#/definitions/Fabs"
@@ -19159,6 +19819,9 @@
                                         },
                                         {
                                             "$ref": "http://geostyler/geostyler-style.json#/definitions/Fproperty"
+                                        },
+                                        {
+                                            "$ref": "http://geostyler/geostyler-style.json#/definitions/Fcustom"
                                         },
                                         {
                                             "$ref": "http://geostyler/geostyler-style.json#/definitions/Fabs"
@@ -19414,6 +20077,9 @@
                             "$ref": "http://geostyler/geostyler-style.json#/definitions/Fproperty"
                         },
                         {
+                            "$ref": "http://geostyler/geostyler-style.json#/definitions/Fcustom"
+                        },
+                        {
                             "$ref": "http://geostyler/geostyler-style.json#/definitions/Fabs"
                         },
                         {
@@ -19525,6 +20191,9 @@
                         },
                         {
                             "$ref": "http://geostyler/geostyler-style.json#/definitions/Fproperty"
+                        },
+                        {
+                            "$ref": "http://geostyler/geostyler-style.json#/definitions/Fcustom"
                         },
                         {
                             "$ref": "http://geostyler/geostyler-style.json#/definitions/Fabs"
@@ -19649,6 +20318,9 @@
                                     "$ref": "http://geostyler/geostyler-style.json#/definitions/Fproperty"
                                 },
                                 {
+                                    "$ref": "http://geostyler/geostyler-style.json#/definitions/Fcustom"
+                                },
+                                {
                                     "$ref": "http://geostyler/geostyler-style.json#/definitions/Fabs"
                                 },
                                 {
@@ -19759,6 +20431,9 @@
                                 },
                                 {
                                     "$ref": "http://geostyler/geostyler-style.json#/definitions/Fproperty"
+                                },
+                                {
+                                    "$ref": "http://geostyler/geostyler-style.json#/definitions/Fcustom"
                                 },
                                 {
                                     "$ref": "http://geostyler/geostyler-style.json#/definitions/Fabs"
@@ -19881,6 +20556,9 @@
                                     "$ref": "http://geostyler/geostyler-style.json#/definitions/Fproperty"
                                 },
                                 {
+                                    "$ref": "http://geostyler/geostyler-style.json#/definitions/Fcustom"
+                                },
+                                {
                                     "$ref": "http://geostyler/geostyler-style.json#/definitions/Fabs"
                                 },
                                 {
@@ -19991,6 +20669,9 @@
                                 },
                                 {
                                     "$ref": "http://geostyler/geostyler-style.json#/definitions/Fproperty"
+                                },
+                                {
+                                    "$ref": "http://geostyler/geostyler-style.json#/definitions/Fcustom"
                                 },
                                 {
                                     "$ref": "http://geostyler/geostyler-style.json#/definitions/Fabs"
@@ -20110,6 +20791,9 @@
                             "$ref": "http://geostyler/geostyler-style.json#/definitions/Fproperty"
                         },
                         {
+                            "$ref": "http://geostyler/geostyler-style.json#/definitions/Fcustom"
+                        },
+                        {
                             "$ref": "http://geostyler/geostyler-style.json#/definitions/FnumberFormat"
                         },
                         {
@@ -20195,6 +20879,9 @@
                             "$ref": "http://geostyler/geostyler-style.json#/definitions/Fproperty"
                         },
                         {
+                            "$ref": "http://geostyler/geostyler-style.json#/definitions/Fcustom"
+                        },
+                        {
                             "$ref": "http://geostyler/geostyler-style.json#/definitions/Fall"
                         },
                         {
@@ -20263,6 +20950,9 @@
                             "$ref": "http://geostyler/geostyler-style.json#/definitions/Fproperty"
                         },
                         {
+                            "$ref": "http://geostyler/geostyler-style.json#/definitions/Fcustom"
+                        },
+                        {
                             "$ref": "http://geostyler/geostyler-style.json#/definitions/FnumberFormat"
                         },
                         {
@@ -20328,6 +21018,9 @@
                         },
                         {
                             "$ref": "http://geostyler/geostyler-style.json#/definitions/Fproperty"
+                        },
+                        {
+                            "$ref": "http://geostyler/geostyler-style.json#/definitions/Fcustom"
                         },
                         {
                             "$ref": "http://geostyler/geostyler-style.json#/definitions/Fall"
@@ -20398,6 +21091,9 @@
                             "$ref": "http://geostyler/geostyler-style.json#/definitions/Fproperty"
                         },
                         {
+                            "$ref": "http://geostyler/geostyler-style.json#/definitions/Fcustom"
+                        },
+                        {
                             "$ref": "http://geostyler/geostyler-style.json#/definitions/FnumberFormat"
                         },
                         {
@@ -20456,6 +21152,9 @@
                                 "$ref": "http://geostyler/geostyler-style.json#/definitions/Fproperty"
                             },
                             {
+                                "$ref": "http://geostyler/geostyler-style.json#/definitions/Fcustom"
+                            },
+                            {
                                 "$ref": "http://geostyler/geostyler-style.json#/definitions/FnumberFormat"
                             },
                             {
@@ -20511,6 +21210,9 @@
                         },
                         {
                             "$ref": "http://geostyler/geostyler-style.json#/definitions/Fproperty"
+                        },
+                        {
+                            "$ref": "http://geostyler/geostyler-style.json#/definitions/Fcustom"
                         },
                         {
                             "$ref": "http://geostyler/geostyler-style.json#/definitions/FnumberFormat"
@@ -20574,6 +21276,9 @@
                             "$ref": "http://geostyler/geostyler-style.json#/definitions/Fproperty"
                         },
                         {
+                            "$ref": "http://geostyler/geostyler-style.json#/definitions/Fcustom"
+                        },
+                        {
                             "$ref": "http://geostyler/geostyler-style.json#/definitions/FnumberFormat"
                         },
                         {
@@ -20622,6 +21327,9 @@
                     ],
                     "description": "Specifies the weight (or boldness) of the font. The weights available depend\non the font-family you are using."
                 },
+                "geometry": {
+                    "description": "Defines which geometry to take or how to apply the geometry to this symbolizer."
+                },
                 "haloBlur": {
                     "anyOf": [
                         {
@@ -20632,6 +21340,9 @@
                         },
                         {
                             "$ref": "http://geostyler/geostyler-style.json#/definitions/Fproperty"
+                        },
+                        {
+                            "$ref": "http://geostyler/geostyler-style.json#/definitions/Fcustom"
                         },
                         {
                             "$ref": "http://geostyler/geostyler-style.json#/definitions/Fabs"
@@ -20747,6 +21458,9 @@
                             "$ref": "http://geostyler/geostyler-style.json#/definitions/Fproperty"
                         },
                         {
+                            "$ref": "http://geostyler/geostyler-style.json#/definitions/Fcustom"
+                        },
+                        {
                             "$ref": "http://geostyler/geostyler-style.json#/definitions/FnumberFormat"
                         },
                         {
@@ -20801,6 +21515,9 @@
                         },
                         {
                             "$ref": "http://geostyler/geostyler-style.json#/definitions/Fproperty"
+                        },
+                        {
+                            "$ref": "http://geostyler/geostyler-style.json#/definitions/Fcustom"
                         },
                         {
                             "$ref": "http://geostyler/geostyler-style.json#/definitions/Fabs"
@@ -20914,6 +21631,9 @@
                         },
                         {
                             "$ref": "http://geostyler/geostyler-style.json#/definitions/Fproperty"
+                        },
+                        {
+                            "$ref": "http://geostyler/geostyler-style.json#/definitions/Fcustom"
                         },
                         {
                             "$ref": "http://geostyler/geostyler-style.json#/definitions/Fabs"
@@ -21037,6 +21757,9 @@
                             "$ref": "http://geostyler/geostyler-style.json#/definitions/Fproperty"
                         },
                         {
+                            "$ref": "http://geostyler/geostyler-style.json#/definitions/Fcustom"
+                        },
+                        {
                             "$ref": "http://geostyler/geostyler-style.json#/definitions/FnumberFormat"
                         },
                         {
@@ -21096,6 +21819,9 @@
                         },
                         {
                             "$ref": "http://geostyler/geostyler-style.json#/definitions/Fproperty"
+                        },
+                        {
+                            "$ref": "http://geostyler/geostyler-style.json#/definitions/Fcustom"
                         },
                         {
                             "$ref": "http://geostyler/geostyler-style.json#/definitions/Fall"
@@ -21171,6 +21897,9 @@
                             "$ref": "http://geostyler/geostyler-style.json#/definitions/Fproperty"
                         },
                         {
+                            "$ref": "http://geostyler/geostyler-style.json#/definitions/Fcustom"
+                        },
+                        {
                             "$ref": "http://geostyler/geostyler-style.json#/definitions/FnumberFormat"
                         },
                         {
@@ -21225,6 +21954,9 @@
                         },
                         {
                             "$ref": "http://geostyler/geostyler-style.json#/definitions/Fproperty"
+                        },
+                        {
+                            "$ref": "http://geostyler/geostyler-style.json#/definitions/Fcustom"
                         },
                         {
                             "$ref": "http://geostyler/geostyler-style.json#/definitions/Fabs"
@@ -21349,6 +22081,9 @@
                             "$ref": "http://geostyler/geostyler-style.json#/definitions/Fproperty"
                         },
                         {
+                            "$ref": "http://geostyler/geostyler-style.json#/definitions/Fcustom"
+                        },
+                        {
                             "$ref": "http://geostyler/geostyler-style.json#/definitions/Fabs"
                         },
                         {
@@ -21471,6 +22206,9 @@
                             "$ref": "http://geostyler/geostyler-style.json#/definitions/Fproperty"
                         },
                         {
+                            "$ref": "http://geostyler/geostyler-style.json#/definitions/Fcustom"
+                        },
+                        {
                             "$ref": "http://geostyler/geostyler-style.json#/definitions/Fabs"
                         },
                         {
@@ -21582,6 +22320,9 @@
                         },
                         {
                             "$ref": "http://geostyler/geostyler-style.json#/definitions/Fproperty"
+                        },
+                        {
+                            "$ref": "http://geostyler/geostyler-style.json#/definitions/Fcustom"
                         },
                         {
                             "$ref": "http://geostyler/geostyler-style.json#/definitions/Fabs"
@@ -21700,6 +22441,9 @@
                                     "$ref": "http://geostyler/geostyler-style.json#/definitions/Fproperty"
                                 },
                                 {
+                                    "$ref": "http://geostyler/geostyler-style.json#/definitions/Fcustom"
+                                },
+                                {
                                     "$ref": "http://geostyler/geostyler-style.json#/definitions/Fabs"
                                 },
                                 {
@@ -21810,6 +22554,9 @@
                                 },
                                 {
                                     "$ref": "http://geostyler/geostyler-style.json#/definitions/Fproperty"
+                                },
+                                {
+                                    "$ref": "http://geostyler/geostyler-style.json#/definitions/Fcustom"
                                 },
                                 {
                                     "$ref": "http://geostyler/geostyler-style.json#/definitions/Fabs"
@@ -21929,6 +22676,9 @@
                             "$ref": "http://geostyler/geostyler-style.json#/definitions/Fproperty"
                         },
                         {
+                            "$ref": "http://geostyler/geostyler-style.json#/definitions/Fcustom"
+                        },
+                        {
                             "$ref": "http://geostyler/geostyler-style.json#/definitions/FnumberFormat"
                         },
                         {
@@ -21987,6 +22737,9 @@
                         },
                         {
                             "$ref": "http://geostyler/geostyler-style.json#/definitions/Fproperty"
+                        },
+                        {
+                            "$ref": "http://geostyler/geostyler-style.json#/definitions/Fcustom"
                         },
                         {
                             "$ref": "http://geostyler/geostyler-style.json#/definitions/Fabs"
@@ -22102,6 +22855,9 @@
                             "$ref": "http://geostyler/geostyler-style.json#/definitions/Fproperty"
                         },
                         {
+                            "$ref": "http://geostyler/geostyler-style.json#/definitions/Fcustom"
+                        },
+                        {
                             "$ref": "http://geostyler/geostyler-style.json#/definitions/Fall"
                         },
                         {
@@ -22168,6 +22924,9 @@
                         },
                         {
                             "$ref": "http://geostyler/geostyler-style.json#/definitions/Fproperty"
+                        },
+                        {
+                            "$ref": "http://geostyler/geostyler-style.json#/definitions/Fcustom"
                         },
                         {
                             "$ref": "http://geostyler/geostyler-style.json#/definitions/Fabs"
@@ -22283,6 +23042,9 @@
                             "$ref": "http://geostyler/geostyler-style.json#/definitions/Fproperty"
                         },
                         {
+                            "$ref": "http://geostyler/geostyler-style.json#/definitions/Fcustom"
+                        },
+                        {
                             "$ref": "http://geostyler/geostyler-style.json#/definitions/Fabs"
                         },
                         {
@@ -22396,6 +23158,9 @@
                             "$ref": "http://geostyler/geostyler-style.json#/definitions/Fproperty"
                         },
                         {
+                            "$ref": "http://geostyler/geostyler-style.json#/definitions/Fcustom"
+                        },
+                        {
                             "$ref": "http://geostyler/geostyler-style.json#/definitions/FnumberFormat"
                         },
                         {
@@ -22457,6 +23222,9 @@
                             "$ref": "http://geostyler/geostyler-style.json#/definitions/Fproperty"
                         },
                         {
+                            "$ref": "http://geostyler/geostyler-style.json#/definitions/Fcustom"
+                        },
+                        {
                             "$ref": "http://geostyler/geostyler-style.json#/definitions/FnumberFormat"
                         },
                         {
@@ -22507,8 +23275,120 @@
                     "description": "Specifies label placement relative to its geometry."
                 },
                 "repeat": {
-                    "description": "Repeat the label with the given distance between repeats in pixels.\nShould only be used for 'line' placement.",
-                    "type": "number"
+                    "anyOf": [
+                        {
+                            "$ref": "http://geostyler/geostyler-style.json#/definitions/Fcase"
+                        },
+                        {
+                            "$ref": "http://geostyler/geostyler-style.json#/definitions/Fstep"
+                        },
+                        {
+                            "$ref": "http://geostyler/geostyler-style.json#/definitions/Fproperty"
+                        },
+                        {
+                            "$ref": "http://geostyler/geostyler-style.json#/definitions/Fcustom"
+                        },
+                        {
+                            "$ref": "http://geostyler/geostyler-style.json#/definitions/Fabs"
+                        },
+                        {
+                            "$ref": "http://geostyler/geostyler-style.json#/definitions/Facos"
+                        },
+                        {
+                            "$ref": "http://geostyler/geostyler-style.json#/definitions/Fadd"
+                        },
+                        {
+                            "$ref": "http://geostyler/geostyler-style.json#/definitions/Fasin"
+                        },
+                        {
+                            "$ref": "http://geostyler/geostyler-style.json#/definitions/Fatan"
+                        },
+                        {
+                            "$ref": "http://geostyler/geostyler-style.json#/definitions/Fatan2"
+                        },
+                        {
+                            "$ref": "http://geostyler/geostyler-style.json#/definitions/Fceil"
+                        },
+                        {
+                            "$ref": "http://geostyler/geostyler-style.json#/definitions/Fcos"
+                        },
+                        {
+                            "$ref": "http://geostyler/geostyler-style.json#/definitions/Fdiv"
+                        },
+                        {
+                            "$ref": "http://geostyler/geostyler-style.json#/definitions/Fexp"
+                        },
+                        {
+                            "$ref": "http://geostyler/geostyler-style.json#/definitions/Ffloor"
+                        },
+                        {
+                            "$ref": "http://geostyler/geostyler-style.json#/definitions/Finterpolate"
+                        },
+                        {
+                            "$ref": "http://geostyler/geostyler-style.json#/definitions/Flog"
+                        },
+                        {
+                            "$ref": "http://geostyler/geostyler-style.json#/definitions/Fmax"
+                        },
+                        {
+                            "$ref": "http://geostyler/geostyler-style.json#/definitions/Fmin"
+                        },
+                        {
+                            "$ref": "http://geostyler/geostyler-style.json#/definitions/Fmodulo"
+                        },
+                        {
+                            "$ref": "http://geostyler/geostyler-style.json#/definitions/Fmul"
+                        },
+                        {
+                            "$ref": "http://geostyler/geostyler-style.json#/definitions/Fpi"
+                        },
+                        {
+                            "$ref": "http://geostyler/geostyler-style.json#/definitions/Fpow"
+                        },
+                        {
+                            "$ref": "http://geostyler/geostyler-style.json#/definitions/Frandom"
+                        },
+                        {
+                            "$ref": "http://geostyler/geostyler-style.json#/definitions/Frint"
+                        },
+                        {
+                            "$ref": "http://geostyler/geostyler-style.json#/definitions/Fround"
+                        },
+                        {
+                            "$ref": "http://geostyler/geostyler-style.json#/definitions/Fsin"
+                        },
+                        {
+                            "$ref": "http://geostyler/geostyler-style.json#/definitions/Fsqrt"
+                        },
+                        {
+                            "$ref": "http://geostyler/geostyler-style.json#/definitions/FstrIndexOf"
+                        },
+                        {
+                            "$ref": "http://geostyler/geostyler-style.json#/definitions/FstrLastIndexOf"
+                        },
+                        {
+                            "$ref": "http://geostyler/geostyler-style.json#/definitions/FstrLength"
+                        },
+                        {
+                            "$ref": "http://geostyler/geostyler-style.json#/definitions/Fsub"
+                        },
+                        {
+                            "$ref": "http://geostyler/geostyler-style.json#/definitions/Ftan"
+                        },
+                        {
+                            "$ref": "http://geostyler/geostyler-style.json#/definitions/FtoDegrees"
+                        },
+                        {
+                            "$ref": "http://geostyler/geostyler-style.json#/definitions/FtoNumber"
+                        },
+                        {
+                            "$ref": "http://geostyler/geostyler-style.json#/definitions/FtoRadians"
+                        },
+                        {
+                            "type": "number"
+                        }
+                    ],
+                    "description": "Repeat the label with the given distance between repeats in pixels.\nShould only be used for 'line' placement."
                 },
                 "rotate": {
                     "anyOf": [
@@ -22520,6 +23400,9 @@
                         },
                         {
                             "$ref": "http://geostyler/geostyler-style.json#/definitions/Fproperty"
+                        },
+                        {
+                            "$ref": "http://geostyler/geostyler-style.json#/definitions/Fcustom"
                         },
                         {
                             "$ref": "http://geostyler/geostyler-style.json#/definitions/Fabs"
@@ -22635,6 +23518,9 @@
                             "$ref": "http://geostyler/geostyler-style.json#/definitions/Fproperty"
                         },
                         {
+                            "$ref": "http://geostyler/geostyler-style.json#/definitions/Fcustom"
+                        },
+                        {
                             "$ref": "http://geostyler/geostyler-style.json#/definitions/FnumberFormat"
                         },
                         {
@@ -22694,6 +23580,9 @@
                         },
                         {
                             "$ref": "http://geostyler/geostyler-style.json#/definitions/Fproperty"
+                        },
+                        {
+                            "$ref": "http://geostyler/geostyler-style.json#/definitions/Fcustom"
                         },
                         {
                             "$ref": "http://geostyler/geostyler-style.json#/definitions/Fabs"
@@ -22817,6 +23706,9 @@
                             "$ref": "http://geostyler/geostyler-style.json#/definitions/Fproperty"
                         },
                         {
+                            "$ref": "http://geostyler/geostyler-style.json#/definitions/Fcustom"
+                        },
+                        {
                             "$ref": "http://geostyler/geostyler-style.json#/definitions/FnumberFormat"
                         },
                         {
@@ -22878,6 +23770,9 @@
                             "$ref": "http://geostyler/geostyler-style.json#/definitions/Fproperty"
                         },
                         {
+                            "$ref": "http://geostyler/geostyler-style.json#/definitions/Fcustom"
+                        },
+                        {
                             "$ref": "http://geostyler/geostyler-style.json#/definitions/Fall"
                         },
                         {
@@ -22932,7 +23827,7 @@
                             "type": "boolean"
                         }
                     ],
-                    "description": "Defines whether the Symbolizer should be visibile or not."
+                    "description": "Defines whether the Symbolizer should be visible or not."
                 }
             },
             "type": "object"
