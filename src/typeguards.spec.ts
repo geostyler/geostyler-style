@@ -2,6 +2,7 @@ import {
   GeoStylerBooleanFunction,
   GeoStylerNumberFunction,
   GeoStylerStringFunction,
+  GeoStylerGeometryFunction,
   GeoStylerUnknownFunction
 } from './functions';
 import {
@@ -33,6 +34,7 @@ import {
   isFilter,
   isGeoStylerBooleanFunction,
   isGeoStylerFunction,
+  isGeoStylerGeometryFunction,
   isGeoStylerNumberFunction,
   isGeoStylerStringFunction,
   isGeoStylerUnknownFunction,
@@ -236,6 +238,14 @@ const booleanFunction: GeoStylerBooleanFunction = {
   }, 'Berlin', 'Hamburg', 'Bremen']
 };
 
+const geometryFunction: GeoStylerGeometryFunction = {
+  name: 'centroid',
+  args: [{
+    name: 'property',
+    args: ['geom'],
+  }]
+};
+
 const unknownFunction: GeoStylerUnknownFunction = {
   name: 'property',
   args: ['city']
@@ -294,6 +304,7 @@ const thingsToTest = [
   numberFunction2,
   stringFunction,
   booleanFunction,
+  geometryFunction,
   unknownFunction,
   customFunction,
   spriteImage
@@ -369,6 +380,8 @@ describe('typeguards', () => {
       negationFilter1,
       negationFilter2,
       booleanFunction,
+      unknownFunction,
+      customFunction,
       tru
     ];
     thingsToTest.forEach(thing => {
@@ -493,7 +506,9 @@ describe('typeguards', () => {
   it('isGeoStylerNumberFunction', () => {
     const expectedMatches: any[] = [
       numberFunction1,
-      numberFunction2
+      numberFunction2,
+      unknownFunction,
+      customFunction,
     ];
     thingsToTest.forEach(thing => {
       expect(isGeoStylerNumberFunction(thing)).toBe(expectedMatches.includes(thing));
@@ -501,7 +516,9 @@ describe('typeguards', () => {
   });
   it('isGeoStylerStringFunction', () => {
     const expectedMatches: any[] = [
-      stringFunction
+      stringFunction,
+      unknownFunction,
+      customFunction,
     ];
     thingsToTest.forEach(thing => {
       expect(isGeoStylerStringFunction(thing)).toBe(expectedMatches.includes(thing));
@@ -510,10 +527,22 @@ describe('typeguards', () => {
   it('isGeoStylerBooleanFunction', () => {
     const expectedMatches: any[] = [
       booleanFunction,
-      functionAsFilter
+      functionAsFilter,
+      unknownFunction,
+      customFunction,
     ];
     thingsToTest.forEach(thing => {
       expect(isGeoStylerBooleanFunction(thing)).toBe(expectedMatches.includes(thing));
+    });
+  });
+  it('isGeoStylerGeometryFunction', () => {
+    const expectedMatches: any[] = [
+      geometryFunction,
+      unknownFunction,
+      customFunction,
+    ];
+    thingsToTest.forEach(thing => {
+      expect(isGeoStylerGeometryFunction(thing)).toBe(expectedMatches.includes(thing));
     });
   });
   it('isGeoStylerUnknownFunction', () => {
@@ -531,6 +560,7 @@ describe('typeguards', () => {
       numberFunction2,
       stringFunction,
       booleanFunction,
+      geometryFunction,
       unknownFunction,
       customFunction,
       functionAsFilter
