@@ -32,7 +32,8 @@ export interface ScaleDenominator {
 export interface FunctionCall<T> {
   name: T extends string ? GeoStylerStringFunction['name'] :
     T extends number ? GeoStylerNumberFunction['name'] :
-    GeoStylerBooleanFunction['name'];
+    T extends boolean ? GeoStylerBooleanFunction['name'] :
+    GeoStylerGeometryFunction['name'];
   args: Expression<PropertyType>[];
 };
 
@@ -274,7 +275,7 @@ export interface MarkSymbolizer extends BasePointSymbolizer {
   * Encodes a dash pattern as an array of numbers. Odd-indexed numbers (first,
   * third, etc) determine the length in pixels to draw the line, and even-indexed
   * numbers (second, fourth, etc) determine the length in pixels to blank out
-  * the line. 
+  * the line.
   * If the array is empty, no dash pattern will be applied.
   */
   strokeDasharray?: Expression<number>[];

@@ -53,7 +53,8 @@ import {
   PointSymbolizer,
   Symbolizer,
   FunctionCall,
-  Sprite
+  Sprite,
+  GeoStylerGeometryFunction
 } from './index';
 
 export const isExpression = (got: any): got is Expression<any> => {
@@ -225,7 +226,7 @@ export const isGeoStylerNumberFunction = (got: any): got is GeoStylerNumberFunct
     'toNumber',
     'toRadians'
   ];
-  return functionNames.includes(got?.name);
+  return isGeoStylerUnknownFunction(got) || functionNames.includes(got?.name);
 };
 
 export const isGeoStylerStringFunction = (got: any): got is GeoStylerStringFunction => {
@@ -244,7 +245,7 @@ export const isGeoStylerStringFunction = (got: any): got is GeoStylerStringFunct
     'strToUpperCase',
     'strTrim'
   ];
-  return functionNames.includes(got?.name);
+  return isGeoStylerUnknownFunction(got) || functionNames.includes(got?.name);
 };
 
 export const isGeoStylerBooleanFunction = (got: any): got is GeoStylerBooleanFunction => {
@@ -267,7 +268,16 @@ export const isGeoStylerBooleanFunction = (got: any): got is GeoStylerBooleanFun
     'strMatches',
     'strStartsWith'
   ];
-  return functionNames.includes(got?.name);
+  return isGeoStylerUnknownFunction(got) || functionNames.includes(got?.name);
+};
+
+export const isGeoStylerGeometryFunction = (got: any): got is GeoStylerGeometryFunction => {
+  const functionNames: GeoStylerGeometryFunction['name'][] = [
+    'centroid',
+    'endPoint',
+    'startPoint'
+  ];
+  return isGeoStylerUnknownFunction(got) || functionNames.includes(got?.name);
 };
 
 export const isGeoStylerUnknownFunction = (got: any): got is GeoStylerUnknownFunction => {
@@ -284,6 +294,7 @@ export const isGeoStylerFunction = (got: any): got is GeoStylerFunction => {
   return isGeoStylerBooleanFunction(got) ||
     isGeoStylerNumberFunction(got) ||
     isGeoStylerStringFunction(got) ||
+    isGeoStylerGeometryFunction(got) ||
     isGeoStylerUnknownFunction(got);
 };
 

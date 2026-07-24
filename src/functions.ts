@@ -1,7 +1,8 @@
 import {
   FunctionCall,
   Expression,
-  PropertyType
+  PropertyType,
+  Geometry
 } from './style';
 
 export type GeoStylerFunction = GeoStylerNumberFunction |
@@ -90,12 +91,45 @@ FstrStartsWith;
 /**
  * An expression of a function that returns a geometry.
  */
-export type GeoStylerGeometryFunction = GeoStylerUnknownFunction;
+export type GeoStylerGeometryFunction = GeoStylerUnknownFunction |
+  FstartPoint |
+  FendPoint |
+  Fcentroid;
 
 /**
  * An expression of a function that returns an unknown type.
  */
 export type GeoStylerUnknownFunction = Fcase | Fstep | Fproperty | Fcustom;
+
+/**
+ * Returns the start point of the specified geometry.
+ */
+export interface FstartPoint extends FunctionCall<Geometry> {
+  name: 'startPoint';
+  args: [
+    Expression<Geometry>
+  ]
+};
+
+/**
+ * Returns the end point of the specified geometry.
+ */
+export interface FendPoint extends FunctionCall<Geometry> {
+  name: 'endPoint';
+  args: [
+    Expression<Geometry>
+  ]
+};
+
+/**
+ * Returns the centroid of the specified geometry.
+ */
+export interface Fcentroid extends FunctionCall<Geometry> {
+  name: 'centroid';
+  args: [
+    Expression<Geometry>
+  ]
+};
 
 /**
  * The absolute value of the specified number value
