@@ -1,3 +1,5 @@
+## [13.0.0](https://github.com/geostyler/geostyler-style/compare/v12.0.0...v13.0.0) (2026-09-09)
+
 ## [12.0.0](https://github.com/geostyler/geostyler-style/compare/v11.1.0...v12.0.0) (2026-04-23)
 
 ### ⚠ BREAKING CHANGES
