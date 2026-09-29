@@ -178,6 +178,11 @@ export interface BasePointSymbolizer extends BaseSymbolizer {
    * Compare https://docs.mapbox.com/mapbox-gl-js/style-spec/#paint-symbol-icon-translate-anchor
    */
   offsetAnchor?: Expression<OffsetAnchorType>;
+  /**
+   * Part of the Symbolizer placed closest to the anchor position of the label/icon/mark.
+   * This may conflict with a set offset.
+   */
+  anchor?: Expression<AnchorType>;
 }
 
 /**
@@ -352,10 +357,6 @@ export interface TextSymbolizer extends BasePointSymbolizer {
    */
   allowOverlap?: Expression<boolean>;
   /**
-   * The anchor position of the label referred to the center of the geometry.
-   */
-  anchor?: Expression<AnchorType>;
-  /**
    * Template string where {{PROPERTYNAME}} can be used to be replaced by values
    * from the dataset.
    * e.g.: "Name {{country_name}}"
@@ -526,11 +527,6 @@ export interface IconSymbolizer extends BasePointSymbolizer {
    * drawn symbols.
    */
   allowOverlap?: Expression<boolean>;
-  /**
-   * Part of the icon placed closest to the anchor. This may conflict with a set
-   * offset.
-   */
-  anchor?: Expression<AnchorType>;
   /**
    * The halo's fadeout distance towards the outside.
    */
