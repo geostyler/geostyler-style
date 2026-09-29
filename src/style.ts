@@ -483,6 +483,10 @@ export interface TextSymbolizer extends BasePointSymbolizer {
    * Should only be used for 'line' placement.
    */
   repeat?: Expression<number>;
+  /**
+   * Wrap the text to not exceed the given length in pixels.
+   */
+  wrap?: number;
 }
 
 /**
