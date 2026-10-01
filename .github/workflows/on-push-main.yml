@@ -11,7 +11,7 @@ jobs:
 
     steps:
     - name: Checkout sources
-      uses: actions/checkout@v6
+      uses: actions/checkout@v7
 
     - name: Set up bun
       uses: oven-sh/setup-bun@v2
@@ -33,7 +33,7 @@ jobs:
 
     steps:
     - name: Checkout sources
-      uses: actions/checkout@v6
+      uses: actions/checkout@v7
 
     - name: Set up bun
       uses: oven-sh/setup-bun@v2
